@@ -1,0 +1,102 @@
+"""Regression checks using the 22 saved filing extracts; no network or DB writes."""
+import copy
+import json
+import sys
+import unittest
+from pathlib import Path
+from types import SimpleNamespace
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT / "scratch/extraction_audit"))
+from experiments import snapshot
+from quick_setup.get_assets_liabilities import get_assets_liabilities
+from calculations.debt_to_asset_ratio import calculate_debt_to_assets
+from calculations.interest_coverage_ratio import calculate_interest_coverage
+from test_calculation_fallbacks import fact, filing, START, END
+
+
+def financials(data):
+    result = snapshot(data)
+    result.xb.presentation_trees = {
+        role: SimpleNamespace(all_nodes={n["concept"]: n for n in nodes})
+        for role, nodes in data["presentations"].items()
+    }
+    return result
+
+
+class FilingRatioTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.data = [json.loads(p.read_text()) for p in
+                    sorted((ROOT / "scratch/extraction_audit").glob("*-*.json"))]
+        assert len(cls.data) == 22
+
+    def test_all_saved_filings_and_hidden_liability_controls(self):
+        recovered = {
+            "AMD": [4922000000, 12830000000, 11993000000, 11658000000, 13927000000],
+            "WMT": [152969000000, 159206000000, 161828000000, 163131000000, 178488000000],
+        }
+        counts = {"AMD": 0, "WMT": 0}
+        interest_count = 0
+        for d in self.data:
+            with self.subTest(ticker=d["ticker"], end=d["end"]):
+                fin = financials(d)
+                values = get_assets_liabilities(fin, d["end"])
+                if d["ticker"] in recovered:
+                    expected = recovered[d["ticker"]][counts[d["ticker"]]]
+                    counts[d["ticker"]] += 1
+                    self.assertEqual(values["liabilities"], expected)
+                else:
+                    expected = values["liabilities"]
+                    self.assertIsNotNone(expected)
+                self.assertEqual(calculate_debt_to_assets(fin, d["end"]),
+                                 expected / values["assets"])
+                hidden = copy.deepcopy(d)
+                hidden["facts"] = [f for f in hidden["facts"]
+                                   if f["concept"] != "us-gaap:Liabilities"]
+                self.assertEqual(get_assets_liabilities(financials(hidden), d["end"])["liabilities"], expected)
+                ratio = calculate_interest_coverage(fin, d["start"], d["end"])
+                if d["ticker"] in {"AMD", "AAPL", "MSFT", "WMT"}:
+                    if ratio is not None:
+                        interest_count += 1
+                    if d["ticker"] == "WMT" or (d["ticker"] == "AAPL" and d["end"][:4] >= "2024") or (d["ticker"] == "MSFT" and d["end"][:4] >= "2025"):
+                        self.assertIsNone(ratio)
+        self.assertEqual(interest_count, 11)
+
+    def test_required_branches_and_caption_cannot_be_guessed(self):
+        source = next(d for d in self.data if d["ticker"] == "WMT" and d["end"] == "2026-01-31")
+        for change in ["missing_equity", "missing_liability", "missing_caption", "numeric_caption", "custom", "unknown_standard", "wrong_entity", "wrong_date", "dimensioned", "no_presentation"]:
+            with self.subTest(change=change):
+                d = copy.deepcopy(source)
+                removed = {"missing_equity": "RedeemableNoncontrollingInterestEquityCarryingAmount", "missing_liability": "FinanceLeaseLiabilityNoncurrent", "missing_caption": "CommitmentsAndContingencies"}.get(change)
+                if removed:
+                    d["facts"] = [f for f in d["facts"] if f["concept"] != "us-gaap:" + removed]
+                for f in d["facts"]:
+                    if change == "numeric_caption" and f["concept"] == "us-gaap:CommitmentsAndContingencies":
+                        f["numeric_value"] = 1
+                    if f["concept"] == "us-gaap:FinanceLeaseLiabilityNoncurrent":
+                        if change == "wrong_entity": f["entity_identifier"] = "1"
+                        if change == "wrong_date": f["period_instant"] = "2000-01-01"
+                        if change == "dimensioned": f["is_dimensioned"] = True
+                if change in {"custom", "unknown_standard"}:
+                    for arcs in d["calculations"].values():
+                        for a in arcs:
+                            if a["child"] == "us-gaap:FinanceLeaseLiabilityNoncurrent":
+                                a["child"] = "wmt:Unreviewed" if change == "custom" else "us-gaap:Unreviewed"
+                if change == "no_presentation": d["presentations"] = {}
+                self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+
+    def test_zero_denominators_negative_income_and_missing_annual_start(self):
+        self.assertIsNone(calculate_debt_to_assets(filing([fact("Assets", 0), fact("Liabilities", 2)]), END))
+        for expense, expected in [(0, None), (2, -3)]:
+            data = filing([fact("OperatingIncomeLoss", -6), fact("InterestExpense", expense)])
+            self.assertEqual(calculate_interest_coverage(data, START, END), expected)
+            self.assertIsNone(calculate_interest_coverage(data, None, END))
+
+    def test_current_only_needs_an_actual_complete_equation(self):
+        data = filing([fact("Assets", 100), fact("LiabilitiesCurrent", 20)])
+        self.assertIsNone(calculate_debt_to_assets(data, END))
+        data = filing([fact("Assets", 100), fact("LiabilitiesCurrent", 20)],
+                      [[("us-gaap_Liabilities", "us-gaap_LiabilitiesCurrent", 1)]])
+        self.assertEqual(calculate_debt_to_assets(data, END), .2)

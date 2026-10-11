@@ -3,6 +3,7 @@ import sys
 
 
 sys.path.append("src")
+from quick_setup.get_assets_liabilities import get_value
 
 from quick_setup.get_operating_income_interest_expense import (
     get_operating_income_interest_expense,
@@ -13,7 +14,7 @@ from quick_setup.setup_sec_identity import setup_sec_identity
 
 setup_sec_identity()
 
-ticker = "WMT"
+ticker = "AMD"
 
 filing = Company(ticker).get_filings(
     form="10-K",
@@ -24,6 +25,28 @@ print(filing)
 
 period_end = str(filing.period_of_report)[:10]
 financial_data = filing.obj().financials
+
+print("\nBalance-sheet components:", ticker, period_end)
+
+concepts = [
+    "Assets",
+    "Liabilities",
+    "LiabilitiesCurrent",
+    "LiabilitiesNoncurrent",
+    "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+    "StockholdersEquity",
+    "MinorityInterest",
+    "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+]
+
+for concept in concepts:
+    value = get_value(
+        financial_data,
+        f"us-gaap:{concept}",
+        period_end,
+    )
+
+    print(f"{concept}: {value}")
 
 print(financial_data.income_statement())
 
@@ -101,3 +124,4 @@ for concept in [
     "us-gaap:LiabilitiesNoncurrent",
 ]:
     print(concept, get_value(financial_data, concept, period_end))
+    print(financial_data.balance_sheet())

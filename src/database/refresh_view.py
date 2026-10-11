@@ -8,7 +8,7 @@ def refresh_view():
     connection_string = os.getenv("db_connection_string")
     engine = create_engine(connection_string)
 
-    with open("src/database/sql/sector_leverage.sql") as f:
-        view_query = f.read()
     with engine.begin() as connection:
-        connection.execute(text(view_query))
+        for filename in ("sector_leverage.sql", "sector_interest_coverage.sql"):
+            with open(f"src/database/sql/{filename}") as f:
+                connection.execute(text(f.read()))

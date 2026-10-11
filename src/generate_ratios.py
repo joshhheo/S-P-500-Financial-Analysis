@@ -11,14 +11,9 @@ def generate_ratios():
 
     companies = pd.read_csv("data/company_status.csv")
 
-    # Temporary filter for the pilot.
-    companies = companies[
-        companies["ticker"].isin(["MSFT", "AAPL", "AMD", "WMT"])
-    ]
-
     results = []
 
-    for _, company in companies.iterrows():
+    for index, company in companies.iterrows():
         ticker = company["ticker"]
         cik = int(company["cik"])
 
@@ -83,10 +78,13 @@ def generate_ratios():
             if len(periods) == 5:
                 break
 
+        print(f"{index + 1}/{len(companies)}: {ticker}, {len(periods)} annual periods", flush=True)
+
     pd.DataFrame(results).to_csv(
-        "data/financial_ratios_pilot.csv",
+        "data/financial_ratios.csv",
         index=False,
     )
+    print(f"Saved {len(results)} rows to data/financial_ratios.csv")
 
 
 if __name__ == "__main__":

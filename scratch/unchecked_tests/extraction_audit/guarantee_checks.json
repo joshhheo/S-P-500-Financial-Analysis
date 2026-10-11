@@ -1,0 +1,35 @@
+{
+  "omission_counterexample": {
+    "company": "AMD",
+    "date": "2025-12-27",
+    "noncurrent_subtotal": null,
+    "known_noncurrent_components": 4472000000
+  },
+  "complete_role_equations_checked": 47,
+  "matched": 47,
+  "mismatches": [],
+  "by_target": {
+    "Assets": 20,
+    "Liabilities": 10,
+    "OperatingIncomeLoss": 17,
+    "InterestExpense": 0
+  },
+  "net_interest_counterexample": {
+    "net_expense": 100,
+    "possible_gross_expenses": [
+      120,
+      150
+    ]
+  },
+  "rounding_counterexample": {
+    "reported_components_millions": [
+      1,
+      1
+    ],
+    "possible_rounded_totals_millions": [
+      2,
+      3
+    ],
+    "conclusion": "Component facts do not uniquely determine a missing total at the same reporting precision."
+  }
+}

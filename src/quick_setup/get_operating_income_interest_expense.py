@@ -1,32 +1,10 @@
+from quick_setup.get_calculated_value import get_value
+
+
 def get_annual_value(financial_data, concept_name, period_start, period_end):
-    if financial_data is None:
+    if period_start is None or period_end is None:
         return None
-
-    facts = (
-        financial_data.xb.query()
-        .by_concept(concept_name, exact=True)
-        .to_dataframe()
-    )
-
-    if facts.empty:
-        return None
-
-    matches = facts[facts["is_dimensioned"] == False]
-
-    matches = matches[
-        matches["period_start"].astype(str).str[:10] == period_start
-    ]
-
-    matches = matches[
-        matches["period_end"].astype(str).str[:10] == period_end
-    ]
-
-    matches = matches.dropna(subset=["numeric_value"])
-
-    if matches.empty:
-        return None
-
-    return matches.iloc[0]["numeric_value"]
+    return get_value(financial_data, concept_name, period_end, period_start)
 
 
 def get_operating_income_interest_expense(
@@ -56,27 +34,26 @@ def get_operating_income_interest_expense(
 
         if operating_interest is None:
             operating_interest_income = get_annual_value(
-            financial_data,
-            "us-gaap:InterestIncomeOperating",
-            period_start,
-            period_end,
-        )
-
-        net_operating_interest = get_annual_value(
-            financial_data,
-            "us-gaap:InterestIncomeExpenseNet",
-            period_start,
-            period_end,
-        )
-
-        if (
-            operating_interest_income is not None
-            and net_operating_interest is not None
-        ):
-            operating_interest = (
-                operating_interest_income - net_operating_interest
+                financial_data,
+                "us-gaap:InterestIncomeOperating",
+                period_start,
+                period_end,
             )
-    
+
+            net_operating_interest = get_annual_value(
+                financial_data,
+                "us-gaap:InterestIncomeExpenseNet",
+                period_start,
+                period_end,
+            )
+
+            if (
+                operating_interest_income is not None
+                and net_operating_interest is not None
+            ):
+                operating_interest = (
+                    operating_interest_income - net_operating_interest
+                )
 
         nonoperating_interest = get_annual_value(
             financial_data,

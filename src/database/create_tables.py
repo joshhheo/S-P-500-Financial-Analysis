@@ -25,6 +25,7 @@ def create_tables():
         ticker TEXT REFERENCES companies(ticker),
         fiscal_period_end DATE,
         debt_to_assets_ratio NUMERIC,
+        interest_coverage_ratio NUMERIC,
         PRIMARY KEY (ticker, fiscal_period_end)
     );
     """
@@ -38,6 +39,10 @@ def create_tables():
             BOOLEAN NOT NULL DEFAULT FALSE;
      """))
         connection.execute(text(create_financials_table))
+        connection.execute(text("""
+            ALTER TABLE financials
+            ADD COLUMN IF NOT EXISTS interest_coverage_ratio NUMERIC;
+        """))
         connection.commit()
 
 if __name__ == "__main__":

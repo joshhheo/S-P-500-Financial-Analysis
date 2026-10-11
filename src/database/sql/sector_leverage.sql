@@ -3,7 +3,8 @@ WITH latest_financials AS (
     SELECT DISTINCT ON (ticker)
         ticker,
         fiscal_period_end,
-        debt_to_assets_ratio
+        debt_to_assets_ratio,
+        interest_coverage_ratio
     FROM financials
     ORDER BY ticker, fiscal_period_end DESC
 )
@@ -19,7 +20,8 @@ SELECT
                 ORDER BY f.debt_to_assets_ratio DESC NULLS LAST
             )
     END AS sector_rank,
-    f.fiscal_period_end
+    f.fiscal_period_end,
+    f.interest_coverage_ratio
 FROM companies c
 LEFT JOIN latest_financials f ON c.ticker = f.ticker
 WHERE c.is_current_constituent = TRUE;

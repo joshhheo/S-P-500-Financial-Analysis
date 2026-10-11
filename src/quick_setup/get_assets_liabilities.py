@@ -1,29 +1,86 @@
-def get_value(financial_data, concept_name, fiscal_period_end):
+from quick_setup.get_calculated_value import (
+    get_value, get_reported_value, matching_facts, standard_concept,
+)
+
+
+# Exact categories reviewed against the official US GAAP definitions. These are
+# classifications of branches in a filed equation, not a list to sum blindly.
+LIABILITY_BRANCHES = {
+    "Liabilities", "LiabilitiesCurrent", "LiabilitiesNoncurrent",
+    "LongTermDebtNoncurrent", "OperatingLeaseLiabilityNoncurrent",
+    "FinanceLeaseLiabilityNoncurrent", "DeferredIncomeTaxLiabilitiesNet",
+    "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent", "OtherLiabilitiesNoncurrent",
+}
+EQUITY_BRANCHES = {
+    "StockholdersEquity", "MinorityInterest",
+    "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+    "RedeemableNoncontrollingInterestEquityCarryingAmount",
+    "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+}
+
+
+def liabilities_from_balance_sheet(financial_data, period_end):
+    """Identify liabilities within a complete filed liabilities-and-equity sum."""
     if financial_data is None:
         return None
-
-    facts = (
-        financial_data.xb.query()
-        .by_concept(concept_name, exact=True)
-        .to_dataframe()
+    xb = financial_data.xb
+    combined = get_reported_value(
+        financial_data, "us-gaap:LiabilitiesAndStockholdersEquity", period_end
     )
-
-    if facts.empty:
+    if combined is None:
         return None
 
-    matches = facts[facts["is_dimensioned"] == False]
-
-    matches = matches[
-        matches["period_instant"].astype(str).str[:10]
-        == fiscal_period_end
-    ]
-
-    matches = matches.dropna(subset=["numeric_value"])
-
-    if matches.empty:
-        return None
-
-    return matches.iloc[0]["numeric_value"]
+    for role, tree in xb.calculation_trees.items():
+        presentation = xb.presentation_trees.get(role)
+        if presentation is None:
+            continue
+        concepts = {standard_concept(c) for c in presentation.all_nodes}
+        if not {"us-gaap:Assets", "us-gaap:LiabilitiesAndStockholdersEquity"} <= concepts:
+            continue
+        children = [a for a in tree.all_arcs if standard_concept(a.parent_id)
+                    == "us-gaap:LiabilitiesAndStockholdersEquity"]
+        equity = 0
+        liabilities = 0
+        has_equity = False
+        has_liabilities = False
+        missing_total = False
+        for arc in children:
+            concept = standard_concept(arc.child_id)
+            if not concept.startswith("us-gaap:") or arc.weight != 1:
+                break
+            name = concept.removeprefix("us-gaap:")
+            if name == "CommitmentsAndContingencies":
+                # This exact taxonomy concept is a balance-sheet caption, not a
+                # monetary category. Excluding its blank caption does NOT mean
+                # commitments are zero. No other missing/nil child is skipped.
+                rows = matching_facts(financial_data, concept, period_end)
+                if (concept not in concepts or rows is None or rows.empty
+                        or rows["numeric_value"].notna().any()
+                        or not rows["value"].fillna("").eq("").all()):
+                    break
+                continue
+            if name not in LIABILITY_BRANCHES | EQUITY_BRANCHES:
+                break
+            if name == "Liabilities":
+                missing_total = True
+                has_liabilities = True
+                continue
+            amount = get_value(financial_data, concept, period_end)
+            if amount is None:
+                break
+            if name in EQUITY_BRANCHES:
+                equity += amount
+                has_equity = True
+            else:
+                liabilities += amount
+                has_liabilities = True
+        else:
+            if has_equity and has_liabilities:
+                # If the total itself is a child, solve its declared equation.
+                # Otherwise use exactly the filed liability branches, never
+                # their descendants or an assumed zero noncurrent subtotal.
+                return combined - equity - liabilities if missing_total else liabilities
+    return None
 
 
 def get_assets_liabilities(financial_data, fiscal_period_end):
@@ -33,6 +90,9 @@ def get_assets_liabilities(financial_data, fiscal_period_end):
     liabilities = get_value(
         financial_data, "us-gaap:Liabilities", fiscal_period_end
     )
+
+    if liabilities is None:
+        liabilities = liabilities_from_balance_sheet(financial_data, fiscal_period_end)
 
     # assets fallback: current + noncurrent
     if assets is None:
