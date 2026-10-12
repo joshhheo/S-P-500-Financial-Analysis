@@ -44,6 +44,7 @@ def create_tables():
             ADD COLUMN IF NOT EXISTS interest_coverage_ratio NUMERIC;
         """))
         connection.commit()
+    print("Schema transaction committed: companies and financials tables ensured; current-membership and interest-coverage columns ensured", flush=True)
 
 if __name__ == "__main__":
     create_tables()

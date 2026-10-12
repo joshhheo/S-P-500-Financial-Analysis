@@ -3,11 +3,11 @@ from pathlib import Path
 import sys
 
 
-def standard_concept(element_id):
+def normalize_concept_name(concept):
     """Convert the library's schema ID spelling, without label/alias matching."""
-    if element_id.startswith("us-gaap_"):
-        return "us-gaap:" + element_id[len("us-gaap_"):]
-    return element_id
+    if concept.startswith("us-gaap_"):
+        return "us-gaap:" + concept[len("us-gaap_"):]
+    return concept
 
 
 def matching_facts(xb, concept, end, start, cik):
@@ -39,7 +39,7 @@ decision that the role is applicable to the requested consolidated amount.
     xb = financial_data.xb
 
     def describe(element_id):
-        concept = standard_concept(element_id)
+        concept = normalize_concept_name(element_id)
         if not concept.startswith("us-gaap:"):
             return "CUSTOM/OUT OF SCOPE", False
         facts = matching_facts(xb, concept, end, start, cik).dropna(subset=["numeric_value"])
@@ -68,16 +68,16 @@ decision that the role is applicable to the requested consolidated amount.
         # all_arcs preserves weights per relationship; node.weight does not.
         arcs = tree.all_arcs
         target_arcs = [a for a in arcs if target in {
-            standard_concept(a.parent_id), standard_concept(a.child_id)
+            normalize_concept_name(a.parent_id), normalize_concept_name(a.child_id)
         }]
         target_roles += bool(target_arcs)
         target_parent_roles += any(
-            standard_concept(a.parent_id) == target for a in arcs
+            normalize_concept_name(a.parent_id) == target for a in arcs
         )
         parents = {
             a.parent_id for a in arcs
-            if standard_concept(a.parent_id) in anchors
-            or standard_concept(a.child_id) == target
+            if normalize_concept_name(a.parent_id) in anchors
+            or normalize_concept_name(a.child_id) == target
         }
         if not parents:
             continue
@@ -87,12 +87,12 @@ decision that the role is applicable to the requested consolidated amount.
                 (a for a in arcs if a.parent_id == parent),
                 key=lambda a: a.order,
             )
-            print(f"  Parent {standard_concept(parent)}: {describe(parent)[0]}")
+            print(f"  Parent {normalize_concept_name(parent)}: {describe(parent)[0]}")
             complete = True
             for arc in children:
                 status, available = describe(arc.child_id)
                 complete = complete and available
-                print(f"    {arc.weight:+g} × {standard_concept(arc.child_id)}: {status}")
+                print(f"    {arc.weight:+g} × {normalize_concept_name(arc.child_id)}: {status}")
             print(f"  All immediate children available and standard: {complete}")
 
     print(f"\nNetworks containing target: {target_roles}")
@@ -107,7 +107,7 @@ def inspect_presentation(financial_data, end, cik):
     """Show balance-sheet rows as filed; indentation does not imply addition."""
     xb = financial_data.xb
     for role, tree in xb.presentation_trees.items():
-        concepts = {standard_concept(key) for key in tree.all_nodes}
+        concepts = {normalize_concept_name(key) for key in tree.all_nodes}
         if not {"us-gaap:Assets", "us-gaap:LiabilitiesAndStockholdersEquity"} <= concepts:
             continue
         print(f"\nPRESENTATION: {role}")
@@ -117,7 +117,7 @@ def inspect_presentation(financial_data, end, cik):
             if element_id in ancestors:
                 return
             node = tree.all_nodes[element_id]
-            concept = standard_concept(element_id)
+            concept = normalize_concept_name(element_id)
             label = node.labels.get(node.preferred_label) or node.standard_label or concept
             if node.is_abstract:
                 status = "HEADING"
@@ -144,7 +144,7 @@ def main():
     from edgar import Company
 
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-    from quick_setup.setup_sec_identity import setup_sec_identity
+    from setup_sec_identity import setup_sec_identity
 
     setup_sec_identity()
     filing = Company(2488).get_filings(

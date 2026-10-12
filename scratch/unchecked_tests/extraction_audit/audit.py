@@ -6,9 +6,9 @@ import sys
 import pandas as pd
 from edgar import Company
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'src'))
-from quick_setup.setup_sec_identity import setup_sec_identity
-from quick_setup.get_calculated_value import standard_concept
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / 'src'))
+from setup_sec_identity import setup_sec_identity
+from value_retrieval.get_value import normalize_concept_name
 
 OUT = Path(__file__).resolve().parent
 setup_sec_identity()
@@ -33,12 +33,12 @@ for ticker, cik in [('AMD',2488),('AAPL',320193),('MSFT',789019),('WMT',104169),
                 if isinstance(row['value'], str) and len(row['value']) > 500:
                     row['value'] = row['value'][:500]
                     row['text_preview_truncated'] = True
-            trees = {role:[dict(parent=standard_concept(a.parent_id),child=standard_concept(a.child_id),weight=a.weight) for a in tree.all_arcs] for role,tree in xb.calculation_trees.items()}
+            trees = {role:[dict(parent=normalize_concept_name(a.parent_id),child=normalize_concept_name(a.child_id),weight=a.weight) for a in tree.all_arcs] for role,tree in xb.calculation_trees.items()}
             presentations = {}
             for role,tree in xb.presentation_trees.items():
-                if 'us-gaap:Assets' not in {standard_concept(x) for x in tree.all_nodes}:
+                if 'us-gaap:Assets' not in {normalize_concept_name(x) for x in tree.all_nodes}:
                     continue
-                presentations[role] = [dict(concept=standard_concept(n.element_id),parent=standard_concept(n.parent) if n.parent else None,label=n.standard_label,abstract=n.is_abstract,children=[standard_concept(c) for c in n.children]) for n in tree.all_nodes.values()]
+                presentations[role] = [dict(concept=normalize_concept_name(n.element_id),parent=normalize_concept_name(n.parent) if n.parent else None,label=n.standard_label,abstract=n.is_abstract,children=[normalize_concept_name(c) for c in n.children]) for n in tree.all_nodes.values()]
             dest.write_text(json.dumps(dict(ticker=ticker,cik=cik,end=end,start=start,accession=filing.accession_no,facts=rows,calculations=trees,presentations=presentations),indent=2))
         print(f'{ticker} {end}: evidence saved',flush=True)
         if len(periods)==(1 if ticker in ['JPM','BRK-B'] else 5):

@@ -1,3 +1,4 @@
+from table_data.checks import check_companies
 import os
 import pandas as pd
 from dotenv import load_dotenv
@@ -9,6 +10,9 @@ def companies_table_info():
     engine = create_engine(os.getenv("db_connection_string"))
 
     companies = pd.read_csv("data/company_status.csv")
+
+    check_companies(companies)
+    print(f"Loading {len(companies)} company rows; resetting current membership then upserting", flush=True)
 
     upsert_query = """
     INSERT INTO companies (ticker, company_name, sector, is_current_constituent)
@@ -30,3 +34,8 @@ def companies_table_info():
                 "company_name": row["company_name"],
                 "sector": row["sector"],
             })
+
+        current = connection.execute(text("SELECT COUNT(*) FROM companies WHERE is_current_constituent = TRUE")).scalar_one()
+        if current != len(companies):
+            raise ValueError(f"Current membership mismatch: expected {len(companies)}, found {current}")
+    print(f"Company transaction committed: {len(companies)} upserts; {current} current constituents verified", flush=True)

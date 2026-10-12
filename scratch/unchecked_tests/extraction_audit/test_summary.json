@@ -1,9 +1,0 @@
-{
-  "filings": 22,
-  "direct_assets_matched_by_calculation": 20,
-  "direct_liabilities_matched_by_calculation": 10,
-  "direct_operating_income_matched_by_calculation": 16,
-  "residual_rule_matches_to_hidden_direct_totals": 12,
-  "missing_liabilities_reconstructed": 10,
-  "negative_cases_passed": 9
-}

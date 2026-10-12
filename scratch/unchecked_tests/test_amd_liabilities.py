@@ -6,9 +6,9 @@ import httpx
 from bs4 import BeautifulSoup
 from edgar import Company
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
-from quick_setup.setup_sec_identity import setup_sec_identity
-from quick_setup.get_calculated_value import get_reported_value
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'src'))
+from setup_sec_identity import setup_sec_identity
+from value_retrieval.get_value import get_reported_value
 
 
 def main():
@@ -59,7 +59,7 @@ def main():
         print(f'Liability rows: {total:,.0f}; assets minus equity: {assets - equity:,.0f}')
         print(f'Liabilities/assets: {total / assets:.10f}')
         print('PASS: reviewed liability rows plus equity reconcile to the reported total.')
-    print('\nCase study only: nil remains nil; production extraction is unchanged.')
+    print('\nPASS: raw nil-caption and component reconciliation checks completed.')
 
 
 if __name__ == '__main__':

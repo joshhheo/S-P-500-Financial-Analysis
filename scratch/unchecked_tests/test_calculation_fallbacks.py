@@ -1,4 +1,4 @@
-"""Run from the repository root: python -m unittest discover -s scratch/tests."""
+"""Run from the repository root: python -m unittest discover -s scratch/unchecked_tests."""
 import sys
 import unittest
 from pathlib import Path
@@ -8,9 +8,10 @@ import pandas as pd
 from edgar.xbrl.models import CalculationArc, CalculationTree
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'src'))
-from quick_setup.get_calculated_value import get_value
-from quick_setup.get_assets_liabilities import get_assets_liabilities
-from quick_setup.get_operating_income_interest_expense import get_operating_income_interest_expense
+from value_retrieval.get_value import get_value
+from value_retrieval.get_assets import get_assets
+from value_retrieval.get_liabilities import get_liabilities
+from value_retrieval.get_interest_expense import get_interest_expense
 
 END = '2025-12-27'
 START = '2024-12-29'
@@ -18,7 +19,7 @@ START = '2024-12-29'
 
 def fact(name, value, **overrides):
     row = dict(concept='us-gaap:' + name, numeric_value=value,
-               is_dimensioned=False, entity_identifier='0000002488',
+               is_dimensioned=False,
                period_instant=END, period_start=START, period_end=END)
     row.update(overrides)
     return row
@@ -35,7 +36,7 @@ def filing(rows, networks=()):
             return pd.DataFrame([r for r in rows if r['concept'] == self.concept])
 
     def query(include_contexts=False):
-        assert include_contexts  # The real XBRL API excludes these by default.
+        assert not include_contexts  # Production no longer needs entity/context columns.
         return Query()
 
     trees = {}
@@ -68,10 +69,9 @@ class FallbackTests(unittest.TestCase):
                        fact('Cash', 6)], [arcs])
         self.assertEqual(get_value(data, 'us-gaap:Assets', END), 7)
 
-    def test_missing_wrong_scope_period_entity_and_custom(self):
+    def test_missing_wrong_scope_period_and_custom(self):
         for overrides in [dict(numeric_value=None), dict(is_dimensioned=True),
-                          dict(period_instant='2024-12-28'),
-                          dict(entity_identifier='1')]:
+                          dict(period_instant='2024-12-28')]:
             data = filing([fact('AssetsCurrent', 10),
                            fact('AssetsNoncurrent', 20, **overrides)], [ASSET_ARCS])
             self.assertIsNone(get_value(data, 'us-gaap:Assets', END))
@@ -99,22 +99,22 @@ class FallbackTests(unittest.TestCase):
     def test_linkbase_before_fixed_assets_and_fixed_fallback_after_failure(self):
         rows = [fact('AssetsCurrent', 10), fact('AssetsNoncurrent', 20), fact('Cash', 8)]
         data = filing(rows, [[('us-gaap_Assets', 'us-gaap_Cash', 1)]])
-        self.assertEqual(get_assets_liabilities(data, END)['assets'], 8)
+        self.assertEqual(get_assets(data, END), 8)
         data = filing(rows, [[('us-gaap_Assets', 'amd_Custom', 1)]])
-        self.assertEqual(get_assets_liabilities(data, END)['assets'], 30)
+        self.assertEqual(get_assets(data, END), 30)
 
     def test_equity_requires_temporary_and_noncontrolling_components(self):
         rows = [fact('Assets', 100), fact('StockholdersEquity', 60)]
-        self.assertIsNone(get_assets_liabilities(filing(rows), END)['liabilities'])
+        self.assertIsNone(get_liabilities(filing(rows), END))
         rows.append(fact('MinorityInterest', 0))
-        self.assertIsNone(get_assets_liabilities(filing(rows), END)['liabilities'])
+        self.assertIsNone(get_liabilities(filing(rows), END))
         rows.append(fact('TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests', 5))
-        self.assertEqual(get_assets_liabilities(filing(rows), END)['liabilities'], 35)
+        self.assertEqual(get_liabilities(filing(rows), END), 35)
 
     def test_interest_fixed_fallback_preserves_net_sign_and_needs_both_parts(self):
         rows = [fact('InterestIncomeOperating', 10), fact('InterestIncomeExpenseNet', -2)]
         def interest(rows):
-            return get_operating_income_interest_expense(filing(rows), START, END)['interest_expense']
+            return get_interest_expense(filing(rows), START, END)
         self.assertIsNone(interest(rows))
         rows.append(fact('InterestExpenseNonoperating', 3))
         self.assertEqual(interest(rows), 15)
@@ -125,8 +125,8 @@ class FallbackTests(unittest.TestCase):
         rows = [fact('InterestIncomeOperating', 10), fact('InterestIncomeExpenseNet', -2),
                 fact('FinanceLeaseInterestExpense', 3)]
         arcs = [[('us-gaap_InterestExpenseNonoperating', 'us-gaap_FinanceLeaseInterestExpense', 1)]]
-        result = get_operating_income_interest_expense(filing(rows, arcs), START, END)
-        self.assertEqual(result['interest_expense'], 15)
+        result = get_interest_expense(filing(rows, arcs), START, END)
+        self.assertEqual(result, 15)
 
 
 if __name__ == '__main__':

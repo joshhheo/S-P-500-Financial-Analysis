@@ -1,3 +1,4 @@
+"""Helpers for historical SEC/equation comparisons; production checks live in test_*.py."""
 import json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent

@@ -1,3 +1,4 @@
+from table_data.checks import check_ratios
 import os
 import pandas as pd
 from dotenv import load_dotenv
@@ -10,8 +11,12 @@ def financials_table_info():
 
     df = pd.read_csv("data/financial_ratios.csv")
 
+    input_rows = len(df)
     # postgres does not allow null values in primary key
     df = df.dropna(subset=["ticker", "fiscal_period_end"])
+
+    print(f"Financial CSV: {input_rows} rows read; {input_rows - len(df)} dropped for missing keys", flush=True)
+    check_ratios(df)
 
     upsert_query = """
     INSERT INTO financials (ticker, fiscal_period_end, debt_to_assets_ratio, interest_coverage_ratio)
@@ -39,3 +44,8 @@ def financials_table_info():
                     else None
                 ),
             })
+
+    print(f"Financial transaction committed: {len(df)} upserts; "
+          f"debt/assets NULLs written={df['debt_to_assets_ratio'].isna().sum()}, "
+          f"interest coverage NULLs written={df['interest_coverage_ratio'].isna().sum()}. "
+          "Existing values at matching keys were replaced, including NULLs.", flush=True)

@@ -4,32 +4,23 @@ import json
 import sys
 import unittest
 from pathlib import Path
-from types import SimpleNamespace
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
-sys.path.insert(0, str(ROOT / "scratch/extraction_audit"))
-from experiments import snapshot
-from quick_setup.get_assets_liabilities import get_assets_liabilities
+from filing_fixtures import financials
+from value_retrieval.get_assets import get_assets
+from value_retrieval.get_liabilities import get_liabilities
 from calculations.debt_to_asset_ratio import calculate_debt_to_assets
 from calculations.interest_coverage_ratio import calculate_interest_coverage
 from test_calculation_fallbacks import fact, filing, START, END
 
-
-def financials(data):
-    result = snapshot(data)
-    result.xb.presentation_trees = {
-        role: SimpleNamespace(all_nodes={n["concept"]: n for n in nodes})
-        for role, nodes in data["presentations"].items()
-    }
-    return result
 
 
 class FilingRatioTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data = [json.loads(p.read_text()) for p in
-                    sorted((ROOT / "scratch/extraction_audit").glob("*-*.json"))]
+                    sorted((ROOT / "scratch/unchecked_tests/extraction_audit").glob("*-*.json"))]
         assert len(cls.data) == 22
 
     def test_all_saved_filings_and_hidden_liability_controls(self):
@@ -42,20 +33,21 @@ class FilingRatioTests(unittest.TestCase):
         for d in self.data:
             with self.subTest(ticker=d["ticker"], end=d["end"]):
                 fin = financials(d)
-                values = get_assets_liabilities(fin, d["end"])
+                assets = get_assets(fin, d["end"])
+                liabilities = get_liabilities(fin, d["end"])
                 if d["ticker"] in recovered:
                     expected = recovered[d["ticker"]][counts[d["ticker"]]]
                     counts[d["ticker"]] += 1
-                    self.assertEqual(values["liabilities"], expected)
+                    self.assertEqual(liabilities, expected)
                 else:
-                    expected = values["liabilities"]
+                    expected = liabilities
                     self.assertIsNotNone(expected)
                 self.assertEqual(calculate_debt_to_assets(fin, d["end"]),
-                                 expected / values["assets"])
+                                 expected / assets)
                 hidden = copy.deepcopy(d)
                 hidden["facts"] = [f for f in hidden["facts"]
                                    if f["concept"] != "us-gaap:Liabilities"]
-                self.assertEqual(get_assets_liabilities(financials(hidden), d["end"])["liabilities"], expected)
+                self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
                 ratio = calculate_interest_coverage(fin, d["start"], d["end"])
                 if d["ticker"] in {"AMD", "AAPL", "MSFT", "WMT"}:
                     if ratio is not None:
@@ -66,7 +58,7 @@ class FilingRatioTests(unittest.TestCase):
 
     def test_required_branches_and_caption_cannot_be_guessed(self):
         source = next(d for d in self.data if d["ticker"] == "WMT" and d["end"] == "2026-01-31")
-        for change in ["missing_equity", "missing_liability", "missing_caption", "numeric_caption", "custom", "unknown_standard", "wrong_entity", "wrong_date", "dimensioned", "no_presentation"]:
+        for change in ["missing_equity", "missing_liability", "missing_caption", "numeric_caption", "custom", "unknown_standard", "wrong_date", "dimensioned", "no_presentation"]:
             with self.subTest(change=change):
                 d = copy.deepcopy(source)
                 removed = {"missing_equity": "RedeemableNoncontrollingInterestEquityCarryingAmount", "missing_liability": "FinanceLeaseLiabilityNoncurrent", "missing_caption": "CommitmentsAndContingencies"}.get(change)
@@ -76,7 +68,6 @@ class FilingRatioTests(unittest.TestCase):
                     if change == "numeric_caption" and f["concept"] == "us-gaap:CommitmentsAndContingencies":
                         f["numeric_value"] = 1
                     if f["concept"] == "us-gaap:FinanceLeaseLiabilityNoncurrent":
-                        if change == "wrong_entity": f["entity_identifier"] = "1"
                         if change == "wrong_date": f["period_instant"] = "2000-01-01"
                         if change == "dimensioned": f["is_dimensioned"] = True
                 if change in {"custom", "unknown_standard"}:

@@ -3,9 +3,9 @@ import os
 from pathlib import Path
 import sys
 import httpx
-sys.path.insert(0,str(Path(__file__).resolve().parents[2] / 'src'))
-from quick_setup.setup_sec_identity import setup_sec_identity
-from scratch.unchecked_tests.extraction_audit.analyze import value
+sys.path.insert(0,str(Path(__file__).resolve().parents[3] / 'src'))
+from setup_sec_identity import setup_sec_identity
+from analyze import value
 setup_sec_identity()
 root=Path(__file__).resolve().parent
 checks=[]

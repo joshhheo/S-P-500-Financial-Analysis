@@ -2,7 +2,7 @@
 import json
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
-from scratch.unchecked_tests.extraction_audit.analyze import value
+from analyze import value
 
 root=Path(__file__).resolve().parent
 checks=[]
