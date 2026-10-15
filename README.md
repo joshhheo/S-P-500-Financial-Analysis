@@ -328,28 +328,33 @@ cases, mocked integration and archived filings; they do not run live extraction
 or write to the live database or production CSVs.
 
 ```sh
-PYTHONPATH=src:scratch/unchecked_tests .venv/bin/python -m unittest test_simple_retrieval
-.venv/bin/python scratch/unchecked_tests/implementation/verify_simple_retrieval.py
+PYTHONPATH=src:scratch/unchecked_tests .venv/bin/python -B -m unittest discover -s scratch/unchecked_tests
+.venv/bin/python -B scratch/unchecked_tests/implementation/verify_simple_retrieval.py
 ```
 
-The latest recorded USD-assumption revision passed **14 focused tests**. Across
+The consolidated suite passed **16 tests**: 14 retrieval/calculation checks and
+two storage/checkpoint checks. Across
 **22 archived filings from six companies**—Apple, AMD, Microsoft, Walmart,
 Berkshire Hathaway and JPMorgan—all four metric slots and both ratios matched
 the frozen linkbase-disabled baseline, including missing values.
 
 Evidence:
 
-- [Focused test log](scratch/unchecked_tests/implementation/usd_assumption_tests.txt)
-- [Archived-filing comparison log](scratch/unchecked_tests/implementation/usd_assumption_real_log.txt)
+- [Focused test log](scratch/unchecked_tests/implementation/current_tests.txt)
+- [Archived-filing comparison log](scratch/unchecked_tests/implementation/archived_filings.txt)
 - [Per-filing results](scratch/unchecked_tests/implementation/simple_retrieval_results.json)
 - [Original filing manifest](scratch/unchecked_tests/implementation/instance_manifest.json)
 - [Linkbase dependency experiment](scratch/unchecked_tests/implementation/linkbase_dependency_results.json)
 
-Older scratch tests reference retired APIs and are historical evidence. Running
-unrestricted test discovery is not the current regression command. The mocked
-filing-loop test verifies wiring, not live transport. Earlier SQLite tests do not
-establish deployed PostgreSQL behavior. Passing a sample does not prove universal
-correctness or complete S&P 500 coverage.
+Obsolete suites and repeated run outputs have been removed. The remaining tests
+run through standard unittest discovery. The mocked filing-loop test verifies
+wiring, not live transport. SQLite checks transaction and missing-value behavior;
+it does not establish deployed PostgreSQL behavior or numeric precision.
+Original filing and official-source documents are compressed, and distinct
+research conclusions are retained alongside the active tests; see the
+[archive guide](scratch/unchecked_tests/README.md). Historical comparisons are
+evidence from earlier experiments, not current executable regression tests.
+Passing a sample does not prove universal correctness or complete S&P 500 coverage.
 
 ## Upcoming features
 
@@ -399,8 +404,3 @@ Tableau visualizations are upcoming after the next SQL analysis work.
 - [Regulation S-X 3-20(a)(2)](https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol3/pdf/CFR-2025-title17-vol3-sec210-3-20.pdf): general USD reporting requirement for non-foreign-private issuers.
 - [SEC Financial Reporting Manual §6640](https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual/frm-topic-6): limited staff exceptions to USD reporting.
 - [Regulation S-X §4-02](https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol3/pdf/CFR-2025-title17-vol3-sec210-4-04.pdf): immaterial amounts need not be separately presented; omission alone does not establish zero.
-
-The [archived README and standards review](scratch/unchecked_tests/readme_history/README.md)
-preserves the detailed findings, historical definition comparisons, experiments
-and superseded implementations. Its code references and test commands describe
-past states; this README is the guide to current behavior.

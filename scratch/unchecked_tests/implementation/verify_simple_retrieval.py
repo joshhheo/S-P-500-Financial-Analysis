@@ -1,6 +1,7 @@
 """Real archived regression against the pre-removal disabled-linkbase baseline."""
 import json
 import sys
+import zipfile
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parents[2]/'src'))
@@ -16,9 +17,10 @@ from table_data.generate_ratios import filing_ratio
 baseline=json.loads((HERE/'linkbase_dependency_results.json').read_text())['filings']
 rows=[]
 for entry in json.loads((HERE/'instance_manifest.json').read_text()):
- saved=json.loads((HERE.parent/'extraction_audit'/f"{entry['ticker']}-{entry['end']}.json").read_text())
  instance=next(d for d in entry['documents'] if d['file'].endswith('_htm.xml'))
- source=XBRL.from_files(instance_file=HERE/instance['file'])
+ source=XBRL()
+ with zipfile.ZipFile(HERE/'filing_documents.zip') as documents:
+  source.parser.parse_instance_content(documents.read(instance['file']).decode())
  end=entry['end'];start=get_annual_start(source,end)
  result={}
  result['USD']=dict(assets=get_assets(source,end),liabilities=get_liabilities(source,end),operating_income=get_operating_income(source,start,end),interest_expense=get_interest_expense(source,start,end))
