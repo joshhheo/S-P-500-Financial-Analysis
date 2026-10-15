@@ -1,0 +1,222 @@
+[
+  {
+    "ticker": "AAPL",
+    "end": "2021-09-25",
+    "accession": "0000320193-21-000105",
+    "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000105/aapl-20210925.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2021-01-31",
+    "schema_refs": [
+      "aapl-20210925.xsd"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "end": "2022-09-24",
+    "accession": "0000320193-22-000108",
+    "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2022",
+    "schema_refs": [
+      "aapl-20220924.xsd"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "end": "2023-09-30",
+    "accession": "0000320193-23-000106",
+    "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2023",
+    "schema_refs": [
+      "aapl-20230930.xsd"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "end": "2024-09-28",
+    "accession": "0000320193-24-000123",
+    "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2024",
+    "schema_refs": [
+      "aapl-20240928.xsd"
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "end": "2025-09-27",
+    "accession": "0000320193-25-000079",
+    "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2025",
+    "schema_refs": [
+      "aapl-20250927.xsd"
+    ]
+  },
+  {
+    "ticker": "AMD",
+    "end": "2021-12-25",
+    "accession": "0000002488-22-000016",
+    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248822000016/amd-20211225.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2021-01-31",
+    "schema_refs": [
+      "amd-20211225.xsd"
+    ]
+  },
+  {
+    "ticker": "AMD",
+    "end": "2022-12-31",
+    "accession": "0000002488-23-000047",
+    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248823000047/amd-20221231.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2022",
+    "schema_refs": [
+      "amd-20221231.xsd"
+    ]
+  },
+  {
+    "ticker": "AMD",
+    "end": "2023-12-30",
+    "accession": "0000002488-24-000012",
+    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000012/amd-20231230.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2023",
+    "schema_refs": [
+      "amd-20231230.xsd"
+    ]
+  },
+  {
+    "ticker": "AMD",
+    "end": "2024-12-28",
+    "accession": "0000002488-25-000012",
+    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2024",
+    "schema_refs": [
+      "amd-20241228.xsd"
+    ]
+  },
+  {
+    "ticker": "AMD",
+    "end": "2025-12-27",
+    "accession": "0000002488-26-000018",
+    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2025",
+    "schema_refs": [
+      "amd-20251227.xsd"
+    ]
+  },
+  {
+    "ticker": "BRK-B",
+    "end": "2025-12-31",
+    "accession": "0001193125-26-083899",
+    "source": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2025",
+    "schema_refs": [
+      "brka-20251231.xsd"
+    ]
+  },
+  {
+    "ticker": "JPM",
+    "end": "2025-12-31",
+    "accession": "0001628280-26-008131",
+    "source": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2025",
+    "schema_refs": [
+      "jpm-20251231.xsd"
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "end": "2022-06-30",
+    "accession": "0001564590-22-026876",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/msft-10k_20220630.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2022",
+    "schema_refs": [
+      "msft-20220630.xsd"
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "end": "2023-06-30",
+    "accession": "0000950170-23-035122",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/msft-20230630.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2023",
+    "schema_refs": [
+      "msft-20230630.xsd"
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "end": "2024-06-30",
+    "accession": "0000950170-24-087843",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2023",
+    "schema_refs": [
+      "msft-20240630.xsd"
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "end": "2025-06-30",
+    "accession": "0000950170-25-100235",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2024",
+    "schema_refs": [
+      "msft-20250630.xsd"
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "end": "2026-06-30",
+    "accession": "0001193125-26-323660",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2025",
+    "schema_refs": [
+      "msft-20260630.xsd"
+    ]
+  },
+  {
+    "ticker": "WMT",
+    "end": "2022-01-31",
+    "accession": "0000104169-22-000012",
+    "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416922000012/wmt-20220131.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2021-01-31",
+    "schema_refs": [
+      "wmt-20220131.xsd"
+    ]
+  },
+  {
+    "ticker": "WMT",
+    "end": "2023-01-31",
+    "accession": "0000104169-23-000020",
+    "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416923000020/wmt-20230131.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2022",
+    "schema_refs": [
+      "wmt-20230131.xsd"
+    ]
+  },
+  {
+    "ticker": "WMT",
+    "end": "2024-01-31",
+    "accession": "0000104169-24-000056",
+    "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416924000056/wmt-20240131.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2023",
+    "schema_refs": [
+      "wmt-20240131.xsd"
+    ]
+  },
+  {
+    "ticker": "WMT",
+    "end": "2025-01-31",
+    "accession": "0000104169-25-000021",
+    "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000021/wmt-20250131.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2024",
+    "schema_refs": [
+      "wmt-20250131.xsd"
+    ]
+  },
+  {
+    "ticker": "WMT",
+    "end": "2026-01-31",
+    "accession": "0000104169-26-000055",
+    "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+    "gaap_namespace": "http://fasb.org/us-gaap/2025",
+    "schema_refs": [
+      "wmt-20260131.xsd"
+    ]
+  }
+]

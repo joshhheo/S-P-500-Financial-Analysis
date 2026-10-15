@@ -1,0 +1,8 @@
+..........Financial transaction committed: 1 upserts
+Financial transaction committed: 1 upserts
+..............................................ABC: saved 5 periods
+......................................................
+----------------------------------------------------------------------
+Ran 110 tests in 29.692s
+
+OK

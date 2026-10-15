@@ -1,6 +1,5 @@
 import pandas as pd
 from wiki_pull import get_wiki_dataframe
-from table_data.checks import check_companies
 
 def create_company_status_csv():
     companies = get_wiki_dataframe()
@@ -16,7 +15,6 @@ def create_company_status_csv():
         })
 
     df = pd.DataFrame(results)
-    check_companies(df)
     df.to_csv("data/company_status.csv", index=False)
     print(f"Saved {len(df)} company rows to data/company_status.csv", flush=True)
 

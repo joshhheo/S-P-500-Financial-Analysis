@@ -1,0 +1,77 @@
+{
+  "filings_compared": 22,
+  "values_and_statuses_identical": true,
+  "evidence_identical_except_coverage_notes": true,
+  "coverage_note_changes": [
+    {
+      "ticker": "AMD",
+      "end": "2021-12-25",
+      "metric": "interest",
+      "before": [],
+      "after": [
+        "unsupported_calculation_component"
+      ]
+    },
+    {
+      "ticker": "AMD",
+      "end": "2022-12-31",
+      "metric": "interest",
+      "before": [],
+      "after": [
+        "unsupported_calculation_component"
+      ]
+    },
+    {
+      "ticker": "AMD",
+      "end": "2023-12-30",
+      "metric": "interest",
+      "before": [],
+      "after": [
+        "unsupported_calculation_component"
+      ]
+    },
+    {
+      "ticker": "AMD",
+      "end": "2024-12-28",
+      "metric": "interest",
+      "before": [],
+      "after": [
+        "unsupported_calculation_component"
+      ]
+    },
+    {
+      "ticker": "AMD",
+      "end": "2025-12-27",
+      "metric": "interest",
+      "before": [],
+      "after": [
+        "unsupported_calculation_component"
+      ]
+    },
+    {
+      "ticker": "BRK-B",
+      "end": "2025-12-31",
+      "metric": "debt",
+      "before": [],
+      "after": [
+        "inapplicable_parent_equity_equation",
+        "unsupported_calculation_component"
+      ]
+    },
+    {
+      "ticker": "JPM",
+      "end": "2025-12-31",
+      "metric": "debt",
+      "before": [],
+      "after": [
+        "unsupported_calculation_component"
+      ]
+    }
+  ],
+  "production_csvs_unchanged": {
+    "data/company_status.csv": true,
+    "data/financial_ratios.csv": true
+  },
+  "live_pipeline_run": false,
+  "live_database_access": false
+}

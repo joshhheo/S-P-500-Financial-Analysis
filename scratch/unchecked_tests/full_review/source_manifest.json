@@ -1,0 +1,192 @@
+[
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2021/elts/us-gaap-doc-2021-01-31.xml",
+    "file": "gaap2021-doc.xml",
+    "sha256": "b6c606d758b73a7f4b4588879abc47c8f06e44af06c85289017e16ae48823f72"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2021/elts/us-gaap-2021-01-31.xsd",
+    "file": "gaap2021.xsd",
+    "sha256": "1439d8b53c733977a05b818c4fd8cb46c68698c489b93a0ee0a43dff09642caa"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2022/elts/us-gaap-doc-2022.xml",
+    "file": "gaap2022-doc.xml",
+    "sha256": "a9d515b582ddab7961cfc5283c4d5799db03b6c4fbc6875bdb0fd31de482f0d2"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2022/elts/us-gaap-2022.xsd",
+    "file": "gaap2022.xsd",
+    "sha256": "e8c6b324f1b6f463eddee9d21f9e3daf13103165e8cc3ee107b4cec4d38f9693"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2023/elts/us-gaap-doc-2023.xml",
+    "file": "gaap2023-doc.xml",
+    "sha256": "288ed00809b3f84f62ee82c93db6f063d4db09bdc4ee6d1654207a1865ded5e7"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2023/elts/us-gaap-2023.xsd",
+    "file": "gaap2023.xsd",
+    "sha256": "5b23edf9ea3f1a6e35a50214e72d8a21acc2c262c6490d606a72cee0c3fb342e"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2024/elts/us-gaap-doc-2024.xml",
+    "file": "gaap2024-doc.xml",
+    "sha256": "96b321b294493af54253a45e3694e85d501857cb4029ba2529089ad9d7880872"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2024/elts/us-gaap-2024.xsd",
+    "file": "gaap2024.xsd",
+    "sha256": "6a5daf96dc96edf69876ac9a34a3cb076f23eec3e2899e88ae92c1cecae0d70f"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2025/elts/us-gaap-doc-2025.xml",
+    "file": "gaap2025-doc.xml",
+    "sha256": "27f1d4ba06b0dcb0c91225db2ac746d5adefc167518fa3948abbdfb944dab019"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2025/elts/us-gaap-2025.xsd",
+    "file": "gaap2025.xsd",
+    "sha256": "4639263ec38aaa5d531cb7d0afb33f9582c2d602fb4623d4921e47e365b6ac9f"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-doc-2026.xml",
+    "file": "gaap2026-doc.xml",
+    "sha256": "320b4eb074533a8f939d3db104153e9870c24a20e89fb32037ac30b44d07abb2"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-2026.xsd",
+    "file": "gaap2026.xsd",
+    "sha256": "5df2d5054b8a37ef1a00bbbad621317833e7c2cb65a421a283128efbd707da7e"
+  },
+  {
+    "url": "https://www.sec.gov/files/edgar/xbrl-guide.pdf",
+    "file": "guide.pdf",
+    "sha256": "dc15a083bd087464f0f76a9893c55b0b2c3f4dbe2e281fa9bfdfd8912199848d"
+  },
+  {
+    "url": "https://www.sec.gov/data-research/structured-data/office-structured-disclosure-staff-observations-guidance-trends/staff-interpretations-faqs-related-interactive-data-disclosure",
+    "file": "faq.html",
+    "sha256": "30cda56255c3fdf4ba53ed24b120a1a901ba0a4680578729888ea3dc22a8aa07"
+  },
+  {
+    "url": "https://www.sec.gov/data-research/structured-data/taxonomies-schemas/standard-taxonomies",
+    "file": "accepted.html",
+    "sha256": "175e51c20c96e46f2ef25bcbcf50cb03dde8b10da3869035ccbb9adf27685acf"
+  },
+  {
+    "url": "https://www.sec.gov/data-research/structured-data/taxonomies-schemas/standard-taxonomies/operating-companies",
+    "file": "operating-companies.html",
+    "sha256": "a45d3d28577cc323faff894f0bcd7ea1c8f1582dc949eea9640037e5eee423f0"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000105/aapl-20210925.htm",
+    "file": "AAPL-2021-09-25.htm",
+    "sha256": "dbfc6fb00ef726387080392c28003b3f3cbfc7e7ffc47d73f3a992dc52b6c139"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924.htm",
+    "file": "AAPL-2022-09-24.htm",
+    "sha256": "fa0de0c4f38dec10bf557f807fa9b86e658931669551434c20cc4ebc9a7d7485"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm",
+    "file": "AAPL-2023-09-30.htm",
+    "sha256": "0e05eb83f1188edd14acbe0b7522b7de346a29fdea4b8f66014777fb73ac831b"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+    "file": "AAPL-2024-09-28.htm",
+    "sha256": "812f766e3cd4f3c5432632b015df2f7ef784c9ba2e8e99f61ccdf08941fd89cb"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+    "file": "AAPL-2025-09-27.htm",
+    "sha256": "d680202ee45e6f56d3bf02c1291512d78a1c13d994f22b577f0017d64cc86839"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248822000016/amd-20211225.htm",
+    "file": "AMD-2021-12-25.htm",
+    "sha256": "420695565bcedc2d7b951296a1672d508405959ecac1b8742efed1cab55c1a1a"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248823000047/amd-20221231.htm",
+    "file": "AMD-2022-12-31.htm",
+    "sha256": "15da77d19db16779f8346bcf1a02f0548a9deffc59b7acb1c1826f9fcbc5113e"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000012/amd-20231230.htm",
+    "file": "AMD-2023-12-30.htm",
+    "sha256": "825d079093aebe2d14de05425e1a9f7f2987d642c73fe3c47c1d671ce3e348e1"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228.htm",
+    "file": "AMD-2024-12-28.htm",
+    "sha256": "7e516288742f2932c062132f6ce880f1ed640fcf0afc2e9780fb398cb3a01ceb"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+    "file": "AMD-2025-12-27.htm",
+    "sha256": "54f6ee1dfc3a17bd9906af025bc96e8c24d7267afd3665d20a8dcf225b424827"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm",
+    "file": "BRK-B-2025-12-31.htm",
+    "sha256": "07937debf1e70008e034362d5548c4ffbb35d373d8843811f5df1e8487f7c5d7"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm",
+    "file": "JPM-2025-12-31.htm",
+    "sha256": "c92ca3fb1db48edf5843a8a721a78cdca4ad21091d8efaf6165dc57dfe688a81"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/msft-10k_20220630.htm",
+    "file": "MSFT-2022-06-30.htm",
+    "sha256": "1bcacc00a9ea772772d66507658ac94f117bef636875ac4210059f0902ecb1ea"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/msft-20230630.htm",
+    "file": "MSFT-2023-06-30.htm",
+    "sha256": "158256ab03125f9c8e918006fc8cca10ce8fd6f5881d31cac2d70259fdb4fd89"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+    "file": "MSFT-2024-06-30.htm",
+    "sha256": "888c4e290770638e3f890e372473088ab54839e297da79f621cef4e62f76ced5"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+    "file": "MSFT-2025-06-30.htm",
+    "sha256": "670db3eaf5789f4ded3d45dc44e824ae24b4613bb38c61a9a975c3834ff02914"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+    "file": "MSFT-2026-06-30.htm",
+    "sha256": "c5a1adab275f377e5ef2635db066ef47bf415800c41e7ccb880baf3326d08429"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416922000012/wmt-20220131.htm",
+    "file": "WMT-2022-01-31.htm",
+    "sha256": "4c3f013d811c2de9ed5e1bd748723b83ee1f519bf4b4860ce5c5ebed0c972d4f"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416923000020/wmt-20230131.htm",
+    "file": "WMT-2023-01-31.htm",
+    "sha256": "ed98b7f60f2d2446935eb79ca955b21aa157bd2cdc083fcffce3dd4f74a62636"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416924000056/wmt-20240131.htm",
+    "file": "WMT-2024-01-31.htm",
+    "sha256": "e1cd4995ebd0059c881eb6bd860e84f5cda5e2523a5b9ddfb16478fdd3f52ddb"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000021/wmt-20250131.htm",
+    "file": "WMT-2025-01-31.htm",
+    "sha256": "9cb5b522448625a9228ad31ee6800378dc097ed4b734443b1d07aace21c1624c"
+  },
+  {
+    "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+    "file": "WMT-2026-01-31.htm",
+    "sha256": "0264777053189935755b20defd592aea34c89f70d577d526ae8f4af75998e064"
+  }
+]

@@ -1,0 +1,3678 @@
+{
+  "ticker": "WMT",
+  "cik": 104169,
+  "accession": "0000104169-26-000055",
+  "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+  "start": "2025-02-01",
+  "end": "2026-01-31",
+  "membership": {
+    "ticker": "WMT",
+    "cik": "104169",
+    "company_name": "Walmart",
+    "sector": "Consumer Staples"
+  },
+  "units": {
+    "usd": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"usd\"><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unit>",
+    "shares": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"shares\"><xbrli:measure>xbrli:shares</xbrli:measure></xbrli:unit>",
+    "usdPerShare": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"usdPerShare\"><xbrli:divide><xbrli:unitNumerator><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unitNumerator><xbrli:unitDenominator><xbrli:measure>xbrli:shares</xbrli:measure></xbrli:unitDenominator></xbrli:divide></xbrli:unit>",
+    "segment": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"segment\"><xbrli:measure>wmt:segment</xbrli:measure></xbrli:unit>",
+    "number": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"number\"><xbrli:measure>xbrli:pure</xbrli:measure></xbrli:unit>",
+    "jpy": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"jpy\"><xbrli:measure>iso4217:JPY</xbrli:measure></xbrli:unit>",
+    "state": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"state\"><xbrli:measure>wmt:state</xbrli:measure></xbrli:unit>",
+    "territory": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"territory\"><xbrli:measure>wmt:territory</xbrli:measure></xbrli:unit>",
+    "case": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"case\"><xbrli:measure>wmt:case</xbrli:measure></xbrli:unit>",
+    "classaction": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"classaction\"><xbrli:measure>wmt:classAction</xbrli:measure></xbrli:unit>",
+    "pharmacist": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"pharmacist\"><xbrli:measure>wmt:pharmacist</xbrli:measure></xbrli:unit>",
+    "employee": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"employee\"><xbrli:measure>wmt:employee</xbrli:measure></xbrli:unit>",
+    "phase": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"phase\"><xbrli:measure>wmt:phase</xbrli:measure></xbrli:unit>",
+    "suppliercontribution": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"suppliercontribution\"><xbrli:measure>wmt:supplierContribution</xbrli:measure></xbrli:unit>",
+    "mxn": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2020-02-12\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:wmt=\"http://www.walmart.com/20260131\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"mxn\"><xbrli:measure>iso4217:MXN</xbrli:measure></xbrli:unit>"
+  },
+  "facts": [
+    {
+      "concept": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "value": "706413000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherIncome",
+      "value": "6750000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:Revenues",
+      "value": "713163000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CostOfRevenue",
+      "value": "535395000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:SellingGeneralAndAdministrativeExpense",
+      "value": "147943000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OperatingIncomeLoss",
+      "value": "29825000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:InterestExpenseDebt",
+      "value": "2318000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "wmt:FinanceLeaseAndFinancingObligationInterestExpense",
+      "value": "481000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:InvestmentIncomeInterest",
+      "value": "368000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:InterestIncomeExpenseNonoperatingNet",
+      "value": "-2431000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NonoperatingIncomeExpense",
+      "value": "2075000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+      "value": "29469000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxExpenseBenefit",
+      "value": "7199000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProfitLoss",
+      "value": "22270000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest",
+      "value": "377000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetIncomeLoss",
+      "value": "21893000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EarningsPerShareBasic",
+      "value": "2.74",
+      "decimals": "2",
+      "context_ref": "c-1",
+      "unit_ref": "usdPerShare",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EarningsPerShareDiluted",
+      "value": "2.73",
+      "decimals": "2",
+      "context_ref": "c-1",
+      "unit_ref": "usdPerShare",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:WeightedAverageNumberOfSharesOutstandingBasic",
+      "value": "7983000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "shares",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+      "value": "8022000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "shares",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CommonStockDividendsPerShareDeclared",
+      "value": "0.94",
+      "decimals": "INF",
+      "context_ref": "c-1",
+      "unit_ref": "usdPerShare",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProfitLoss",
+      "value": "22270000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest",
+      "value": "377000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetIncomeLoss",
+      "value": "21893000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossNetOfTax",
+      "value": "1009000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToNoncontrollingInterest",
+      "value": "174000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToParent",
+      "value": "835000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest",
+      "value": "23279000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest",
+      "value": "551000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ComprehensiveIncomeNetOfTax",
+      "value": "22728000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+      "value": "10727000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:ReceivablesNetCurrent",
+      "value": "11172000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:InventoryNet",
+      "value": "58851000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PrepaidExpenseAndOtherAssetsCurrent",
+      "value": "4124000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AssetsCurrent",
+      "value": "84874000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PropertyPlantAndEquipmentNet",
+      "value": "136083000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseRightOfUseAsset",
+      "value": "14750000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseRightOfUseAsset",
+      "value": "6123000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:Goodwill",
+      "value": "28735000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OtherAssetsNoncurrent",
+      "value": "14103000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:Assets",
+      "value": "284668000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:ShortTermBorrowings",
+      "value": "6596000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AccountsPayableCurrent",
+      "value": "63061000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AccruedLiabilitiesCurrent",
+      "value": "31187000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AccruedIncomeTaxesCurrent",
+      "value": "596000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtCurrent",
+      "value": "3542000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseLiabilityCurrent",
+      "value": "1631000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiabilityCurrent",
+      "value": "856000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LiabilitiesCurrent",
+      "value": "107469000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtNoncurrent",
+      "value": "34624000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseLiabilityNoncurrent",
+      "value": "13941000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiabilityNoncurrent",
+      "value": "5905000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+      "value": "16549000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:RedeemableNoncontrollingInterestEquityCarryingAmount",
+      "value": "293000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:CommonStockValue",
+      "value": "797000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AdditionalPaidInCapital",
+      "value": "6816000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:RetainedEarningsAccumulatedDeficit",
+      "value": "104774000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AccumulatedOtherComprehensiveIncomeLossNetOfTax",
+      "value": "-12770000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:StockholdersEquity",
+      "value": "99617000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:MinorityInterest",
+      "value": "6270000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+      "value": "105887000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LiabilitiesAndStockholdersEquity",
+      "value": "284668000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:NetIncomeLossIncludingPortionAttributableToNonredeemableNoncontrollingInterest",
+      "value": "22319000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossBeforeReclassificationsNetOfTax",
+      "value": "1152000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ReclassificationFromAccumulatedOtherComprehensiveIncomeCurrentPeriodNetOfTax",
+      "value": "143000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CommonStockDividendsPerShareDeclared",
+      "value": "0.94",
+      "decimals": "2",
+      "context_ref": "c-1",
+      "unit_ref": "usdPerShare",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DividendsCash",
+      "value": "7507000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:StockRepurchasedAndRetiredDuringPeriodValue",
+      "value": "8080000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:MinorityInterestDecreaseFromDistributionsToNoncontrollingInterestHolders",
+      "value": "418000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NoncontrollingInterestIncreaseFromSubsidiaryEquityIssuance",
+      "value": "69000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:StockholdersEquityOther",
+      "value": "-1074000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+      "value": "105887000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:ProfitLoss",
+      "value": "22270000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DepreciationAmortizationAndAccretionNet",
+      "value": "14203000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:GainLossOnInvestments",
+      "value": "2016000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInDeferredIncomeTaxes",
+      "value": "-2277000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherNoncashIncomeExpense",
+      "value": "-4079000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInAccountsAndOtherReceivables",
+      "value": "1136000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInRetailRelatedInventories",
+      "value": "1443000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInAccountsPayable",
+      "value": "1611000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInAccruedLiabilities",
+      "value": "1607000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInAccruedTaxesPayable",
+      "value": "113000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "value": "41565000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "value": "26642000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment",
+      "value": "106000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProceedsFromSaleOfEquitySecuritiesFvNi",
+      "value": "927000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PaymentsToAcquireBusinessesNetOfCashAcquired",
+      "value": "53000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PaymentsForProceedsFromOtherInvestingActivities",
+      "value": "688000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetCashProvidedByUsedInInvestingActivities",
+      "value": "-26350000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProceedsFromRepaymentsOfShortTermDebt",
+      "value": "3523000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProceedsFromIssuanceOfLongTermDebt",
+      "value": "3983000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:RepaymentsOfLongTermDebt",
+      "value": "2625000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PaymentsOfDividendsCommonStock",
+      "value": "7507000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PaymentsForRepurchaseOfCommonStock",
+      "value": "8088000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PaymentsOfDividendsMinorityInterest",
+      "value": "439000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "wmt:PurchaseofNoncontrollingInterest",
+      "value": "0",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProceedsFromIssuanceOrSaleOfEquity",
+      "value": "111000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProceedsFromPaymentsForOtherFinancingActivities",
+      "value": "-2511000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetCashProvidedByUsedInFinancingActivities",
+      "value": "-13553000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectOfExchangeRateOnCashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+      "value": "123000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect",
+      "value": "1785000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+      "value": "11321000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:IncomeTaxesPaidNet",
+      "value": "5364000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:InterestPaidNet",
+      "value": "2793000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+      "value": "10700000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "wmt:PercentageOfCashAndCashEquivalentsAtCarryingValueForeign",
+      "value": "0.56",
+      "decimals": "2",
+      "context_ref": "c-16",
+      "unit_ref": "number",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AccountsReceivableNet",
+      "value": "4900000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PropertyPlantAndEquipmentGross",
+      "value": "256421000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+      "value": "120338000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PropertyPlantAndEquipmentNet",
+      "value": "136083000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DepreciationAmortizationAndAccretionNet",
+      "value": "14200000000.0",
+      "decimals": "-8",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:GoodwillForeignCurrencyTranslationGainLoss",
+      "value": "-66000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:GoodwillAcquiredDuringPeriod",
+      "value": "9000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:Goodwill",
+      "value": "28735000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:IndefiniteLivedIntangibleAssetsExcludingGoodwill",
+      "value": "4300000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:SupplierFinanceProgramObligationIncrease",
+      "value": "40342000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:SupplierFinanceProgramObligationDecreaseSettlement",
+      "value": "40062000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "wmt:SupplierFinanceProgramTranslationAndOther",
+      "value": "-16000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:SupplierFinanceProgramObligation",
+      "value": "5989000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AdvertisingExpense",
+      "value": "5400000000.0",
+      "decimals": "-8",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProfitLoss",
+      "value": "22270000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest",
+      "value": "377000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetIncomeLoss",
+      "value": "21893000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:WeightedAverageNumberOfSharesOutstandingBasic",
+      "value": "7983000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "shares",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:WeightedAverageNumberDilutedSharesOutstandingAdjustment",
+      "value": "39000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "shares",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+      "value": "8022000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "shares",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EarningsPerShareBasic",
+      "value": "2.74",
+      "decimals": "2",
+      "context_ref": "c-1",
+      "unit_ref": "usdPerShare",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EarningsPerShareDiluted",
+      "value": "2.73",
+      "decimals": "2",
+      "context_ref": "c-1",
+      "unit_ref": "usdPerShare",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CommonStockParOrStatedValuePerShare",
+      "value": "0.10",
+      "decimals": "2",
+      "context_ref": "c-16",
+      "unit_ref": "usdPerShare",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:CommonStockSharesAuthorized",
+      "value": "33000000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "shares",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PreferredStockParOrStatedValuePerShare",
+      "value": "0.10",
+      "decimals": "2",
+      "context_ref": "c-16",
+      "unit_ref": "usdPerShare",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PreferredStockSharesAuthorized",
+      "value": "100000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "shares",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AllocatedShareBasedCompensationExpense",
+      "value": "3600000000.0",
+      "decimals": "-8",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EmployeeServiceShareBasedCompensationTaxBenefitFromCompensationExpense",
+      "value": "900000000.0",
+      "decimals": "-8",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:AllocatedShareBasedCompensationExpense",
+      "value": "3603000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "value": "215000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "shares",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:TreasuryStockSharesAcquired",
+      "value": "85000000.0",
+      "decimals": "-5",
+      "context_ref": "c-1",
+      "unit_ref": "shares",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:TreasuryStockAcquiredAverageCostPerShare",
+      "value": "95.13",
+      "decimals": "2",
+      "context_ref": "c-1",
+      "unit_ref": "usdPerShare",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:TreasuryStockValueAcquiredCostMethod",
+      "value": "8088000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EmployeeRelatedLiabilitiesCurrent",
+      "value": "7878000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:SelfInsuranceReserveCurrent",
+      "value": "5525000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AccrualForTaxesOtherThanIncomeTaxesCurrent",
+      "value": "4110000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "wmt:DeferredGiftCardRevenueCurrent",
+      "value": "2941000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OtherAccruedLiabilitiesCurrent",
+      "value": "10733000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AccruedLiabilitiesCurrent",
+      "value": "31187000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:ShortTermBorrowings",
+      "value": "6600000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:ShortTermDebtWeightedAverageInterestRate",
+      "value": "0.040",
+      "decimals": "3",
+      "context_ref": "c-16",
+      "unit_ref": "number",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LettersOfCreditOutstandingAmount",
+      "value": "1700000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:UnsecuredDebt",
+      "value": "38802000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebt",
+      "value": "38166000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtCurrent",
+      "value": "3542000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtNoncurrent",
+      "value": "34624000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths",
+      "value": "3542000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo",
+      "value": "3237000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree",
+      "value": "3389000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour",
+      "value": "2143000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive",
+      "value": "2600000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive",
+      "value": "23255000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebt",
+      "value": "38166000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "wmt:RepaymentsOfSignificantLongTermDebt",
+      "value": "2625000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseCost",
+      "value": "2434000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseRightOfUseAssetAmortization",
+      "value": "888000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseInterestExpense",
+      "value": "383000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:VariableLeaseCost",
+      "value": "1180000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OperatingLeasePayments",
+      "value": "2315000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseInterestPaymentOnLiability",
+      "value": "377000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:FinanceLeasePrincipalPayments",
+      "value": "891000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability",
+      "value": "2303000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:RightOfUseAssetObtainedInExchangeForFinanceLeaseLiability",
+      "value": "703000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseWeightedAverageDiscountRatePercent",
+      "value": "0.067",
+      "decimals": "3",
+      "context_ref": "c-16",
+      "unit_ref": "number",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseWeightedAverageDiscountRatePercent",
+      "value": "0.070",
+      "decimals": "3",
+      "context_ref": "c-16",
+      "unit_ref": "number",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueNextTwelveMonths",
+      "value": "2453000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiabilityPaymentsDueNextTwelveMonths",
+      "value": "1228000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueYearTwo",
+      "value": "2361000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiabilityPaymentsDueYearTwo",
+      "value": "1132000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueYearThree",
+      "value": "2214000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiabilityPaymentsDueYearThree",
+      "value": "955000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueYearFour",
+      "value": "2008000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiabilityPaymentsDueYearFour",
+      "value": "805000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueYearFive",
+      "value": "1796000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiabilityPaymentsDueYearFive",
+      "value": "692000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueAfterYearFive",
+      "value": "11792000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiabilityPaymentsDueAfterYearFive",
+      "value": "6003000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDue",
+      "value": "22624000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiabilityPaymentsDue",
+      "value": "10815000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityUndiscountedExcessAmount",
+      "value": "7052000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiabilityUndiscountedExcessAmount",
+      "value": "4054000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseLiability",
+      "value": "15572000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinanceLeaseLiability",
+      "value": "6761000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:NonoperatingIncomeExpense",
+      "value": "2100000000.0",
+      "decimals": "-8",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EquitySecuritiesFvNiUnrealizedGainLoss",
+      "value": "1500000000.0",
+      "decimals": "-8",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DerivativeNotionalAmount",
+      "value": "10791000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesDomestic",
+      "value": "23272000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesForeign",
+      "value": "6197000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+      "value": "29469000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CurrentFederalTaxExpenseBenefit",
+      "value": "2128000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CurrentStateAndLocalTaxExpenseBenefit",
+      "value": "678000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CurrentForeignTaxExpenseBenefit",
+      "value": "2116000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CurrentIncomeTaxExpenseBenefit",
+      "value": "4922000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DeferredFederalIncomeTaxExpenseBenefit",
+      "value": "2010000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DeferredStateAndLocalIncomeTaxExpenseBenefit",
+      "value": "294000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DeferredForeignIncomeTaxExpenseBenefit",
+      "value": "-27000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DeferredIncomeTaxExpenseBenefit",
+      "value": "2277000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxExpenseBenefit",
+      "value": "7199000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxesPaidNet",
+      "value": "5364000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxPaidFederalAfterRefundReceived",
+      "value": "1743000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxPaidStateAndLocalAfterRefundReceived",
+      "value": "895000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxPaidForeignAfterRefundReceived",
+      "value": "2726000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxPaidFederalAfterRefundReceived",
+      "value": "1743000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationIncomeTaxExpenseBenefitAtFederalStatutoryIncomeTaxRate",
+      "value": "6188000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate",
+      "value": "0.210",
+      "decimals": "INF",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationStateAndLocalIncomeTaxes",
+      "value": "760000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationStateAndLocalIncomeTaxes",
+      "value": "0.026",
+      "decimals": "3",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationForeignIncomeTaxRateDifferential",
+      "value": "498000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationForeignIncomeTaxRateDifferential",
+      "value": "0.017",
+      "decimals": "3",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationCrossBorderTaxEffectAmount",
+      "value": "400000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationCrossBorderTaxEffectPercent",
+      "value": "0.014",
+      "decimals": "3",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationTaxCreditsForeign",
+      "value": "586000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationTaxCreditsForeign",
+      "value": "0.020",
+      "decimals": "3",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationTaxCreditsResearch",
+      "value": "323000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationTaxCreditsResearch",
+      "value": "0.011",
+      "decimals": "3",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationTaxCreditsOther",
+      "value": "167000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationTaxCreditsOther",
+      "value": "0.006",
+      "decimals": "3",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationShareBasedCompensationExcessTaxBenefitAmount",
+      "value": "-373000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationShareBasedCompensationExcessTaxBenefitPercent",
+      "value": "-0.013",
+      "decimals": "3",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationNondeductibleExpenseOther",
+      "value": "132000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationNondeductibleExpenseOther",
+      "value": "0.004",
+      "decimals": "3",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationTaxContingencies",
+      "value": "301000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationTaxContingencies",
+      "value": "0.010",
+      "decimals": "3",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxExpenseBenefit",
+      "value": "7199000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateContinuingOperations",
+      "value": "0.244",
+      "decimals": "3",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsTaxCreditCarryforwards",
+      "value": "4615000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsTaxDeferredExpenseReservesAndAccrualsAccruedLiabilities",
+      "value": "3504000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "wmt:DeferredTaxAssetsLeases",
+      "value": "5181000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsOther",
+      "value": "1239000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsGross",
+      "value": "14539000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsValuationAllowance",
+      "value": "4421000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsNet",
+      "value": "10118000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxLiabilitiesPropertyPlantAndEquipment",
+      "value": "6122000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxLiabilitiesGoodwillAndIntangibleAssetsIntangibleAssets",
+      "value": "1066000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxLiabilitiesDeferredExpenseCapitalizedInventoryCosts",
+      "value": "3570000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxLiabilitiesLeasingArrangements",
+      "value": "5345000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxLiabilitiesOther",
+      "value": "1373000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredIncomeTaxLiabilities",
+      "value": "17476000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxLiabilities",
+      "value": "7358000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxLiabilities",
+      "value": "7358000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:TaxCreditCarryforwardAmount",
+      "value": "19600000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsValuationAllowance",
+      "value": "4400000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefits",
+      "value": "2400000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefitsThatWouldImpactEffectiveTaxRate",
+      "value": "2000000000.0",
+      "decimals": "-8",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefitsIncreasesResultingFromPriorPeriodTaxPositions",
+      "value": "342000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefitsDecreasesResultingFromPriorPeriodTaxPositions",
+      "value": "1360000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefitsIncreasesResultingFromCurrentPeriodTaxPositions",
+      "value": "94000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefitsDecreasesResultingFromSettlementsWithTaxingAuthorities",
+      "value": "328000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefitsReductionsResultingFromLapseOfApplicableStatuteOfLimitations",
+      "value": "65000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefits",
+      "value": "2440000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DefinedContributionPlanEmployerMatchingContributionPercentOfMatch",
+      "value": "1.00",
+      "decimals": "2",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DefinedContributionPlanEmployerMatchingContributionPercent",
+      "value": "0.06",
+      "decimals": "2",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DefinedContributionPlanEmployersMatchingContributionAnnualVestingPercentage",
+      "value": "1.00",
+      "decimals": "2",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DefinedContributionPlanMaximumAnnualContributionsPerEmployeePercent",
+      "value": "0.50",
+      "decimals": "2",
+      "context_ref": "c-1",
+      "unit_ref": "number",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DefinedContributionPlanCostRecognized",
+      "value": "1896000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "value": "706413000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherIncome",
+      "value": "6750000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:Revenues",
+      "value": "713163000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CostOfRevenue",
+      "value": "535395000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:SellingGeneralAndAdministrativeExpense",
+      "value": "147943000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OperatingIncomeLoss",
+      "value": "29825000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:InterestIncomeExpenseNonoperatingNet",
+      "value": "-2431000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NonoperatingIncomeExpense",
+      "value": "2075000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+      "value": "29469000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:Assets",
+      "value": "284668000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DepreciationAmortizationAndAccretionNet",
+      "value": "14203000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:SegmentExpenditureAdditionToLongLivedAssets",
+      "value": "26642000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:Revenues",
+      "value": "713163000000",
+      "decimals": "-6",
+      "context_ref": "c-1",
+      "unit_ref": "usd",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NoncurrentAssets",
+      "value": "156956000000",
+      "decimals": "-6",
+      "context_ref": "c-16",
+      "unit_ref": "usd",
+      "instant": [
+        "2026-01-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:CommonStockDividendsPerShareDeclared",
+      "value": "0.94",
+      "decimals": "INF",
+      "context_ref": "c-1",
+      "unit_ref": "usdPerShare",
+      "instant": [],
+      "start": [
+        "2025-02-01"
+      ],
+      "end": [
+        "2026-01-31"
+      ]
+    }
+  ],
+  "unsupported_transforms": {
+    "numwordsen": 8
+  }
+}

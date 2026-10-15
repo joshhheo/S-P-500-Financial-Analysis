@@ -1,0 +1,39 @@
+{
+  "filings": 22,
+  "ratios": 44,
+  "changes": [
+    {
+      "ticker": "AAPL",
+      "end": "2025-09-27",
+      "ratio": "interest",
+      "field": "status",
+      "before": "incomplete_standard_coverage",
+      "after": "missing_required_amount"
+    },
+    {
+      "ticker": "BRK-B",
+      "end": "2025-12-31",
+      "ratio": "interest",
+      "field": "status",
+      "before": "incomplete_standard_coverage",
+      "after": "missing_required_amount"
+    },
+    {
+      "ticker": "WMT",
+      "end": "2025-01-31",
+      "ratio": "interest",
+      "field": "status",
+      "before": "incomplete_standard_coverage",
+      "after": "missing_required_amount"
+    },
+    {
+      "ticker": "WMT",
+      "end": "2026-01-31",
+      "ratio": "interest",
+      "field": "status",
+      "before": "incomplete_standard_coverage",
+      "after": "missing_required_amount"
+    }
+  ],
+  "production_csvs_unchanged": true
+}

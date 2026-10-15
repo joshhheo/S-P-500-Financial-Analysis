@@ -1,0 +1,3001 @@
+{
+  "production_concepts": [
+    "Assets",
+    "AssetsCurrent",
+    "AssetsNoncurrent",
+    "CommitmentsAndContingencies",
+    "DeferredIncomeTaxLiabilitiesNet",
+    "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+    "FinanceLeaseLiabilityNoncurrent",
+    "InterestExpense",
+    "InterestExpenseNonoperating",
+    "InterestExpenseOperating",
+    "InterestIncomeExpenseNet",
+    "InterestIncomeOperating",
+    "Liabilities",
+    "LiabilitiesAndStockholdersEquity",
+    "LiabilitiesCurrent",
+    "LiabilitiesNoncurrent",
+    "LongTermDebtNoncurrent",
+    "MinorityInterest",
+    "OperatingIncomeLoss",
+    "OperatingLeaseLiabilityNoncurrent",
+    "OtherLiabilitiesNoncurrent",
+    "RedeemableNoncontrollingInterestEquityCarryingAmount",
+    "StockholdersEquity",
+    "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+    "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests"
+  ],
+  "additional_review_concepts": [
+    "AccountsPayableCurrent",
+    "DeferredRevenueNoncurrent",
+    "InterestAndDebtExpense",
+    "InterestCostsCapitalized",
+    "InterestCostsIncurred",
+    "TemporaryEquityCarryingAmountAttributableToParent"
+  ],
+  "versions": {
+    "2021": {
+      "AccountsPayableCurrent": {
+        "definition": "Carrying value as of the balance sheet date of liabilities incurred (and for which invoices have typically been received) and payable to vendors for goods and services received that are used in an entity's business. Used to reflect the current portion of the liabilities (due within one year or within the normal operating cycle if longer).",
+        "attributes": {
+          "id": "us-gaap_AccountsPayableCurrent",
+          "name": "AccountsPayableCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "Assets": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are recognized. Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsCurrent": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold, or consumed within one year (or the normal operating cycle, if longer). Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsNoncurrent": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold or consumed after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_AssetsNoncurrent",
+          "name": "AssetsNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "CommitmentsAndContingencies": {
+        "definition": "Represents the caption on the face of the balance sheet to indicate that the entity has entered into (1) purchase or supply arrangements that will require expending a portion of its resources to meet the terms thereof, and (2) is exposed to potential losses or, less frequently, gains, arising from (a) possible claims against a company's resources due to future performance under contract terms, and (b) possible losses or likely gains from uncertainties that will ultimately be resolved when one or more future events that are deemed likely to occur do occur or fail to occur.",
+        "attributes": {
+          "id": "us-gaap_CommitmentsAndContingencies",
+          "name": "CommitmentsAndContingencies",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxLiabilitiesNet": {
+        "definition": "Amount, after deferred tax asset, of deferred tax liability attributable to taxable differences with jurisdictional netting.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxLiabilitiesNet",
+          "name": "DeferredIncomeTaxLiabilitiesNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent": {
+        "definition": "Amount of deferred tax liability attributable to taxable temporary differences, after deferred tax asset, and other liabilities expected to be paid after one year or operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "name": "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredRevenueNoncurrent": {
+        "definition": "Amount of deferred income and obligation to transfer product and service to customer for which consideration has been received or is receivable, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_DeferredRevenueNoncurrent",
+          "name": "DeferredRevenueNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "FinanceLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from finance lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_FinanceLeaseLiabilityNoncurrent",
+          "name": "FinanceLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "InterestAndDebtExpense": {
+        "definition": "Interest and debt related expenses associated with nonoperating financing activities of the entity.",
+        "attributes": {
+          "id": "us-gaap_InterestAndDebtExpense",
+          "name": "InterestAndDebtExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsCapitalized": {
+        "definition": "Amount of interest capitalized during the period.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsCapitalized",
+          "name": "InterestCostsCapitalized",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsIncurred": {
+        "definition": "Total interest costs incurred during the period and either capitalized or charged against earnings.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsIncurred",
+          "name": "InterestCostsIncurred",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpense": {
+        "definition": "Amount of the cost of borrowed funds accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpenseNonoperating": {
+        "definition": null,
+        "attributes": null
+      },
+      "InterestExpenseOperating": {
+        "definition": null,
+        "attributes": null
+      },
+      "InterestIncomeExpenseNet": {
+        "definition": "The net amount of operating interest income (expense).",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestIncomeOperating": {
+        "definition": "Amount of operating interest income, including, but not limited to, amortization and accretion of premiums and discounts on securities.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeOperating",
+          "name": "InterestIncomeOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "Liabilities": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all liabilities that are recognized. Liabilities are probable future sacrifices of economic benefits arising from present obligations of an entity to transfer assets or provide services to other entities in the future.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesAndStockholdersEquity": {
+        "definition": "Amount of liabilities and equity items, including the portion of equity attributable to noncontrolling interests, if any.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesAndStockholdersEquity",
+          "name": "LiabilitiesAndStockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesCurrent": {
+        "definition": "Total obligations incurred as part of normal operations that are expected to be paid during the following twelve months or within one business cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesCurrent",
+          "name": "LiabilitiesCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesNoncurrent": {
+        "definition": "Amount of obligation due after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesNoncurrent",
+          "name": "LiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LongTermDebtNoncurrent": {
+        "definition": "Amount after unamortized (discount) premium and debt issuance costs of long-term debt classified as noncurrent and excluding amounts to be repaid within one year or the normal operating cycle, if longer. Includes, but not limited to, notes payable, bonds payable, debentures, mortgage loans and commercial paper. Excludes capital lease obligations.",
+        "attributes": {
+          "id": "us-gaap_LongTermDebtNoncurrent",
+          "name": "LongTermDebtNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "MinorityInterest": {
+        "definition": "Total of all stockholders' equity (deficit) items, net of receivables from officers, directors, owners, and affiliates of the entity which is directly or indirectly attributable to that ownership interest in subsidiary equity which is not attributable to the parent (that is, noncontrolling interest, previously referred to as minority interest).",
+        "attributes": {
+          "id": "us-gaap_MinorityInterest",
+          "name": "MinorityInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OperatingIncomeLoss": {
+        "definition": "The net result for the period of deducting operating expenses from operating revenues.",
+        "attributes": {
+          "id": "us-gaap_OperatingIncomeLoss",
+          "name": "OperatingIncomeLoss",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "OperatingLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from operating lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_OperatingLeaseLiabilityNoncurrent",
+          "name": "OperatingLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OtherLiabilitiesNoncurrent": {
+        "definition": "Amount of liabilities classified as other, due after one year or the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_OtherLiabilitiesNoncurrent",
+          "name": "OtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "RedeemableNoncontrollingInterestEquityCarryingAmount": {
+        "definition": "As of the reporting date, the aggregate carrying amount of all noncontrolling interests which are redeemable by the (parent) entity (1) at a fixed or determinable price on a fixed or determinable date, (2) at the option of the holder of the noncontrolling interest, or (3) upon occurrence of an event that is not solely within the control of the (parent) entity. This item includes noncontrolling interest holder's ownership (or holders' ownership) regardless of the type of equity interest (common, preferred, other) including all potential organizational (legal) forms of the investee entity.",
+        "attributes": {
+          "id": "us-gaap_RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "name": "RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquity": {
+        "definition": "Total of all stockholders' equity (deficit) items, net of receivables from officers, directors, owners, and affiliates of the entity which are attributable to the parent. The amount of the economic entity's stockholders' equity attributable to the parent excludes the amount of stockholders' equity which is allocable to that ownership interest in subsidiary equity which is not attributable to the parent (noncontrolling interest, minority interest). This excludes temporary equity and is sometimes called permanent equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquity",
+          "name": "StockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest": {
+        "definition": "Amount of stockholders' equity (deficit), net of receivables from officers, directors, owners, and affiliates of the entity, attributable to both the parent and noncontrolling interests. Amount excludes temporary equity. Alternate caption for the concept is permanent equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "name": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountAttributableToParent": {
+        "definition": "Carrying amount, attributable to parent, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountAttributableToParent",
+          "name": "TemporaryEquityCarryingAmountAttributableToParent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests": {
+        "definition": "Carrying amount, attributable to parent and noncontrolling interests, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "name": "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    "2022": {
+      "AccountsPayableCurrent": {
+        "definition": "Carrying value as of the balance sheet date of liabilities incurred (and for which invoices have typically been received) and payable to vendors for goods and services received that are used in an entity's business. Used to reflect the current portion of the liabilities (due within one year or within the normal operating cycle if longer).",
+        "attributes": {
+          "id": "us-gaap_AccountsPayableCurrent",
+          "name": "AccountsPayableCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "Assets": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are recognized. Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsCurrent": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold, or consumed within one year (or the normal operating cycle, if longer). Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsNoncurrent": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold or consumed after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_AssetsNoncurrent",
+          "name": "AssetsNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "CommitmentsAndContingencies": {
+        "definition": "Represents the caption on the face of the balance sheet to indicate that the entity has entered into (1) purchase or supply arrangements that will require expending a portion of its resources to meet the terms thereof, and (2) is exposed to potential losses or, less frequently, gains, arising from (a) possible claims against a company's resources due to future performance under contract terms, and (b) possible losses or likely gains from uncertainties that will ultimately be resolved when one or more future events that are deemed likely to occur do occur or fail to occur.",
+        "attributes": {
+          "id": "us-gaap_CommitmentsAndContingencies",
+          "name": "CommitmentsAndContingencies",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxLiabilitiesNet": {
+        "definition": "Amount, after deferred tax asset, of deferred tax liability attributable to taxable differences with jurisdictional netting.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxLiabilitiesNet",
+          "name": "DeferredIncomeTaxLiabilitiesNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent": {
+        "definition": "Amount of deferred tax liability attributable to taxable temporary differences, after deferred tax asset, and other liabilities expected to be paid after one year or operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "name": "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredRevenueNoncurrent": {
+        "definition": "Amount of deferred income and obligation to transfer product and service to customer for which consideration has been received or is receivable, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_DeferredRevenueNoncurrent",
+          "name": "DeferredRevenueNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "FinanceLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from finance lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_FinanceLeaseLiabilityNoncurrent",
+          "name": "FinanceLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "InterestAndDebtExpense": {
+        "definition": "Interest and debt related expenses associated with nonoperating financing activities of the entity.",
+        "attributes": {
+          "id": "us-gaap_InterestAndDebtExpense",
+          "name": "InterestAndDebtExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsCapitalized": {
+        "definition": "Amount of interest capitalized during the period.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsCapitalized",
+          "name": "InterestCostsCapitalized",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsIncurred": {
+        "definition": "Total interest costs incurred during the period and either capitalized or charged against earnings.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsIncurred",
+          "name": "InterestCostsIncurred",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpense": {
+        "definition": "Amount of the cost of borrowed funds accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpenseNonoperating": {
+        "definition": null,
+        "attributes": null
+      },
+      "InterestExpenseOperating": {
+        "definition": null,
+        "attributes": null
+      },
+      "InterestIncomeExpenseNet": {
+        "definition": "The net amount of operating interest income (expense).",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestIncomeOperating": {
+        "definition": "Amount of operating interest income, including, but not limited to, amortization and accretion of premiums and discounts on securities.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeOperating",
+          "name": "InterestIncomeOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "Liabilities": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all liabilities that are recognized. Liabilities are probable future sacrifices of economic benefits arising from present obligations of an entity to transfer assets or provide services to other entities in the future.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesAndStockholdersEquity": {
+        "definition": "Amount of liabilities and equity items, including the portion of equity attributable to noncontrolling interests, if any.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesAndStockholdersEquity",
+          "name": "LiabilitiesAndStockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesCurrent": {
+        "definition": "Total obligations incurred as part of normal operations that are expected to be paid during the following twelve months or within one business cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesCurrent",
+          "name": "LiabilitiesCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesNoncurrent": {
+        "definition": "Amount of obligation due after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesNoncurrent",
+          "name": "LiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LongTermDebtNoncurrent": {
+        "definition": "Amount, excluding unamortized premium (discount) and debt issuance cost, of long-term debt classified as noncurrent. Excludes lease obligation.",
+        "attributes": {
+          "id": "us-gaap_LongTermDebtNoncurrent",
+          "name": "LongTermDebtNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "MinorityInterest": {
+        "definition": "Total of all stockholders' equity (deficit) items, net of receivables from officers, directors, owners, and affiliates of the entity which is directly or indirectly attributable to that ownership interest in subsidiary equity which is not attributable to the parent (that is, noncontrolling interest, previously referred to as minority interest).",
+        "attributes": {
+          "id": "us-gaap_MinorityInterest",
+          "name": "MinorityInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OperatingIncomeLoss": {
+        "definition": "The net result for the period of deducting operating expenses from operating revenues.",
+        "attributes": {
+          "id": "us-gaap_OperatingIncomeLoss",
+          "name": "OperatingIncomeLoss",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "OperatingLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from operating lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_OperatingLeaseLiabilityNoncurrent",
+          "name": "OperatingLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OtherLiabilitiesNoncurrent": {
+        "definition": "Amount of liabilities classified as other, due after one year or the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_OtherLiabilitiesNoncurrent",
+          "name": "OtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "RedeemableNoncontrollingInterestEquityCarryingAmount": {
+        "definition": "As of the reporting date, the aggregate carrying amount of all noncontrolling interests which are redeemable by the (parent) entity (1) at a fixed or determinable price on a fixed or determinable date, (2) at the option of the holder of the noncontrolling interest, or (3) upon occurrence of an event that is not solely within the control of the (parent) entity. This item includes noncontrolling interest holder's ownership (or holders' ownership) regardless of the type of equity interest (common, preferred, other) including all potential organizational (legal) forms of the investee entity.",
+        "attributes": {
+          "id": "us-gaap_RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "name": "RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquity": {
+        "definition": "Total of all stockholders' equity (deficit) items, net of receivables from officers, directors, owners, and affiliates of the entity which are attributable to the parent. The amount of the economic entity's stockholders' equity attributable to the parent excludes the amount of stockholders' equity which is allocable to that ownership interest in subsidiary equity which is not attributable to the parent (noncontrolling interest, minority interest). This excludes temporary equity and is sometimes called permanent equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquity",
+          "name": "StockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest": {
+        "definition": "Amount of stockholders' equity (deficit), net of receivables from officers, directors, owners, and affiliates of the entity, attributable to both the parent and noncontrolling interests. Amount excludes temporary equity. Alternate caption for the concept is permanent equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "name": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountAttributableToParent": {
+        "definition": "Carrying amount, attributable to parent, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountAttributableToParent",
+          "name": "TemporaryEquityCarryingAmountAttributableToParent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests": {
+        "definition": "Carrying amount, attributable to parent and noncontrolling interests, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "name": "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    "2023": {
+      "AccountsPayableCurrent": {
+        "definition": "Carrying value as of the balance sheet date of liabilities incurred (and for which invoices have typically been received) and payable to vendors for goods and services received that are used in an entity's business. Used to reflect the current portion of the liabilities (due within one year or within the normal operating cycle if longer).",
+        "attributes": {
+          "id": "us-gaap_AccountsPayableCurrent",
+          "name": "AccountsPayableCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "Assets": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are recognized. Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsCurrent": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold, or consumed within one year (or the normal operating cycle, if longer). Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsNoncurrent": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold or consumed after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_AssetsNoncurrent",
+          "name": "AssetsNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "CommitmentsAndContingencies": {
+        "definition": "Represents the caption on the face of the balance sheet to indicate that the entity has entered into (1) purchase or supply arrangements that will require expending a portion of its resources to meet the terms thereof, and (2) is exposed to potential losses or, less frequently, gains, arising from (a) possible claims against a company's resources due to future performance under contract terms, and (b) possible losses or likely gains from uncertainties that will ultimately be resolved when one or more future events that are deemed likely to occur do occur or fail to occur.",
+        "attributes": {
+          "id": "us-gaap_CommitmentsAndContingencies",
+          "name": "CommitmentsAndContingencies",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxLiabilitiesNet": {
+        "definition": "Amount, after deferred tax asset, of deferred tax liability attributable to taxable differences with jurisdictional netting.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxLiabilitiesNet",
+          "name": "DeferredIncomeTaxLiabilitiesNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent": {
+        "definition": "Amount of deferred tax liability attributable to taxable temporary differences, after deferred tax asset, and other liabilities expected to be paid after one year or operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "name": "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredRevenueNoncurrent": {
+        "definition": "Amount of deferred income and obligation to transfer product and service to customer for which consideration has been received or is receivable, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_DeferredRevenueNoncurrent",
+          "name": "DeferredRevenueNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "FinanceLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from finance lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_FinanceLeaseLiabilityNoncurrent",
+          "name": "FinanceLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "InterestAndDebtExpense": {
+        "definition": "Interest and debt related expenses associated with nonoperating financing activities of the entity.",
+        "attributes": {
+          "id": "us-gaap_InterestAndDebtExpense",
+          "name": "InterestAndDebtExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsCapitalized": {
+        "definition": "Amount of interest capitalized during the period.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsCapitalized",
+          "name": "InterestCostsCapitalized",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsIncurred": {
+        "definition": "Total interest costs incurred during the period and either capitalized or charged against earnings.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsIncurred",
+          "name": "InterestCostsIncurred",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpense": {
+        "definition": "Amount of the cost of borrowed funds accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpenseNonoperating": {
+        "definition": null,
+        "attributes": null
+      },
+      "InterestExpenseOperating": {
+        "definition": null,
+        "attributes": null
+      },
+      "InterestIncomeExpenseNet": {
+        "definition": "The net amount of operating interest income (expense).",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestIncomeOperating": {
+        "definition": "Amount of operating interest income, including, but not limited to, amortization and accretion of premiums and discounts on securities.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeOperating",
+          "name": "InterestIncomeOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "Liabilities": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all liabilities that are recognized. Liabilities are probable future sacrifices of economic benefits arising from present obligations of an entity to transfer assets or provide services to other entities in the future.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesAndStockholdersEquity": {
+        "definition": "Amount of liabilities and equity items, including the portion of equity attributable to noncontrolling interests, if any.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesAndStockholdersEquity",
+          "name": "LiabilitiesAndStockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesCurrent": {
+        "definition": "Total obligations incurred as part of normal operations that are expected to be paid during the following twelve months or within one business cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesCurrent",
+          "name": "LiabilitiesCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesNoncurrent": {
+        "definition": "Amount of obligation due after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesNoncurrent",
+          "name": "LiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LongTermDebtNoncurrent": {
+        "definition": "Amount, after deduction of unamortized premium (discount) and debt issuance cost, of long-term debt classified as noncurrent. Excludes lease obligation.",
+        "attributes": {
+          "id": "us-gaap_LongTermDebtNoncurrent",
+          "name": "LongTermDebtNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "MinorityInterest": {
+        "definition": "Amount of equity (deficit) attributable to noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_MinorityInterest",
+          "name": "MinorityInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OperatingIncomeLoss": {
+        "definition": "The net result for the period of deducting operating expenses from operating revenues.",
+        "attributes": {
+          "id": "us-gaap_OperatingIncomeLoss",
+          "name": "OperatingIncomeLoss",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "OperatingLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from operating lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_OperatingLeaseLiabilityNoncurrent",
+          "name": "OperatingLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OtherLiabilitiesNoncurrent": {
+        "definition": "Amount of liabilities classified as other, due after one year or the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_OtherLiabilitiesNoncurrent",
+          "name": "OtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "RedeemableNoncontrollingInterestEquityCarryingAmount": {
+        "definition": "As of the reporting date, the aggregate carrying amount of all noncontrolling interests which are redeemable by the (parent) entity (1) at a fixed or determinable price on a fixed or determinable date, (2) at the option of the holder of the noncontrolling interest, or (3) upon occurrence of an event that is not solely within the control of the (parent) entity. This item includes noncontrolling interest holder's ownership (or holders' ownership) regardless of the type of equity interest (common, preferred, other) including all potential organizational (legal) forms of the investee entity.",
+        "attributes": {
+          "id": "us-gaap_RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "name": "RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquity": {
+        "definition": "Amount of equity (deficit) attributable to parent. Excludes temporary equity and equity attributable to noncontrolling interest.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquity",
+          "name": "StockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest": {
+        "definition": "Amount of equity (deficit) attributable to parent and noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "name": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountAttributableToParent": {
+        "definition": "Carrying amount, attributable to parent, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountAttributableToParent",
+          "name": "TemporaryEquityCarryingAmountAttributableToParent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests": {
+        "definition": "Carrying amount, attributable to parent and noncontrolling interests, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "name": "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    "2024": {
+      "AccountsPayableCurrent": {
+        "definition": "Carrying value as of the balance sheet date of liabilities incurred (and for which invoices have typically been received) and payable to vendors for goods and services received that are used in an entity's business. Used to reflect the current portion of the liabilities (due within one year or within the normal operating cycle if longer).",
+        "attributes": {
+          "id": "us-gaap_AccountsPayableCurrent",
+          "name": "AccountsPayableCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "Assets": {
+        "definition": "Amount of asset recognized for present right to economic benefit.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsCurrent": {
+        "definition": "Amount of asset recognized for present right to economic benefit, classified as current.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsNoncurrent": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold or consumed after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_AssetsNoncurrent",
+          "name": "AssetsNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "CommitmentsAndContingencies": {
+        "definition": "Represents the caption on the face of the balance sheet to indicate that the entity has entered into (1) purchase or supply arrangements that will require expending a portion of its resources to meet the terms thereof, and (2) is exposed to potential losses or, less frequently, gains, arising from (a) possible claims against a company's resources due to future performance under contract terms, and (b) possible losses or likely gains from uncertainties that will ultimately be resolved when one or more future events that are deemed likely to occur do occur or fail to occur.",
+        "attributes": {
+          "id": "us-gaap_CommitmentsAndContingencies",
+          "name": "CommitmentsAndContingencies",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxLiabilitiesNet": {
+        "definition": "Amount, after deferred tax asset, of deferred tax liability attributable to taxable differences with jurisdictional netting.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxLiabilitiesNet",
+          "name": "DeferredIncomeTaxLiabilitiesNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent": {
+        "definition": "Amount of deferred tax liability attributable to taxable temporary differences, after deferred tax asset, and other liabilities expected to be paid after one year or operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "name": "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredRevenueNoncurrent": {
+        "definition": "Amount of deferred income and obligation to transfer product and service to customer for which consideration has been received or is receivable, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_DeferredRevenueNoncurrent",
+          "name": "DeferredRevenueNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "FinanceLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from finance lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_FinanceLeaseLiabilityNoncurrent",
+          "name": "FinanceLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "InterestAndDebtExpense": {
+        "definition": "Interest and debt related expenses associated with nonoperating financing activities of the entity.",
+        "attributes": {
+          "id": "us-gaap_InterestAndDebtExpense",
+          "name": "InterestAndDebtExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsCapitalized": {
+        "definition": "Amount of interest capitalized during the period.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsCapitalized",
+          "name": "InterestCostsCapitalized",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsIncurred": {
+        "definition": "Total interest costs incurred during the period and either capitalized or charged against earnings.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsIncurred",
+          "name": "InterestCostsIncurred",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpense": {
+        "definition": "Amount of interest expense classified as operating and nonoperating. Includes, but is not limited to, cost of borrowing accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpenseNonoperating": {
+        "definition": "Amount of interest expense classified as nonoperating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseNonoperating",
+          "name": "InterestExpenseNonoperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpenseOperating": {
+        "definition": "Amount of interest expense classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseOperating",
+          "name": "InterestExpenseOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestIncomeExpenseNet": {
+        "definition": "Amount of interest income (expense) classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestIncomeOperating": {
+        "definition": "Amount of operating interest income, including, but not limited to, amortization and accretion of premiums and discounts on securities.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeOperating",
+          "name": "InterestIncomeOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "Liabilities": {
+        "definition": "Amount of liability recognized for present obligation requiring transfer or otherwise providing economic benefit to others.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesAndStockholdersEquity": {
+        "definition": "Amount of liabilities and equity items, including the portion of equity attributable to noncontrolling interests, if any.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesAndStockholdersEquity",
+          "name": "LiabilitiesAndStockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesCurrent": {
+        "definition": "Total obligations incurred as part of normal operations that are expected to be paid during the following twelve months or within one business cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesCurrent",
+          "name": "LiabilitiesCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesNoncurrent": {
+        "definition": "Amount of obligation due after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesNoncurrent",
+          "name": "LiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LongTermDebtNoncurrent": {
+        "definition": "Amount, after deduction of unamortized premium (discount) and debt issuance cost, of long-term debt classified as noncurrent. Excludes lease obligation.",
+        "attributes": {
+          "id": "us-gaap_LongTermDebtNoncurrent",
+          "name": "LongTermDebtNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "MinorityInterest": {
+        "definition": "Amount of equity (deficit) attributable to noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_MinorityInterest",
+          "name": "MinorityInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OperatingIncomeLoss": {
+        "definition": "The net result for the period of deducting operating expenses from operating revenues.",
+        "attributes": {
+          "id": "us-gaap_OperatingIncomeLoss",
+          "name": "OperatingIncomeLoss",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "OperatingLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from operating lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_OperatingLeaseLiabilityNoncurrent",
+          "name": "OperatingLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OtherLiabilitiesNoncurrent": {
+        "definition": "Amount of liabilities classified as other, due after one year or the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_OtherLiabilitiesNoncurrent",
+          "name": "OtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "RedeemableNoncontrollingInterestEquityCarryingAmount": {
+        "definition": "As of the reporting date, the aggregate carrying amount of all noncontrolling interests which are redeemable by the (parent) entity (1) at a fixed or determinable price on a fixed or determinable date, (2) at the option of the holder of the noncontrolling interest, or (3) upon occurrence of an event that is not solely within the control of the (parent) entity. This item includes noncontrolling interest holder's ownership (or holders' ownership) regardless of the type of equity interest (common, preferred, other) including all potential organizational (legal) forms of the investee entity.",
+        "attributes": {
+          "id": "us-gaap_RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "name": "RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquity": {
+        "definition": "Amount of equity (deficit) attributable to parent. Excludes temporary equity and equity attributable to noncontrolling interest.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquity",
+          "name": "StockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest": {
+        "definition": "Amount of equity (deficit) attributable to parent and noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "name": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountAttributableToParent": {
+        "definition": "Carrying amount, attributable to parent, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountAttributableToParent",
+          "name": "TemporaryEquityCarryingAmountAttributableToParent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests": {
+        "definition": "Carrying amount, attributable to parent and noncontrolling interests, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "name": "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    "2025": {
+      "AccountsPayableCurrent": {
+        "definition": "Carrying value as of the balance sheet date of liabilities incurred (and for which invoices have typically been received) and payable to vendors for goods and services received that are used in an entity's business. Used to reflect the current portion of the liabilities (due within one year or within the normal operating cycle if longer).",
+        "attributes": {
+          "id": "us-gaap_AccountsPayableCurrent",
+          "name": "AccountsPayableCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "Assets": {
+        "definition": "Amount of asset recognized for present right to economic benefit.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsCurrent": {
+        "definition": "Amount of asset recognized for present right to economic benefit, classified as current.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsNoncurrent": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold or consumed after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_AssetsNoncurrent",
+          "name": "AssetsNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "CommitmentsAndContingencies": {
+        "definition": "Represents the caption on the face of the balance sheet to indicate that the entity has entered into (1) purchase or supply arrangements that will require expending a portion of its resources to meet the terms thereof, and (2) is exposed to potential losses or, less frequently, gains, arising from (a) possible claims against a company's resources due to future performance under contract terms, and (b) possible losses or likely gains from uncertainties that will ultimately be resolved when one or more future events that are deemed likely to occur do occur or fail to occur.",
+        "attributes": {
+          "id": "us-gaap_CommitmentsAndContingencies",
+          "name": "CommitmentsAndContingencies",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxLiabilitiesNet": {
+        "definition": "Amount, after deferred tax asset, of deferred tax liability attributable to taxable differences with jurisdictional netting.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxLiabilitiesNet",
+          "name": "DeferredIncomeTaxLiabilitiesNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent": {
+        "definition": "Amount of deferred tax liability attributable to taxable temporary differences, after deferred tax asset, and other liabilities expected to be paid after one year or operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "name": "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredRevenueNoncurrent": {
+        "definition": "Amount of deferred income and obligation to transfer product and service to customer for which consideration has been received or is receivable, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_DeferredRevenueNoncurrent",
+          "name": "DeferredRevenueNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "FinanceLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from finance lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_FinanceLeaseLiabilityNoncurrent",
+          "name": "FinanceLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "InterestAndDebtExpense": {
+        "definition": "Interest and debt related expenses associated with nonoperating financing activities of the entity.",
+        "attributes": {
+          "id": "us-gaap_InterestAndDebtExpense",
+          "name": "InterestAndDebtExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsCapitalized": {
+        "definition": "Amount of interest capitalized during the period.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsCapitalized",
+          "name": "InterestCostsCapitalized",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsIncurred": {
+        "definition": "Total interest costs incurred during the period and either capitalized or charged against earnings.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsIncurred",
+          "name": "InterestCostsIncurred",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpense": {
+        "definition": "Amount of interest expense classified as operating and nonoperating. Includes, but is not limited to, cost of borrowing accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpenseNonoperating": {
+        "definition": "Amount of interest expense classified as nonoperating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseNonoperating",
+          "name": "InterestExpenseNonoperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpenseOperating": {
+        "definition": "Amount of interest expense classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseOperating",
+          "name": "InterestExpenseOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestIncomeExpenseNet": {
+        "definition": "Amount of interest income (expense) classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestIncomeOperating": {
+        "definition": "Amount of operating interest income, including, but not limited to, amortization and accretion of premiums and discounts on securities.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeOperating",
+          "name": "InterestIncomeOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "Liabilities": {
+        "definition": "Amount of liability recognized for present obligation requiring transfer or otherwise providing economic benefit to others.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesAndStockholdersEquity": {
+        "definition": "Amount of liabilities and equity items, including the portion of equity attributable to noncontrolling interests, if any.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesAndStockholdersEquity",
+          "name": "LiabilitiesAndStockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesCurrent": {
+        "definition": "Total obligations incurred as part of normal operations that are expected to be paid during the following twelve months or within one business cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesCurrent",
+          "name": "LiabilitiesCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesNoncurrent": {
+        "definition": "Amount of obligation due after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesNoncurrent",
+          "name": "LiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LongTermDebtNoncurrent": {
+        "definition": "Amount, after deduction of unamortized premium (discount) and debt issuance cost, of long-term debt classified as noncurrent. Excludes lease obligation.",
+        "attributes": {
+          "id": "us-gaap_LongTermDebtNoncurrent",
+          "name": "LongTermDebtNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "MinorityInterest": {
+        "definition": "Amount of equity (deficit) attributable to noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_MinorityInterest",
+          "name": "MinorityInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OperatingIncomeLoss": {
+        "definition": "The net result for the period of deducting operating expenses from operating revenues.",
+        "attributes": {
+          "id": "us-gaap_OperatingIncomeLoss",
+          "name": "OperatingIncomeLoss",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "OperatingLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from operating lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_OperatingLeaseLiabilityNoncurrent",
+          "name": "OperatingLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OtherLiabilitiesNoncurrent": {
+        "definition": "Amount of liabilities classified as other, due after one year or the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_OtherLiabilitiesNoncurrent",
+          "name": "OtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "RedeemableNoncontrollingInterestEquityCarryingAmount": {
+        "definition": "As of the reporting date, the aggregate carrying amount of all noncontrolling interests which are redeemable by the (parent) entity (1) at a fixed or determinable price on a fixed or determinable date, (2) at the option of the holder of the noncontrolling interest, or (3) upon occurrence of an event that is not solely within the control of the (parent) entity. This item includes noncontrolling interest holder's ownership (or holders' ownership) regardless of the type of equity interest (common, preferred, other) including all potential organizational (legal) forms of the investee entity.",
+        "attributes": {
+          "id": "us-gaap_RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "name": "RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquity": {
+        "definition": "Amount of equity (deficit) attributable to parent. Excludes temporary equity and equity attributable to noncontrolling interest.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquity",
+          "name": "StockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest": {
+        "definition": "Amount of equity (deficit) attributable to parent and noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "name": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountAttributableToParent": {
+        "definition": "Carrying amount, attributable to parent, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountAttributableToParent",
+          "name": "TemporaryEquityCarryingAmountAttributableToParent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests": {
+        "definition": "Carrying amount, attributable to parent and noncontrolling interests, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "name": "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    "2026": {
+      "AccountsPayableCurrent": {
+        "definition": "Carrying value as of the balance sheet date of liabilities incurred (and for which invoices have typically been received) and payable to vendors for goods and services received that are used in an entity's business. Used to reflect the current portion of the liabilities (due within one year or within the normal operating cycle if longer).",
+        "attributes": {
+          "id": "us-gaap_AccountsPayableCurrent",
+          "name": "AccountsPayableCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "Assets": {
+        "definition": "Amount of asset recognized for present right to economic benefit.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsCurrent": {
+        "definition": "Amount of asset recognized for present right to economic benefit, classified as current.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "AssetsNoncurrent": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold or consumed after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_AssetsNoncurrent",
+          "name": "AssetsNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "CommitmentsAndContingencies": {
+        "definition": "Represents the caption on the face of the balance sheet to indicate that the entity has entered into (1) purchase or supply arrangements that will require expending a portion of its resources to meet the terms thereof, and (2) is exposed to potential losses or, less frequently, gains, arising from (a) possible claims against a company's resources due to future performance under contract terms, and (b) possible losses or likely gains from uncertainties that will ultimately be resolved when one or more future events that are deemed likely to occur do occur or fail to occur.",
+        "attributes": {
+          "id": "us-gaap_CommitmentsAndContingencies",
+          "name": "CommitmentsAndContingencies",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxLiabilitiesNet": {
+        "definition": "Amount, after deferred tax asset, of deferred tax liability attributable to taxable differences with jurisdictional netting.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxLiabilitiesNet",
+          "name": "DeferredIncomeTaxLiabilitiesNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent": {
+        "definition": "Amount of deferred tax liability attributable to taxable temporary differences, after deferred tax asset, and other liabilities expected to be paid after one year or operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "name": "DeferredIncomeTaxesAndOtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "DeferredRevenueNoncurrent": {
+        "definition": "Amount of deferred income and obligation to transfer product and service to customer for which consideration has been received or is receivable, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_DeferredRevenueNoncurrent",
+          "name": "DeferredRevenueNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "FinanceLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from finance lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_FinanceLeaseLiabilityNoncurrent",
+          "name": "FinanceLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "InterestAndDebtExpense": {
+        "definition": "Interest and debt related expenses associated with nonoperating financing activities of the entity.",
+        "attributes": {
+          "id": "us-gaap_InterestAndDebtExpense",
+          "name": "InterestAndDebtExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsCapitalized": {
+        "definition": "Amount of interest capitalized during the period.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsCapitalized",
+          "name": "InterestCostsCapitalized",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestCostsIncurred": {
+        "definition": "Total interest costs incurred during the period and either capitalized or charged against earnings.",
+        "attributes": {
+          "id": "us-gaap_InterestCostsIncurred",
+          "name": "InterestCostsIncurred",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpense": {
+        "definition": "Amount of interest expense classified as operating and nonoperating. Includes, but is not limited to, cost of borrowing accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpenseNonoperating": {
+        "definition": "Amount of interest expense classified as nonoperating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseNonoperating",
+          "name": "InterestExpenseNonoperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestExpenseOperating": {
+        "definition": "Amount of interest expense classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseOperating",
+          "name": "InterestExpenseOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestIncomeExpenseNet": {
+        "definition": "Amount of interest income (expense) classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "InterestIncomeOperating": {
+        "definition": "Amount of operating interest income, including, but not limited to, amortization and accretion of premiums and discounts on securities.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeOperating",
+          "name": "InterestIncomeOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "Liabilities": {
+        "definition": "Amount of liability recognized for present obligation requiring transfer or otherwise providing economic benefit to others.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesAndStockholdersEquity": {
+        "definition": "Amount of liabilities and equity items, including the portion of equity attributable to noncontrolling interests, if any.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesAndStockholdersEquity",
+          "name": "LiabilitiesAndStockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesCurrent": {
+        "definition": "Total obligations incurred as part of normal operations that are expected to be paid during the following twelve months or within one business cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesCurrent",
+          "name": "LiabilitiesCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LiabilitiesNoncurrent": {
+        "definition": "Amount of obligation due after one year or beyond the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_LiabilitiesNoncurrent",
+          "name": "LiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "LongTermDebtNoncurrent": {
+        "definition": "Amount, after deduction of unamortized premium (discount) and debt issuance cost, of long-term debt classified as noncurrent. Excludes lease obligation.",
+        "attributes": {
+          "id": "us-gaap_LongTermDebtNoncurrent",
+          "name": "LongTermDebtNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "MinorityInterest": {
+        "definition": "Amount of equity (deficit) attributable to noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_MinorityInterest",
+          "name": "MinorityInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OperatingIncomeLoss": {
+        "definition": "The net result for the period of deducting operating expenses from operating revenues.",
+        "attributes": {
+          "id": "us-gaap_OperatingIncomeLoss",
+          "name": "OperatingIncomeLoss",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "OperatingLeaseLiabilityNoncurrent": {
+        "definition": "Present value of lessee's discounted obligation for lease payments from operating lease, classified as noncurrent.",
+        "attributes": {
+          "id": "us-gaap_OperatingLeaseLiabilityNoncurrent",
+          "name": "OperatingLeaseLiabilityNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "OtherLiabilitiesNoncurrent": {
+        "definition": "Amount of liabilities classified as other, due after one year or the normal operating cycle, if longer.",
+        "attributes": {
+          "id": "us-gaap_OtherLiabilitiesNoncurrent",
+          "name": "OtherLiabilitiesNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "RedeemableNoncontrollingInterestEquityCarryingAmount": {
+        "definition": "As of the reporting date, the aggregate carrying amount of all noncontrolling interests which are redeemable by the (parent) entity (1) at a fixed or determinable price on a fixed or determinable date, (2) at the option of the holder of the noncontrolling interest, or (3) upon occurrence of an event that is not solely within the control of the (parent) entity. This item includes noncontrolling interest holder's ownership (or holders' ownership) regardless of the type of equity interest (common, preferred, other) including all potential organizational (legal) forms of the investee entity.",
+        "attributes": {
+          "id": "us-gaap_RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "name": "RedeemableNoncontrollingInterestEquityCarryingAmount",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquity": {
+        "definition": "Amount of equity (deficit) attributable to parent. Excludes temporary equity and equity attributable to noncontrolling interest.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquity",
+          "name": "StockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest": {
+        "definition": "Amount of equity (deficit) attributable to parent and noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "name": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountAttributableToParent": {
+        "definition": "Carrying amount, attributable to parent, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountAttributableToParent",
+          "name": "TemporaryEquityCarryingAmountAttributableToParent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests": {
+        "definition": "Carrying amount, attributable to parent and noncontrolling interests, of an entity's issued and outstanding stock which is not included within permanent equity. Temporary equity is a security with redemption features that are outside the control of the issuer, is not classified as an asset or liability in conformity with GAAP, and is not mandatorily redeemable. Includes any type of security that is redeemable at a fixed or determinable price or on a fixed or determinable date or dates, is redeemable at the option of the holder, or has conditions for redemption which are not solely within the control of the issuer. Includes stock with a put option held by an ESOP and stock redeemable by a holder only in the event of a change in control of the issuer.",
+        "attributes": {
+          "id": "us-gaap_TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "name": "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    }
+  },
+  "differences_from_2026": [
+    {
+      "year": 2021,
+      "concept": "Assets",
+      "old": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are recognized. Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of asset recognized for present right to economic benefit.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "concept": "AssetsCurrent",
+      "old": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold, or consumed within one year (or the normal operating cycle, if longer). Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of asset recognized for present right to economic benefit, classified as current.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "concept": "InterestExpense",
+      "old": {
+        "definition": "Amount of the cost of borrowed funds accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "new": {
+        "definition": "Amount of interest expense classified as operating and nonoperating. Includes, but is not limited to, cost of borrowing accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "concept": "InterestExpenseNonoperating",
+      "old": {
+        "definition": null,
+        "attributes": null
+      },
+      "new": {
+        "definition": "Amount of interest expense classified as nonoperating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseNonoperating",
+          "name": "InterestExpenseNonoperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "concept": "InterestExpenseOperating",
+      "old": {
+        "definition": null,
+        "attributes": null
+      },
+      "new": {
+        "definition": "Amount of interest expense classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseOperating",
+          "name": "InterestExpenseOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "concept": "InterestIncomeExpenseNet",
+      "old": {
+        "definition": "The net amount of operating interest income (expense).",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "new": {
+        "definition": "Amount of interest income (expense) classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "concept": "Liabilities",
+      "old": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all liabilities that are recognized. Liabilities are probable future sacrifices of economic benefits arising from present obligations of an entity to transfer assets or provide services to other entities in the future.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of liability recognized for present obligation requiring transfer or otherwise providing economic benefit to others.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "concept": "LongTermDebtNoncurrent",
+      "old": {
+        "definition": "Amount after unamortized (discount) premium and debt issuance costs of long-term debt classified as noncurrent and excluding amounts to be repaid within one year or the normal operating cycle, if longer. Includes, but not limited to, notes payable, bonds payable, debentures, mortgage loans and commercial paper. Excludes capital lease obligations.",
+        "attributes": {
+          "id": "us-gaap_LongTermDebtNoncurrent",
+          "name": "LongTermDebtNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount, after deduction of unamortized premium (discount) and debt issuance cost, of long-term debt classified as noncurrent. Excludes lease obligation.",
+        "attributes": {
+          "id": "us-gaap_LongTermDebtNoncurrent",
+          "name": "LongTermDebtNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "concept": "MinorityInterest",
+      "old": {
+        "definition": "Total of all stockholders' equity (deficit) items, net of receivables from officers, directors, owners, and affiliates of the entity which is directly or indirectly attributable to that ownership interest in subsidiary equity which is not attributable to the parent (that is, noncontrolling interest, previously referred to as minority interest).",
+        "attributes": {
+          "id": "us-gaap_MinorityInterest",
+          "name": "MinorityInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of equity (deficit) attributable to noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_MinorityInterest",
+          "name": "MinorityInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "concept": "StockholdersEquity",
+      "old": {
+        "definition": "Total of all stockholders' equity (deficit) items, net of receivables from officers, directors, owners, and affiliates of the entity which are attributable to the parent. The amount of the economic entity's stockholders' equity attributable to the parent excludes the amount of stockholders' equity which is allocable to that ownership interest in subsidiary equity which is not attributable to the parent (noncontrolling interest, minority interest). This excludes temporary equity and is sometimes called permanent equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquity",
+          "name": "StockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of equity (deficit) attributable to parent. Excludes temporary equity and equity attributable to noncontrolling interest.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquity",
+          "name": "StockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "concept": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+      "old": {
+        "definition": "Amount of stockholders' equity (deficit), net of receivables from officers, directors, owners, and affiliates of the entity, attributable to both the parent and noncontrolling interests. Amount excludes temporary equity. Alternate caption for the concept is permanent equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "name": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of equity (deficit) attributable to parent and noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "name": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "Assets",
+      "old": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are recognized. Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of asset recognized for present right to economic benefit.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "AssetsCurrent",
+      "old": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold, or consumed within one year (or the normal operating cycle, if longer). Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of asset recognized for present right to economic benefit, classified as current.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "InterestExpense",
+      "old": {
+        "definition": "Amount of the cost of borrowed funds accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "new": {
+        "definition": "Amount of interest expense classified as operating and nonoperating. Includes, but is not limited to, cost of borrowing accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "InterestExpenseNonoperating",
+      "old": {
+        "definition": null,
+        "attributes": null
+      },
+      "new": {
+        "definition": "Amount of interest expense classified as nonoperating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseNonoperating",
+          "name": "InterestExpenseNonoperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "InterestExpenseOperating",
+      "old": {
+        "definition": null,
+        "attributes": null
+      },
+      "new": {
+        "definition": "Amount of interest expense classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseOperating",
+          "name": "InterestExpenseOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "InterestIncomeExpenseNet",
+      "old": {
+        "definition": "The net amount of operating interest income (expense).",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "new": {
+        "definition": "Amount of interest income (expense) classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "Liabilities",
+      "old": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all liabilities that are recognized. Liabilities are probable future sacrifices of economic benefits arising from present obligations of an entity to transfer assets or provide services to other entities in the future.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of liability recognized for present obligation requiring transfer or otherwise providing economic benefit to others.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "LongTermDebtNoncurrent",
+      "old": {
+        "definition": "Amount, excluding unamortized premium (discount) and debt issuance cost, of long-term debt classified as noncurrent. Excludes lease obligation.",
+        "attributes": {
+          "id": "us-gaap_LongTermDebtNoncurrent",
+          "name": "LongTermDebtNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount, after deduction of unamortized premium (discount) and debt issuance cost, of long-term debt classified as noncurrent. Excludes lease obligation.",
+        "attributes": {
+          "id": "us-gaap_LongTermDebtNoncurrent",
+          "name": "LongTermDebtNoncurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "MinorityInterest",
+      "old": {
+        "definition": "Total of all stockholders' equity (deficit) items, net of receivables from officers, directors, owners, and affiliates of the entity which is directly or indirectly attributable to that ownership interest in subsidiary equity which is not attributable to the parent (that is, noncontrolling interest, previously referred to as minority interest).",
+        "attributes": {
+          "id": "us-gaap_MinorityInterest",
+          "name": "MinorityInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of equity (deficit) attributable to noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_MinorityInterest",
+          "name": "MinorityInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "StockholdersEquity",
+      "old": {
+        "definition": "Total of all stockholders' equity (deficit) items, net of receivables from officers, directors, owners, and affiliates of the entity which are attributable to the parent. The amount of the economic entity's stockholders' equity attributable to the parent excludes the amount of stockholders' equity which is allocable to that ownership interest in subsidiary equity which is not attributable to the parent (noncontrolling interest, minority interest). This excludes temporary equity and is sometimes called permanent equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquity",
+          "name": "StockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of equity (deficit) attributable to parent. Excludes temporary equity and equity attributable to noncontrolling interest.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquity",
+          "name": "StockholdersEquity",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "concept": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+      "old": {
+        "definition": "Amount of stockholders' equity (deficit), net of receivables from officers, directors, owners, and affiliates of the entity, attributable to both the parent and noncontrolling interests. Amount excludes temporary equity. Alternate caption for the concept is permanent equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "name": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of equity (deficit) attributable to parent and noncontrolling interest. Excludes temporary equity.",
+        "attributes": {
+          "id": "us-gaap_StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "name": "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "concept": "Assets",
+      "old": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are recognized. Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of asset recognized for present right to economic benefit.",
+        "attributes": {
+          "id": "us-gaap_Assets",
+          "name": "Assets",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "concept": "AssetsCurrent",
+      "old": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all assets that are expected to be realized in cash, sold, or consumed within one year (or the normal operating cycle, if longer). Assets are probable future economic benefits obtained or controlled by an entity as a result of past transactions or events.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of asset recognized for present right to economic benefit, classified as current.",
+        "attributes": {
+          "id": "us-gaap_AssetsCurrent",
+          "name": "AssetsCurrent",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "concept": "InterestExpense",
+      "old": {
+        "definition": "Amount of the cost of borrowed funds accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "new": {
+        "definition": "Amount of interest expense classified as operating and nonoperating. Includes, but is not limited to, cost of borrowing accounted for as interest expense.",
+        "attributes": {
+          "id": "us-gaap_InterestExpense",
+          "name": "InterestExpense",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "concept": "InterestExpenseNonoperating",
+      "old": {
+        "definition": null,
+        "attributes": null
+      },
+      "new": {
+        "definition": "Amount of interest expense classified as nonoperating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseNonoperating",
+          "name": "InterestExpenseNonoperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "concept": "InterestExpenseOperating",
+      "old": {
+        "definition": null,
+        "attributes": null
+      },
+      "new": {
+        "definition": "Amount of interest expense classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestExpenseOperating",
+          "name": "InterestExpenseOperating",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "debit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "concept": "InterestIncomeExpenseNet",
+      "old": {
+        "definition": "The net amount of operating interest income (expense).",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      },
+      "new": {
+        "definition": "Amount of interest income (expense) classified as operating.",
+        "attributes": {
+          "id": "us-gaap_InterestIncomeExpenseNet",
+          "name": "InterestIncomeExpenseNet",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "duration"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "concept": "Liabilities",
+      "old": {
+        "definition": "Sum of the carrying amounts as of the balance sheet date of all liabilities that are recognized. Liabilities are probable future sacrifices of economic benefits arising from present obligations of an entity to transfer assets or provide services to other entities in the future.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      },
+      "new": {
+        "definition": "Amount of liability recognized for present obligation requiring transfer or otherwise providing economic benefit to others.",
+        "attributes": {
+          "id": "us-gaap_Liabilities",
+          "name": "Liabilities",
+          "nillable": "true",
+          "substitutionGroup": "xbrli:item",
+          "type": "xbrli:monetaryItemType",
+          "{http://www.xbrl.org/2003/instance}balance": "credit",
+          "{http://www.xbrl.org/2003/instance}periodType": "instant"
+        }
+      }
+    }
+  ]
+}

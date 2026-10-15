@@ -1,0 +1,9 @@
+{
+  "filings": 22,
+  "ratio_values_and_statuses_compared": 44,
+  "differences": [],
+  "production_csv_hashes": {
+    "data/company_status.csv": "57efe625e6477c1f3815dc8aba89c40e1ee2156f902d030377ede309fae95d4c",
+    "data/financial_ratios.csv": "37bed5b141714b4aea2b2d8d2542b566afd7cd63cdac93d87e7f2a7444fd43ca"
+  }
+}

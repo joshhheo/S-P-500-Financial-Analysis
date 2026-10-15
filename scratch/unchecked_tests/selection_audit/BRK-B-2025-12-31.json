@@ -1,0 +1,3189 @@
+{
+  "ticker": "BRK-B",
+  "cik": 1067983,
+  "accession": "0001193125-26-083899",
+  "source": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm",
+  "start": "2025-01-01",
+  "end": "2025-12-31",
+  "membership": {
+    "ticker": "BRK-B",
+    "cik": "1067983",
+    "company_name": "Berkshire Hathaway",
+    "sector": "Financials"
+  },
+  "units": {
+    "U_acre": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_acre\"><xbrli:measure>utr:acre</xbrli:measure></xbrli:unit>",
+    "U_EUR": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_EUR\"><xbrli:measure>iso4217:EUR</xbrli:measure></xbrli:unit>",
+    "U_Vote": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_Vote\"><xbrli:measure>brka:Vote</xbrli:measure></xbrli:unit>",
+    "U_pure": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_pure\"><xbrli:measure>xbrli:pure</xbrli:measure></xbrli:unit>",
+    "U_JPY": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_JPY\"><xbrli:measure>iso4217:JPY</xbrli:measure></xbrli:unit>",
+    "U_Plaintiff": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_Plaintiff\"><xbrli:measure>brka:Plaintiff</xbrli:measure></xbrli:unit>",
+    "U_Activity": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_Activity\"><xbrli:measure>brka:Activity</xbrli:measure></xbrli:unit>",
+    "U_Company": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_Company\"><xbrli:measure>brka:Company</xbrli:measure></xbrli:unit>",
+    "U_UnitedStatesOfAmericaDollarsShare": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_UnitedStatesOfAmericaDollarsShare\"><xbrli:divide><xbrli:unitNumerator><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unitNumerator><xbrli:unitDenominator><xbrli:measure>xbrli:shares</xbrli:measure></xbrli:unitDenominator></xbrli:divide></xbrli:unit>",
+    "U_Segment": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_Segment\"><xbrli:measure>brka:Segment</xbrli:measure></xbrli:unit>",
+    "U_shares": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_shares\"><xbrli:measure>xbrli:shares</xbrli:measure></xbrli:unit>",
+    "U_Claim": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_Claim\"><xbrli:measure>brka:Claim</xbrli:measure></xbrli:unit>",
+    "U_GBP": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_GBP\"><xbrli:measure>iso4217:GBP</xbrli:measure></xbrli:unit>",
+    "U_USD": "<xbrli:unit xmlns:xbrli=\"http://www.xbrl.org/2003/instance\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\" xmlns:xbrldt=\"http://xbrl.org/2005/xbrldt\" xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:ix=\"http://www.xbrl.org/2013/inlineXBRL\" xmlns:nonNumeric=\"http://www.xbrl.org/dtr/type/non-numeric\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:us-gaap=\"http://fasb.org/us-gaap/2025\" xmlns:dtr-types=\"http://www.xbrl.org/dtr/type/2024-01-31\" xmlns:country=\"http://xbrl.sec.gov/country/2025\" xmlns:cyd=\"http://xbrl.sec.gov/cyd/2025\" xmlns:ixt-sec=\"http://www.sec.gov/inlineXBRL/transformation/2015-08-31\" xmlns:ecd-sub=\"http://xbrl.sec.gov/ecd-sub/2025\" xmlns:srt=\"http://fasb.org/srt/2025\" xmlns:currency=\"http://xbrl.sec.gov/currency/2025\" xmlns:utr=\"http://www.xbrl.org/2009/utr\" xmlns:dei=\"http://xbrl.sec.gov/dei/2025\" xmlns:iso4217=\"http://www.xbrl.org/2003/iso4217\" xmlns:enum2=\"http://xbrl.org/2020/extensible-enumerations-2.0\" xmlns:ecd=\"http://xbrl.sec.gov/ecd/2025\" xmlns:ixt=\"http://www.xbrl.org/inlineXBRL/transformation/2022-02-16\" xmlns:brka=\"http://www.berkshirehathaway.com/20251231\" id=\"U_USD\"><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unit>"
+  },
+  "facts": [
+    {
+      "concept": "brka:EconomicEquivalentPercentageOfClassBCommonShareToClassACommonShare",
+      "value": "0.000667",
+      "decimals": "6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_pure",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:EconomicEquivalentPercentageOfClassBCommonShareToClassACommonShare",
+      "value": "0.000667",
+      "decimals": "6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_pure",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:EconomicEquivalentPercentageOfClassBCommonShareToClassACommonShare",
+      "value": "0.000667",
+      "decimals": "6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_pure",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:NumberOfReportableSegments",
+      "value": "7",
+      "decimals": "INF",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_Segment",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:Assets",
+      "value": "1222176000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:CashEquivalentsAtCarryingValue",
+      "value": "17600000000.0",
+      "decimals": "-8",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OtherPayablesToBrokerDealersAndClearingOrganizations",
+      "value": "167000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:IncomeTaxesPrincipallyDeferred",
+      "value": "86955000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:Liabilities",
+      "value": "502473000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:CommonStockValue",
+      "value": "8000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AdditionalPaidInCapitalCommonStock",
+      "value": "35612000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AccumulatedOtherComprehensiveIncomeLossNetOfTax",
+      "value": "-2448000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:RetainedEarningsAccumulatedDeficit",
+      "value": "763186000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:TreasuryStockValue",
+      "value": "78939000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:StockholdersEquity",
+      "value": "717419000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:MinorityInterest",
+      "value": "2284000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+      "value": "719703000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LiabilitiesAndStockholdersEquity",
+      "value": "1222176000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:Revenues",
+      "value": "371444000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:GainLossOnInvestments",
+      "value": "39078000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CostsAndExpenses",
+      "value": "318473000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+      "value": "92049000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromEquityMethodInvestments",
+      "value": "-9590000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+      "value": "82459000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxExpenseBenefit",
+      "value": "15199000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProfitLoss",
+      "value": "67260000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetIncomeLossAttributableToNoncontrollingInterest",
+      "value": "292000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetIncomeLoss",
+      "value": "66968000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProfitLoss",
+      "value": "67260000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeUnrealizedHoldingGainLossOnSecuritiesArisingDuringPeriodBeforeTax",
+      "value": "141000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossReclassificationAdjustmentFromAOCIForSaleOfSecuritiesTax",
+      "value": "-23000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossForeignCurrencyTransactionAndTranslationAdjustmentBeforeTax",
+      "value": "1479000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossForeignCurrencyTranslationAdjustmentTax",
+      "value": "-32000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OciLiabilityForFuturePolicyBenefitGainLossBeforeReclassificationAdjustmentAndTax",
+      "value": "210000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OciLiabilityForFuturePolicyBenefitGainLossBeforeReclassificationAdjustmentTax",
+      "value": "46000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansAdjustmentBeforeTax",
+      "value": "800000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansTax",
+      "value": "174000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeOtherNetOfTax",
+      "value": "-21000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossNetOfTax",
+      "value": "1146000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest",
+      "value": "68406000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest",
+      "value": "302000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ComprehensiveIncomeNetOfTax",
+      "value": "68104000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProfitLoss",
+      "value": "67260000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherComprehensiveIncomeLossNetOfTax",
+      "value": "1146000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "brka:IncreaseDecreaseThroughTransactionsWithNoncontrollingInterests",
+      "value": "-358000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+      "value": "719703000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:ProfitLoss",
+      "value": "67260000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:GainLossOnInvestments",
+      "value": "39078000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DepreciationDepletionAndAmortization",
+      "value": "13476000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:AccretionAmortizationOfDiscountsAndPremiumsInvestments",
+      "value": "11964000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EquityMethodInvestmentOtherThanTemporaryImpairment",
+      "value": "10681000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OtherNoncashIncomeExpense",
+      "value": "-3239000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInLiabilityForClaimsAndClaimsAdjustmentExpenseReserve",
+      "value": "3088000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "brka:IncreaseDecreaseInDeferredChargesRetroactiveReinsurance",
+      "value": "-693000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInUnearnedPremiums",
+      "value": "432000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInReceivables",
+      "value": "2426000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInOtherOperatingAssets",
+      "value": "861000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInOtherOperatingLiabilities",
+      "value": "429000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncreaseDecreaseInIncomeTaxes",
+      "value": "1000000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "value": "45969000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PaymentsToAcquireEquitySecuritiesFvNi",
+      "value": "16923000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProceedsFromSaleOfEquitySecuritiesFvNi",
+      "value": "30686000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "brka:PaymentsToAcquireUSTreasuryBillsAndAvailableForSaleSecuritiesDebt",
+      "value": "586129000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "brka:ProceedsFromSaleOfUSTreasuryBillsAndAvailableForSaleSecuritiesDebt",
+      "value": "44769000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "brka:ProceedsFromRedemptionsAndMaturitiesOfUSTreasuryBillsAndAvailableForSaleSecuritiesDebt",
+      "value": "503954000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PaymentsToAcquireBusinessesNetOfCashAcquired",
+      "value": "1074000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "value": "20927000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PaymentsForProceedsFromOtherInvestingActivities",
+      "value": "-1157000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetCashProvidedByUsedInInvestingActivities",
+      "value": "-44487000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProceedsFromRepaymentsOfShortTermDebt",
+      "value": "878000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProceedsFromPaymentsForOtherFinancingActivities",
+      "value": "-793000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NetCashProvidedByUsedInFinancingActivities",
+      "value": "2233000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectOfExchangeRateOnCashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+      "value": "478000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsPeriodIncreaseDecreaseIncludingExchangeRateEffect",
+      "value": "4193000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+      "value": "52569000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:RestrictedCashAndCashEquivalents",
+      "value": "692000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+      "value": "52569000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PercentageOfLIFOInventory",
+      "value": "0.30",
+      "decimals": "2",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_pure",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:ExcessOfReplacementOrCurrentCostsOverStatedLIFOValue",
+      "value": "2500000000.0",
+      "decimals": "-8",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleDebtSecuritiesAmortizedCostBasis",
+      "value": "17525000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleDebtSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "value": "304000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleDebtSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "value": "13000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtSecurities",
+      "value": "17816000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesNextRollingTwelveMonthsAmortizedCostBasis",
+      "value": "12875000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesRollingYearTwoThroughFiveAmortizedCostBasis",
+      "value": "4040000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesRollingYearSixThroughTenAmortizedCostBasis",
+      "value": "406000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesRollingAfterYearTenAmortizedCostBasis",
+      "value": "100000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesWithoutSingleMaturityDateAmortizedCost",
+      "value": "104000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleDebtSecuritiesAmortizedCostBasis",
+      "value": "17525000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesNextRollingTwelveMonthsFairValue",
+      "value": "12949000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesRollingYearTwoThroughFiveFairValue",
+      "value": "4083000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesRollingYearSixThroughTenFairValue",
+      "value": "558000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesRollingAfterYearTenFairValue",
+      "value": "110000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtMaturitiesWithoutSingleMaturityDateFairValue",
+      "value": "116000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AvailableForSaleSecuritiesDebtSecurities",
+      "value": "17816000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:EquitySecuritiesFvNiCost",
+      "value": "85389000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:EquitySecuritiesAccumulatedUnrealizedGainLoss",
+      "value": "212389000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:EquitySecuritiesFvNi",
+      "value": "297778000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:EquityMethodInvestments",
+      "value": "19978000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromEquityMethodInvestments",
+      "value": "-9590000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EquityMethodInvestmentDividendsOrDistributions",
+      "value": "875000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EquitySecuritiesFvNiUnrealizedGainLoss",
+      "value": "39981000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EquitySecuritiesFvNiRealizedGainLoss",
+      "value": "-18000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EquitySecuritiesFvNiGainLoss",
+      "value": "39963000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DebtSecuritiesAvailableForSaleRealizedGain",
+      "value": "53000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DebtSecuritiesAvailableForSaleRealizedLoss",
+      "value": "83000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:GainLossOnSaleOfOtherInvestments",
+      "value": "-855000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:GainLossOnInvestments",
+      "value": "39078000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ProceedsFromSaleOfEquitySecuritiesFvNi",
+      "value": "30700000000.0",
+      "decimals": "-8",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "brka:TaxableGainsLossOnSalesOfEquitySecurities",
+      "value": "23700000000.0",
+      "decimals": "-8",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:FinancingReceivableBeforeAllowanceForCreditLossAndFee",
+      "value": "31997000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinancingReceivableAllowanceForCreditLosses",
+      "value": "1347000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FinancingReceivableUnamortizedLoanCommitmentOriginationFeeAndPremiumDiscount",
+      "value": "-814000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:NotesReceivableNet",
+      "value": "29836000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:ProvisionForLoanLossesExpensed",
+      "value": "385000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:FinancingReceivableAllowanceForCreditLossesWriteOffs",
+      "value": "172000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:FinancingReceivableAllowanceForCreditLosses",
+      "value": "1347000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:ProvisionForDoubtfulAccounts",
+      "value": "530000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "brka:ChargeOffsNetOfRecoveriesOnReceivables",
+      "value": "539000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:InventoryRawMaterialsAndSuppliesNetOfReserves",
+      "value": "5020000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:InventoryWorkInProcessAndOtherInventoryNetOfReserves",
+      "value": "3625000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:InventoryFinishedGoodsNetOfReserves",
+      "value": "5698000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:OtherInventoryPurchasedGoodsNetOfReserves",
+      "value": "10081000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:InventoryNet",
+      "value": "24424000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DepreciationExcludingLessorAssetUnderOperatingLease",
+      "value": "10146000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:PropertySubjectToOrAvailableForOperatingLeaseGross",
+      "value": "31892000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PropertySubjectToOrAvailableForOperatingLeaseAccumulatedDepreciation",
+      "value": "13357000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PropertySubjectToOrAvailableForOperatingLeaseNet",
+      "value": "18535000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OperatingLeasesIncomeStatementDepreciationExpenseOnPropertySubjectToOrHeldForLease",
+      "value": "1585000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseLeaseIncomeLeasePayments",
+      "value": "6911000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseVariableLeaseIncome",
+      "value": "3123000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseLeaseIncome",
+      "value": "10034000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:LessorOperatingLeasePaymentsToBeReceivedNextTwelveMonths",
+      "value": "4703000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LessorOperatingLeasePaymentsToBeReceivedTwoYears",
+      "value": "3713000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LessorOperatingLeasePaymentsToBeReceivedThreeYears",
+      "value": "2802000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LessorOperatingLeasePaymentsToBeReceivedFourYears",
+      "value": "1816000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LessorOperatingLeasePaymentsToBeReceivedFiveYears",
+      "value": "904000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LessorOperatingLeasePaymentsToBeReceivedThereafter",
+      "value": "230000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LessorOperatingLeasePaymentsToBeReceived",
+      "value": "14168000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseRightOfUseAsset",
+      "value": "6020000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseLiability",
+      "value": "6290000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseWeightedAverageDiscountRatePercent",
+      "value": "0.048",
+      "decimals": "3",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_pure",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueNextTwelveMonths",
+      "value": "1437000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueYearTwo",
+      "value": "1269000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueYearThree",
+      "value": "1022000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueYearFour",
+      "value": "827000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueYearFive",
+      "value": "643000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDueAfterYearFive",
+      "value": "2546000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityPaymentsDue",
+      "value": "7744000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LesseeOperatingLeaseLiabilityUndiscountedExcessAmount",
+      "value": "1454000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseLiability",
+      "value": "6290000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:OperatingLeaseCost",
+      "value": "1647000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ShortTermLeaseCost",
+      "value": "170000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:VariableLeaseCost",
+      "value": "209000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:LeaseCost",
+      "value": "2026000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:GoodwillAcquiredDuringPeriod",
+      "value": "459000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:GoodwillOtherIncreaseDecrease",
+      "value": "-1265000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:Goodwill",
+      "value": "83074000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:GoodwillImpairedAccumulatedImpairmentLoss",
+      "value": "13000000000.0",
+      "decimals": "-8",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:IndefiniteLivedIntangibleAssetsExcludingGoodwill",
+      "value": "18900000000.0",
+      "decimals": "-8",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:AmortizationOfIntangibleAssets",
+      "value": "1700000000.0",
+      "decimals": "-8",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:FiniteLivedIntangibleAssetsAmortizationExpenseNextTwelveMonths",
+      "value": "1700000000.0",
+      "decimals": "-8",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FiniteLivedIntangibleAssetsAmortizationExpenseYearTwo",
+      "value": "1600000000.0",
+      "decimals": "-8",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FiniteLivedIntangibleAssetsAmortizationExpenseYearThree",
+      "value": "1400000000.0",
+      "decimals": "-8",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FiniteLivedIntangibleAssetsAmortizationExpenseYearFour",
+      "value": "1400000000.0",
+      "decimals": "-8",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FiniteLivedIntangibleAssetsAmortizationExpenseYearFive",
+      "value": "1300000000.0",
+      "decimals": "-8",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:IncomeTaxesPaidNet",
+      "value": "13978000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:NoncashOrPartNoncashAcquisitionValueOfLiabilitiesAssumed1",
+      "value": "28000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability",
+      "value": "1640000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:AssetsHeldByInsuranceRegulators",
+      "value": "5500000000.0",
+      "decimals": "-8",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LiabilityForFuturePolicyBenefits",
+      "value": "17890000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:RepaymentsOfDebtPrincipalInNextTwelveMonths",
+      "value": "9782000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo",
+      "value": "6631000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree",
+      "value": "5193000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour",
+      "value": "6336000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive",
+      "value": "5793000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:CurrentIncomeTaxesPayableReceivableNet",
+      "value": "902000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredIncomeTaxLiabilitiesNet",
+      "value": "85597000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefits",
+      "value": "456000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:IncomeTaxesPrincipallyDeferred",
+      "value": "86955000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:DeferredTaxLiabilitiesUnrealizedGainsLossesOnAvailableForSaleSecuritiesAndOtherComprehensiveIncome",
+      "value": "48411000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:DeferredTaxLiabilitiesDeferredChargesRetroactiveReinsurance",
+      "value": "1702000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "brka:DeferredTaxLiabilitiesPropertyPlantAndEquipmentEquipmentHeldForLease",
+      "value": "34834000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxLiabilitiesGoodwillAndIntangibleAssets",
+      "value": "7399000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxLiabilitiesOther",
+      "value": "4528000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredIncomeTaxLiabilities",
+      "value": "96874000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsTaxDeferredExpenseReservesAndAccrualsLossReserves",
+      "value": "1270000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsTaxDeferredExpenseReservesAndAccrualsUnearnedPremiumsReserve",
+      "value": "1323000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsTaxDeferredExpenseReservesAndAccrualsAccruedLiabilities",
+      "value": "2535000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsRegulatoryAssetsAndLiabilities",
+      "value": "1388000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsDeferredIncome",
+      "value": "2916000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsOther",
+      "value": "1845000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredTaxAssetsNet",
+      "value": "11277000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:DeferredIncomeTaxLiabilitiesNet",
+      "value": "85597000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:FederalIncomeTaxExpenseBenefitContinuingOperations",
+      "value": "13044000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:StateAndLocalIncomeTaxExpenseBenefitContinuingOperations",
+      "value": "973000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:ForeignIncomeTaxExpenseBenefitContinuingOperations",
+      "value": "1182000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxExpenseBenefit",
+      "value": "15199000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:CurrentIncomeTaxExpenseBenefit",
+      "value": "13332000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DeferredIncomeTaxExpenseBenefit",
+      "value": "1867000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxExpenseBenefit",
+      "value": "15199000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxPaidFederalAfterRefundReceived",
+      "value": "11753000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxPaidStateAndLocalAfterRefundReceived",
+      "value": "825000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxPaidForeignAfterRefundReceived",
+      "value": "1400000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxesPaidNet",
+      "value": "13978000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesDomestic",
+      "value": "77083000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesForeign",
+      "value": "5376000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+      "value": "82459000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationIncomeTaxExpenseBenefitAtFederalStatutoryIncomeTaxRate",
+      "value": "17316000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate",
+      "value": "0.210",
+      "decimals": "3",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_pure",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationStateAndLocalIncomeTaxes",
+      "value": "769000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationStateAndLocalIncomeTaxes",
+      "value": "0.009",
+      "decimals": "3",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_pure",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationTaxCreditEnergyRelatedAmount",
+      "value": "2084000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationTaxCreditEnergyRelatedPercent",
+      "value": "0.025",
+      "decimals": "3",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_pure",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationTaxCreditsOther",
+      "value": "597000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationTaxCreditsOther",
+      "value": "0.007",
+      "decimals": "3",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_pure",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationDeductionsDividends",
+      "value": "460000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationDeductionsDividends",
+      "value": "0.006",
+      "decimals": "3",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_pure",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationNondeductibleExpenseOther",
+      "value": "257000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationNondeductibleExpenseOther",
+      "value": "0.003",
+      "decimals": "3",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_pure",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxReconciliationOtherAdjustments",
+      "value": "-2000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateReconciliationOtherAdjustments",
+      "value": "0.00",
+      "decimals": "2",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_pure",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxExpenseBenefit",
+      "value": "15199000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:EffectiveIncomeTaxRateContinuingOperations",
+      "value": "0.184",
+      "decimals": "3",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_pure",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefits",
+      "value": "456000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:UnrecognizedTaxBenefitsThatWouldImpactEffectiveTaxRate",
+      "value": "421000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "value": "247244000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:RevenueNotFromContractWithCustomer",
+      "value": "124200000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:Revenues",
+      "value": "371444000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "brka:DefinedContributionPlanEmployerContributionAmount",
+      "value": "1400000000.0",
+      "decimals": "-8",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:Revenues",
+      "value": "371444000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+      "value": "82459000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:InterestExpense",
+      "value": "5069000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:IncomeTaxExpenseBenefit",
+      "value": "15199000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:DepreciationDepletionAndAmortization",
+      "value": "13476000000",
+      "decimals": "-6",
+      "context_ref": "C_94793643-ea6a-4eac-ab2a-b0ec1141213e",
+      "unit_ref": "U_USD",
+      "instant": [],
+      "start": [
+        "2025-01-01"
+      ],
+      "end": [
+        "2025-12-31"
+      ]
+    },
+    {
+      "concept": "us-gaap:Assets",
+      "value": "1222176000000",
+      "decimals": "-6",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PurchaseObligationDueInNextTwelveMonths",
+      "value": "10000000000",
+      "decimals": "-9",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PurchaseObligationDueInSecondYear",
+      "value": "6000000000",
+      "decimals": "-9",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PurchaseObligationDueInThirdYear",
+      "value": "4000000000",
+      "decimals": "-9",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PurchaseObligationDueInFourthYear",
+      "value": "3000000000",
+      "decimals": "-9",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PurchaseObligationDueInFifthYear",
+      "value": "2000000000",
+      "decimals": "-9",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    },
+    {
+      "concept": "us-gaap:PurchaseObligationDueAfterFifthYear",
+      "value": "17000000000",
+      "decimals": "-9",
+      "context_ref": "C_3b0879da-d8f4-402b-8d0c-e124348816fc",
+      "unit_ref": "U_USD",
+      "instant": [
+        "2025-12-31"
+      ],
+      "start": [],
+      "end": []
+    }
+  ],
+  "unsupported_transforms": {
+    "numwordsen": 3
+  }
+}

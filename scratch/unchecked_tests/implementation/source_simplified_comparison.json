@@ -1,0 +1,9 @@
+{
+  "filings": 22,
+  "ratio_slots": 44,
+  "changes": [],
+  "production_csvs_unchanged": {
+    "data/company_status.csv": true,
+    "data/financial_ratios.csv": true
+  }
+}

@@ -103,47 +103,10 @@ decision that the role is applicable to the requested consolidated amount.
 
 
 
-def inspect_presentation(financial_data, end, cik):
-    """Show balance-sheet rows as filed; indentation does not imply addition."""
-    xb = financial_data.xb
-    for role, tree in xb.presentation_trees.items():
-        concepts = {normalize_concept_name(key) for key in tree.all_nodes}
-        if not {"us-gaap:Assets", "us-gaap:LiabilitiesAndStockholdersEquity"} <= concepts:
-            continue
-        print(f"\nPRESENTATION: {role}")
-        print("Indentation shows presentation grouping, not an arithmetic equation.")
-
-        def show(element_id, ancestors=()):
-            if element_id in ancestors:
-                return
-            node = tree.all_nodes[element_id]
-            concept = normalize_concept_name(element_id)
-            label = node.labels.get(node.preferred_label) or node.standard_label or concept
-            if node.is_abstract:
-                status = "HEADING"
-            else:
-                facts = matching_facts(xb, concept, end, None, cik)
-                numeric = facts.dropna(subset=["numeric_value"])
-                if not numeric.empty:
-                    fact = numeric.iloc[0]
-                    status = f"value={fact['numeric_value']:,}; context={fact['context_ref']}"
-                elif not facts.empty:
-                    fact = facts.iloc[0]
-                    status = f"NONNUMERIC/NIL: raw={fact['value']!r}; context={fact['context_ref']}"
-                else:
-                    status = "NO matching consolidated instant fact"
-            print(f"{'  ' * len(ancestors)}{concept} | {label} | {status}")
-            for child in node.children:
-                show(child, ancestors + (element_id,))
-
-        for root in tree.root_element_ids:
-            show(root)
-
-
 def main():
     from edgar import Company
 
-    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
     from setup_sec_identity import setup_sec_identity
 
     setup_sec_identity()
@@ -160,7 +123,6 @@ def main():
         cik=2488,
     )
 
-    inspect_presentation(annual_report.financials, str(filing.period_of_report)[:10], 2488)
 
 
 if __name__ == "__main__":

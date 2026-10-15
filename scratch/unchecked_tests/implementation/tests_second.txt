@@ -1,0 +1,182 @@
+.........Financial data checked: 1 rows, 1 tickers; periods 2025-12-27 through 2025-12-27
+  debt_to_assets_ratio: 1 available, 0 missing
+  interest_coverage_ratio: 1 available, 0 missing
+Financial transaction committed: 1 audited upserts
+Financial data checked: 1 rows, 1 tickers; periods 2025-12-27 through 2025-12-27
+  debt_to_assets_ratio: 1 available, 0 missing
+  interest_coverage_ratio: 0 available, 1 missing
+Financial transaction committed: 1 audited upserts
+.Financial data checked: 1 rows, 1 tickers; periods  through 
+  debt_to_assets_ratio: 1 available, 0 missing
+  interest_coverage_ratio: 1 available, 0 missing
+F........FFFInterest coverage unavailable: Required same-basis amounts were not established
+Interest coverage unavailable: Required same-basis amounts were not established
+FInterest coverage unavailable: Required same-basis amounts were not established
+FFFFFInterest coverage unavailable: Required same-basis amounts were not established
+Interest coverage unavailable: Required same-basis amounts were not established
+Interest coverage unavailable: Required same-basis amounts were not established
+Interest coverage unavailable: Required same-basis amounts were not established
+Interest coverage unavailable: Required same-basis amounts were not established
+F..Debt/assets unavailable: Required same-basis amounts were not established
+.FFDebt/assets unavailable: Required same-basis amounts were not established
+Debt/assets unavailable: Required same-basis amounts were not established
+Debt/assets unavailable: Required same-basis amounts were not established
+Debt/assets unavailable: Required same-basis amounts were not established
+FFDebt/assets unavailable: Division by disclosed zero is undefined
+Interest coverage unavailable: Division by disclosed zero is undefined
+Interest coverage unavailable: Required annual start not established
+Interest coverage unavailable: Required annual start not established
+...Financial data checked: 1 rows, 1 tickers; periods 2025-12-31 through 2025-12-31
+.Debt/assets unavailable: Required same-basis amounts were not established
+.......Debt/assets unavailable: No financial source available
+Interest coverage unavailable: No financial source available
+......................
+======================================================================
+FAIL: test_invalid_input_rejected_before_database_access (test_database_load.DatabaseLoadTests.test_invalid_input_rejected_before_database_access)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_database_load.py", line 56, in test_invalid_input_rejected_before_database_access
+    connect.assert_not_called()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 940, in assert_not_called
+    raise AssertionError(msg)
+AssertionError: Expected 'create_engine' to not have been called. Called 1 times.
+Calls: [call('[redacted connection string]'),
+ call().begin(),
+ call().begin().__enter__(),
+ call().begin().__enter__().execute(<sqlalchemy.sql.elements.TextClause object at 0x1170c8490>, {'ticker': 'AMD', 'fiscal_period_end': '', 'cik': '2488', 'accession': 'constructed', 'fiscal_period_start': '2024-12-29', 'debt_to_assets_ratio': '0.1234567890123456789012345678', 'interest_coverage_ratio': '28', 'debt_to_assets_status': 'available', 'interest_coverage_status': 'available', 'extraction_evidence': '{"debt_to_assets": {"value": "0.1234567890123456789012345678", "status": "available"}, "interest_coverage": {"value": "28", "status": "available"}}'}),
+ call().begin().__enter__().execute().scalar(),
+ call().begin().__enter__().execute().scalar().__bool__(),
+ call().begin().__enter__().execute().scalar().__str__(),
+ call().begin().__exit__(<class 'ValueError'>, ValueError('Ticker/period already belongs to another CIK'), <traceback object at 0x1158e3e80>)].
+
+======================================================================
+FAIL: test_berkshire_hidden_liabilities_are_independent_of_calculation_role_order (test_equation_selection.EquationSelectionTests.test_berkshire_hidden_liabilities_are_independent_of_calculation_role_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_equation_selection.py", line 39, in test_berkshire_hidden_liabilities_are_independent_of_calculation_role_order
+    self.assertEqual(get_liabilities(financials(hidden), hidden["end"]), 502473000000)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 502473000000
+
+======================================================================
+FAIL: test_same_berkshire_equation_also_affects_asset_fallback (test_equation_selection.EquationSelectionTests.test_same_berkshire_equation_also_affects_asset_fallback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_equation_selection.py", line 25, in test_same_berkshire_equation_also_affects_asset_fallback
+    self.assertEqual(get_assets(fin, data['end']), 1222176000000)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1222176000000
+
+======================================================================
+FAIL: test_targeted_filter_preserves_saved_results_with_and_without_direct_liabilities (test_equation_selection.EquationSelectionTests.test_targeted_filter_preserves_saved_results_with_and_without_direct_liabilities)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_equation_selection.py", line 75, in test_targeted_filter_preserves_saved_results_with_and_without_direct_liabilities
+    self.assertEqual(get_liabilities(fin, sample['end']), expected, path.name)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('205753000000') : MSFT-2023-06-30.json
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='BRK-B', end='2025-12-31')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 51, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('502473000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='MSFT', end='2022-06-30')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 51, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('198298000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='MSFT', end='2023-06-30')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 51, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('205753000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='MSFT', end='2024-06-30')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 51, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('243686000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='MSFT', end='2025-06-30')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 51, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('275524000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='MSFT', end='2026-06-30')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 51, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('315989000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 58, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(interest_count, 11)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 8 != 11
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='missing_equity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 79, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='missing_liability')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 79, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='wrong_date')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 79, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='dimensioned')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 79, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+----------------------------------------------------------------------
+Ran 60 tests in 6.383s
+
+FAILED (failures=15)

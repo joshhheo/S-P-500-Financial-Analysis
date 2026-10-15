@@ -1,51 +1,29 @@
-from table_data.checks import check_ratios
+"""Load decimal strings and NULLs without a float conversion."""
 import os
 import pandas as pd
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, text
 
+DETAIL_COLUMNS = ['cik', 'accession', 'fiscal_period_start', 'debt_to_assets_status',
+                 'interest_coverage_status']
+
 
 def financials_table_info():
+    df = pd.read_csv('data/financial_ratios.csv', dtype=str, keep_default_na=False)
     load_dotenv()
-    engine = create_engine(os.getenv("db_connection_string"))
-
-    df = pd.read_csv("data/financial_ratios.csv")
-
-    input_rows = len(df)
-    # postgres does not allow null values in primary key
-    df = df.dropna(subset=["ticker", "fiscal_period_end"])
-
-    print(f"Financial CSV: {input_rows} rows read; {input_rows - len(df)} dropped for missing keys", flush=True)
-    check_ratios(df)
-
-    upsert_query = """
-    INSERT INTO financials (ticker, fiscal_period_end, debt_to_assets_ratio, interest_coverage_ratio)
-    VALUES (:ticker, :fiscal_period_end, :debt_to_assets_ratio, :interest_coverage_ratio)
-    ON CONFLICT (ticker, fiscal_period_end)
-    DO UPDATE SET
-        debt_to_assets_ratio = EXCLUDED.debt_to_assets_ratio,
-        interest_coverage_ratio = EXCLUDED.interest_coverage_ratio;
-    """
-
-    # begin automatically handles commit
+    engine = create_engine(os.getenv('db_connection_string'))
+    columns = ['ticker', 'fiscal_period_end', 'debt_to_assets_ratio', 'interest_coverage_ratio'] + DETAIL_COLUMNS
+    placeholders = [f'CAST(:{c} AS NUMERIC)' if c.endswith('_ratio') else f':{c}' for c in columns]
+    updates = ', '.join(f'{c} = EXCLUDED.{c}' for c in columns if c not in ('ticker','fiscal_period_end'))
+    updates += ', extraction_evidence = NULL'
+    query = text(f"INSERT INTO financials ({', '.join(columns)}) VALUES ({', '.join(placeholders)}) "
+                 f"ON CONFLICT (ticker, fiscal_period_end) DO UPDATE SET {updates}")
     with engine.begin() as connection:
-        for _, row in df.iterrows():
-            connection.execute(text(upsert_query), {
-                "ticker": row["ticker"],
-                "fiscal_period_end": row["fiscal_period_end"],
-                "debt_to_assets_ratio": (
-                    row["debt_to_assets_ratio"]
-                    if pd.notna(row["debt_to_assets_ratio"])
-                    else None
-                ),
-                "interest_coverage_ratio": (
-                    row["interest_coverage_ratio"]
-                    if pd.notna(row["interest_coverage_ratio"])
-                    else None
-                ),
-            })
-
-    print(f"Financial transaction committed: {len(df)} upserts; "
-          f"debt/assets NULLs written={df['debt_to_assets_ratio'].isna().sum()}, "
-          f"interest coverage NULLs written={df['interest_coverage_ratio'].isna().sum()}. "
-          "Existing values at matching keys were replaced, including NULLs.", flush=True)
+        for row in df.to_dict('records'):
+            previous = connection.execute(text('SELECT cik FROM financials WHERE ticker=:ticker '
+                'AND fiscal_period_end=:fiscal_period_end'), row).scalar()
+            if previous and str(previous) != row['cik']:
+                return None
+        for row in df.to_dict('records'):
+            connection.execute(query, {c: row[c] if row[c] != '' else None for c in columns})
+    print(f'Financial transaction committed: {len(df)} upserts', flush=True)

@@ -1,0 +1,9 @@
+{
+  "before_bytes": 1791705,
+  "after_bytes": 404662,
+  "versions": 6,
+  "concept_version_entries": 45704,
+  "tests_passed": 75,
+  "real_filing_results_identical": 22,
+  "production_csvs_unchanged": true
+}

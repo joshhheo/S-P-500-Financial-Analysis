@@ -43,6 +43,14 @@ def create_tables():
             ALTER TABLE financials
             ADD COLUMN IF NOT EXISTS interest_coverage_ratio NUMERIC;
         """))
+        # Existing rows retain their values and are explicitly marked unverified.
+        for name, definition in {
+            'cik': 'TEXT', 'accession': 'TEXT', 'fiscal_period_start': 'DATE',
+            'debt_to_assets_status': "TEXT NOT NULL DEFAULT 'legacy_unverified'",
+            'interest_coverage_status': "TEXT NOT NULL DEFAULT 'legacy_unverified'",
+            'extraction_evidence': 'TEXT',
+        }.items():
+            connection.execute(text(f'ALTER TABLE financials ADD COLUMN IF NOT EXISTS {name} {definition}'))
         connection.commit()
     print("Schema transaction committed: companies and financials tables ensured; current-membership and interest-coverage columns ensured", flush=True)
 

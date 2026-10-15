@@ -1,0 +1,90 @@
+{
+  "filings": 22,
+  "ratios": 44,
+  "changes": [
+    {
+      "before": {
+        "ticker": "WMT",
+        "end": "2022-01-31",
+        "start": "2021-02-01",
+        "debt": {
+          "value": "0.6247202483051539655313240219",
+          "status": "available"
+        },
+        "interest": {
+          "value": null,
+          "status": "incomplete_standard_coverage"
+        }
+      },
+      "after": {
+        "ticker": "WMT",
+        "end": "2022-01-31",
+        "start": "2021-02-01",
+        "debt": {
+          "value": "0.6247202483051539655313240219",
+          "status": "available"
+        },
+        "interest": {
+          "value": null,
+          "status": "missing_required_amount"
+        }
+      }
+    },
+    {
+      "before": {
+        "ticker": "WMT",
+        "end": "2023-01-31",
+        "start": "2022-02-01",
+        "debt": {
+          "value": "0.6546380095149200031250385490",
+          "status": "available"
+        },
+        "interest": {
+          "value": null,
+          "status": "incomplete_standard_coverage"
+        }
+      },
+      "after": {
+        "ticker": "WMT",
+        "end": "2023-01-31",
+        "start": "2022-02-01",
+        "debt": {
+          "value": "0.6546380095149200031250385490",
+          "status": "available"
+        },
+        "interest": {
+          "value": null,
+          "status": "missing_required_amount"
+        }
+      }
+    },
+    {
+      "before": {
+        "ticker": "WMT",
+        "end": "2024-01-31",
+        "start": "2023-02-01",
+        "debt": {
+          "value": "0.6411594340706579661567597336",
+          "status": "available"
+        },
+        "interest": {
+          "value": null,
+          "status": "incomplete_standard_coverage"
+        }
+      },
+      "after": {
+        "ticker": "WMT",
+        "end": "2024-01-31",
+        "start": "2023-02-01",
+        "debt": {
+          "value": "0.6411594340706579661567597336",
+          "status": "available"
+        },
+        "interest": {
+          "value": null,
+          "status": "missing_required_amount"
+        }
+      }
+    }
+  ]
+}

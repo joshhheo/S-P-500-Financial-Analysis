@@ -8,7 +8,7 @@ from edgar import Company
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'src'))
 from setup_sec_identity import setup_sec_identity
-from value_retrieval.get_value import get_reported_value
+from legacy_api import get_reported_value
 
 
 def main():

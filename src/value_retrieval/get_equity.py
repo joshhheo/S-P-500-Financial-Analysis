@@ -1,28 +1,18 @@
-from value_retrieval.get_value import get_instant_value
+from value_retrieval.get_value import get_value
 
 
-def get_equity(financial_data, fiscal_period_end):
-    equity = get_instant_value(
-        financial_data,
-        "us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
-        fiscal_period_end,
-    )
-    # fallback for equity: parent + noncontrolling
+def get_equity(financial_data, period_end):
+    equity = get_value(financial_data, 'us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest', period_end)
     if equity is None:
-        parent_equity = get_instant_value(
-            financial_data, "us-gaap:StockholdersEquity", fiscal_period_end
-        )
-        noncontrolling_equity = get_instant_value(
-            financial_data, "us-gaap:MinorityInterest", fiscal_period_end
-        )
+        parent = get_value(financial_data, 'us-gaap:StockholdersEquity', period_end)
+        noncontrolling = get_value(financial_data, 'us-gaap:MinorityInterest', period_end)
+        if parent is not None and noncontrolling is not None:
+            equity = parent + noncontrolling
 
-        if parent_equity is not None and noncontrolling_equity is not None:
-            equity = parent_equity + noncontrolling_equity
-
-    temporary_equity = get_instant_value(
-        financial_data,
-        "us-gaap:TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
-        fiscal_period_end,
-    )
-
-    return equity, temporary_equity
+    temporary = get_value(financial_data, 'us-gaap:TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests', period_end)
+    if temporary is None:
+        parent = get_value(financial_data, 'us-gaap:TemporaryEquityCarryingAmountAttributableToParent', period_end)
+        noncontrolling = get_value(financial_data, 'us-gaap:RedeemableNoncontrollingInterestEquityCarryingAmount', period_end)
+        if parent is not None and noncontrolling is not None:
+            temporary = parent + noncontrolling
+    return equity, temporary

@@ -1,0 +1,833 @@
+[
+  {
+    "filing": "AAPL-2021-09-25",
+    "accession": "0000320193-21-000105",
+    "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000105/aapl-20210925.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2021-01-31",
+    "membership": {
+      "ticker": "AAPL",
+      "cik": "320193",
+      "company_name": "Apple Inc.",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 423,
+    "unsupported_transforms": {},
+    "values": {
+      "assets": 351002000000.0,
+      "liabilities": 287912000000.0,
+      "operating_income": 108949000000.0,
+      "interest_expense": 2645000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2020-09-27"
+    ],
+    "selected_entity_ids": [
+      "0000320193"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "AAPL-2022-09-24",
+    "accession": "0000320193-22-000108",
+    "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2022",
+    "membership": {
+      "ticker": "AAPL",
+      "cik": "320193",
+      "company_name": "Apple Inc.",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 411,
+    "unsupported_transforms": {},
+    "values": {
+      "assets": 352755000000.0,
+      "liabilities": 302083000000.0,
+      "operating_income": 119437000000.0,
+      "interest_expense": 2931000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2021-09-26"
+    ],
+    "selected_entity_ids": [
+      "0000320193"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "AAPL-2023-09-30",
+    "accession": "0000320193-23-000106",
+    "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2023",
+    "membership": {
+      "ticker": "AAPL",
+      "cik": "320193",
+      "company_name": "Apple Inc.",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 397,
+    "unsupported_transforms": {},
+    "values": {
+      "assets": 352583000000.0,
+      "liabilities": 290437000000.0,
+      "operating_income": 114301000000.0,
+      "interest_expense": 3933000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2022-09-25",
+      "2023-07-02"
+    ],
+    "selected_entity_ids": [
+      "0000320193"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "AAPL-2024-09-28",
+    "accession": "0000320193-24-000123",
+    "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2024",
+    "membership": {
+      "ticker": "AAPL",
+      "cik": "320193",
+      "company_name": "Apple Inc.",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 380,
+    "unsupported_transforms": {},
+    "values": {
+      "assets": 364980000000.0,
+      "liabilities": 308030000000.0,
+      "operating_income": 123216000000.0,
+      "interest_expense": null
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "OperatingIncomeLoss"
+    ],
+    "undimensioned_duration_starts": [
+      "2023-10-01",
+      "2024-06-30"
+    ],
+    "selected_entity_ids": [
+      "0000320193"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "AAPL-2025-09-27",
+    "accession": "0000320193-25-000079",
+    "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2025",
+    "membership": {
+      "ticker": "AAPL",
+      "cik": "320193",
+      "company_name": "Apple Inc.",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 386,
+    "unsupported_transforms": {},
+    "values": {
+      "assets": 359241000000.0,
+      "liabilities": 285508000000.0,
+      "operating_income": 133050000000.0,
+      "interest_expense": null
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "OperatingIncomeLoss"
+    ],
+    "undimensioned_duration_starts": [
+      "2024-09-29",
+      "2025-06-29"
+    ],
+    "selected_entity_ids": [
+      "0000320193"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "AMD-2021-12-25",
+    "accession": "0000002488-22-000016",
+    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248822000016/amd-20211225.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2021-01-31",
+    "membership": {
+      "ticker": "AMD",
+      "cik": "2488",
+      "company_name": "Advanced Micro Devices",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 444,
+    "unsupported_transforms": {
+      "numwordsen": 1
+    },
+    "values": {
+      "assets": 12419000000.0,
+      "liabilities": 4922000000.0,
+      "operating_income": 3648000000.0,
+      "interest_expense": 34000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2020-12-27"
+    ],
+    "selected_entity_ids": [
+      "0000002488"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD",
+      "{http://www.xbrl.org/2009/utr}Rate"
+    ]
+  },
+  {
+    "filing": "AMD-2022-12-31",
+    "accession": "0000002488-23-000047",
+    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248823000047/amd-20221231.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2022",
+    "membership": {
+      "ticker": "AMD",
+      "cik": "2488",
+      "company_name": "Advanced Micro Devices",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 522,
+    "unsupported_transforms": {},
+    "values": {
+      "assets": 67580000000.0,
+      "liabilities": 12830000000.0,
+      "operating_income": 1264000000.0,
+      "interest_expense": 88000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2021-12-26"
+    ],
+    "selected_entity_ids": [
+      "0000002488"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "AMD-2023-12-30",
+    "accession": "0000002488-24-000012",
+    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000012/amd-20231230.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2023",
+    "membership": {
+      "ticker": "AMD",
+      "cik": "2488",
+      "company_name": "Advanced Micro Devices",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 508,
+    "unsupported_transforms": {},
+    "values": {
+      "assets": 67885000000.0,
+      "liabilities": 11993000000.0,
+      "operating_income": 401000000.0,
+      "interest_expense": 106000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2023-01-01"
+    ],
+    "selected_entity_ids": [
+      "0000002488"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "AMD-2024-12-28",
+    "accession": "0000002488-25-000012",
+    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2024",
+    "membership": {
+      "ticker": "AMD",
+      "cik": "2488",
+      "company_name": "Advanced Micro Devices",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 556,
+    "unsupported_transforms": {
+      "numwordsen": 2
+    },
+    "values": {
+      "assets": 69226000000.0,
+      "liabilities": 11658000000.0,
+      "operating_income": 1900000000.0,
+      "interest_expense": 92000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2023-12-31"
+    ],
+    "selected_entity_ids": [
+      "0000002488"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "AMD-2025-12-27",
+    "accession": "0000002488-26-000018",
+    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2025",
+    "membership": {
+      "ticker": "AMD",
+      "cik": "2488",
+      "company_name": "Advanced Micro Devices",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 571,
+    "unsupported_transforms": {
+      "numwordsen": 1
+    },
+    "values": {
+      "assets": 76926000000.0,
+      "liabilities": 13927000000.0,
+      "operating_income": 3694000000.0,
+      "interest_expense": 131000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2024-12-29"
+    ],
+    "selected_entity_ids": [
+      "0000002488"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD",
+      "{http://www.xbrl.org/2009/utr}Rate"
+    ]
+  },
+  {
+    "filing": "BRK-B-2025-12-31",
+    "accession": "0001193125-26-083899",
+    "source": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2025",
+    "membership": {
+      "ticker": "BRK-B",
+      "cik": "1067983",
+      "company_name": "Berkshire Hathaway",
+      "sector": "Financials"
+    },
+    "facts_decoded": 1143,
+    "unsupported_transforms": {
+      "numwordsen": 2
+    },
+    "values": {
+      "assets": 1222176000000.0,
+      "liabilities": 502473000000.0,
+      "operating_income": null,
+      "interest_expense": 5069000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2025-01-01",
+      "2025-10-01"
+    ],
+    "selected_entity_ids": [
+      "0001067983"
+    ],
+    "selected_unit_measures": [
+      "{http://www.berkshirehathaway.com/20251231}Segment",
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "JPM-2025-12-31",
+    "accession": "0001628280-26-008131",
+    "source": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2025",
+    "membership": {
+      "ticker": "JPM",
+      "cik": "19617",
+      "company_name": "JPMorgan Chase",
+      "sector": "Financials"
+    },
+    "facts_decoded": 2847,
+    "unsupported_transforms": {
+      "numwordsen": 9
+    },
+    "values": {
+      "assets": 4424900000000.0,
+      "liabilities": 4062462000000.0,
+      "operating_income": null,
+      "interest_expense": null
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities"
+    ],
+    "undimensioned_duration_starts": [
+      "2025-01-01",
+      "2025-10-01"
+    ],
+    "selected_entity_ids": [
+      "0000019617"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "MSFT-2022-06-30",
+    "accession": "0001564590-22-026876",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/msft-10k_20220630.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2022",
+    "membership": {
+      "ticker": "MSFT",
+      "cik": "789019",
+      "company_name": "Microsoft",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 632,
+    "unsupported_transforms": {},
+    "values": {
+      "assets": 364840000000.0,
+      "liabilities": 198298000000.0,
+      "operating_income": 83383000000.0,
+      "interest_expense": 2063000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2021-07-01",
+      "2022-04-01"
+    ],
+    "selected_entity_ids": [
+      "0000789019"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "MSFT-2023-06-30",
+    "accession": "0000950170-23-035122",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/msft-20230630.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2023",
+    "membership": {
+      "ticker": "MSFT",
+      "cik": "789019",
+      "company_name": "Microsoft",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 635,
+    "unsupported_transforms": {},
+    "values": {
+      "assets": 411976000000.0,
+      "liabilities": 205753000000.0,
+      "operating_income": 88523000000.0,
+      "interest_expense": 1968000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2022-07-01",
+      "2023-04-01"
+    ],
+    "selected_entity_ids": [
+      "0000789019"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "MSFT-2024-06-30",
+    "accession": "0000950170-24-087843",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2023",
+    "membership": {
+      "ticker": "MSFT",
+      "cik": "789019",
+      "company_name": "Microsoft",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 653,
+    "unsupported_transforms": {},
+    "values": {
+      "assets": 512163000000.0,
+      "liabilities": 243686000000.0,
+      "operating_income": 109433000000.0,
+      "interest_expense": 2935000000.0
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "OperatingIncomeLoss",
+      "InterestExpense"
+    ],
+    "undimensioned_duration_starts": [
+      "2023-07-01",
+      "2024-04-01"
+    ],
+    "selected_entity_ids": [
+      "0000789019"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "MSFT-2025-06-30",
+    "accession": "0000950170-25-100235",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2024",
+    "membership": {
+      "ticker": "MSFT",
+      "cik": "789019",
+      "company_name": "Microsoft",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 642,
+    "unsupported_transforms": {
+      "numwordsen": 2
+    },
+    "values": {
+      "assets": 619003000000.0,
+      "liabilities": 275524000000.0,
+      "operating_income": 128528000000.0,
+      "interest_expense": null
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "OperatingIncomeLoss"
+    ],
+    "undimensioned_duration_starts": [
+      "2024-07-01",
+      "2025-04-01"
+    ],
+    "selected_entity_ids": [
+      "0000789019"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "MSFT-2026-06-30",
+    "accession": "0001193125-26-323660",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2025",
+    "membership": {
+      "ticker": "MSFT",
+      "cik": "789019",
+      "company_name": "Microsoft",
+      "sector": "Information Technology"
+    },
+    "facts_decoded": 675,
+    "unsupported_transforms": {
+      "numwordsen": 1
+    },
+    "values": {
+      "assets": 758376000000.0,
+      "liabilities": 315989000000.0,
+      "operating_income": 155237000000.0,
+      "interest_expense": null
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "Liabilities",
+      "OperatingIncomeLoss"
+    ],
+    "undimensioned_duration_starts": [
+      "2025-07-01",
+      "2026-04-01"
+    ],
+    "selected_entity_ids": [
+      "0000789019"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "WMT-2022-01-31",
+    "accession": "0000104169-22-000012",
+    "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416922000012/wmt-20220131.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2021-01-31",
+    "membership": {
+      "ticker": "WMT",
+      "cik": "104169",
+      "company_name": "Walmart",
+      "sector": "Consumer Staples"
+    },
+    "facts_decoded": 459,
+    "unsupported_transforms": {
+      "numwordsen": 2
+    },
+    "values": {
+      "assets": 244860000000.0,
+      "liabilities": 152969000000.0,
+      "operating_income": 25942000000.0,
+      "interest_expense": null
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "OperatingIncomeLoss"
+    ],
+    "undimensioned_duration_starts": [
+      "2021-02-01"
+    ],
+    "selected_entity_ids": [
+      "0000104169"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "WMT-2023-01-31",
+    "accession": "0000104169-23-000020",
+    "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416923000020/wmt-20230131.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2022",
+    "membership": {
+      "ticker": "WMT",
+      "cik": "104169",
+      "company_name": "Walmart",
+      "sector": "Consumer Staples"
+    },
+    "facts_decoded": 461,
+    "unsupported_transforms": {
+      "numwordsen": 2
+    },
+    "values": {
+      "assets": 243197000000.0,
+      "liabilities": 159206000000.0,
+      "operating_income": 20428000000.0,
+      "interest_expense": null
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "OperatingIncomeLoss"
+    ],
+    "undimensioned_duration_starts": [
+      "2022-02-01"
+    ],
+    "selected_entity_ids": [
+      "0000104169"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "WMT-2024-01-31",
+    "accession": "0000104169-24-000056",
+    "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416924000056/wmt-20240131.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2023",
+    "membership": {
+      "ticker": "WMT",
+      "cik": "104169",
+      "company_name": "Walmart",
+      "sector": "Consumer Staples"
+    },
+    "facts_decoded": 455,
+    "unsupported_transforms": {
+      "numwordsen": 4
+    },
+    "values": {
+      "assets": 252399000000.0,
+      "liabilities": 161828000000.0,
+      "operating_income": 27012000000.0,
+      "interest_expense": null
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "OperatingIncomeLoss"
+    ],
+    "undimensioned_duration_starts": [
+      "2023-02-01",
+      "2023-11-01"
+    ],
+    "selected_entity_ids": [
+      "0000104169"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "WMT-2025-01-31",
+    "accession": "0000104169-25-000021",
+    "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000021/wmt-20250131.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2024",
+    "membership": {
+      "ticker": "WMT",
+      "cik": "104169",
+      "company_name": "Walmart",
+      "sector": "Consumer Staples"
+    },
+    "facts_decoded": 448,
+    "unsupported_transforms": {
+      "numwordsen": 4
+    },
+    "values": {
+      "assets": 260823000000.0,
+      "liabilities": 163131000000.0,
+      "operating_income": 29348000000.0,
+      "interest_expense": null
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "OperatingIncomeLoss"
+    ],
+    "undimensioned_duration_starts": [
+      "2024-02-01",
+      "2024-11-01"
+    ],
+    "selected_entity_ids": [
+      "0000104169"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  },
+  {
+    "filing": "WMT-2026-01-31",
+    "accession": "0000104169-26-000055",
+    "source": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+    "taxonomy": "http://fasb.org/us-gaap/2025",
+    "membership": {
+      "ticker": "WMT",
+      "cik": "104169",
+      "company_name": "Walmart",
+      "sector": "Consumer Staples"
+    },
+    "facts_decoded": 488,
+    "unsupported_transforms": {
+      "numwordsen": 4
+    },
+    "values": {
+      "assets": 284668000000.0,
+      "liabilities": 178488000000.0,
+      "operating_income": 29825000000.0,
+      "interest_expense": null
+    },
+    "direct_raw_checks": [
+      "Assets",
+      "OperatingIncomeLoss"
+    ],
+    "undimensioned_duration_starts": [
+      "2025-02-01",
+      "2025-11-01"
+    ],
+    "selected_entity_ids": [
+      "0000104169"
+    ],
+    "selected_unit_measures": [
+      "{http://www.xbrl.org/2003/instance}pure",
+      "{http://www.xbrl.org/2003/instance}shares",
+      "{http://www.xbrl.org/2003/iso4217}USD"
+    ]
+  }
+]

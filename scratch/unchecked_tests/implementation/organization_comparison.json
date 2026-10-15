@@ -1,0 +1,10 @@
+{
+  "filings_compared": 22,
+  "full_results_including_evidence_identical": true,
+  "production_csvs_unchanged": {
+    "data/company_status.csv": true,
+    "data/financial_ratios.csv": true
+  },
+  "live_pipeline_run": false,
+  "live_database_access": false
+}

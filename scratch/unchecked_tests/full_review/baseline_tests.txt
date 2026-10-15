@@ -1,0 +1,15 @@
+.........Financial CSV: 2 rows read; 1 dropped for missing keys
+Financial data checked: 1 rows, 1 tickers; periods 2025-12-27 through 2025-12-27
+  debt_to_assets_ratio: 1 available, 0 missing; zero=0, negative=0, min=0.18, max=0.18
+  interest_coverage_ratio: 1 available, 0 missing; zero=0, negative=0, min=28, max=28
+Financial transaction committed: 1 upserts; debt/assets NULLs written=0, interest coverage NULLs written=0. Existing values at matching keys were replaced, including NULLs.
+Financial CSV: 2 rows read; 1 dropped for missing keys
+Financial data checked: 1 rows, 1 tickers; periods 2025-12-27 through 2025-12-27
+  debt_to_assets_ratio: 1 available, 0 missing; zero=0, negative=0, min=0.2, max=0.2
+  interest_coverage_ratio: 0 available, 1 missing; zero=0, negative=0, min=nan, max=nan
+Financial transaction committed: 1 upserts; debt/assets NULLs written=0, interest coverage NULLs written=1. Existing values at matching keys were replaced, including NULLs.
+...................................
+----------------------------------------------------------------------
+Ran 44 tests in 7.320s
+
+OK

@@ -1,0 +1,33 @@
+AAPL 2021-09-25 0.8202574344305730451678338015 available 41.19054820415879017013232514 available
+AAPL 2022-09-24 0.8563535598361469008235177389 available 40.74957352439440464005458888 available
+AAPL 2023-09-30 0.8237407929480434394171017888 available 29.06203915586066615814899568 available
+AAPL 2024-09-28 0.8439640528248123184832045592 available None missing_required_amount
+  Required same-basis amounts were not established
+AAPL 2025-09-27 0.7947533828265704638390384171 available None incomplete_standard_coverage
+  Required same-basis amounts were not established
+AMD 2021-12-25 0.3963282067799339721394637249 available 107.2941176470588235294117647 available
+AMD 2022-12-31 0.1898490677715300384729209825 available 14.36363636363636363636363636 available
+AMD 2023-12-30 0.1766664211534212270752007071 available 3.783018867924528301886792453 available
+AMD 2024-12-28 0.1684049345621587264900470921 available 20.65217391304347826086956522 available
+AMD 2025-12-27 0.1810441203234277097470296129 available 28.19847328244274809160305344 available
+BRK-B 2025-12-31 0.4111298209095907627052077606 available None incomplete_standard_coverage
+  Required same-basis amounts were not established
+JPM 2025-12-31 0.9180912562995773915794707225 available None missing_required_amount
+  Required same-basis amounts were not established
+MSFT 2022-06-30 0.5435204473193728757811643460 available 40.41832283082888996606883180 available
+MSFT 2023-06-30 0.4994295784220440025632561120 available 44.98119918699186991869918699 available
+MSFT 2024-06-30 0.4757977440775690551640786234 available 37.28551959114139693356047700 available
+MSFT 2025-06-30 0.4451093128789359663846540324 available None missing_required_amount
+  Required same-basis amounts were not established
+MSFT 2026-06-30 0.4166653480595377490848866525 available None missing_required_amount
+  Required same-basis amounts were not established
+WMT 2022-01-31 0.6247202483051539655313240219 available None incomplete_standard_coverage
+  Required same-basis amounts were not established
+WMT 2023-01-31 0.6546380095149200031250385490 available None incomplete_standard_coverage
+  Required same-basis amounts were not established
+WMT 2024-01-31 0.6411594340706579661567597336 available None incomplete_standard_coverage
+  Required same-basis amounts were not established
+WMT 2025-01-31 0.6254471423149032102230248099 available None incomplete_standard_coverage
+  Required same-basis amounts were not established
+WMT 2026-01-31 0.6270040889738221366644652718 available None incomplete_standard_coverage
+  Required same-basis amounts were not established

@@ -1,0 +1,386 @@
+.........E........FFFInterest coverage unavailable: Required same-basis amounts were not established
+Interest coverage unavailable: Required same-basis amounts were not established
+FInterest coverage unavailable: Required same-basis amounts were not established
+FFFFFInterest coverage unavailable: Required same-basis amounts were not established
+Interest coverage unavailable: Required same-basis amounts were not established
+Interest coverage unavailable: Required same-basis amounts were not established
+Interest coverage unavailable: Required same-basis amounts were not established
+Interest coverage unavailable: Required same-basis amounts were not established
+F..Debt/assets unavailable: Required same-basis amounts were not established
+FFFDebt/assets unavailable: Required same-basis amounts were not established
+FFFFFDebt/assets unavailable: Division by disclosed zero is undefined
+Interest coverage unavailable: Division by disclosed zero is undefined
+Interest coverage unavailable: Required annual start not established
+Interest coverage unavailable: Required annual start not established
+.EFEFDebt/assets unavailable: Required same-basis amounts were not established
+FFFF.FDebt/assets unavailable: No financial source available
+Interest coverage unavailable: No financial source available
+..FFF..E.E....F..E
+======================================================================
+ERROR: test_upsert_both_ratios_and_replace_missing_with_null (test_database_load.DatabaseLoadTests.test_upsert_both_ratios_and_replace_missing_with_null)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_database_load.py", line 24, in test_upsert_both_ratios_and_replace_missing_with_null
+    financials_table_info()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/joshua/Desktop/sp500_risk/src/database/financials_table_info.py", line 15, in financials_table_info
+    raise ValueError('CSV lacks extraction evidence; regenerate with the audited extractor')
+ValueError: CSV lacks extraction evidence; regenerate with the audited extractor
+
+======================================================================
+ERROR: test_annual_selection_depends_on_period_order (test_full_project_review.FullReviewTests.test_annual_selection_depends_on_period_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 168, in test_annual_selection_depends_on_period_order
+    patch('table_data.generate_ratios.calculate_debt_to_assets', return_value=.5), \
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 1497, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 1467, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'table_data.generate_ratios' from '/Users/joshua/Desktop/sp500_risk/src/table_data/generate_ratios.py'> does not have the attribute 'calculate_debt_to_assets'
+
+======================================================================
+ERROR: test_csv_validation_accepts_infinite_ratios (test_full_project_review.FullReviewTests.test_csv_validation_accepts_infinite_ratios)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 146, in test_csv_validation_accepts_infinite_ratios
+    check_ratios(rows)
+    ~~~~~~~~~~~~^^^^^^
+  File "/Users/joshua/Desktop/sp500_risk/src/table_data/checks.py", line 43, in check_ratios
+    raise ValueError(f"Nonfinite {column}")
+ValueError: Nonfinite debt_to_assets_ratio
+
+======================================================================
+ERROR: test_interruption_keeps_completed_csv_and_saves_partial_rows (test_pipeline_checkpoints.CheckpointTests.test_interruption_keeps_completed_csv_and_saves_partial_rows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_pipeline_checkpoints.py", line 50, in test_interruption_keeps_completed_csv_and_saves_partial_rows
+    patch("table_data.generate_ratios.calculate_debt_to_assets", return_value=.5), \
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 1497, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 1467, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'table_data.generate_ratios' from '/Users/joshua/Desktop/sp500_risk/src/table_data/generate_ratios.py'> does not have the attribute 'calculate_debt_to_assets'
+
+======================================================================
+ERROR: test_equal_amounts_are_safe_but_different_units_are_not_duplicates (test_production_selection.ProductionSelectionTests.test_equal_amounts_are_safe_but_different_units_are_not_duplicates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_production_selection.py", line 75, in test_equal_amounts_are_safe_but_different_units_are_not_duplicates
+    self.assertEqual(get_value(filing(rows), 'us-gaap:Assets', END), 100)
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Desktop/sp500_risk/src/value_retrieval/get_value.py", line 20, in get_value
+    result = retrieve(financial_data,concept,period_end,period_start)
+  File "/Users/joshua/Desktop/sp500_risk/src/value_retrieval/engine.py", line 249, in retrieve
+    amount = engine.resolve(concept)
+  File "/Users/joshua/Desktop/sp500_risk/src/value_retrieval/engine.py", line 188, in resolve
+    reported = self.direct(concept)
+  File "/Users/joshua/Desktop/sp500_risk/src/value_retrieval/engine.py", line 68, in direct
+    value,lower,upper = reported_selection(pd.DataFrame(rows),concept,self.end)
+                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Desktop/sp500_risk/src/value_retrieval/selection.py", line 22, in reported_selection
+    lo, hi, accuracy = accuracy_interval(value,row.get('decimals'))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Desktop/sp500_risk/src/value_retrieval/amount.py", line 28, in accuracy_interval
+    raise SelectionError('Missing decimals metadata', 'missing_accuracy')
+value_retrieval.amount.SelectionError: Missing decimals metadata
+
+======================================================================
+ERROR: setUpClass (test_selection_audit.SelectionAuditTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_selection_audit.py", line 58, in setUpClass
+    cls.results = audit()
+                  ~~~~~^^
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/selection_audit/analyze.py", line 142, in audit
+    (HERE / 'results.json').write_text(json.dumps(result, indent=2) + '\n')
+                                       ~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Decimal is not JSON serializable
+
+======================================================================
+FAIL: test_berkshire_hidden_liabilities_are_independent_of_calculation_role_order (test_equation_selection.EquationSelectionTests.test_berkshire_hidden_liabilities_are_independent_of_calculation_role_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_equation_selection.py", line 39, in test_berkshire_hidden_liabilities_are_independent_of_calculation_role_order
+    self.assertEqual(get_liabilities(financials(hidden), hidden["end"]), 502473000000)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 502473000000
+
+======================================================================
+FAIL: test_same_berkshire_equation_also_affects_asset_fallback (test_equation_selection.EquationSelectionTests.test_same_berkshire_equation_also_affects_asset_fallback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_equation_selection.py", line 25, in test_same_berkshire_equation_also_affects_asset_fallback
+    self.assertEqual(get_assets(fin, data['end']), 1222176000000)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 1222176000000
+
+======================================================================
+FAIL: test_targeted_filter_preserves_saved_results_with_and_without_direct_liabilities (test_equation_selection.EquationSelectionTests.test_targeted_filter_preserves_saved_results_with_and_without_direct_liabilities)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_equation_selection.py", line 75, in test_targeted_filter_preserves_saved_results_with_and_without_direct_liabilities
+    self.assertEqual(get_liabilities(fin, sample['end']), expected, path.name)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('205753000000') : MSFT-2023-06-30.json
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='BRK-B', end='2025-12-31')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 50, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('502473000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='MSFT', end='2022-06-30')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 50, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('198298000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='MSFT', end='2023-06-30')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 50, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('205753000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='MSFT', end='2024-06-30')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 50, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('243686000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='MSFT', end='2025-06-30')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 50, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('275524000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls) (ticker='MSFT', end='2026-06-30')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 50, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(get_liabilities(financials(hidden), d["end"]), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != Decimal('315989000000')
+
+======================================================================
+FAIL: test_all_saved_filings_and_hidden_liability_controls (test_filing_ratios.FilingRatioTests.test_all_saved_filings_and_hidden_liability_controls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 57, in test_all_saved_filings_and_hidden_liability_controls
+    self.assertEqual(interest_count, 11)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 8 != 11
+
+======================================================================
+FAIL: test_current_only_needs_an_actual_complete_equation (test_filing_ratios.FilingRatioTests.test_current_only_needs_an_actual_complete_equation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 92, in test_current_only_needs_an_actual_complete_equation
+    self.assertEqual(calculate_debt_to_assets(data, END), .2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.2') != 0.2
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='missing_equity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 78, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='missing_liability')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 78, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='numeric_caption')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 78, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='custom')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 78, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='unknown_standard')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 78, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='wrong_date')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 78, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+======================================================================
+FAIL: test_required_branches_and_caption_cannot_be_guessed (test_filing_ratios.FilingRatioTests.test_required_branches_and_caption_cannot_be_guessed) (change='dimensioned')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_filing_ratios.py", line 78, in test_required_branches_and_caption_cannot_be_guessed
+    self.assertIsNone(calculate_debt_to_assets(financials(d), d["end"]))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('0.6270040889738221366644652718') is not None
+
+======================================================================
+FAIL: test_complete_nested_standard_equation_is_not_evaluated (test_full_project_review.FullReviewTests.test_complete_nested_standard_equation_is_not_evaluated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 104, in test_complete_nested_standard_equation_is_not_evaluated
+    self.assertIsNone(get_value(sample(rows, arcs), 'us-gaap:OperatingIncomeLoss', END, START))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('50') is not None
+
+======================================================================
+FAIL: test_currency_is_lost_before_fixed_and_filed_sums (test_full_project_review.FullReviewTests.test_currency_is_lost_before_fixed_and_filed_sums)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 69, in test_currency_is_lost_before_fixed_and_filed_sums
+    self.assertEqual(get_assets(sample(rows), END), 100)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 100
+
+======================================================================
+FAIL: test_currency_is_lost_before_ratio (test_full_project_review.FullReviewTests.test_currency_is_lost_before_ratio)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 65, in test_currency_is_lost_before_ratio
+    self.assertEqual(calculate_debt_to_assets(fin, END), .5)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 0.5
+
+======================================================================
+FAIL: test_distinct_currency_facts_are_treated_as_conflicting_duplicates (test_full_project_review.FullReviewTests.test_distinct_currency_facts_are_treated_as_conflicting_duplicates)
+----------------------------------------------------------------------
+value_retrieval.amount.SelectionError: Multiple currencies available; reporting currency is not established
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 76, in test_distinct_currency_facts_are_treated_as_conflicting_duplicates
+    with self.assertRaisesRegex(SelectionError, 'different units'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "different units" does not match "Multiple currencies available; reporting currency is not established"
+
+======================================================================
+FAIL: test_filed_inverse_interest_equation_is_not_solved (test_full_project_review.FullReviewTests.test_filed_inverse_interest_equation_is_not_solved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 110, in test_filed_inverse_interest_equation_is_not_solved
+    self.assertIsNone(get_interest_expense(sample(rows, arcs), START, END))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('10') is not None
+
+======================================================================
+FAIL: test_float_conversion_does_not_preserve_exact_integer (test_full_project_review.FullReviewTests.test_float_conversion_does_not_preserve_exact_integer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 140, in test_float_conversion_does_not_preserve_exact_integer
+    self.assertNotEqual(Decimal(str(actual)), Decimal(value))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('9007199254740993') == Decimal('9007199254740993')
+
+======================================================================
+FAIL: test_nil_caption_blocks_general_assets_reconstruction (test_full_project_review.FullReviewTests.test_nil_caption_blocks_general_assets_reconstruction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 134, in test_nil_caption_blocks_general_assets_reconstruction
+    self.assertIsNone(get_assets(sample(rows, arcs), END))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('100') is not None
+
+======================================================================
+FAIL: test_rounding_conflict_blocks_independent_reported_total (test_full_project_review.FullReviewTests.test_rounding_conflict_blocks_independent_reported_total)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 123, in test_rounding_conflict_blocks_independent_reported_total
+    with self.assertRaisesRegex(SelectionError, 'equations disagree'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: SelectionError not raised
+
+======================================================================
+FAIL: test_standard_liability_branch_not_in_allowlist (test_full_project_review.FullReviewTests.test_standard_liability_branch_not_in_allowlist)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 88, in test_standard_liability_branch_not_in_allowlist
+    self.assertIsNone(get_liabilities(sample(rows, arcs), END))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('60') is not None
+
+======================================================================
+FAIL: test_temporary_equity_split_is_not_retrieved (test_full_project_review.FullReviewTests.test_temporary_equity_split_is_not_retrieved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_full_project_review.py", line 96, in test_temporary_equity_split_is_not_retrieved
+    self.assertIsNone(get_liabilities(sample(rows), END))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Decimal('45') is not None
+
+======================================================================
+FAIL: test_refreshed_standard_duplicate_groups_through_production (test_production_selection.ProductionSelectionTests.test_refreshed_standard_duplicate_groups_through_production)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Desktop/sp500_risk/scratch/unchecked_tests/test_production_selection.py", line 41, in test_refreshed_standard_duplicate_groups_through_production
+    self.assertEqual(get_reported_value(filing(order), originals[0]['concept'], data['end'], start), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 7.49
+
+----------------------------------------------------------------------
+Ran 54 tests in 12.572s
+
+FAILED (failures=29, errors=6)

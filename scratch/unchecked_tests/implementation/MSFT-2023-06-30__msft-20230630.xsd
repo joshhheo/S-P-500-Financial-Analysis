@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- DFIN New ActiveDisclosure (SM) XBRL Schema Document - http://www.dfinsolutions.com/ -->
+<!-- Creation Date :2023-07-27T13:30:44.4628+00:00 -->
+<!-- Copyright (c) 2023 Donnelly Financial Solutions, Inc. All Rights Reserved. -->
+<xsd:schema targetNamespace="http://www.microsoft.com/20230630" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:dtr-types="http://www.xbrl.org/dtr/type/2022-03-31" xmlns:country="http://xbrl.sec.gov/country/2023" xmlns:ecd-sub="http://xbrl.sec.gov/ecd-sub/2023" xmlns:msft="http://www.microsoft.com/20230630" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:dei="http://xbrl.sec.gov/dei/2023" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:enum2="http://xbrl.org/2020/extensible-enumerations-2.0" xmlns:srt="http://fasb.org/srt/2023" xmlns:us-gaap="http://fasb.org/us-gaap/2023" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <xsd:import schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" namespace="http://www.xbrl.org/2003/instance"/>
+  <xsd:import schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" namespace="http://www.xbrl.org/2003/linkbase"/>
+  <xsd:import schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" namespace="http://xbrl.org/2005/xbrldt"/>
+  <xsd:import schemaLocation="https://xbrl.sec.gov/dei/2023/dei-2023.xsd" namespace="http://xbrl.sec.gov/dei/2023"/>
+  <xsd:import schemaLocation="https://www.xbrl.org/2020/extensible-enumerations-2.0.xsd" namespace="http://xbrl.org/2020/extensible-enumerations-2.0"/>
+  <xsd:import schemaLocation="https://xbrl.sec.gov/ecd/2023/ecd-sub-2023.xsd" namespace="http://xbrl.sec.gov/ecd-sub/2023"/>
+  <xsd:import schemaLocation="https://www.xbrl.org/dtr/type/2022-03-31/types.xsd" namespace="http://www.xbrl.org/dtr/type/2022-03-31"/>
+  <xsd:import schemaLocation="https://xbrl.fasb.org/us-gaap/2023/elts/us-gaap-2023.xsd" namespace="http://fasb.org/us-gaap/2023"/>
+  <xsd:import schemaLocation="https://xbrl.sec.gov/country/2023/country-2023.xsd" namespace="http://xbrl.sec.gov/country/2023"/>
+  <xsd:import schemaLocation="https://xbrl.fasb.org/srt/2023/elts/srt-2023.xsd" namespace="http://fasb.org/srt/2023"/>
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="msft-20230630_lab.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:title="Labels link" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="msft-20230630_pre.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:title="Presentation link" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="msft-20230630_def.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:title="Definition link" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="msft-20230630_cal.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:title="Calculation link" xlink:type="simple"/>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DocumentDocumentAndEntityInformation" id="Role_DocumentDocumentAndEntityInformation">
+        <link:definition>100000 - Document - Document and Entity Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_StatementINCOMESTATEMENTS" id="Role_StatementINCOMESTATEMENTS">
+        <link:definition>100010 - Statement - INCOME STATEMENTS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_StatementCOMPREHENSIVEINCOMESTATEMENTS" id="Role_StatementCOMPREHENSIVEINCOMESTATEMENTS">
+        <link:definition>100020 - Statement - COMPREHENSIVE INCOME STATEMENTS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_StatementBALANCESHEETS" id="Role_StatementBALANCESHEETS">
+        <link:definition>100030 - Statement - BALANCE SHEETS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_StatementBALANCESHEETSParenthetical" id="Role_StatementBALANCESHEETSParenthetical">
+        <link:definition>100040 - Statement - BALANCE SHEETS (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_StatementCASHFLOWSSTATEMENTS" id="Role_StatementCASHFLOWSSTATEMENTS">
+        <link:definition>100050 - Statement - CASH FLOWS STATEMENTS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_StatementSTOCKHOLDERSEQUITYSTATEMENTS" id="Role_StatementSTOCKHOLDERSEQUITYSTATEMENTS">
+        <link:definition>100060 - Statement - STOCKHOLDERS' EQUITY STATEMENTS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureACCOUNTINGPOLICIES" id="Role_DisclosureACCOUNTINGPOLICIES">
+        <link:definition>995455 - Disclosure - ACCOUNTING POLICIES</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureEARNINGSPERSHARE" id="Role_DisclosureEARNINGSPERSHARE">
+        <link:definition>995465 - Disclosure - EARNINGS PER SHARE</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureOTHERINCOMEEXPENSENET" id="Role_DisclosureOTHERINCOMEEXPENSENET">
+        <link:definition>995475 - Disclosure - OTHER INCOME (EXPENSE), NET</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureINVESTMENTS" id="Role_DisclosureINVESTMENTS">
+        <link:definition>995485 - Disclosure - INVESTMENTS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDERIVATIVES" id="Role_DisclosureDERIVATIVES">
+        <link:definition>995495 - Disclosure - DERIVATIVES</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureINVENTORIES" id="Role_DisclosureINVENTORIES">
+        <link:definition>995505 - Disclosure - INVENTORIES</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosurePROPERTYANDEQUIPMENT" id="Role_DisclosurePROPERTYANDEQUIPMENT">
+        <link:definition>995515 - Disclosure - PROPERTY AND EQUIPMENT</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureBUSINESSCOMBINATIONS" id="Role_DisclosureBUSINESSCOMBINATIONS">
+        <link:definition>995525 - Disclosure - BUSINESS COMBINATIONS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureGOODWILL" id="Role_DisclosureGOODWILL">
+        <link:definition>995535 - Disclosure - GOODWILL</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureINTANGIBLEASSETS" id="Role_DisclosureINTANGIBLEASSETS">
+        <link:definition>995545 - Disclosure - INTANGIBLE ASSETS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDEBT" id="Role_DisclosureDEBT">
+        <link:definition>995555 - Disclosure - DEBT</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureINCOMETAXES" id="Role_DisclosureINCOMETAXES">
+        <link:definition>995565 - Disclosure - INCOME TAXES</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureUNEARNEDREVENUE" id="Role_DisclosureUNEARNEDREVENUE">
+        <link:definition>995575 - Disclosure - UNEARNED REVENUE</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureLEASES" id="Role_DisclosureLEASES">
+        <link:definition>995585 - Disclosure - LEASES</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureCONTINGENCIES" id="Role_DisclosureCONTINGENCIES">
+        <link:definition>995595 - Disclosure - CONTINGENCIES</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSTOCKHOLDERSEQUITY" id="Role_DisclosureSTOCKHOLDERSEQUITY">
+        <link:definition>995605 - Disclosure - STOCKHOLDERS' EQUITY</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureACCUMULATEDOTHERCOMPREHENSIVEINCOMELOSS" id="Role_DisclosureACCUMULATEDOTHERCOMPREHENSIVEINCOMELOSS">
+        <link:definition>995615 - Disclosure - ACCUMULATED OTHER COMPREHENSIVE INCOME (LOSS)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureEMPLOYEESTOCKANDSAVINGSPLANS" id="Role_DisclosureEMPLOYEESTOCKANDSAVINGSPLANS">
+        <link:definition>995625 - Disclosure - EMPLOYEE STOCK AND SAVINGS PLANS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSEGMENTINFORMATIONANDGEOGRAPHICDATA" id="Role_DisclosureSEGMENTINFORMATIONANDGEOGRAPHICDATA">
+        <link:definition>995635 - Disclosure - SEGMENT INFORMATION AND GEOGRAPHIC DATA</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureACCOUNTINGPOLICIESPolicies" id="Role_DisclosureACCOUNTINGPOLICIESPolicies">
+        <link:definition>995645 - Disclosure - ACCOUNTING POLICIES (Policies)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureACCOUNTINGPOLICIESTables" id="Role_DisclosureACCOUNTINGPOLICIESTables">
+        <link:definition>995655 - Disclosure - ACCOUNTING POLICIES (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureEARNINGSPERSHARETables" id="Role_DisclosureEARNINGSPERSHARETables">
+        <link:definition>995665 - Disclosure - EARNINGS PER SHARE (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureOTHERINCOMEEXPENSENETTables" id="Role_DisclosureOTHERINCOMEEXPENSENETTables">
+        <link:definition>995675 - Disclosure - OTHER INCOME (EXPENSE), NET (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureINVESTMENTSTables" id="Role_DisclosureINVESTMENTSTables">
+        <link:definition>995685 - Disclosure - INVESTMENTS (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDERIVATIVESTables" id="Role_DisclosureDERIVATIVESTables">
+        <link:definition>995695 - Disclosure - DERIVATIVES (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureINVENTORIESTables" id="Role_DisclosureINVENTORIESTables">
+        <link:definition>995705 - Disclosure - INVENTORIES (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosurePROPERTYANDEQUIPMENTTables" id="Role_DisclosurePROPERTYANDEQUIPMENTTables">
+        <link:definition>995715 - Disclosure - PROPERTY AND EQUIPMENT (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureBUSINESSCOMBINATIONSTables" id="Role_DisclosureBUSINESSCOMBINATIONSTables">
+        <link:definition>995725 - Disclosure - BUSINESS COMBINATIONS (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureGOODWILLTables" id="Role_DisclosureGOODWILLTables">
+        <link:definition>995735 - Disclosure - GOODWILL (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureINTANGIBLEASSETSTables" id="Role_DisclosureINTANGIBLEASSETSTables">
+        <link:definition>995745 - Disclosure - INTANGIBLE ASSETS (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDEBTTables" id="Role_DisclosureDEBTTables">
+        <link:definition>995755 - Disclosure - DEBT (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureINCOMETAXESTables" id="Role_DisclosureINCOMETAXESTables">
+        <link:definition>995765 - Disclosure - INCOME TAXES (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureUNEARNEDREVENUETables" id="Role_DisclosureUNEARNEDREVENUETables">
+        <link:definition>995775 - Disclosure - UNEARNED REVENUE (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureLEASESTables" id="Role_DisclosureLEASESTables">
+        <link:definition>995785 - Disclosure - LEASES (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSTOCKHOLDERSEQUITYTables" id="Role_DisclosureSTOCKHOLDERSEQUITYTables">
+        <link:definition>995795 - Disclosure - STOCKHOLDERS' EQUITY (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureACCUMULATEDOTHERCOMPREHENSIVEINCOMELOSSTables" id="Role_DisclosureACCUMULATEDOTHERCOMPREHENSIVEINCOMELOSSTables">
+        <link:definition>995805 - Disclosure - ACCUMULATED OTHER COMPREHENSIVE INCOME (LOSS) (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureEMPLOYEESTOCKANDSAVINGSPLANSTables" id="Role_DisclosureEMPLOYEESTOCKANDSAVINGSPLANSTables">
+        <link:definition>995815 - Disclosure - EMPLOYEE STOCK AND SAVINGS PLANS (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSEGMENTINFORMATIONANDGEOGRAPHICDATATables" id="Role_DisclosureSEGMENTINFORMATIONANDGEOGRAPHICDATATables">
+        <link:definition>995825 - Disclosure - SEGMENT INFORMATION AND GEOGRAPHIC DATA (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureAccountingPoliciesAdditionalInformationDetail" id="Role_DisclosureAccountingPoliciesAdditionalInformationDetail">
+        <link:definition>995835 - Disclosure - Accounting Policies - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureAllowanceForDoubtfulAccountsDetail" id="Role_DisclosureAllowanceForDoubtfulAccountsDetail">
+        <link:definition>995845 - Disclosure - Allowance for Doubtful Accounts (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureBasicAndDilutedEarningsPerShareDetail" id="Role_DisclosureBasicAndDilutedEarningsPerShareDetail">
+        <link:definition>995855 - Disclosure - Basic and Diluted Earnings Per Share (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureComponentsOfOtherIncomeExpenseNetDetail" id="Role_DisclosureComponentsOfOtherIncomeExpenseNetDetail">
+        <link:definition>995865 - Disclosure - Components of Other Income (Expense), Net (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureNetRecognizedGainsLossesOnDebtInvestmentsDetail" id="Role_DisclosureNetRecognizedGainsLossesOnDebtInvestmentsDetail">
+        <link:definition>995875 - Disclosure - Net Recognized Gains (Losses) on Debt Investments (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureNetRecognizedGainsLossesOnEquityInvestmentsDetail" id="Role_DisclosureNetRecognizedGainsLossesOnEquityInvestmentsDetail">
+        <link:definition>995885 - Disclosure - Net Recognized Gains (Losses) on Equity Investments (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureInvestmentComponentsDetail" id="Role_DisclosureInvestmentComponentsDetail">
+        <link:definition>995895 - Disclosure - Investment Components (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureInvestmentsAdditionalInformationDetail" id="Role_DisclosureInvestmentsAdditionalInformationDetail">
+        <link:definition>995905 - Disclosure - Investments - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureUnrealizedLossesOnDebtInvestmentsDetail" id="Role_DisclosureUnrealizedLossesOnDebtInvestmentsDetail">
+        <link:definition>995915 - Disclosure - Unrealized Losses on Debt Investments (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDebtInvestmentMaturitiesDetail" id="Role_DisclosureDebtInvestmentMaturitiesDetail">
+        <link:definition>995925 - Disclosure - Debt Investment Maturities (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDerivativesAdditionalInformationDetail" id="Role_DisclosureDerivativesAdditionalInformationDetail">
+        <link:definition>995935 - Disclosure - Derivatives - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureNotionalAmountsOfOutstandingDerivativeInstrumentsMeasuredInUSDollarEquivalentsDetail" id="Role_DisclosureNotionalAmountsOfOutstandingDerivativeInstrumentsMeasuredInUSDollarEquivalentsDetail">
+        <link:definition>995945 - Disclosure - Notional Amounts of Outstanding Derivative Instruments Measured in U.S. Dollar Equivalents (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureFairValuesOfDerivativeInstrumentsDetail" id="Role_DisclosureFairValuesOfDerivativeInstrumentsDetail">
+        <link:definition>995955 - Disclosure - Fair Values of Derivative Instruments (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/DisclosureGainsLossesOnDerivativeInstrumentsRecognizedInOtherIncomeExpenseNetDetail" id="DisclosureGainsLossesOnDerivativeInstrumentsRecognizedInOtherIncomeExpenseNetDetail">
+        <link:definition>995965 - Disclosure - Gains (Losses) on Derivative Instruments Recognized in Other Income (Expense), Net (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureGainsLossesNetOfTaxOnDerivativeInstrumentsRecognizedOnConsolidatedComprehensiveIncomeStatementsDetail" id="Role_DisclosureGainsLossesNetOfTaxOnDerivativeInstrumentsRecognizedOnConsolidatedComprehensiveIncomeStatementsDetail">
+        <link:definition>995975 - Disclosure - Gains (Losses), Net of Tax, on Derivative Instruments Recognized on Consolidated Comprehensive Income Statements (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureComponentsOfInventoriesDetail" id="Role_DisclosureComponentsOfInventoriesDetail">
+        <link:definition>995985 - Disclosure - Components of Inventories (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureComponentsOfPropertyAndEquipmentDetail" id="Role_DisclosureComponentsOfPropertyAndEquipmentDetail">
+        <link:definition>995995 - Disclosure - Components of Property and Equipment (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosurePropertyAndEquipmentAdditionalInformationDetail" id="Role_DisclosurePropertyAndEquipmentAdditionalInformationDetail">
+        <link:definition>996005 - Disclosure - Property and Equipment - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureBusinessCombinationsAdditionalInformationDetail" id="Role_DisclosureBusinessCombinationsAdditionalInformationDetail">
+        <link:definition>996015 - Disclosure - Business Combinations - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureMajorClassesOfAssetsAndLiabilitiesAllocatedPurchasePriceDetail" id="Role_DisclosureMajorClassesOfAssetsAndLiabilitiesAllocatedPurchasePriceDetail">
+        <link:definition>996025 - Disclosure - Major Classes of Assets and Liabilities Allocated Purchase Price (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureMajorClassesOfAssetsAndLiabilitiesAllocatedPurchasePriceParentheticalDetail" id="Role_DisclosureMajorClassesOfAssetsAndLiabilitiesAllocatedPurchasePriceParentheticalDetail">
+        <link:definition>996035 - Disclosure - Major Classes of Assets and Liabilities Allocated Purchase Price (Parenthetical) (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureAcquiredIntangibleAssetsDetail" id="Role_DisclosureAcquiredIntangibleAssetsDetail">
+        <link:definition>996045 - Disclosure - Acquired Intangible Assets (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureCarryingAmountOfGoodwillDetail" id="Role_DisclosureCarryingAmountOfGoodwillDetail">
+        <link:definition>996055 - Disclosure - Carrying Amount of Goodwill (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureGoodwillAdditionalInformationDetail" id="Role_DisclosureGoodwillAdditionalInformationDetail">
+        <link:definition>996065 - Disclosure - Goodwill - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureFiniteLivedIntangibleAssetsDetail" id="Role_DisclosureFiniteLivedIntangibleAssetsDetail">
+        <link:definition>996075 - Disclosure - Finite-Lived Intangible Assets (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureIntangibleAssetsAcquiredDetail" id="Role_DisclosureIntangibleAssetsAcquiredDetail">
+        <link:definition>996085 - Disclosure - Intangible Assets Acquired (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureIntangibleAssetsAdditionalInformationDetail" id="Role_DisclosureIntangibleAssetsAdditionalInformationDetail">
+        <link:definition>996095 - Disclosure - Intangible Assets - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureEstimatedFutureAmortizationExpenseRelatedToIntangibleAssetsDetail" id="Role_DisclosureEstimatedFutureAmortizationExpenseRelatedToIntangibleAssetsDetail">
+        <link:definition>996105 - Disclosure - Estimated Future Amortization Expense Related to Intangible Assets (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDebtDetail" id="Role_DisclosureDebtDetail">
+        <link:definition>996115 - Disclosure - Debt (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDebtParentheticalDetail" id="Role_DisclosureDebtParentheticalDetail">
+        <link:definition>996125 - Disclosure - Debt (Parenthetical) (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDebtAdditionalInformationDetail" id="Role_DisclosureDebtAdditionalInformationDetail">
+        <link:definition>996135 - Disclosure - Debt - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDebtDetail2" id="Role_DisclosureDebtDetail2">
+        <link:definition>996145 - Disclosure - Debt (Detail) 2</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureMaturitiesOfLongTermDebtIncludingCurrentPortionDetail" id="Role_DisclosureMaturitiesOfLongTermDebtIncludingCurrentPortionDetail">
+        <link:definition>996155 - Disclosure - Maturities of Long-term Debt Including Current Portion (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureProvisionForIncomeTaxesDetail" id="Role_DisclosureProvisionForIncomeTaxesDetail">
+        <link:definition>996165 - Disclosure - Provision for Income Taxes (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureIncomeBeforeIncomeTaxesDetail" id="Role_DisclosureIncomeBeforeIncomeTaxesDetail">
+        <link:definition>996175 - Disclosure - Income Before Income Taxes (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDifferenceBetweenIncomeTaxesComputedAtFederalStatutoryRateAndProvisionForIncomeTaxesDetail" id="Role_DisclosureDifferenceBetweenIncomeTaxesComputedAtFederalStatutoryRateAndProvisionForIncomeTaxesDetail">
+        <link:definition>996185 - Disclosure - Difference Between Income Taxes Computed at Federal Statutory Rate and Provision for Income Taxes (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureIncomeTaxesAdditionalInformationDetail" id="Role_DisclosureIncomeTaxesAdditionalInformationDetail">
+        <link:definition>996195 - Disclosure - Income Taxes - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDeferredIncomeTaxAssetsAndLiabilitiesDetail" id="Role_DisclosureDeferredIncomeTaxAssetsAndLiabilitiesDetail">
+        <link:definition>996205 - Disclosure - Deferred Income Tax Assets and Liabilities (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureChangesInGrossUnrecognizedTaxBenefitsRelatedToUncertainTaxPositionsDetail" id="Role_DisclosureChangesInGrossUnrecognizedTaxBenefitsRelatedToUncertainTaxPositionsDetail">
+        <link:definition>996215 - Disclosure - Changes in Gross Unrecognized Tax Benefits Related to Uncertain Tax Positions (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureIncomeTaxesAdditionalInformationRegardingExaminationsDetail" id="Role_DisclosureIncomeTaxesAdditionalInformationRegardingExaminationsDetail">
+        <link:definition>996225 - Disclosure - Income Taxes - Additional Information Regarding Examinations (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureUnearnedRevenueBySegmentDetail" id="Role_DisclosureUnearnedRevenueBySegmentDetail">
+        <link:definition>996235 - Disclosure - Unearned Revenue by Segment (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureChangesInUnearnedRevenueDetail" id="Role_DisclosureChangesInUnearnedRevenueDetail">
+        <link:definition>996245 - Disclosure - Changes in Unearned Revenue (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDeferredIncomeTaxAssetsAndLiabilitiesDetail2" id="Role_DisclosureDeferredIncomeTaxAssetsAndLiabilitiesDetail2">
+        <link:definition>996255 - Disclosure - Deferred Income Tax Assets and Liabilities (Detail) 2</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureUnearnedRevenueAdditionalInformationDetail" id="Role_DisclosureUnearnedRevenueAdditionalInformationDetail">
+        <link:definition>996265 - Disclosure - Unearned Revenue - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/DisclosureUnearnedRevenueRemainingPerformanceObligationAdditionalInformationDetail" id="DisclosureUnearnedRevenueRemainingPerformanceObligationAdditionalInformationDetail">
+        <link:definition>996275 - Disclosure - Unearned Revenue - Remaining Performance Obligation - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/DisclosureUnearnedRevenueRemainingPerformanceObligationAdditionalInformationDetailDefault" id="DisclosureUnearnedRevenueRemainingPerformanceObligationAdditionalInformationDetailDefault">
+        <link:definition>996275 - Disclosure - Unearned Revenue - Remaining Performance Obligation - Additional Information (Detail) [Default]</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureLeasesAdditionalInformationDetail" id="Role_DisclosureLeasesAdditionalInformationDetail">
+        <link:definition>996285 - Disclosure - Leases - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureComponentsOfLeaseExpenseDetail" id="Role_DisclosureComponentsOfLeaseExpenseDetail">
+        <link:definition>996295 - Disclosure - Components of Lease Expense (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSupplementalCashFlowInformationRelatedToLeasesDetail" id="Role_DisclosureSupplementalCashFlowInformationRelatedToLeasesDetail">
+        <link:definition>996305 - Disclosure - Supplemental Cash Flow Information Related to Leases (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSupplementalBalanceSheetInformationRelatedToLeasesDetail" id="Role_DisclosureSupplementalBalanceSheetInformationRelatedToLeasesDetail">
+        <link:definition>996315 - Disclosure - Supplemental Balance Sheet Information Related to Leases (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureMaturitiesOfLeaseLiabilitiesDetail" id="Role_DisclosureMaturitiesOfLeaseLiabilitiesDetail">
+        <link:definition>996325 - Disclosure - Maturities of Lease Liabilities (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureContingenciesAdditionalInformationDetail" id="Role_DisclosureContingenciesAdditionalInformationDetail">
+        <link:definition>996335 - Disclosure - Contingencies - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSharesOfCommonStockOutstandingDetail" id="Role_DisclosureSharesOfCommonStockOutstandingDetail">
+        <link:definition>996345 - Disclosure - Shares of Common Stock Outstanding (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureStockholdersEquityAdditionalInformationDetail" id="Role_DisclosureStockholdersEquityAdditionalInformationDetail">
+        <link:definition>996355 - Disclosure - Stockholders' Equity - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureShareRepurchasesDetail" id="Role_DisclosureShareRepurchasesDetail">
+        <link:definition>996365 - Disclosure - Share Repurchases (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureDividendsDeclaredDetail" id="Role_DisclosureDividendsDeclaredDetail">
+        <link:definition>996375 - Disclosure - Dividends Declared (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureMaturitiesOfLeaseLiabilitiesDetail2" id="Role_DisclosureMaturitiesOfLeaseLiabilitiesDetail2">
+        <link:definition>996385 - Disclosure - Maturities of Lease Liabilities (Detail) 2</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSummaryOfChangesInAccumulatedOtherComprehensiveIncomeLossByComponentDetail" id="Role_DisclosureSummaryOfChangesInAccumulatedOtherComprehensiveIncomeLossByComponentDetail">
+        <link:definition>996395 - Disclosure - Summary of Changes in Accumulated Other Comprehensive Income (Loss) by Component (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSummaryOfChangesInAccumulatedOtherComprehensiveIncomeLossByComponentParentheticalDetail" id="Role_DisclosureSummaryOfChangesInAccumulatedOtherComprehensiveIncomeLossByComponentParentheticalDetail">
+        <link:definition>996405 - Disclosure - Summary of Changes in Accumulated Other Comprehensive Income (Loss) by Component (Parenthetical) (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureStockBasedCompensationExpenseAndRelatedIncomeTaxBenefitsDetail" id="Role_DisclosureStockBasedCompensationExpenseAndRelatedIncomeTaxBenefitsDetail">
+        <link:definition>996415 - Disclosure - Stock-Based Compensation Expense and Related Income Tax Benefits (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureEmployeeStockAndSavingsPlansAdditionalInformationDetail" id="Role_DisclosureEmployeeStockAndSavingsPlansAdditionalInformationDetail">
+        <link:definition>996425 - Disclosure - Employee Stock and Savings Plans - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureAssumptionsUsedInEstimatingFairValueOfStockAwardGrantsDetail" id="Role_DisclosureAssumptionsUsedInEstimatingFairValueOfStockAwardGrantsDetail">
+        <link:definition>996435 - Disclosure - Assumptions Used in Estimating the Fair Value of Stock Award Grants (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureStockPlanActivityDetail" id="Role_DisclosureStockPlanActivityDetail">
+        <link:definition>996445 - Disclosure - Stock Plan Activity (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureStockPlanActivityParentheticalDetail" id="Role_DisclosureStockPlanActivityParentheticalDetail">
+        <link:definition>996455 - Disclosure - Stock Plan Activity (Parenthetical) (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureEmployeePurchasedSharesDetail" id="Role_DisclosureEmployeePurchasedSharesDetail">
+        <link:definition>996465 - Disclosure - Employee Purchased Shares (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSegmentRevenueDetail" id="Role_DisclosureSegmentRevenueDetail">
+        <link:definition>996475 - Disclosure - Segment Revenue (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureOperatingIncomeLossBySegmentDetail" id="Role_DisclosureOperatingIncomeLossBySegmentDetail">
+        <link:definition>996485 - Disclosure - Operating Income (Loss) by Segment (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureSegmentInformationAndGeographicDataAdditionalInformationDetail" id="Role_DisclosureSegmentInformationAndGeographicDataAdditionalInformationDetail">
+        <link:definition>996495 - Disclosure - Segment Information and Geographic Data - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureRevenueClassifiedByMajorGeographicAreasDetail" id="Role_DisclosureRevenueClassifiedByMajorGeographicAreasDetail">
+        <link:definition>996505 - Disclosure - Revenue Classified by Major Geographic Areas (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureRevenueClassifiedBySignificantProductAndServiceOfferingsDetail" id="Role_DisclosureRevenueClassifiedBySignificantProductAndServiceOfferingsDetail">
+        <link:definition>996515 - Disclosure - Revenue Classified by Significant Product and Service Offerings (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureRevenueClassifiedBySignificantProductAndServiceOfferingsParentheticalDetail" id="Role_DisclosureRevenueClassifiedBySignificantProductAndServiceOfferingsParentheticalDetail">
+        <link:definition>996525 - Disclosure - Revenue Classified by Significant Product and Service Offerings (Parenthetical) (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.microsoft.com/20230630/taxonomy/role/Role_DisclosureLongLivedAssetsExcludingFinancialInstrumentsAndTaxAssetsClassifiedByLocationOfControllingStatutoryCompanyDetail" id="Role_DisclosureLongLivedAssetsExcludingFinancialInstrumentsAndTaxAssetsClassifiedByLocationOfControllingStatutoryCompanyDetail">
+        <link:definition>996535 - Disclosure - Long-Lived Assets, Excluding Financial Instruments and Tax Assets, Classified by Location of Controlling Statutory Company (Detail)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:element id="msft_CapitalLossCarryforwardsExpirationYear" name="CapitalLossCarryforwardsExpirationYear" type="xbrli:gYearItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_AcquisitionsNetOfCashAcquiredAndPurchasesOfIntangibleAndOtherAssets" name="AcquisitionsNetOfCashAcquiredAndPurchasesOfIntangibleAndOtherAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_TaxYearIndiaSupremeCourtDecision" name="TaxYearIndiaSupremeCourtDecision" type="xbrli:gYearItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_ContractWithCustomerLiabilityBySegmentTableTextBlock" name="ContractWithCustomerLiabilityBySegmentTableTextBlock" type="dtr-types:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_DeferredTaxLiabilitiesDeferredTaxOnForeignEarnings" name="DeferredTaxLiabilitiesDeferredTaxOnForeignEarnings" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_IndiaSupremeCourtMember" name="IndiaSupremeCourtMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtNineMember" name="IssuanceOfLongTermDebtNineMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_FinanceLeaseMember" name="FinanceLeaseMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_InvestmentsUnrealizedLossPositionLineItems" name="InvestmentsUnrealizedLossPositionLineItems" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtEightMember" name="IssuanceOfLongTermDebtEightMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_DeferredTaxAssetsCapitalizedResearchAndDevelopment" name="DeferredTaxAssetsCapitalizedResearchAndDevelopment" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_DeferredTaxAssetsAmortization" name="DeferredTaxAssetsAmortization" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_ProductivityAndBusinessProcessesMember" name="ProductivityAndBusinessProcessesMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_LesseeOperatingAndFinanceLeasesTextBlock" name="LesseeOperatingAndFinanceLeasesTextBlock" type="dtr-types:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_CommercialCustomersMember" name="CommercialCustomersMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_IncomeTaxesLineItems" name="IncomeTaxesLineItems" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ScheduleOfDeferredIncomeTaxAssetsAndLiabilitiesLineItems" name="ScheduleOfDeferredIncomeTaxAssetsAndLiabilitiesLineItems" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ScheduleOfDeferredIncomeTaxAssetsAndLiabilitiesTable" name="ScheduleOfDeferredIncomeTaxAssetsAndLiabilitiesTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_DerivativeAssetStatementOfFinancialPositionExtensibleEnumerationNotDisclosedFlag" name="DerivativeAssetStatementOfFinancialPositionExtensibleEnumerationNotDisclosedFlag" type="enum2:enumerationSetItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" enum2:domain="us-gaap:AssetsAbstract" enum2:headUsable="false" enum2:linkrole="http://fasb.org/us-gaap/role/eedm/ExtensibleEnumerationLists"/>
+  <xsd:element id="msft_ProceedsFromInvestments" name="ProceedsFromInvestments" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_NuanceCommunicationsIncMember" name="NuanceCommunicationsIncMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_IntelligentCloudMember" name="IntelligentCloudMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_EarningPerShareBasicAndDilutedAbstract" name="EarningPerShareBasicAndDilutedAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_FinanceReceivablesNet" name="FinanceReceivablesNet" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_NotesThreePointOneTwoFivePercentDueDecemberSixTwentyTwentyEightMember" name="NotesThreePointOneTwoFivePercentDueDecemberSixTwentyTwentyEightMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_RegionalOperatingCentersMember" name="RegionalOperatingCentersMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_BuildingBuildingImprovementsAndLeaseholdImprovementsMember" name="BuildingBuildingImprovementsAndLeaseholdImprovementsMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_MicrosoftCloudMember" name="MicrosoftCloudMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_DepreciationAmortizationAndOther" name="DepreciationAmortizationAndOther" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_InvestmentsUnrealizedLossPositionTable" name="InvestmentsUnrealizedLossPositionTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ScheduleOfSupplementalCashFlowInformationRelatedToLeasesTableTextBlock" name="ScheduleOfSupplementalCashFlowInformationRelatedToLeasesTableTextBlock" type="dtr-types:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_CashPaidForAmountsIncludedInMeasurementOfLeaseLiabilitiesAbstract" name="CashPaidForAmountsIncludedInMeasurementOfLeaseLiabilitiesAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_NetworkEquipmentMember" name="NetworkEquipmentMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsMethodUsedLineItems" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsMethodUsedLineItems" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_FinanceLeaseCost" name="FinanceLeaseCost" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_AccountsReceivableNetMember" name="AccountsReceivableNetMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_TransferOfIntangiblePropertiesMember" name="TransferOfIntangiblePropertiesMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_CreditLossAllowanceAndImpairmentOfInvestments" name="CreditLossAllowanceAndImpairmentOfInvestments" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_ShareRepurchasesTable" name="ShareRepurchasesTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_CapitalLossCarryforwards" name="CapitalLossCarryforwards" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_OtherProductsAndServicesMember" name="OtherProductsAndServicesMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ContractWithCustomerLiabilityLineItems" name="ContractWithCustomerLiabilityLineItems" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_RightOfUseAssetsObtainedInExchangeForLeaseObligationsAbstract" name="RightOfUseAssetsObtainedInExchangeForLeaseObligationsAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtTwoMember" name="IssuanceOfLongTermDebtTwoMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_SearchAndNewsAdvertisingMember" name="SearchAndNewsAdvertisingMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_DeferredTaxLiabilitiesDepreciation" name="DeferredTaxLiabilitiesDepreciation" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_DeferredTaxLiabilitiesBookTaxBasisDifferencesInvestmentsAndDebt" name="DeferredTaxLiabilitiesBookTaxBasisDifferencesInvestmentsAndDebt" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtSevenMember" name="IssuanceOfLongTermDebtSevenMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ShareRepurchasesLineItems" name="ShareRepurchasesLineItems" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_DeferredTaxAssetsLeasingLiabilities" name="DeferredTaxAssetsLeasingLiabilities" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_ScheduleOfSupplementalBalanceSheetInformationRelatedToLeasesTableTextBlock" name="ScheduleOfSupplementalBalanceSheetInformationRelatedToLeasesTableTextBlock" type="dtr-types:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_DeferredTaxAssetsBookTaxBasisDifferencesInInvestmentsAndDebt" name="DeferredTaxAssetsBookTaxBasisDifferencesInInvestmentsAndDebt" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtFourMember" name="IssuanceOfLongTermDebtFourMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_OtherReceivablesRelatedToPurchaseOfComponents" name="OtherReceivablesRelatedToPurchaseOfComponents" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedOtherAssets" name="BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedOtherAssets" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_FinancialInstrumentCovenantMinimumLiquidity" name="FinancialInstrumentCovenantMinimumLiquidity" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_CashToBePaidToAcquireBusiness" name="CashToBePaidToAcquireBusiness" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_DebtInstrumentMaturityYear" name="DebtInstrumentMaturityYear" type="xbrli:gYearItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtElevenMember" name="IssuanceOfLongTermDebtElevenMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_FederalAndStateMember" name="FederalAndStateMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_CompensationRelatedCostsDisclosureLineItems" name="CompensationRelatedCostsDisclosureLineItems" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_OfficeProductsAndCloudServicesMember" name="OfficeProductsAndCloudServicesMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_WindowsMember" name="WindowsMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtTenMember" name="IssuanceOfLongTermDebtTenMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_EnterpriseServicesMember" name="EnterpriseServicesMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ProductsOrServicesSecondaryCategorizationAxis" name="ProductsOrServicesSecondaryCategorizationAxis" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_EffectiveIncomeTaxRateReconciliationInterestIncomeExpense" name="EffectiveIncomeTaxRateReconciliationInterestIncomeExpense" type="dtr-types:percentItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsMethodUsedTableTextBlock" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsMethodUsedTableTextBlock" type="dtr-types:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_SignificantAccountingPoliciesLineItems" name="SignificantAccountingPoliciesLineItems" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_IncomeTaxesTable" name="IncomeTaxesTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_DebtInstrumentIssuanceYear" name="DebtInstrumentIssuanceYear" type="xbrli:gYearItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_DerivativeLiabilityStatementOfFinancialPositionExtensibleEnumerationNotDisclosedFlag" name="DerivativeLiabilityStatementOfFinancialPositionExtensibleEnumerationNotDisclosedFlag" type="enum2:enumerationSetItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" enum2:domain="us-gaap:LiabilitiesAbstract" enum2:headUsable="false" enum2:linkrole="http://fasb.org/us-gaap/role/eedm/ExtensibleEnumerationLists"/>
+  <xsd:element id="msft_ValuationAllowancesAndReservesChargedToCostsAndOther" name="ValuationAllowancesAndReservesChargedToCostsAndOther" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_LeasesTable" name="LeasesTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_LinkedInCorporationMember" name="LinkedInCorporationMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_DynamicsMember" name="DynamicsMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ShareRepurchaseProgramTwentyTwentyOneMember" name="ShareRepurchaseProgramTwentyTwentyOneMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_OtherMeasurementMember" name="OtherMeasurementMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtThreeMember" name="IssuanceOfLongTermDebtThreeMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_StockIssuedEmployeeStockPurchasePlanAveragePricePerShare" name="StockIssuedEmployeeStockPurchasePlanAveragePricePerShare" type="dtr-types:perShareItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_LesseeOperatingAndFinanceLeasesRemainingLeaseTerm" name="LesseeOperatingAndFinanceLeasesRemainingLeaseTerm" type="xbrli:durationItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtSixMember" name="IssuanceOfLongTermDebtSixMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ContractWithCustomerLiabilityTable" name="ContractWithCustomerLiabilityTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_AccumulatedTranslationAdjustmentAndOtherMember" name="AccumulatedTranslationAdjustmentAndOtherMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_LeasesLineItems" name="LeasesLineItems" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_LesseeOperatingAndFinanceLeasesOptionsToTerminateLeasesTerm" name="LesseeOperatingAndFinanceLeasesOptionsToTerminateLeasesTerm" type="xbrli:durationItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_ComputerHardwareAndSoftware" name="ComputerHardwareAndSoftware" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_WeightedAverageDiscountRateAbstract" name="WeightedAverageDiscountRateAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_CashCashEquivalentsAndInvestmentsLineItems" name="CashCashEquivalentsAndInvestmentsLineItems" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_OperatingLeaseLiabilitiesMember" name="OperatingLeaseLiabilitiesMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ImpairmentOfEquityInvestments" name="ImpairmentOfEquityInvestments" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_OperatingLossCarryforwardsExpirationYear" name="OperatingLossCarryforwardsExpirationYear" type="xbrli:gYearItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_CashCashEquivalentsAndInvestmentsTable" name="CashCashEquivalentsAndInvestmentsTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ServerEquipmentMember" name="ServerEquipmentMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_PremiumOnDebtExchange1" name="PremiumOnDebtExchange1" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_CompensationRelatedCostsDisclosureTable" name="CompensationRelatedCostsDisclosureTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedOtherLiabilities" name="BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedOtherLiabilities" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtOneMember" name="IssuanceOfLongTermDebtOneMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_WeightedAverageRemainingLeaseTermAbstract" name="WeightedAverageRemainingLeaseTermAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ScheduleOfMaturitiesOfOperatingAndFinanceLeasesLiabilitiesTableTextBlock" name="ScheduleOfMaturitiesOfOperatingAndFinanceLeasesLiabilitiesTableTextBlock" type="dtr-types:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_FinancialInstrumentCovenantMinimumLiquidityRequirement" name="FinancialInstrumentCovenantMinimumLiquidityRequirement" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_ContractWithCustomerLiabilityRevenueDeferred" name="ContractWithCustomerLiabilityRevenueDeferred" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_EffectiveIncomeTaxRateReconciliationDeductionsExcessTaxBenefitsStockBasedCompensation" name="EffectiveIncomeTaxRateReconciliationDeductionsExcessTaxBenefitsStockBasedCompensation" type="dtr-types:percentItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_GamingMember" name="GamingMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_OperatingLeaseMember" name="OperatingLeaseMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_NotesTwoPointSixTwoFivePercentDueMayTwoTwentyThirtyThreeMember" name="NotesTwoPointSixTwoFivePercentDueMayTwoTwentyThirtyThreeMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_GainLossOnInvestmentsAndDerivativeInstruments" name="GainLossOnInvestmentsAndDerivativeInstruments" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_ShareRepurchaseProgramDisclosureTableTextBlock" name="ShareRepurchaseProgramDisclosureTableTextBlock" type="dtr-types:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_OtherCountriesMember" name="OtherCountriesMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ShareRepurchaseProgramTwentyNineteenAndTwentyTwentyOneMember" name="ShareRepurchaseProgramTwentyNineteenAndTwentyTwentyOneMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_MorePersonalComputingMember" name="MorePersonalComputingMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ScheduleOfCashCashEquivalentsAndInvestmentsTableTextBlock" name="ScheduleOfCashCashEquivalentsAndInvestmentsTableTextBlock" type="dtr-types:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_ForeignEarningsTaxedAtRatesLowerThanUsRate" name="ForeignEarningsTaxedAtRatesLowerThanUsRate" type="dtr-types:percentItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_ProductsOrServicesNameSecondaryCategorizationDomain" name="ProductsOrServicesNameSecondaryCategorizationDomain" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_DevicesMember" name="DevicesMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsMethodUsedTable" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsMethodUsedTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_CashCashEquivalentsAndInvestments" name="CashCashEquivalentsAndInvestments" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+  <xsd:element id="msft_IssuanceOfLongTermDebtFiveMember" name="IssuanceOfLongTermDebtFiveMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_HedgeAccountingFairValueAdjustments" name="HedgeAccountingFairValueAdjustments" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_SellingAndMarketingPolicyTextBlock" name="SellingAndMarketingPolicyTextBlock" type="dtr-types:textBlockItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_FinanceLeasesCostAbstract" name="FinanceLeasesCostAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ServerProductsAndCloudServicesMember" name="ServerProductsAndCloudServicesMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_SignificantAccountingPoliciesTable" name="SignificantAccountingPoliciesTable" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ExecutiveIncentivePlanMember" name="ExecutiveIncentivePlanMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ZeniMaxMediaIncMember" name="ZeniMaxMediaIncMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ContractWithCustomerLiabilityRevenueRecognizedIncludingAdditions" name="ContractWithCustomerLiabilityRevenueRecognizedIncludingAdditions" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false" xbrli:balance="credit"/>
+  <xsd:element id="msft_EffectiveIncomeTaxRateReconciliationIntangiblePropertyTransfers" name="EffectiveIncomeTaxRateReconciliationIntangiblePropertyTransfers" type="dtr-types:percentItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsExpectedDividendsPerShare" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsExpectedDividendsPerShare" type="dtr-types:perShareItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="false"/>
+  <xsd:element id="msft_FinanceLeaseAbstract" name="FinanceLeaseAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ActivisionBlizzardIncMember" name="ActivisionBlizzardIncMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_ShareRepurchaseProgramTwentyNineteenMember" name="ShareRepurchaseProgramTwentyNineteenMember" type="dtr-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" abstract="true"/>
+  <xsd:element id="msft_DeferredTaxAssetsOperatingLossAndTaxCreditCarryForwards" name="DeferredTaxAssetsOperatingLossAndTaxCreditCarryForwards" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" abstract="false" xbrli:balance="debit"/>
+</xsd:schema>

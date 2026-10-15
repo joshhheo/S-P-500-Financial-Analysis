@@ -1,0 +1,50 @@
+{
+  "evidence_type": "constructed offline examples",
+  "edgartools_version": "5.58.0",
+  "prohibited_relationship": {
+    "library_arcs": [
+      {
+        "parent_id": "us-gaap_Assets",
+        "child_id": "us-gaap_AssetsCurrent",
+        "weight": 1.0,
+        "order": 0.0
+      }
+    ],
+    "current_asset_result": null
+  },
+  "custom_schema_standard_looking_fragment": {
+    "library_arcs": [
+      {
+        "parent_id": "us-gaap_Assets",
+        "child_id": "us-gaap_AssetsCurrent",
+        "weight": 1.0,
+        "order": 0.0
+      }
+    ],
+    "current_asset_result": null
+  },
+  "fact_fields": [
+    {
+      "element_id": "us-gaap:Assets",
+      "context_ref": "i",
+      "value": "9007199254740993",
+      "unit_ref": "u",
+      "decimals": "INF",
+      "numeric_value": 9007199254740992.0,
+      "footnotes": [],
+      "instance_id": 0,
+      "fact_id": null
+    },
+    {
+      "element_id": "us-gaap:Assets",
+      "context_ref": "i",
+      "value": "",
+      "unit_ref": "u",
+      "decimals": null,
+      "numeric_value": null,
+      "footnotes": [],
+      "instance_id": 1,
+      "fact_id": null
+    }
+  ]
+}
