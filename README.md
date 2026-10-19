@@ -5,7 +5,7 @@ and stores results in CSVs and PostgreSQL sector-ranking views.
 
 The code favors direct concept searches, explicit accounting formulas and small
 modules with separate purposes. Current behavior and policies below reflect the
-October 15, 2026 revision.
+October 19, 2026 revision; dated research below describes earlier snapshots.
 
 ## Analytical framework
 
@@ -57,12 +57,20 @@ Amended filings are excluded. The full run performs all five steps.
 | [src/main.py](src/main.py) | Run the pipeline stages. |
 | [src/wiki_pull.py](src/wiki_pull.py) | Retrieve the constituent list. |
 | [src/table_data/](src/table_data/) | Build company and ratio CSVs. |
-| [src/value_retrieval/get_value.py](src/value_retrieval/get_value.py) | Search one exact concept and match dimensions and dates. |
-| [src/value_retrieval/get_reporting_period.py](src/value_retrieval/get_reporting_period.py) | Establish the annual start from reported DEI facts. |
+| [src/value_retrieval/get_value.py](src/value_retrieval/get_value.py) | Establish the annual start from DEI facts and retrieve exact concepts for specified dates. |
 | [src/value_retrieval/](src/value_retrieval/) | Individual asset, liability, equity, interest and operating-income formulas. |
 | [src/calculations/](src/calculations/) | Divide independently retrieved metrics. |
 | [src/database/](src/database/) | Create tables, load CSVs and refresh views. |
-| [scratch/unchecked_tests/](scratch/unchecked_tests/) | Tests, archived filings and review evidence. |
+| [scratch/tests/](scratch/tests/) | Repeatable behavior checks and archived filing fixtures. |
+| [scratch/research/](scratch/research/) | Historical investigations and source evidence behind accounting decisions. |
+
+The company CSV (`data/company_status.csv`) supplies ticker, CIK, name and sector
+to `companies`, keyed by ticker. The ratios CSV (`data/financial_ratios.csv`)
+supplies the reporting dates and two ratios to `financials`, keyed by ticker and
+fiscal-period end. CIK is stored only in `companies`. The ratios CSV is written
+directly after extraction finishes; there is no checkpoint or resume mechanism.
+Sector views join by ticker, select the latest stored period for current
+constituents and rank nonmissing ratios without substituting an older period.
 
 ## Data rules and assumptions
 
@@ -77,14 +85,16 @@ Amended filings are excluded. The full run performs all five steps.
   non-USD reporting exceptions are outside supported coverage and are not detected.
 - Use the reported value first, then the explicit accounting fallbacks below.
   Return the first successful result, including zero. Do not reconcile alternatives.
+- Preserve missing results as blank CSV cells and SQL `NULL`, not zero. The loader
+  uses pandas' inferred numeric types and converts missing cells to Python `None`.
+  Missing results do not distinguish undisclosed inputs from unsupported structures.
 - Require every input to a formula. An absent component does not automatically
   mean zero; this includes noncontrolling interest and temporary equity.
 - Trust compliant duplicate facts and accepted rounding differences. Use Edgar's
-  dataframe duplicate handling, then the first matching row. No independent
+  dataframe duplicate handling, then the first nonmissing matching row. No independent
   precision ranking or conflicting-value reconciliation is performed.
-- Convert original numeric text to `Decimal` to avoid binary floating-point
-  representation error. Arithmetic still has finite precision; ratios use 28
-  significant digits with half-even rounding.
+- Convert numeric text to Python `float` and use ordinary arithmetic for these
+  analytical ratios. No Decimal module or custom arithmetic context is used.
 
 Annual starts come from the matching `DocumentType`, `DocumentFiscalPeriodFocus`
 and `DocumentPeriodEndDate` contexts. Exactly one shared start must be found.
@@ -127,7 +137,7 @@ non-USD standard-tag debt disclosures, but the documented examples are dimension
 and outside our current concept list. The scan of 22 archived filings found 38
 non-USD facts and none using that list. Targeted external research did not establish
 a qualifying S&P 500 consolidated counterexample for our selected values. This
-is supporting evidence, not an exhaustive proof. [Recorded facts and contexts](scratch/unchecked_tests/implementation/foreign_currency_evidence.json)
+is supporting evidence, not an exhaustive proof. [Recorded facts and contexts](scratch/research/research_evidence.json)
 
 [SEC staff guidance §6640](https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual/frm-topic-6)
 also documents limited non-USD reporting exceptions. We explicitly exclude those
@@ -199,7 +209,7 @@ well-defined inputs, not reasons to build a general inference engine.
 
 We reviewed official definitions and schemas for the 2026 baseline and compared
 relevant earlier releases used by the archived filings. The
-[historical comparison](scratch/unchecked_tests/full_review/taxonomy_comparison.json)
+[historical comparison](scratch/research/research_evidence.json)
 records differences; for example, the operating/nonoperating interest concepts
 first appear in 2024 in the checked releases. Those differences were not erased
 by simplifying the code.
@@ -214,19 +224,22 @@ Updating the baseline requires another explicit review.
 
 Under the compliant-input assumption, equal reported facts and consistent rounded
 duplicates do not require an independent reconciliation framework for this project.
-We accepted Edgar's duplicate handling and first-row selection, rather than
+We accepted Edgar's duplicate handling and first-nonmissing-row selection, rather than
 preserving precision intervals and dependency graphs. That is an implementation
 choice with accepted rounding differences, not an SEC mandate to select the first
 row. The [SEC XBRL Guide](https://www.sec.gov/files/edgar/xbrl-guide.pdf) discusses
 numeric duplicate consistency and accuracy; the project does not independently
 revalidate those conditions.
 
+After scope and period filtering, retrieval skips missing values and empty strings,
+then returns the first remaining value. Zero is retained. If no value remains,
+it returns `None`; a blank match no longer discards another numeric match. This
+is our selection policy under the documented scope assumptions, not an SEC rule.
+
 Similarly, direct values take precedence and later fallback results are not
 compared after one succeeds. A returned zero is a result, not a reason to continue.
-`Decimal` remains as a small way to avoid introducing binary representation error;
-it does not recover undisclosed precision. Detailed missing-reason objects and
-provenance classes were removed in favor of values/`None` and available/missing
-statuses, while filing identifiers remain in the output.
+Retrieval and ratios use ordinary Python floats. Detailed missing-reason objects and
+provenance classes were removed in favor of values/`None`, with reporting dates retained in the financial output and CIK in company data.
 
 ### Why calculation-linkbase support was deferred
 
@@ -234,13 +247,13 @@ We implemented and tested filed calculation relationships, then measured what
 happens without them. Disabling the linkbase while keeping the same direct facts
 and accounting fallbacks removed liabilities and debt-to-assets for AMD and Walmart
 in five filings each. Other outputs did not change in the sample.
-[Measured comparison](scratch/unchecked_tests/implementation/linkbase_dependency_results.json)
+[Measured comparison](scratch/research/research_evidence.json)
 
 Simple candidate formulas reproduced all ten liabilities numerically. However,
 missing equity categories prevented us from proving those candidates complete as
 general accounting fallbacks. The test therefore demonstrated dependence on the
 then-current implementation, not that the values were mathematically impossible
-to derive another way. [Candidate identity comparison](scratch/unchecked_tests/implementation/liability_identity_comparison.json)
+to derive another way. [Candidate identity comparison](scratch/research/research_evidence.json)
 
 The owner chose simpler code and reduced coverage over calculation-network
 parsing, priority/prohibition handling and traversal. Those features were removed,
@@ -256,12 +269,370 @@ beforehand, not downloaded at runtime.
 
 | Metric | Order after its direct concept is unavailable |
 | --- | --- |
-| Assets | Current + noncurrent assets; liabilities-and-equity total; liabilities + inclusive permanent equity + temporary equity. |
-| Liabilities | Current + noncurrent liabilities; assets − inclusive permanent equity − temporary equity. |
-| Inclusive permanent equity | Parent equity + noncontrolling interest. |
+| Assets | Current + noncurrent assets; liabilities-and-equity total; liabilities + net assets; liabilities + inclusive permanent equity + temporary equity. |
+| Liabilities | Current + noncurrent liabilities; assets − net assets; assets − inclusive permanent equity − temporary equity. |
+| Inclusive permanent equity | Inclusive permanent partners’ capital; parent equity + noncontrolling interest; derived partners’ capital; equity before treasury stock − treasury stock. |
 | Inclusive temporary equity | Parent temporary equity + redeemable noncontrolling equity. |
-| Total interest expense | Operating + nonoperating interest expense. If operating expense is missing, operating interest income − net operating interest income. |
-| Operating income | No accounting fallback currently implemented. |
+| Total interest expense | Operating + nonoperating expense; total interest income − total net interest; incurred interest − capitalized interest; total income − operating net − nonoperating net; operating expense + derived nonoperating expense. Every term is required. |
+| Operating income | Subject to the explicit-zero restrictions below: gross profit − operating expenses; revenues − costs and expenses; the same identities with gross profit or operating expenses reconstructed using cost of revenue. |
+
+### Full inventory and nested-derivation review: completed work and remaining scope
+
+The next review downloaded the complete official
+[US GAAP 2026 archive](https://xbrl.fasb.org/us-gaap/2026/us-gaap-2026.zip) and
+[SRT 2026 companion archive](https://xbrl.fasb.org/srt/2026/srt-2026.zip).
+Their URLs and SHA-256 hashes are retained with the research. These are offline
+research inputs, not pipeline dependencies.
+
+The recorded [inventory results](scratch/research/research_evidence.json) cover
+**17,802 schema elements, including 7,542 monetary elements**, and
+**1,845 reference calculation groups**. Starting with the four main metrics,
+following parent-to-component relationships reaches 1,851 concepts in seven passes.
+Allowing traversal through relationships in either direction reaches 4,024 concepts
+in thirteen passes. The next pass adds nothing. This traversal is candidate
+discovery, **not validation of those equations or a runtime calculation engine**.
+
+The [ledger](scratch/research/research_evidence.json) records
+54 reviewed equation boundaries, their definitions and reference-group locations.
+Every reference group immediately touching a current production concept has a
+recorded parent decision. The full per-element inventory was removed during test
+cleanup; the counts and conclusion-specific relationships remain. Nonmonetary elements are not direct monetary
+inputs; that does not prove they cannot participate in a more elaborate formula.
+
+The sequential first pass has now read **all 7,485 US GAAP monetary definitions**,
+the **57 SRT monetary definitions**, and **1,158 other numeric/rate definitions**
+(1,081 US GAAP and 77 SRT). The
+[review record](scratch/research/research_evidence.json) retains
+the inclusive ranges and candidate dispositions. The ledger separates a definition
+having been read from an equation having been approved. Text, axes and other
+nonnumeric elements were inventoried, not individually read in this numeric pass.
+
+**This completes that definition-screening pass, not a proof of every possible
+derivation.** The reference graph is finite, but its relationships are not a
+complete specification of accounting identities. Many definitions describe a
+component without establishing a complete, disjoint partition of its parent.
+Those cases remain unverified coverage, rather than being relabeled as filing
+errors or unavoidable missing information. Other accepted SEC taxonomy families
+were not exhaustively reviewed; this pass covers the project's US GAAP/SRT scope.
+
+The definition review did establish these additional nested identities:
+
+| Intermediate value | Complete-input identity | Important scope detail |
+| --- | --- | --- |
+| Inclusive partners' equity | `PartnersCapital + PartnersCapitalAttributableToNoncontrollingInterest` | Temporary equity remains separate. |
+| Treasury stock | `TreasuryStockCommonValue + TreasuryStockPreferredValue` | Both carrying amounts required; absence is not zero. |
+| Inclusive permanent equity | `StockholdersEquityBeforeTreasuryStock − TreasuryStockValue` | The before-treasury definition already includes noncontrolling interests. Do not add them again. |
+| Redeemable noncontrolling equity | `RedeemableNoncontrollingInterestEquityCommonCarryingAmount + RedeemableNoncontrollingInterestEquityPreferredCarryingAmount + RedeemableNoncontrollingInterestEquityOtherCarryingAmount` | All three carrying amounts required; this feeds temporary equity. |
+| Operating government-assistance income | `GovernmentAssistanceAmount − GovernmentAssistanceNonoperatingIncome` | The operating-income fallback still requires the result to equal zero. |
+| Operating expenses | `OperatingCostsAndExpenses + SellingGeneralAndAdministrativeExpense` | The first explicitly excludes SG&A; the target explicitly includes it. Both inputs required. |
+| Operating revenue | `RegulatedAndUnregulatedOperatingRevenue`, otherwise `RegulatedOperatingRevenue + UnregulatedOperatingRevenue` | The aggregate definition says total operating revenue. Both portions required for the sum. |
+| Inclusive LLC members' equity | `MembersEquity + MembersEquityAttributableToNoncontrollingInterest` | Direct inclusive LLC equity takes precedence. Temporary equity remains separate. |
+
+The equity concepts above have unchanged definitions in the archived 2021–2026
+releases. `GovernmentAssistanceAmount` had broader recognition wording in 2022;
+its 2024 definition describes income. The nonoperating-income component first
+appears in 2024, so the new identity requires that newer concept as well. No
+runtime taxonomy download or version-selection framework was added.
+
+Several promising-looking candidates were **not** added:
+
+- Contract revenue plus noncontract revenue requires the assessed-tax basis to
+  match the company's reporting policy. The reference archive also contains a
+  bank revenue presentation with net interest, whereas the generic `Revenues`
+  definition includes interest before deduction of interest expense. A template
+  relationship alone cannot settle that scope difference.
+- The noncurrent-liability reference group combines debt-and-lease obligations
+  with liabilities other than long-term debt. The latter definition does not
+  explicitly exclude finance leases. Blind addition is not justified without
+  establishing a disjoint partition.
+- Security-only interest income, debt-category expense totals, share-class equity
+  sums and detailed balance-sheet lists still need matching scope and completeness.
+  Finding additional component tags does not establish an exhaustive partition.
+
+The three latest identities above have unchanged definitions across 2021–2026.
+Their supporting definitions are in the official
+[2026 documentation](https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-doc-2026.xml);
+the reviewed earlier definitions and source references are retained with the research.
+The full earlier taxonomy downloads were removed during cleanup. The LLC presentation
+in `stm/us-gaap-stm-sfp-cls2-cal-2026.xml` separately places temporary equity and
+inclusive members' equity beneath liabilities and equity. That supports keeping
+temporary equity separate; it does not authorize treating absent temporary equity
+as zero or summing every template child indiscriminately.
+
+The archived [candidate comparison](scratch/research/research_evidence.json)
+tested 20 explicit equations against the 22 archived filings, recording exact
+inputs, accessions, source URLs and definition histories in
+[its results](scratch/research/research_evidence.json).
+These comparisons exposed useful boundaries:
+
+- Total long-term debt less current debt matched 13 reported noncurrent amounts.
+  However, the **2022** total/noncurrent definitions exclude unamortized carrying
+  adjustments while the current definition retains the earlier wording. This is
+  not an unconditional cross-version identity. It also does not solve the missing
+  complete partition of noncurrent liabilities.
+- Domestic plus foreign pretax income matched 17 inclusive reported totals. The
+  official income-tax reference places those components under the subtotal
+  **before equity-method income**. The matches do not establish universal
+  inclusive scope. Other after-tax/OCI/pretax component identities do not solve
+  the unresolved bridge from pretax income to operating income or total interest.
+  Unused intermediate modules were therefore not added.
+- Current plus deferred tax had 17 complete comparisons, two unequal: AMD 2022
+  and 2023. The archived inputs contain positive deferred-tax amounts of
+  $1.505 billion and $1.019 billion, respectively, whereas subtracting them from
+  current tax reproduces the reported tax benefits. The raw 2022 XML confirms
+  the positive amount. This is a conflict to investigate, not permission to
+  change signs or proof that the accounting identity is invalid.
+- JPMorgan 2025 reports both gross and net revenue concepts as $182.447 billion
+  and operating interest expense as $97.898 billion in the matched context.
+  Subtracting those revenue facts yields zero. The cause is not established;
+  this sample does not validate a universal gross/net reversal.
+- EPS, tax-rate, borrowing-rate and regulatory-ratio inversions were not added.
+  Their denominators, ownership scope, time basis or rounding can differ from
+  the requested monetary total. Period-end debt times a rate is not annual
+  accrued interest; regulatory/risk-weighted/average assets are not period-end
+  GAAP assets. This is an implementation boundary, not a claim that no particular
+  filing could supply enough compatible information.
+
+The newly added expense, regulated-revenue and members'-equity partitions had
+**no complete input sets in the archived sample**. Their arithmetic, missing-input,
+zero and priority checks are constructed evidence. Their real-filing coverage
+remains unverified. No claim of improved S&P 500 recovery follows from these tests.
+
+### Modules for intermediate values
+
+An intermediate value with its own fallback now has its own module. `get_equity`
+returns only inclusive **permanent** equity; `get_temporary_equity` returns temporary
+equity. Assets and liabilities retrieve both separately when that identity is used.
+
+The four main metric modules remain at the top level. Supporting modules live in
+folders named for the metric they support, with deeper fallbacks nested beneath
+their intermediate metric. Shared components live at their nearest common level
+so there is only one implementation of each formula.
+
+```text
+value_retrieval/
+├── get_value.py
+├── get_assets.py
+├── get_liabilities.py
+├── assets_and_liabilities/
+│   ├── get_equity.py
+│   ├── equity/
+│   │   ├── get_partners_equity.py
+│   │   ├── get_members_equity.py
+│   │   └── get_treasury_stock.py
+│   ├── get_temporary_equity.py
+│   └── temporary_equity/
+│       └── get_redeemable_noncontrolling_equity.py
+├── get_operating_income.py
+├── operating_income/
+│   ├── get_gross_profit.py
+│   ├── get_operating_revenue.py
+│   ├── get_operating_expenses.py
+│   └── get_government_assistance_operating_income.py
+├── get_interest_expense.py
+└── interest_expense/
+    ├── get_operating_interest_expense.py
+    ├── get_nonoperating_interest_expense.py
+    ├── get_operating_interest_income.py
+    ├── get_operating_net_interest.py
+    ├── get_net_interest.py
+    └── get_capitalized_interest.py
+```
+
+Operating revenue is shared by gross-profit and operating-income retrieval.
+Operating interest income and net interest also support multiple fallbacks, so
+they remain directly inside `interest_expense/`. Current/noncurrent direct tag
+lookups stay in the existing main modules; no empty folders or wrapper modules
+are needed for concepts that have no implemented fallbacks of their own.
+
+| Module(s) | Responsibility |
+| --- | --- |
+| `get_partners_equity`, `get_members_equity`, `get_treasury_stock` | Resolve their direct amounts or complete component identities for permanent equity. |
+| `get_redeemable_noncontrolling_equity`, `get_temporary_equity` | Resolve redeemable NCI, then combine it with parent temporary equity. |
+| `get_operating_interest_income`, `get_operating_net_interest` | Resolve operating income from interest/dividend amounts and operating net interest from total/nonoperating net amounts. |
+| `get_operating_interest_expense`, `get_nonoperating_interest_expense` | Resolve each expense classification independently from its compatible income/net inputs. |
+| `get_net_interest`, `get_capitalized_interest` | Resolve total net interest and the alternative capitalized-interest tags. |
+| `get_operating_revenue`, `get_gross_profit`, `get_operating_expenses` | Resolve operating revenue, revenue-minus-cost, and the reviewed expense identities. |
+| `get_government_assistance_operating_income` | Resolve direct operating assistance or total assistance income less nonoperating assistance income. |
+
+These functions use literal concept searches and explicit arithmetic. They do not
+call back into the main metric to manufacture a required component. Existing
+identity order is preserved: some main modules therefore try a reported pair
+before calling the intermediate modules for deeper fallbacks.
+
+**Validation:** all 32 constructed/integration tests pass, and all 22 archived
+filings retain their frozen baseline. The read-only comparison of 30 exact saved
+S&P 500 filings preserves all existing ratios and recovers **no additional ratios**
+in that sample. The sample did not supply complete inputs for the new nested
+identities, so their arithmetic/missing-input tests are constructed evidence,
+not independent real-filing confirmation. All 55 literal production concepts were
+checked against the official definitions/schema and their 2021–2026 definition
+history. The full pipeline was not run; production CSV hashes remained unchanged
+and the live database was not accessed.
+
+The exploratory inventory runner and full downloaded taxonomies were removed after review.
+The retained evidence contains the counts, equation decisions, relevant relationships,
+definition histories and source hashes; it does not reproduce the full inventory.
+
+### Review of additional standard-concept equations
+
+The initial follow-up review verified the **36 literal US GAAP concepts then used by
+retrieval** against the official 2026 definitions and schema, and compared their
+definitions across the archived 2021–2026 releases. The
+[definition history and real-filing results](scratch/research/research_evidence.json)
+are scratch evidence, not a runtime taxonomy dictionary or downloaded rules engine.
+
+Additional equations and their limits:
+
+- `Assets = Liabilities + AssetsNet`, and the inverse for liabilities. These use
+  reported net assets, not inferred zero temporary equity or noncontrolling interest.
+- `PartnersCapitalIncludingPortionAttributableToNoncontrollingInterest` is an
+  explicit inclusive permanent-equity alternative; temporary equity is still required.
+- Operating interest income can come from `InterestAndDividendIncomeOperating −
+  DividendIncomeOperating`. Net operating interest can also come from
+  `InterestRevenueExpenseNet − InterestIncomeExpenseNonoperatingNet`. These support
+  the existing operating-interest-expense identity without treating dividends as interest.
+- Total interest expense can come from `InterestIncomeOperatingAndNonoperating −
+  InterestRevenueExpenseNet`, or by subtracting both operating and nonoperating net
+  interest from that same total income. A directly reported operating expense can
+  instead be combined with nonoperating expense derived as total interest income
+  minus operating interest income minus nonoperating net interest.
+- `InterestCostsIncurred − InterestCostsCapitalized` is another complete interest
+  identity. `InterestCostsCapitalizedAdjustment` is an alternative capitalized input;
+  its positive credit amount is subtracted. A missing capitalized amount is not zero.
+
+**Operating-income qualification:** the official
+[FASB statement calculation example](https://xbrl.fasb.org/us-gaap/2026/stm/us-gaap-stm-soi-cal-2026.xml)
+contains `GrossProfit − OperatingExpenses + OtherOperatingIncomeExpenseNet +
+GovernmentAssistanceOperatingIncome`. It therefore disproves the blanket claim
+that the first two tags always suffice. This reference network illustrates a
+permitted structure; it does not establish the actual calculation network of every
+company. The simple fallbacks require established zero values for the two extra
+income terms (reported directly or derived from complete compatible inputs). Nonzero or absent adjustments remain unsupported because this
+pipeline does not determine whether they have already been included elsewhere.
+This is a conservative implementation restriction, **not an SEC requirement to
+report zero facts**, and not a complete solution for all permitted structures.
+
+With those explicit zeros, the module tries `GrossProfit − OperatingExpenses`,
+then `Revenues − CostsAndExpenses`. It can reconstruct gross profit as
+`Revenues − CostOfRevenue`, or operating expenses as
+`CostsAndExpenses − CostOfRevenue`, using complete inputs. These now live in separate intermediate-value modules, with direct retrieval
+first and no recursion or comparison of competing fallback results.
+
+**Reviewed exclusions:** customer-contract revenue alone need not be total revenue;
+`CostOfGoodsAndServicesSold` explicitly excludes some financial-service and other
+revenue-generating costs. Debt interest, lease interest and other selected borrowing
+categories do not establish an exhaustive partition of total interest.
+`InterestAndDebtExpense` includes debt-related costs beyond interest, cash interest
+paid is not accrued expense, and `InvestmentIncomeInterest` does not establish all
+nonoperating interest income. `InterestCostsIncurredCapitalized` includes construction
+allowances, so it is not an unconditional substitute for pure capitalized interest.
+Likewise, a pretax-income bridge needs the correct treatment of equity-method
+income, interest/debt costs and other nonoperating items; it was not added merely
+because a tag is named `NonoperatingIncomeExpense`. Detailed asset/liability
+components and equity share-class balances are not presumed complete or disjoint.
+These exclusions are scope limitations, not proof that the amounts can never be
+recovered with additional filing-specific evidence.
+
+The new total-interest-income concept and the operating/nonoperating expense
+concepts first appear in the reviewed 2024 release. `InterestRevenueExpenseNet`
+previously described a narrower investment/cash-interest scope; its 2024 definition
+covers operating and nonoperating interest. The new formulas using that aggregate
+also require a post-2023 income/expense concept, rather than treating the older
+wording as equivalent. Asset/liability and equity wording changes are recorded in
+the review JSON. No runtime standards download or taxonomy-version gate was added.
+
+**Validation:** 24 constructed/integration tests pass, and 22 archived filings still
+match their frozen baseline. The same 30-filing live sample preserved every
+previously available ratio and recovered one previously missing coverage value:
+Air Products FY2025. Its $615.8 million incurred interest minus $401.8 million
+capitalized interest yields $214 million expense and coverage of approximately
+−4.0981, using its reported operating loss. This also equals its separately
+reported nonoperating interest expense; zero operating interest was not assumed.
+For an independent check of the incurred/capitalized identity, ARE FY2025 supplies
+$557.122 million incurred and $330.424 million capitalized, whose difference equals
+its directly reported $226.698 million total interest expense. The new operating
+income fallbacks recover none of the sampled missing numerators. All other sampled
+missing ratios remain missing. Production CSVs and the database were not rewritten.
+
+The definition audit and read-only sample results are retained as historical evidence;
+the exploratory runner has been removed.
+
+This is a bounded review of supported equations for the four current metrics,
+not certification that every possible accounting derivation has been implemented.
+Definitions do not enumerate every company's complete partition of amounts.
+Remaining coverage gaps must not be hidden by calling missing inputs zero.
+
+### Further interest-coverage candidate research
+
+An additional screen examined 579 monetary duration concepts matching interest or
+operating-income/cost terminology in the official 2026 definitions. This is a
+historical keyword screen, not an exhaustive proof of every possible equation.
+The selected candidate definitions were also compared across 2021–2026.
+
+One further denominator candidate is:
+
+```text
+Total interest expense = before-interest continuing-operations subtotal
+                      + total interest income − pretax continuing-operations income
+```
+
+The exact standard concepts are
+`IncomeLossFromContinuingOperationsBeforeInterestExpenseInterestIncomeIncomeTaxesExtraordinaryItemsNoncontrollingInterestsNet`,
+`InterestIncomeOperatingAndNonoperating`, and
+`IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest`.
+The first subtotal includes nonoperating and equity-method income: it is **not**
+a replacement for the operating-income numerator. Its reviewed definition is
+unchanged across 2021–2026; the total-interest-income concept first appears in 2024.
+
+The later full-archive review found an additional restriction: the reference
+income template builds this subtotal from operating income, nonoperating income
+and equity-method income. It does not establish that all operating interest has
+been removed from operating income. Therefore the displayed equation is still
+an **unapproved candidate**, even if all three tags are present; matching
+classification evidence would be required before using it for total interest.
+
+Possible complete-input bridges to the pretax amount are continuing-operations
+income including noncontrolling interests plus continuing-operations tax expense;
+or consolidated `ProfitLoss` minus discontinued-operations income after tax,
+plus that tax expense. Parent-only `NetIncomeLoss` additionally requires the
+noncontrolling-interest income component. Missing discontinued operations or
+noncontrolling interests are not assumed zero.
+
+**Real evidence:** a purposive sample of 26 latest saved S&P 500 company filings
+covered banks, brokers, utilities and previously problematic nonfinancial firms.
+None supplied the required before-interest subtotal, so this candidate recovered
+**zero additional interest-expense amounts or ratios**. Ten constructed checks
+verified the arithmetic and missing-input handling; they do not validate the
+identity against a real filing. The candidate remains research and was not added
+to production. Production CSV hashes were unchanged and no database was accessed.
+
+Other screened concepts do not establish an unconditional new fallback:
+
+- `InterestExpenseBorrowings`, `InterestExpenseDeposits`,
+  `InterestExpenseInterestBearingLiability`, `InterestExpenseDebt` and lease
+  interest describe components. Their names do not establish a complete,
+  nonoverlapping partition of total expense.
+- `InterestAndDebtExpense` includes debt-related costs, so it is not a pure
+  interest-expense substitute.
+- `InvestmentIncomeInterest` concerns securities interest before certain
+  amortization/accretion adjustments; it is not all nonoperating interest income.
+- `InterestIncomeExpenseAfterProvisionForLoanLoss` includes loss provisions.
+  Adding a provision back needs matching scope and does not by itself establish
+  total operating and nonoperating interest expense.
+- A cash-interest-paid bridge needs more than changes in interest payable:
+  noncash adjustments and capitalized amounts can matter.
+
+These conclusions use the [official FASB 2026 definitions](https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-doc-2026.xml)
+and [technical schema](https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-2026.xsd),
+within the [SEC accepted-taxonomy framework](https://www.sec.gov/data-research/structured-data/taxonomies-schemas/standard-taxonomies).
+The equations are accounting interpretations of the definitions, not SEC mandates
+to disclose those inputs. No new unconditional operating-income derivation was
+established by this screen. Unexamined structures remain unverified coverage.
+
+The consolidated evidence retains the selected definition histories, exact
+accessions, filing URLs and observed inputs. The broad keyword inventory and its
+exploratory runner were removed; they are not needed by the current tests.
 
 The `get_assets_before_equity` and `get_liabilities_before_equity` helpers exclude
 the final equity identity. The final formulas use those helpers so they cannot
@@ -273,25 +644,10 @@ Historical taxonomy definitions are not all identical. In the reviewed releases,
 version gate or prove cross-year semantic equivalence. Earlier version comparisons
 remain in the archived review linked below.
 
-## Results and storage
-
-- `data/company_status.csv`: current constituent identity and sector data.
-- `data/financial_ratios.partial.csv`: checkpoint rewritten after each company.
-  A new extraction starts fresh; this is not a resume mechanism.
-- `data/financial_ratios.csv`: completed extraction, including CIK, accession,
-  reporting dates, ratios and `available`/`missing` statuses.
-- `companies` and `financials`: PostgreSQL tables. Financial rows are keyed by
-  ticker and fiscal-period end. The loader preserves decimal strings and turns
-  blank cells into SQL `NULL`; it refuses updates with a conflicting stored CIK.
-- Sector views select the latest stored period for current constituents and rank
-  only available ratios. They do not substitute an older available period when
-  the latest value is missing. Legacy unverified values are excluded from ranking.
-
-The existing `extraction_evidence` database column is retained for compatibility;
-current loads leave it null. Missing statuses do not distinguish undisclosed
-amounts, unsupported standard structures or custom-tag coverage gaps.
-
 ## Setup and execution
+
+Schema setup creates tables if absent; it does not migrate older schemas or delete
+existing tables. The separate view-refresh stage creates the sector views.
 
 Run from the repository root. The development environment uses Python 3.13;
 [requirements.txt](requirements.txt) pins dependencies, including EdgarTools 5.58.0.
@@ -321,40 +677,36 @@ PYTHONPATH=src .venv/bin/python -m table_data.company_status
 PYTHONPATH=src .venv/bin/python -m table_data.generate_ratios
 ```
 
-## Offline verification
+## Research and tests
 
-These are the active checks for the current architecture. They use constructed
-cases, mocked integration and archived filings; they do not run live extraction
-or write to the live database or production CSVs.
+- **Tests:** 32 constructed and isolated checks passed for date/dimension selection,
+  missing values, fallback priority, arithmetic and database loading. All four
+  metrics and both ratios also matched the frozen baseline across 22 archived
+  filings from six companies, including missing states. These checks establish
+  tested behavior and regression consistency, not universal accounting correctness
+  or deployed PostgreSQL behavior.
+- **Investigations:** official-definition reviews established the explicit
+  accounting fallbacks above and rejected substitutions with incompatible scope.
+  A historical 30-filing null audit identified unavailable total-interest inputs
+  and operating-income facts as immediate blockers; it did not demonstrate a
+  selection or arithmetic bug explaining those nulls. Taxonomy changes explained
+  some interest-coverage gaps, and no general missing-tag-equals-zero rule was
+  established. Disney's negative expense was traced to the source tag, not Edgar's
+  parsing. These samples do not establish full-index coverage or current null rates.
+
+[Tests and archived fixtures](scratch/tests/) are separate from
+[research evidence](scratch/research/research_evidence.json) and its
+[source manifest](scratch/research/source_manifest.json). The research includes
+historical observations whose exploratory runners were removed; it is not all
+rerunnable from the retained files. The broader AI-assisted analysis has not been
+independently reviewed by the owner. The owner's small diagnostic scripts in
+`scratch/research/` use live Edgar data; the checks below run offline without
+writing production CSVs or the live database.
 
 ```sh
-PYTHONPATH=src:scratch/unchecked_tests .venv/bin/python -B -m unittest discover -s scratch/unchecked_tests
-.venv/bin/python -B scratch/unchecked_tests/implementation/verify_simple_retrieval.py
+PYTHONPATH=src .venv/bin/python -B -m unittest discover -s scratch/tests -p 'test_*.py'
+.venv/bin/python -B scratch/tests/verify_archived_filings.py
 ```
-
-The consolidated suite passed **16 tests**: 14 retrieval/calculation checks and
-two storage/checkpoint checks. Across
-**22 archived filings from six companies**—Apple, AMD, Microsoft, Walmart,
-Berkshire Hathaway and JPMorgan—all four metric slots and both ratios matched
-the frozen linkbase-disabled baseline, including missing values.
-
-Evidence:
-
-- [Focused test log](scratch/unchecked_tests/implementation/current_tests.txt)
-- [Archived-filing comparison log](scratch/unchecked_tests/implementation/archived_filings.txt)
-- [Per-filing results](scratch/unchecked_tests/implementation/simple_retrieval_results.json)
-- [Original filing manifest](scratch/unchecked_tests/implementation/instance_manifest.json)
-- [Linkbase dependency experiment](scratch/unchecked_tests/implementation/linkbase_dependency_results.json)
-
-Obsolete suites and repeated run outputs have been removed. The remaining tests
-run through standard unittest discovery. The mocked filing-loop test verifies
-wiring, not live transport. SQLite checks transaction and missing-value behavior;
-it does not establish deployed PostgreSQL behavior or numeric precision.
-Original filing and official-source documents are compressed, and distinct
-research conclusions are retained alongside the active tests; see the
-[archive guide](scratch/unchecked_tests/README.md). Historical comparisons are
-evidence from earlier experiments, not current executable regression tests.
-Passing a sample does not prove universal correctness or complete S&P 500 coverage.
 
 ## Upcoming features
 
@@ -380,6 +732,16 @@ Tableau visualizations are upcoming after the next SQL analysis work.
 
 ## Remaining limitations
 
+- **Ticker changes:** database records are keyed by ticker, and ticker changes
+  are not automatically reconciled. Later loads can retain rows under the old
+  ticker while adding rows under the new ticker, splitting or duplicating a
+  company's stored history. Filing retrieval still uses CIK; the retained CIK
+  column in `companies` can identify the connection between those records.
+- **Confirmed retrieval omissions corrected in this pass:** the explicit SG&A
+  complement, total regulated/unregulated operating revenue and inclusive LLC
+  members' equity were absent. They now have direct-first, complete-input
+  fallbacks. Their presence in the official taxonomy is established; recovery
+  for actual missing S&P 500 results is not established by the samples.
 - **Coverage gaps:** additional justified accounting fallbacks and permitted
   standard filing structures remain to be implemented. Returning `None` does not
   automatically make an amount unobtainable.

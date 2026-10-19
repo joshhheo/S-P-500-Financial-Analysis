@@ -10,18 +10,19 @@ from database.refresh_view import refresh_view
 def main():
     total_start = time.time()
 
-    stages = [
-        ("Company CSV creation", create_company_status_csv),
-        ("SEC ratio extraction", generate_ratios),
-        ("Database schema setup", create_tables),
-        ("Company database load", companies_table_info),
-        ("Financial database load", financials_table_info),
-        ("Sector view refresh", refresh_view),
-    ]
-    for label, run_stage in stages:
+    stages = {
+        "Company CSV creation": create_company_status_csv,
+        "SEC ratio extraction": generate_ratios,
+        "Database schema setup": create_tables,
+        "Company database load": companies_table_info,
+        "Financial database load": financials_table_info,
+        "Sector view refresh": refresh_view,
+    }
+    for label, run_stage in stages.items():
         start = time.time()
         print(f"Starting {label}", flush=True)
         run_stage()
+        # flush stops print buffer
         print(f"{label} completed: {time.time() - start:.2f} seconds", flush=True)
 
     print(f"Total runtime: {time.time() - total_start:.2f} seconds")

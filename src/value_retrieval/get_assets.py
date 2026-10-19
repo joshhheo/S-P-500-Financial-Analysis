@@ -1,7 +1,8 @@
 from value_retrieval.get_value import get_value
-from value_retrieval.get_equity import get_equity
+from value_retrieval.assets_and_liabilities.get_equity import get_equity
+from value_retrieval.assets_and_liabilities.get_temporary_equity import get_temporary_equity
 
-
+# stops feedback loop of assets and liabilities
 def get_assets_before_equity(financial_data, period_end):
     assets = get_value(financial_data, 'us-gaap:Assets', period_end)
     if assets is not None:
@@ -20,7 +21,11 @@ def get_assets(financial_data, period_end):
     if assets is not None:
         return assets
     liabilities = get_liabilities_before_equity(financial_data, period_end)
-    equity, temporary = get_equity(financial_data, period_end)
+    net_assets = get_value(financial_data, 'us-gaap:AssetsNet', period_end)
+    if liabilities is not None and net_assets is not None:
+        return liabilities + net_assets
+    equity = get_equity(financial_data, period_end)
+    temporary = get_temporary_equity(financial_data, period_end)
     if liabilities is not None and equity is not None and temporary is not None:
         return liabilities + equity + temporary
     return None

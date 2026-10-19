@@ -13,4 +13,3 @@ def refresh_view():
             with open(f"src/database/sql/{filename}") as f:
                 connection.execute(text(f.read()))
 
-    print("Both sector view definitions committed", flush=True)

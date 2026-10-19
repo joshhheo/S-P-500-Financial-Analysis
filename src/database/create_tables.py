@@ -13,6 +13,7 @@ def create_tables():
     create_companies_table = """
     CREATE TABLE IF NOT EXISTS companies (
         ticker TEXT PRIMARY KEY,
+        cik TEXT,
         company_name TEXT,
         sector TEXT,
         is_current_constituent BOOLEAN NOT NULL DEFAULT FALSE
@@ -23,6 +24,7 @@ def create_tables():
     create_financials_table = """
     CREATE TABLE IF NOT EXISTS financials (
         ticker TEXT REFERENCES companies(ticker),
+        fiscal_period_start DATE,
         fiscal_period_end DATE,
         debt_to_assets_ratio NUMERIC,
         interest_coverage_ratio NUMERIC,
@@ -31,29 +33,10 @@ def create_tables():
     """
 
     # with statement to close connection automatically
-    with engine.connect() as connection:
+    with engine.begin() as connection:
         connection.execute(text(create_companies_table))
-        connection.execute(text("""
-            ALTER TABLE companies
-            ADD COLUMN IF NOT EXISTS is_current_constituent
-            BOOLEAN NOT NULL DEFAULT FALSE;
-     """))
         connection.execute(text(create_financials_table))
-        connection.execute(text("""
-            ALTER TABLE financials
-            ADD COLUMN IF NOT EXISTS interest_coverage_ratio NUMERIC;
-        """))
-        # Existing rows retain their values and are explicitly marked unverified.
-        for name, definition in {
-            'cik': 'TEXT', 'accession': 'TEXT', 'fiscal_period_start': 'DATE',
-            'debt_to_assets_status': "TEXT NOT NULL DEFAULT 'legacy_unverified'",
-            'interest_coverage_status': "TEXT NOT NULL DEFAULT 'legacy_unverified'",
-            'extraction_evidence': 'TEXT',
-        }.items():
-            connection.execute(text(f'ALTER TABLE financials ADD COLUMN IF NOT EXISTS {name} {definition}'))
-        connection.commit()
-    print("Schema transaction committed: companies and financials tables ensured; current-membership and interest-coverage columns ensured", flush=True)
+
 
 if __name__ == "__main__":
     create_tables()
-    

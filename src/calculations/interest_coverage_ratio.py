@@ -1,4 +1,3 @@
-from decimal import localcontext
 from value_retrieval.get_operating_income import get_operating_income
 from value_retrieval.get_interest_expense import get_interest_expense
 
@@ -10,7 +9,4 @@ def calculate_interest_coverage(financial_data, period_start, period_end):
         return None
     if interest == 0:
         return None
-    with localcontext() as context:
-        context.prec = 28
-        context.rounding = 'ROUND_HALF_EVEN'
-        return income / interest
+    return income / interest

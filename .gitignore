@@ -4,7 +4,4 @@
 __pycache__/
 *.pyc
 
-# Temporary extraction checkpoints
-data/financial_ratios.partial.csv
-data/financial_ratios.partial.tmp
-data/financial_ratios.csv.tmp
+# Temporary completed-CSV writes

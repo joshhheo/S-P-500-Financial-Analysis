@@ -188,5 +188,20 @@
     "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
     "file": "WMT-2026-01-31.htm",
     "sha256": "0264777053189935755b20defd592aea34c89f70d577d526ae8f4af75998e064"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2026/stm/us-gaap-stm-soi-cal-2026.xml",
+    "file": "us-gaap-stm-soi-cal-2026.xml",
+    "sha256": "72a743247eaa397e9b4e91006e7311c5a908afa324d9c2a0608d02e441dabd4d"
+  },
+  {
+    "url": "https://xbrl.fasb.org/us-gaap/2026/us-gaap-2026.zip",
+    "file": "us-gaap-2026.zip",
+    "sha256": "f4c8b8b5697ba7d825a8614b159611cd25a46640e98a9737cda1e4a672bd4c81"
+  },
+  {
+    "url": "https://xbrl.fasb.org/srt/2026/srt-2026.zip",
+    "file": "srt-2026.zip",
+    "sha256": "34dab1ee7a10b9991fee1e17437c278908599ff2258ea3270ef718cab265be05"
   }
 ]

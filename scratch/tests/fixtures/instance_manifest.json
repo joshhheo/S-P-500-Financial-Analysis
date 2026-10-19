@@ -12,19 +12,34 @@
       {
         "file": "AAPL-2021-09-25__aapl-20210925_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000105/aapl-20210925_htm.xml",
-        "sha256": "80b1307f72e709b4f23961f38d3f3a950b65a8feaa4499241f55962d2a2a70a9"
+        "sha256": "80b1307f72e709b4f23961f38d3f3a950b65a8feaa4499241f55962d2a2a70a9",
+        "retained_in_archive": true
       },
       {
         "file": "AAPL-2021-09-25__aapl-20210925.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000105/aapl-20210925.xsd",
-        "sha256": "80456504d2fd74c58125ee4538e137fbc15da375f062c33cdf00f54ee55e24c6"
+        "sha256": "80456504d2fd74c58125ee4538e137fbc15da375f062c33cdf00f54ee55e24c6",
+        "retained_in_archive": false
       },
       {
         "file": "AAPL-2021-09-25__aapl-20210925_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000105/aapl-20210925_cal.xml",
-        "sha256": "8481b890fbde7bb5fec120a1fc154997ad5c9bcd63ce961db46182b570c15a9c"
+        "sha256": "8481b890fbde7bb5fec120a1fc154997ad5c9bcd63ce961db46182b570c15a9c",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "351002000000",
+        "liabilities": "287912000000",
+        "operating_income": "108949000000",
+        "interest_expense": "2645000000"
+      },
+      "ratios": {
+        "debt_to_assets": "0.8202574344305730451678338015",
+        "interest_coverage": "41.19054820415879017013232514"
+      }
+    }
   },
   {
     "ticker": "AAPL",
@@ -39,19 +54,34 @@
       {
         "file": "AAPL-2022-09-24__aapl-20220924_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924_htm.xml",
-        "sha256": "7f9a394635aeedb431c1be3da022e469d5116eac3c621b14b65bdf01d9d9bd8c"
+        "sha256": "7f9a394635aeedb431c1be3da022e469d5116eac3c621b14b65bdf01d9d9bd8c",
+        "retained_in_archive": true
       },
       {
         "file": "AAPL-2022-09-24__aapl-20220924.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924.xsd",
-        "sha256": "77b53a186376c8d5520809572436510d02393192c2b38b6b7bfc8d03c5339edf"
+        "sha256": "77b53a186376c8d5520809572436510d02393192c2b38b6b7bfc8d03c5339edf",
+        "retained_in_archive": false
       },
       {
         "file": "AAPL-2022-09-24__aapl-20220924_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924_cal.xml",
-        "sha256": "17e931215673dc0e0e0d8bbc5c705b645295e4f7099c37b7eefa61032b7b6ecf"
+        "sha256": "17e931215673dc0e0e0d8bbc5c705b645295e4f7099c37b7eefa61032b7b6ecf",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "352755000000",
+        "liabilities": "302083000000",
+        "operating_income": "119437000000",
+        "interest_expense": "2931000000"
+      },
+      "ratios": {
+        "debt_to_assets": "0.8563535598361469008235177389",
+        "interest_coverage": "40.74957352439440464005458888"
+      }
+    }
   },
   {
     "ticker": "AAPL",
@@ -66,19 +96,34 @@
       {
         "file": "AAPL-2023-09-30__aapl-20230930_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930_htm.xml",
-        "sha256": "9ba479d9d5d674416fe64f2a7d3e306f5b5c30ecb0aa9d87737b80ad740f76d9"
+        "sha256": "9ba479d9d5d674416fe64f2a7d3e306f5b5c30ecb0aa9d87737b80ad740f76d9",
+        "retained_in_archive": true
       },
       {
         "file": "AAPL-2023-09-30__aapl-20230930.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930.xsd",
-        "sha256": "cfb3e49a01af2843495d4a517210526d9a2235a2a09a8105d2b88ef64539b7b5"
+        "sha256": "cfb3e49a01af2843495d4a517210526d9a2235a2a09a8105d2b88ef64539b7b5",
+        "retained_in_archive": false
       },
       {
         "file": "AAPL-2023-09-30__aapl-20230930_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930_cal.xml",
-        "sha256": "2506e7bc4f8ab5cba92314f72a3f00a866ff73352d2e72d249ae7ea435452895"
+        "sha256": "2506e7bc4f8ab5cba92314f72a3f00a866ff73352d2e72d249ae7ea435452895",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "352583000000",
+        "liabilities": "290437000000",
+        "operating_income": "114301000000",
+        "interest_expense": "3933000000"
+      },
+      "ratios": {
+        "debt_to_assets": "0.8237407929480434394171017888",
+        "interest_coverage": "29.06203915586066615814899568"
+      }
+    }
   },
   {
     "ticker": "AAPL",
@@ -93,19 +138,34 @@
       {
         "file": "AAPL-2024-09-28__aapl-20240928_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928_htm.xml",
-        "sha256": "1bf6615f47d53f87b10fd036b647fbb4e9ad59db51667761b42ee6666bb2241c"
+        "sha256": "1bf6615f47d53f87b10fd036b647fbb4e9ad59db51667761b42ee6666bb2241c",
+        "retained_in_archive": true
       },
       {
         "file": "AAPL-2024-09-28__aapl-20240928.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.xsd",
-        "sha256": "3515cfaf75c1b0ec2696425bf907a07b4aae286698e4cf5cf9de54e1270b3b7e"
+        "sha256": "3515cfaf75c1b0ec2696425bf907a07b4aae286698e4cf5cf9de54e1270b3b7e",
+        "retained_in_archive": false
       },
       {
         "file": "AAPL-2024-09-28__aapl-20240928_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928_cal.xml",
-        "sha256": "2e9a0fa7a379a4a691bff7531b3d6c35c307cba9874aa21c62902c399cc15d00"
+        "sha256": "2e9a0fa7a379a4a691bff7531b3d6c35c307cba9874aa21c62902c399cc15d00",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "364980000000",
+        "liabilities": "308030000000",
+        "operating_income": "123216000000",
+        "interest_expense": null
+      },
+      "ratios": {
+        "debt_to_assets": "0.8439640528248123184832045592",
+        "interest_coverage": null
+      }
+    }
   },
   {
     "ticker": "AAPL",
@@ -120,19 +180,34 @@
       {
         "file": "AAPL-2025-09-27__aapl-20250927_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927_htm.xml",
-        "sha256": "e1076735f1c81bc96d5c1ff6e1a9d23515d6eacf52b405cb1f7da3e379ac533b"
+        "sha256": "e1076735f1c81bc96d5c1ff6e1a9d23515d6eacf52b405cb1f7da3e379ac533b",
+        "retained_in_archive": true
       },
       {
         "file": "AAPL-2025-09-27__aapl-20250927.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.xsd",
-        "sha256": "e697d106fae1543535c634bede6337b8f1ecd987e7655eb91c62913900ab6335"
+        "sha256": "e697d106fae1543535c634bede6337b8f1ecd987e7655eb91c62913900ab6335",
+        "retained_in_archive": false
       },
       {
         "file": "AAPL-2025-09-27__aapl-20250927_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927_cal.xml",
-        "sha256": "314091ba88cd58f392874866c19010ed9facdd643f34f0afbcf37137192c5f05"
+        "sha256": "314091ba88cd58f392874866c19010ed9facdd643f34f0afbcf37137192c5f05",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "359241000000",
+        "liabilities": "285508000000",
+        "operating_income": "133050000000",
+        "interest_expense": null
+      },
+      "ratios": {
+        "debt_to_assets": "0.7947533828265704638390384171",
+        "interest_coverage": null
+      }
+    }
   },
   {
     "ticker": "AMD",
@@ -147,19 +222,34 @@
       {
         "file": "AMD-2021-12-25__amd-20211225_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248822000016/amd-20211225_htm.xml",
-        "sha256": "b0a3a993f19183fa43d4531191e96b7e9d992242ea9cf236b7a2c1b2c5eec0d2"
+        "sha256": "b0a3a993f19183fa43d4531191e96b7e9d992242ea9cf236b7a2c1b2c5eec0d2",
+        "retained_in_archive": true
       },
       {
         "file": "AMD-2021-12-25__amd-20211225.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248822000016/amd-20211225.xsd",
-        "sha256": "2fabd48920c8372b9b411381b5211b8faf3beee32712f769ef0b6f1b67b28ccf"
+        "sha256": "2fabd48920c8372b9b411381b5211b8faf3beee32712f769ef0b6f1b67b28ccf",
+        "retained_in_archive": false
       },
       {
         "file": "AMD-2021-12-25__amd-20211225_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248822000016/amd-20211225_cal.xml",
-        "sha256": "81d4fcc2a957ecdd9988d66e2d02bae2529649f9a243dd6fa703654f23156584"
+        "sha256": "81d4fcc2a957ecdd9988d66e2d02bae2529649f9a243dd6fa703654f23156584",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "12419000000",
+        "liabilities": null,
+        "operating_income": "3648000000",
+        "interest_expense": "34000000"
+      },
+      "ratios": {
+        "debt_to_assets": null,
+        "interest_coverage": "107.2941176470588235294117647"
+      }
+    }
   },
   {
     "ticker": "AMD",
@@ -174,19 +264,34 @@
       {
         "file": "AMD-2022-12-31__amd-20221231_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248823000047/amd-20221231_htm.xml",
-        "sha256": "688cb6aa6206daef101283ae6e4806e48e8024a9be62c7cb929f161f28735e11"
+        "sha256": "688cb6aa6206daef101283ae6e4806e48e8024a9be62c7cb929f161f28735e11",
+        "retained_in_archive": true
       },
       {
         "file": "AMD-2022-12-31__amd-20221231.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248823000047/amd-20221231.xsd",
-        "sha256": "40b89af31ef1b5c9e85f7c46174f1eb67713ad13abeee61d29a94228b285d341"
+        "sha256": "40b89af31ef1b5c9e85f7c46174f1eb67713ad13abeee61d29a94228b285d341",
+        "retained_in_archive": false
       },
       {
         "file": "AMD-2022-12-31__amd-20221231_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248823000047/amd-20221231_cal.xml",
-        "sha256": "ab12a32dcf2ac9f755b271a829b2480d425e116904ea81f4f43636910e4963c4"
+        "sha256": "ab12a32dcf2ac9f755b271a829b2480d425e116904ea81f4f43636910e4963c4",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "67580000000",
+        "liabilities": null,
+        "operating_income": "1264000000",
+        "interest_expense": "88000000"
+      },
+      "ratios": {
+        "debt_to_assets": null,
+        "interest_coverage": "14.36363636363636363636363636"
+      }
+    }
   },
   {
     "ticker": "AMD",
@@ -201,19 +306,34 @@
       {
         "file": "AMD-2023-12-30__amd-20231230_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000012/amd-20231230_htm.xml",
-        "sha256": "505e98600b95dd3bbb1271bd348686425f0b3bd022b6cc1cf690752a015bb370"
+        "sha256": "505e98600b95dd3bbb1271bd348686425f0b3bd022b6cc1cf690752a015bb370",
+        "retained_in_archive": true
       },
       {
         "file": "AMD-2023-12-30__amd-20231230.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000012/amd-20231230.xsd",
-        "sha256": "0d2f73671886f5670208d892cd28a81230a682e4d57408957465bc0649a151cd"
+        "sha256": "0d2f73671886f5670208d892cd28a81230a682e4d57408957465bc0649a151cd",
+        "retained_in_archive": false
       },
       {
         "file": "AMD-2023-12-30__amd-20231230_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000012/amd-20231230_cal.xml",
-        "sha256": "d6830e8015cec8161270ec1b47267bbc5b94f912538e34b80b88d0d49dd1fabc"
+        "sha256": "d6830e8015cec8161270ec1b47267bbc5b94f912538e34b80b88d0d49dd1fabc",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "67885000000",
+        "liabilities": null,
+        "operating_income": "401000000",
+        "interest_expense": "106000000"
+      },
+      "ratios": {
+        "debt_to_assets": null,
+        "interest_coverage": "3.783018867924528301886792453"
+      }
+    }
   },
   {
     "ticker": "AMD",
@@ -228,19 +348,34 @@
       {
         "file": "AMD-2024-12-28__amd-20241228_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228_htm.xml",
-        "sha256": "712b8a06cbb849e4fc4c78102986dbb25806cce5e3c2bbc0464da4d63ee516f4"
+        "sha256": "712b8a06cbb849e4fc4c78102986dbb25806cce5e3c2bbc0464da4d63ee516f4",
+        "retained_in_archive": true
       },
       {
         "file": "AMD-2024-12-28__amd-20241228.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228.xsd",
-        "sha256": "6e20c1d2af55d49256f0bb3c58a55a26e2eb07b4c607e2378f76d5fdbdef5487"
+        "sha256": "6e20c1d2af55d49256f0bb3c58a55a26e2eb07b4c607e2378f76d5fdbdef5487",
+        "retained_in_archive": false
       },
       {
         "file": "AMD-2024-12-28__amd-20241228_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228_cal.xml",
-        "sha256": "41a8cd4a4b775b30d262701670b6e216e7022d5bd942c05454cdd12899bf64b1"
+        "sha256": "41a8cd4a4b775b30d262701670b6e216e7022d5bd942c05454cdd12899bf64b1",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "69226000000",
+        "liabilities": null,
+        "operating_income": "1900000000",
+        "interest_expense": "92000000"
+      },
+      "ratios": {
+        "debt_to_assets": null,
+        "interest_coverage": "20.65217391304347826086956522"
+      }
+    }
   },
   {
     "ticker": "AMD",
@@ -255,19 +390,34 @@
       {
         "file": "AMD-2025-12-27__amd-20251227_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227_htm.xml",
-        "sha256": "7a073e96fa640527505f4b53c4cda1f5b0af4d6e6a3b54b4cb056e78c36d328e"
+        "sha256": "7a073e96fa640527505f4b53c4cda1f5b0af4d6e6a3b54b4cb056e78c36d328e",
+        "retained_in_archive": true
       },
       {
         "file": "AMD-2025-12-27__amd-20251227.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.xsd",
-        "sha256": "a58214ad88d43cc49a9404522d6ec8a650092da34cafa46c11270baa0d921a3d"
+        "sha256": "a58214ad88d43cc49a9404522d6ec8a650092da34cafa46c11270baa0d921a3d",
+        "retained_in_archive": false
       },
       {
         "file": "AMD-2025-12-27__amd-20251227_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227_cal.xml",
-        "sha256": "b992fa9f6cf84e5ca7084e0ae9aa1192814f95fe84878f74c8b75e32fb1281f4"
+        "sha256": "b992fa9f6cf84e5ca7084e0ae9aa1192814f95fe84878f74c8b75e32fb1281f4",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "76926000000",
+        "liabilities": null,
+        "operating_income": "3694000000",
+        "interest_expense": "131000000"
+      },
+      "ratios": {
+        "debt_to_assets": null,
+        "interest_coverage": "28.19847328244274809160305344"
+      }
+    }
   },
   {
     "ticker": "BRK-B",
@@ -282,14 +432,28 @@
       {
         "file": "BRK-B-2025-12-31__brka-20251231_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231_htm.xml",
-        "sha256": "85cdfd4f4c3ffd4a6332a135215abda946f320ab41dac4a1946cc339546fa1b5"
+        "sha256": "85cdfd4f4c3ffd4a6332a135215abda946f320ab41dac4a1946cc339546fa1b5",
+        "retained_in_archive": true
       },
       {
         "file": "BRK-B-2025-12-31__brka-20251231.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.xsd",
-        "sha256": "1d129f94d889b651223ece7210211a08b4b0f8bfb7cbf822169ce46f15a33b93"
+        "sha256": "1d129f94d889b651223ece7210211a08b4b0f8bfb7cbf822169ce46f15a33b93",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "1222176000000",
+        "liabilities": "502473000000",
+        "operating_income": null,
+        "interest_expense": "5069000000"
+      },
+      "ratios": {
+        "debt_to_assets": "0.4111298209095907627052077606",
+        "interest_coverage": null
+      }
+    }
   },
   {
     "ticker": "JPM",
@@ -304,19 +468,34 @@
       {
         "file": "JPM-2025-12-31__jpm-20251231_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231_htm.xml",
-        "sha256": "9fe211a6d6f7ec3af368f81c820868b54d7ea02ca2fe9776e72d7a41e2472126"
+        "sha256": "9fe211a6d6f7ec3af368f81c820868b54d7ea02ca2fe9776e72d7a41e2472126",
+        "retained_in_archive": true
       },
       {
         "file": "JPM-2025-12-31__jpm-20251231.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.xsd",
-        "sha256": "b30f37aa5c0289d87d83bc23923f968fc8f3332baa8ab5ea33dea84d9fb7a977"
+        "sha256": "b30f37aa5c0289d87d83bc23923f968fc8f3332baa8ab5ea33dea84d9fb7a977",
+        "retained_in_archive": false
       },
       {
         "file": "JPM-2025-12-31__jpm-20251231_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231_cal.xml",
-        "sha256": "fc64d14d2f39175cf6bcce94937d78c914622f7d48a6f109386fad1088a83929"
+        "sha256": "fc64d14d2f39175cf6bcce94937d78c914622f7d48a6f109386fad1088a83929",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "4424900000000",
+        "liabilities": "4062462000000",
+        "operating_income": null,
+        "interest_expense": null
+      },
+      "ratios": {
+        "debt_to_assets": "0.9180912562995773915794707225",
+        "interest_coverage": null
+      }
+    }
   },
   {
     "ticker": "MSFT",
@@ -331,19 +510,34 @@
       {
         "file": "MSFT-2022-06-30__msft-10k_20220630_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/msft-10k_20220630_htm.xml",
-        "sha256": "b43e1f641905a26ceda158cbd910d67caa658b8227f331b48932fdd052136a40"
+        "sha256": "b43e1f641905a26ceda158cbd910d67caa658b8227f331b48932fdd052136a40",
+        "retained_in_archive": true
       },
       {
         "file": "MSFT-2022-06-30__msft-20220630.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/msft-20220630.xsd",
-        "sha256": "1ce81cbc847b24c6fc4d132ecd906c922c3530ff732b9d22e376bd5d166968c9"
+        "sha256": "1ce81cbc847b24c6fc4d132ecd906c922c3530ff732b9d22e376bd5d166968c9",
+        "retained_in_archive": false
       },
       {
         "file": "MSFT-2022-06-30__msft-20220630_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/msft-20220630_cal.xml",
-        "sha256": "ca10d0bde31ccd1dc6088425cbb6e1ba07d0921a3c11fa6843cf96e185fdc0e1"
+        "sha256": "ca10d0bde31ccd1dc6088425cbb6e1ba07d0921a3c11fa6843cf96e185fdc0e1",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "364840000000",
+        "liabilities": "198298000000",
+        "operating_income": "83383000000",
+        "interest_expense": "2063000000"
+      },
+      "ratios": {
+        "debt_to_assets": "0.5435204473193728757811643460",
+        "interest_coverage": "40.41832283082888996606883180"
+      }
+    }
   },
   {
     "ticker": "MSFT",
@@ -358,19 +552,34 @@
       {
         "file": "MSFT-2023-06-30__msft-20230630_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/msft-20230630_htm.xml",
-        "sha256": "520b20e1fa8c53eaa07f5dfdb3e171c89c1f3251be4673d26916fc35ba6d5f0c"
+        "sha256": "520b20e1fa8c53eaa07f5dfdb3e171c89c1f3251be4673d26916fc35ba6d5f0c",
+        "retained_in_archive": true
       },
       {
         "file": "MSFT-2023-06-30__msft-20230630.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/msft-20230630.xsd",
-        "sha256": "7aa1155820b46b6fa2e990103ab82ce6ea6162215287dc3b2d2d47f7ef89d126"
+        "sha256": "7aa1155820b46b6fa2e990103ab82ce6ea6162215287dc3b2d2d47f7ef89d126",
+        "retained_in_archive": false
       },
       {
         "file": "MSFT-2023-06-30__msft-20230630_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/msft-20230630_cal.xml",
-        "sha256": "20c95a216d426260953987af8f4995b939b500828086994d7afbac748aa945bf"
+        "sha256": "20c95a216d426260953987af8f4995b939b500828086994d7afbac748aa945bf",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "411976000000",
+        "liabilities": "205753000000",
+        "operating_income": "88523000000",
+        "interest_expense": "1968000000"
+      },
+      "ratios": {
+        "debt_to_assets": "0.4994295784220440025632561120",
+        "interest_coverage": "44.98119918699186991869918699"
+      }
+    }
   },
   {
     "ticker": "MSFT",
@@ -385,14 +594,28 @@
       {
         "file": "MSFT-2024-06-30__msft-20240630_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630_htm.xml",
-        "sha256": "02d05d37ecc41a1dd70a3a378417e7c3a2397f45010361df047c51a5ac1c05e0"
+        "sha256": "02d05d37ecc41a1dd70a3a378417e7c3a2397f45010361df047c51a5ac1c05e0",
+        "retained_in_archive": true
       },
       {
         "file": "MSFT-2024-06-30__msft-20240630.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.xsd",
-        "sha256": "eb7a190a1c0e55e0aac6e0f7713440901259992359db64eb98dc0601e041d484"
+        "sha256": "eb7a190a1c0e55e0aac6e0f7713440901259992359db64eb98dc0601e041d484",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "512163000000",
+        "liabilities": "243686000000",
+        "operating_income": "109433000000",
+        "interest_expense": "2935000000"
+      },
+      "ratios": {
+        "debt_to_assets": "0.4757977440775690551640786234",
+        "interest_coverage": "37.28551959114139693356047700"
+      }
+    }
   },
   {
     "ticker": "MSFT",
@@ -407,14 +630,28 @@
       {
         "file": "MSFT-2025-06-30__msft-20250630_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630_htm.xml",
-        "sha256": "b90704839beab78c428874d38eaaf2582e048439d53a79f52af3d2cd4ee5e792"
+        "sha256": "b90704839beab78c428874d38eaaf2582e048439d53a79f52af3d2cd4ee5e792",
+        "retained_in_archive": true
       },
       {
         "file": "MSFT-2025-06-30__msft-20250630.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.xsd",
-        "sha256": "15b2140a25e594331e0b7c650b1f3c4e4c7da5a6163d996690b4be35edd842e5"
+        "sha256": "15b2140a25e594331e0b7c650b1f3c4e4c7da5a6163d996690b4be35edd842e5",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "619003000000",
+        "liabilities": "275524000000",
+        "operating_income": "128528000000",
+        "interest_expense": null
+      },
+      "ratios": {
+        "debt_to_assets": "0.4451093128789359663846540324",
+        "interest_coverage": null
+      }
+    }
   },
   {
     "ticker": "MSFT",
@@ -429,14 +666,28 @@
       {
         "file": "MSFT-2026-06-30__msft-20260630_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630_htm.xml",
-        "sha256": "56e56d82ee2d82cb75d37b85df51d4807ffc1e1a3cc4e02ec87513b7574aa886"
+        "sha256": "56e56d82ee2d82cb75d37b85df51d4807ffc1e1a3cc4e02ec87513b7574aa886",
+        "retained_in_archive": true
       },
       {
         "file": "MSFT-2026-06-30__msft-20260630.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.xsd",
-        "sha256": "29d4cdf7695b78550142ff145e3981d80637ecb3290383be4fa779d9be3d0512"
+        "sha256": "29d4cdf7695b78550142ff145e3981d80637ecb3290383be4fa779d9be3d0512",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "758376000000",
+        "liabilities": "315989000000",
+        "operating_income": "155237000000",
+        "interest_expense": null
+      },
+      "ratios": {
+        "debt_to_assets": "0.4166653480595377490848866525",
+        "interest_coverage": null
+      }
+    }
   },
   {
     "ticker": "WMT",
@@ -451,19 +702,34 @@
       {
         "file": "WMT-2022-01-31__wmt-20220131_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416922000012/wmt-20220131_htm.xml",
-        "sha256": "e9799d54d7131d9021c0b4747194b5fd0286519b0de6f4a9d9c35bd147aa962c"
+        "sha256": "e9799d54d7131d9021c0b4747194b5fd0286519b0de6f4a9d9c35bd147aa962c",
+        "retained_in_archive": true
       },
       {
         "file": "WMT-2022-01-31__wmt-20220131.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416922000012/wmt-20220131.xsd",
-        "sha256": "bf6798758ded04f579fd10a7b5ba19d305db5096a309dc7674b885a0086e5d88"
+        "sha256": "bf6798758ded04f579fd10a7b5ba19d305db5096a309dc7674b885a0086e5d88",
+        "retained_in_archive": false
       },
       {
         "file": "WMT-2022-01-31__wmt-20220131_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416922000012/wmt-20220131_cal.xml",
-        "sha256": "41feeb4d0ad13c4c990f2408f87914eb8befe72d76a903d38b3f3c30a7f8c6db"
+        "sha256": "41feeb4d0ad13c4c990f2408f87914eb8befe72d76a903d38b3f3c30a7f8c6db",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "244860000000",
+        "liabilities": null,
+        "operating_income": "25942000000",
+        "interest_expense": null
+      },
+      "ratios": {
+        "debt_to_assets": null,
+        "interest_coverage": null
+      }
+    }
   },
   {
     "ticker": "WMT",
@@ -478,19 +744,34 @@
       {
         "file": "WMT-2023-01-31__wmt-20230131_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416923000020/wmt-20230131_htm.xml",
-        "sha256": "53993be13e93eeec5d146a5146c377d60d33b80877bcec072e06105663e3701f"
+        "sha256": "53993be13e93eeec5d146a5146c377d60d33b80877bcec072e06105663e3701f",
+        "retained_in_archive": true
       },
       {
         "file": "WMT-2023-01-31__wmt-20230131.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416923000020/wmt-20230131.xsd",
-        "sha256": "44045de9d99ffbc869eb0dffa96fd6bf498b12c3af392f35ca0b17e49a6e43c6"
+        "sha256": "44045de9d99ffbc869eb0dffa96fd6bf498b12c3af392f35ca0b17e49a6e43c6",
+        "retained_in_archive": false
       },
       {
         "file": "WMT-2023-01-31__wmt-20230131_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416923000020/wmt-20230131_cal.xml",
-        "sha256": "8dc0426bb20a2a50b4f04d5490d98aeceb6bb939a97922b3f764ea4664d8dee7"
+        "sha256": "8dc0426bb20a2a50b4f04d5490d98aeceb6bb939a97922b3f764ea4664d8dee7",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "243197000000",
+        "liabilities": null,
+        "operating_income": "20428000000",
+        "interest_expense": null
+      },
+      "ratios": {
+        "debt_to_assets": null,
+        "interest_coverage": null
+      }
+    }
   },
   {
     "ticker": "WMT",
@@ -505,19 +786,34 @@
       {
         "file": "WMT-2024-01-31__wmt-20240131_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416924000056/wmt-20240131_htm.xml",
-        "sha256": "45efb4b456dba5aa1a453de8ebe3c96793cc74766885f91d0aff17f5782679ea"
+        "sha256": "45efb4b456dba5aa1a453de8ebe3c96793cc74766885f91d0aff17f5782679ea",
+        "retained_in_archive": true
       },
       {
         "file": "WMT-2024-01-31__wmt-20240131.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416924000056/wmt-20240131.xsd",
-        "sha256": "ac9204af6329569861fd620955fadcd714cc462693f2d5d5471a31f5b1fa0665"
+        "sha256": "ac9204af6329569861fd620955fadcd714cc462693f2d5d5471a31f5b1fa0665",
+        "retained_in_archive": false
       },
       {
         "file": "WMT-2024-01-31__wmt-20240131_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416924000056/wmt-20240131_cal.xml",
-        "sha256": "4f1d3568f81b3e543ce123b5524d9ce41c303ec5aa63d26384de58062a3dc4f3"
+        "sha256": "4f1d3568f81b3e543ce123b5524d9ce41c303ec5aa63d26384de58062a3dc4f3",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "252399000000",
+        "liabilities": null,
+        "operating_income": "27012000000",
+        "interest_expense": null
+      },
+      "ratios": {
+        "debt_to_assets": null,
+        "interest_coverage": null
+      }
+    }
   },
   {
     "ticker": "WMT",
@@ -532,19 +828,34 @@
       {
         "file": "WMT-2025-01-31__wmt-20250131_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000021/wmt-20250131_htm.xml",
-        "sha256": "5fcf3e216138d1e38cd8365f789f7f76a083295f5424fa0b4e1794c43f2a40ff"
+        "sha256": "5fcf3e216138d1e38cd8365f789f7f76a083295f5424fa0b4e1794c43f2a40ff",
+        "retained_in_archive": true
       },
       {
         "file": "WMT-2025-01-31__wmt-20250131.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000021/wmt-20250131.xsd",
-        "sha256": "d895c47391a23532c3d1f24c66d0402c34a12d3f07572914d1604d3b382cd045"
+        "sha256": "d895c47391a23532c3d1f24c66d0402c34a12d3f07572914d1604d3b382cd045",
+        "retained_in_archive": false
       },
       {
         "file": "WMT-2025-01-31__wmt-20250131_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000021/wmt-20250131_cal.xml",
-        "sha256": "3b902da818f48ab31e2533fb330831ac67e28daf0eab86625d4c3f02cdbc7bae"
+        "sha256": "3b902da818f48ab31e2533fb330831ac67e28daf0eab86625d4c3f02cdbc7bae",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "260823000000",
+        "liabilities": null,
+        "operating_income": "29348000000",
+        "interest_expense": null
+      },
+      "ratios": {
+        "debt_to_assets": null,
+        "interest_coverage": null
+      }
+    }
   },
   {
     "ticker": "WMT",
@@ -559,18 +870,33 @@
       {
         "file": "WMT-2026-01-31__wmt-20260131_htm.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131_htm.xml",
-        "sha256": "07c72faa90cf8515eb1ff1ca264361ca8741c2663202d2f5a25ff9c694f4ef67"
+        "sha256": "07c72faa90cf8515eb1ff1ca264361ca8741c2663202d2f5a25ff9c694f4ef67",
+        "retained_in_archive": true
       },
       {
         "file": "WMT-2026-01-31__wmt-20260131.xsd",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.xsd",
-        "sha256": "84f839867584daa64830e7aca7fff5823c51ade2c6d0df7ff047184756683d3d"
+        "sha256": "84f839867584daa64830e7aca7fff5823c51ade2c6d0df7ff047184756683d3d",
+        "retained_in_archive": false
       },
       {
         "file": "WMT-2026-01-31__wmt-20260131_cal.xml",
         "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131_cal.xml",
-        "sha256": "fc75342dbc3c3705b528a4d04a8cab46cecdd078cd58b37cfc5c74f0f986c178"
+        "sha256": "fc75342dbc3c3705b528a4d04a8cab46cecdd078cd58b37cfc5c74f0f986c178",
+        "retained_in_archive": false
       }
-    ]
+    ],
+    "expected_disabled_linkbase_baseline": {
+      "USD": {
+        "assets": "284668000000",
+        "liabilities": null,
+        "operating_income": "29825000000",
+        "interest_expense": null
+      },
+      "ratios": {
+        "debt_to_assets": null,
+        "interest_coverage": null
+      }
+    }
   }
 ]

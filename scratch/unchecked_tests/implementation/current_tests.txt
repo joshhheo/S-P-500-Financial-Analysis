@@ -1,8 +1,0 @@
-.......TEST: saved 1 periods
-........Financial transaction committed: 1 upserts
-Financial transaction committed: 1 upserts
-.
-----------------------------------------------------------------------
-Ran 16 tests in 0.573s
-
-OK
