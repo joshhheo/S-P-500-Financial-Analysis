@@ -44,10 +44,25 @@ negative reported amounts are not automatically rejected.
 ## Pipeline flow
 
 1. Read current S&P 500 constituents, CIKs and sectors from Wikipedia.
-2. Use each CIK to retrieve up to five distinct original 10-K reporting periods.
+2. Use each CIK to retrieve up to five distinct original 10-K reporting periods,
+   processing up to three companies concurrently.
 3. Let Edgar parse each filing; search its facts using explicit concept names.
 4. Retrieve each metric, trying its accounting fallbacks only when needed.
 5. Calculate ratios, save CSVs, load the database and refresh sector views.
+
+Extraction is the main runtime cost, so `ThreadPoolExecutor` processes three
+companies concurrently while each company's filings remain sequential. Results
+retain company-CSV order and are written once after all workers succeed.
+EdgarTools shares one request limiter across the threads (9 requests/second by
+default), below the [SEC limit](https://www.sec.gov/about/developer-resources).
+
+In user-reported runs, extraction took **2,023 seconds with one worker** and
+**1,671 seconds with three**—about **17% faster**. Two workers were close at
+1,689 seconds; four, five, six and ten were slower. Three is the chosen practical
+setting, not a proven optimum. These were individual runs with potentially
+different cache, network and machine conditions; the original roughly 2,200-second
+sequential run is not a controlled baseline. Parsing still takes time even when
+downloads are cached, so more workers do not guarantee a shorter run.
 
 Historical results cover **current constituents**, not historical index membership.
 Amended filings are excluded. The full run performs all five steps.
@@ -460,7 +475,7 @@ call back into the main metric to manufacture a required component. Existing
 identity order is preserved: some main modules therefore try a reported pair
 before calling the intermediate modules for deeper fallbacks.
 
-**Validation:** all 32 constructed/integration tests pass, and all 22 archived
+**Validation:** all 34 constructed/integration tests pass, and all 22 archived
 filings retain their frozen baseline. The read-only comparison of 30 exact saved
 S&P 500 filings preserves all existing ratios and recovers **no additional ratios**
 in that sample. The sample did not supply complete inputs for the new nested
@@ -679,7 +694,7 @@ PYTHONPATH=src .venv/bin/python -m table_data.generate_ratios
 
 ## Research and tests
 
-- **Tests:** 32 constructed and isolated checks passed for date/dimension selection,
+- **Tests:** 34 constructed and isolated checks passed for date/dimension selection,
   missing values, fallback priority, arithmetic and database loading. All four
   metrics and both ratios also matched the frozen baseline across 22 archived
   filings from six companies, including missing states. These checks establish

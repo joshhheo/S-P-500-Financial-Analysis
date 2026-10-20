@@ -164,6 +164,56 @@ class ExplicitFormulaTests(unittest.TestCase):
             self.assertEqual(set(rows[0]), {'ticker', 'fiscal_period_start', 'fiscal_period_end', 'debt_to_assets_ratio', 'interest_coverage_ratio'})
             self.assertEqual(rows[0]['fiscal_period_start'], '2025-01-01')
 
+    def test_parallel_companies_match_sequential_output(self):
+        from threading import Barrier
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        import pandas as pd
+        from table_data.generate_ratios import generate_ratios
+
+        companies = pd.DataFrame([dict(ticker='FIRST', cik=1), dict(ticker='SECOND', cik=2)])
+        barrier = Barrier(2)
+
+        def company_for(cik):
+            # Parse independent constructed filings in each worker.
+            data = source(fact('Assets', 100) + fact('Liabilities', cik * 20))
+            filing = SimpleNamespace(period_of_report=END,
+                obj=lambda: SimpleNamespace(financials=SimpleNamespace(xb=data)))
+            return SimpleNamespace(get_filings=lambda **kwargs: [filing])
+
+        def concurrent_company(cik):
+            barrier.wait(timeout=10)
+            return company_for(cik)
+
+        module = 'table_data.generate_ratios.'
+        with patch(module+'setup_sec_identity'), \
+             patch(module+'pd.read_csv', return_value=companies), \
+             patch(module+'Company', side_effect=company_for) as company, \
+             patch.object(pd.DataFrame, 'to_csv', autospec=True) as save:
+            generate_ratios(max_workers=1)
+            sequential = save.call_args.args[0].copy()
+            save.reset_mock()
+            company.side_effect = concurrent_company
+            generate_ratios(max_workers=2)
+            save.assert_called_once()
+            parallel = save.call_args.args[0]
+            pd.testing.assert_frame_equal(parallel, sequential)
+            self.assertEqual(parallel['ticker'].tolist(), ['FIRST', 'SECOND'])
+
+    def test_worker_failure_does_not_write_csv(self):
+        from unittest.mock import patch
+        import pandas as pd
+        from table_data.generate_ratios import generate_ratios
+
+        module = 'table_data.generate_ratios.'
+        with patch(module+'setup_sec_identity'), \
+             patch(module+'pd.read_csv', return_value=pd.DataFrame([dict(ticker='TEST', cik=1)])), \
+             patch(module+'get_company_ratios', side_effect=RuntimeError('simulated download failure')), \
+             patch.object(pd.DataFrame, 'to_csv') as save:
+            with self.assertRaisesRegex(RuntimeError, 'simulated download failure'):
+                generate_ratios()
+            save.assert_not_called()
+
 
 class ReviewedFallbackTests(unittest.TestCase):
     def duration_source(self, values):

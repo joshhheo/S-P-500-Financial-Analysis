@@ -1,0 +1,1116 @@
+{
+  "historical_trends": [
+    {
+      "sector": "Communication Services",
+      "period_end_year": 2021,
+      "observed_companies": 14,
+      "leverage_available": 8,
+      "interest_coverage_available": 10,
+      "median_liabilities_to_assets": 0.5398775037565959,
+      "median_interest_coverage": 6.557063001270006
+    },
+    {
+      "sector": "Communication Services",
+      "period_end_year": 2022,
+      "observed_companies": 19,
+      "leverage_available": 9,
+      "interest_coverage_available": 10,
+      "median_liabilities_to_assets": 0.4194138960732879,
+      "median_interest_coverage": 7.900583743697912
+    },
+    {
+      "sector": "Communication Services",
+      "period_end_year": 2023,
+      "observed_companies": 20,
+      "leverage_available": 10,
+      "interest_coverage_available": 11,
+      "median_liabilities_to_assets": 0.5037250159219951,
+      "median_interest_coverage": 5.704428676290678
+    },
+    {
+      "sector": "Communication Services",
+      "period_end_year": 2024,
+      "observed_companies": 21,
+      "leverage_available": 11,
+      "interest_coverage_available": 6,
+      "median_liabilities_to_assets": 0.5360607027969452,
+      "median_interest_coverage": 2.673844913649356
+    },
+    {
+      "sector": "Communication Services",
+      "period_end_year": 2025,
+      "observed_companies": 22,
+      "leverage_available": 11,
+      "interest_coverage_available": 6,
+      "median_liabilities_to_assets": 0.5212782820826299,
+      "median_interest_coverage": 3.7551401994827733
+    },
+    {
+      "sector": "Communication Services",
+      "period_end_year": 2026,
+      "observed_companies": 5,
+      "leverage_available": 1,
+      "interest_coverage_available": 0,
+      "median_liabilities_to_assets": 0.6258312729132919,
+      "median_interest_coverage": null
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "period_end_year": 2021,
+      "observed_companies": 33,
+      "leverage_available": 24,
+      "interest_coverage_available": 21,
+      "median_liabilities_to_assets": 0.7117601403731628,
+      "median_interest_coverage": 4.166666666666667
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "period_end_year": 2022,
+      "observed_companies": 47,
+      "leverage_available": 34,
+      "interest_coverage_available": 26,
+      "median_liabilities_to_assets": 0.7091823209068442,
+      "median_interest_coverage": 5.470802877464683
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "period_end_year": 2023,
+      "observed_companies": 47,
+      "leverage_available": 34,
+      "interest_coverage_available": 25,
+      "median_liabilities_to_assets": 0.7270063321301261,
+      "median_interest_coverage": 6.505016722408027
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "period_end_year": 2024,
+      "observed_companies": 47,
+      "leverage_available": 35,
+      "interest_coverage_available": 10,
+      "median_liabilities_to_assets": 0.7684628552284767,
+      "median_interest_coverage": 6.621383900599383
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "period_end_year": 2025,
+      "observed_companies": 47,
+      "leverage_available": 35,
+      "interest_coverage_available": 9,
+      "median_liabilities_to_assets": 0.7538383911194406,
+      "median_interest_coverage": 5.412089937338739
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "period_end_year": 2026,
+      "observed_companies": 13,
+      "leverage_available": 9,
+      "interest_coverage_available": 2,
+      "median_liabilities_to_assets": 0.6328703404612701,
+      "median_interest_coverage": 25.654824526968675
+    },
+    {
+      "sector": "Consumer Staples",
+      "period_end_year": 2021,
+      "observed_companies": 16,
+      "leverage_available": 11,
+      "interest_coverage_available": 10,
+      "median_liabilities_to_assets": 0.6570921601140572,
+      "median_interest_coverage": 9.867272990319865
+    },
+    {
+      "sector": "Consumer Staples",
+      "period_end_year": 2022,
+      "observed_companies": 31,
+      "leverage_available": 24,
+      "interest_coverage_available": 19,
+      "median_liabilities_to_assets": 0.6488371207411148,
+      "median_interest_coverage": 12.368480725623582
+    },
+    {
+      "sector": "Consumer Staples",
+      "period_end_year": 2023,
+      "observed_companies": 33,
+      "leverage_available": 25,
+      "interest_coverage_available": 20,
+      "median_liabilities_to_assets": 0.6368089978838739,
+      "median_interest_coverage": 9.260684334519805
+    },
+    {
+      "sector": "Consumer Staples",
+      "period_end_year": 2024,
+      "observed_companies": 33,
+      "leverage_available": 25,
+      "interest_coverage_available": 14,
+      "median_liabilities_to_assets": 0.6358457853220174,
+      "median_interest_coverage": 7.990921412199608
+    },
+    {
+      "sector": "Consumer Staples",
+      "period_end_year": 2025,
+      "observed_companies": 33,
+      "leverage_available": 25,
+      "interest_coverage_available": 10,
+      "median_liabilities_to_assets": 0.6625682422845529,
+      "median_interest_coverage": 8.697102900073345
+    },
+    {
+      "sector": "Consumer Staples",
+      "period_end_year": 2026,
+      "observed_companies": 15,
+      "leverage_available": 14,
+      "interest_coverage_available": 2,
+      "median_liabilities_to_assets": 0.7231300378792651,
+      "median_interest_coverage": 45.15232674924674
+    },
+    {
+      "sector": "Energy",
+      "period_end_year": 2021,
+      "observed_companies": 20,
+      "leverage_available": 11,
+      "interest_coverage_available": 8,
+      "median_liabilities_to_assets": 0.5350774003780558,
+      "median_interest_coverage": 4.602848391450472
+    },
+    {
+      "sector": "Energy",
+      "period_end_year": 2022,
+      "observed_companies": 20,
+      "leverage_available": 11,
+      "interest_coverage_available": 9,
+      "median_liabilities_to_assets": 0.5053654784757569,
+      "median_interest_coverage": 15.41551246537396
+    },
+    {
+      "sector": "Energy",
+      "period_end_year": 2023,
+      "observed_companies": 20,
+      "leverage_available": 11,
+      "interest_coverage_available": 8,
+      "median_liabilities_to_assets": 0.4862703807180685,
+      "median_interest_coverage": 16.499298130138094
+    },
+    {
+      "sector": "Energy",
+      "period_end_year": 2024,
+      "observed_companies": 20,
+      "leverage_available": 11,
+      "interest_coverage_available": 3,
+      "median_liabilities_to_assets": 0.4722593256230656,
+      "median_interest_coverage": 32.56296296296296
+    },
+    {
+      "sector": "Energy",
+      "period_end_year": 2025,
+      "observed_companies": 20,
+      "leverage_available": 11,
+      "interest_coverage_available": 3,
+      "median_liabilities_to_assets": 0.471153609591681,
+      "median_interest_coverage": 5.721223021582734
+    },
+    {
+      "sector": "Financials",
+      "period_end_year": 2021,
+      "observed_companies": 73,
+      "leverage_available": 70,
+      "interest_coverage_available": 17,
+      "median_liabilities_to_assets": 0.8022979129189485,
+      "median_interest_coverage": 10.436018957345972
+    },
+    {
+      "sector": "Financials",
+      "period_end_year": 2022,
+      "observed_companies": 75,
+      "leverage_available": 71,
+      "interest_coverage_available": 18,
+      "median_liabilities_to_assets": 0.8456805398227193,
+      "median_interest_coverage": 11.541665927018842
+    },
+    {
+      "sector": "Financials",
+      "period_end_year": 2023,
+      "observed_companies": 75,
+      "leverage_available": 73,
+      "interest_coverage_available": 17,
+      "median_liabilities_to_assets": 0.8294344149687506,
+      "median_interest_coverage": 7.417058158657374
+    },
+    {
+      "sector": "Financials",
+      "period_end_year": 2024,
+      "observed_companies": 76,
+      "leverage_available": 74,
+      "interest_coverage_available": 2,
+      "median_liabilities_to_assets": 0.8079311538555006,
+      "median_interest_coverage": 3.288723028055516
+    },
+    {
+      "sector": "Financials",
+      "period_end_year": 2025,
+      "observed_companies": 76,
+      "leverage_available": 74,
+      "interest_coverage_available": 2,
+      "median_liabilities_to_assets": 0.7945899460138957,
+      "median_interest_coverage": 7.478977871443625
+    },
+    {
+      "sector": "Financials",
+      "period_end_year": 2026,
+      "observed_companies": 1,
+      "leverage_available": 1,
+      "interest_coverage_available": 0,
+      "median_liabilities_to_assets": 0.3476994549086041,
+      "median_interest_coverage": null
+    },
+    {
+      "sector": "Health Care",
+      "period_end_year": 2021,
+      "observed_companies": 48,
+      "leverage_available": 36,
+      "interest_coverage_available": 31,
+      "median_liabilities_to_assets": 0.5997438138410779,
+      "median_interest_coverage": 14.439759036144578
+    },
+    {
+      "sector": "Health Care",
+      "period_end_year": 2022,
+      "observed_companies": 59,
+      "leverage_available": 42,
+      "interest_coverage_available": 36,
+      "median_liabilities_to_assets": 0.5535452686318989,
+      "median_interest_coverage": 9.88522360890877
+    },
+    {
+      "sector": "Health Care",
+      "period_end_year": 2023,
+      "observed_companies": 59,
+      "leverage_available": 43,
+      "interest_coverage_available": 36,
+      "median_liabilities_to_assets": 0.5535085352643642,
+      "median_interest_coverage": 7.93667418443594
+    },
+    {
+      "sector": "Health Care",
+      "period_end_year": 2024,
+      "observed_companies": 60,
+      "leverage_available": 45,
+      "interest_coverage_available": 16,
+      "median_liabilities_to_assets": 0.5509615454122682,
+      "median_interest_coverage": 6.473318729962893
+    },
+    {
+      "sector": "Health Care",
+      "period_end_year": 2025,
+      "observed_companies": 60,
+      "leverage_available": 45,
+      "interest_coverage_available": 14,
+      "median_liabilities_to_assets": 0.5313936961792493,
+      "median_interest_coverage": 5.6948958795584845
+    },
+    {
+      "sector": "Health Care",
+      "period_end_year": 2026,
+      "observed_companies": 7,
+      "leverage_available": 4,
+      "interest_coverage_available": 2,
+      "median_liabilities_to_assets": 0.29760287095167265,
+      "median_interest_coverage": 15.066425334560645
+    },
+    {
+      "sector": "Industrials",
+      "period_end_year": 2021,
+      "observed_companies": 68,
+      "leverage_available": 53,
+      "interest_coverage_available": 42,
+      "median_liabilities_to_assets": 0.6526484235705822,
+      "median_interest_coverage": 8.364276867305815
+    },
+    {
+      "sector": "Industrials",
+      "period_end_year": 2022,
+      "observed_companies": 78,
+      "leverage_available": 61,
+      "interest_coverage_available": 47,
+      "median_liabilities_to_assets": 0.6623528891248562,
+      "median_interest_coverage": 10.769820971867007
+    },
+    {
+      "sector": "Industrials",
+      "period_end_year": 2023,
+      "observed_companies": 79,
+      "leverage_available": 61,
+      "interest_coverage_available": 48,
+      "median_liabilities_to_assets": 0.6549821068096912,
+      "median_interest_coverage": 8.700404858299596
+    },
+    {
+      "sector": "Industrials",
+      "period_end_year": 2024,
+      "observed_companies": 79,
+      "leverage_available": 62,
+      "interest_coverage_available": 19,
+      "median_liabilities_to_assets": 0.6311525922436794,
+      "median_interest_coverage": 7.653921568627451
+    },
+    {
+      "sector": "Industrials",
+      "period_end_year": 2025,
+      "observed_companies": 78,
+      "leverage_available": 63,
+      "interest_coverage_available": 13,
+      "median_liabilities_to_assets": 0.6201129335842969,
+      "median_interest_coverage": 12.23404255319149
+    },
+    {
+      "sector": "Industrials",
+      "period_end_year": 2026,
+      "observed_companies": 13,
+      "leverage_available": 11,
+      "interest_coverage_available": 0,
+      "median_liabilities_to_assets": 0.5656131060731425,
+      "median_interest_coverage": null
+    },
+    {
+      "sector": "Information Technology",
+      "period_end_year": 2021,
+      "observed_companies": 45,
+      "leverage_available": 39,
+      "interest_coverage_available": 34,
+      "median_liabilities_to_assets": 0.5198712791633145,
+      "median_interest_coverage": 13.139556077982666
+    },
+    {
+      "sector": "Information Technology",
+      "period_end_year": 2022,
+      "observed_companies": 73,
+      "leverage_available": 65,
+      "interest_coverage_available": 55,
+      "median_liabilities_to_assets": 0.5345976617540653,
+      "median_interest_coverage": 9.225165562913908
+    },
+    {
+      "sector": "Information Technology",
+      "period_end_year": 2023,
+      "observed_companies": 73,
+      "leverage_available": 65,
+      "interest_coverage_available": 53,
+      "median_liabilities_to_assets": 0.499429578422044,
+      "median_interest_coverage": 14.238970588235292
+    },
+    {
+      "sector": "Information Technology",
+      "period_end_year": 2024,
+      "observed_companies": 72,
+      "leverage_available": 64,
+      "interest_coverage_available": 28,
+      "median_liabilities_to_assets": 0.5238022979307309,
+      "median_interest_coverage": 9.514265536723162
+    },
+    {
+      "sector": "Information Technology",
+      "period_end_year": 2025,
+      "observed_companies": 75,
+      "leverage_available": 67,
+      "interest_coverage_available": 15,
+      "median_liabilities_to_assets": 0.5069803841116226,
+      "median_interest_coverage": 14.558441558441558
+    },
+    {
+      "sector": "Information Technology",
+      "period_end_year": 2026,
+      "observed_companies": 28,
+      "leverage_available": 26,
+      "interest_coverage_available": 3,
+      "median_liabilities_to_assets": 0.5000919074121952,
+      "median_interest_coverage": 19.725
+    },
+    {
+      "sector": "Materials",
+      "period_end_year": 2021,
+      "observed_companies": 20,
+      "leverage_available": 14,
+      "interest_coverage_available": 11,
+      "median_liabilities_to_assets": 0.5203266991683037,
+      "median_interest_coverage": 9.396739130434783
+    },
+    {
+      "sector": "Materials",
+      "period_end_year": 2022,
+      "observed_companies": 22,
+      "leverage_available": 15,
+      "interest_coverage_available": 12,
+      "median_liabilities_to_assets": 0.5132209891765995,
+      "median_interest_coverage": 10.46024123707549
+    },
+    {
+      "sector": "Materials",
+      "period_end_year": 2023,
+      "observed_companies": 23,
+      "leverage_available": 16,
+      "interest_coverage_available": 13,
+      "median_liabilities_to_assets": 0.5189979199009107,
+      "median_interest_coverage": 9.655172413793103
+    },
+    {
+      "sector": "Materials",
+      "period_end_year": 2024,
+      "observed_companies": 24,
+      "leverage_available": 17,
+      "interest_coverage_available": 7,
+      "median_liabilities_to_assets": 0.523964033487676,
+      "median_interest_coverage": 8.23508668821628
+    },
+    {
+      "sector": "Materials",
+      "period_end_year": 2025,
+      "observed_companies": 24,
+      "leverage_available": 17,
+      "interest_coverage_available": 7,
+      "median_liabilities_to_assets": 0.5632018378508118,
+      "median_interest_coverage": 6.247826086956522
+    },
+    {
+      "sector": "Materials",
+      "period_end_year": 2026,
+      "observed_companies": 1,
+      "leverage_available": 1,
+      "interest_coverage_available": 1,
+      "median_liabilities_to_assets": 0.6818708720851867,
+      "median_interest_coverage": 2.809171597633136
+    },
+    {
+      "sector": "Real Estate",
+      "period_end_year": 2021,
+      "observed_companies": 30,
+      "leverage_available": 29,
+      "interest_coverage_available": 11,
+      "median_liabilities_to_assets": 0.4692585104008308,
+      "median_interest_coverage": 3.0327430024933646
+    },
+    {
+      "sector": "Real Estate",
+      "period_end_year": 2022,
+      "observed_companies": 30,
+      "leverage_available": 29,
+      "interest_coverage_available": 11,
+      "median_liabilities_to_assets": 0.4578734736037504,
+      "median_interest_coverage": 3.3690803929987623
+    },
+    {
+      "sector": "Real Estate",
+      "period_end_year": 2023,
+      "observed_companies": 30,
+      "leverage_available": 29,
+      "interest_coverage_available": 12,
+      "median_liabilities_to_assets": 0.4698271424117215,
+      "median_interest_coverage": 3.0384424357930744
+    },
+    {
+      "sector": "Real Estate",
+      "period_end_year": 2024,
+      "observed_companies": 30,
+      "leverage_available": 29,
+      "interest_coverage_available": 7,
+      "median_liabilities_to_assets": 0.4849070952275737,
+      "median_interest_coverage": 2.6918552964507967
+    },
+    {
+      "sector": "Real Estate",
+      "period_end_year": 2025,
+      "observed_companies": 30,
+      "leverage_available": 29,
+      "interest_coverage_available": 7,
+      "median_liabilities_to_assets": 0.5105244162068362,
+      "median_interest_coverage": 3.257367657090687
+    },
+    {
+      "sector": "Utilities",
+      "period_end_year": 2021,
+      "observed_companies": 31,
+      "leverage_available": 18,
+      "interest_coverage_available": 22,
+      "median_liabilities_to_assets": 0.7295286050751821,
+      "median_interest_coverage": 2.7306366057203233
+    },
+    {
+      "sector": "Utilities",
+      "period_end_year": 2022,
+      "observed_companies": 31,
+      "leverage_available": 19,
+      "interest_coverage_available": 23,
+      "median_liabilities_to_assets": 0.7414308854020674,
+      "median_interest_coverage": 2.5896296296296297
+    },
+    {
+      "sector": "Utilities",
+      "period_end_year": 2023,
+      "observed_companies": 31,
+      "leverage_available": 19,
+      "interest_coverage_available": 23,
+      "median_liabilities_to_assets": 0.747514491158559,
+      "median_interest_coverage": 2.488930741300785
+    },
+    {
+      "sector": "Utilities",
+      "period_end_year": 2024,
+      "observed_companies": 31,
+      "leverage_available": 19,
+      "interest_coverage_available": 10,
+      "median_liabilities_to_assets": 0.7441900011336583,
+      "median_interest_coverage": 2.2679721619708735
+    },
+    {
+      "sector": "Utilities",
+      "period_end_year": 2025,
+      "observed_companies": 31,
+      "leverage_available": 20,
+      "interest_coverage_available": 11,
+      "median_liabilities_to_assets": 0.7454794962369087,
+      "median_interest_coverage": 2.3736929003852505
+    }
+  ],
+  "missing_coverage": [
+    {
+      "sector": "Financials",
+      "current_companies": 76,
+      "no_financial_history": 0,
+      "latest_leverage_missing": 2,
+      "latest_interest_coverage_missing": 74,
+      "leverage_missing_pct": "2.63",
+      "interest_coverage_missing_pct": "97.37"
+    },
+    {
+      "sector": "Energy",
+      "current_companies": 21,
+      "no_financial_history": 1,
+      "latest_leverage_missing": 9,
+      "latest_interest_coverage_missing": 17,
+      "leverage_missing_pct": "47.62",
+      "interest_coverage_missing_pct": "85.71"
+    },
+    {
+      "sector": "Industrials",
+      "current_companies": 83,
+      "no_financial_history": 1,
+      "latest_leverage_missing": 16,
+      "latest_interest_coverage_missing": 69,
+      "leverage_missing_pct": "20.48",
+      "interest_coverage_missing_pct": "84.34"
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "current_companies": 47,
+      "no_financial_history": 0,
+      "latest_leverage_missing": 12,
+      "latest_interest_coverage_missing": 38,
+      "leverage_missing_pct": "25.53",
+      "interest_coverage_missing_pct": "80.85"
+    },
+    {
+      "sector": "Information Technology",
+      "current_companies": 75,
+      "no_financial_history": 0,
+      "latest_leverage_missing": 8,
+      "latest_interest_coverage_missing": 60,
+      "leverage_missing_pct": "10.67",
+      "interest_coverage_missing_pct": "80.00"
+    },
+    {
+      "sector": "Health Care",
+      "current_companies": 60,
+      "no_financial_history": 0,
+      "latest_leverage_missing": 15,
+      "latest_interest_coverage_missing": 46,
+      "leverage_missing_pct": "25.00",
+      "interest_coverage_missing_pct": "76.67"
+    },
+    {
+      "sector": "Real Estate",
+      "current_companies": 30,
+      "no_financial_history": 0,
+      "latest_leverage_missing": 1,
+      "latest_interest_coverage_missing": 23,
+      "leverage_missing_pct": "3.33",
+      "interest_coverage_missing_pct": "76.67"
+    },
+    {
+      "sector": "Consumer Staples",
+      "current_companies": 34,
+      "no_financial_history": 1,
+      "latest_leverage_missing": 7,
+      "latest_interest_coverage_missing": 24,
+      "leverage_missing_pct": "23.53",
+      "interest_coverage_missing_pct": "73.53"
+    },
+    {
+      "sector": "Communication Services",
+      "current_companies": 22,
+      "no_financial_history": 0,
+      "latest_leverage_missing": 11,
+      "latest_interest_coverage_missing": 16,
+      "leverage_missing_pct": "50.00",
+      "interest_coverage_missing_pct": "72.73"
+    },
+    {
+      "sector": "Materials",
+      "current_companies": 24,
+      "no_financial_history": 0,
+      "latest_leverage_missing": 7,
+      "latest_interest_coverage_missing": 17,
+      "leverage_missing_pct": "29.17",
+      "interest_coverage_missing_pct": "70.83"
+    },
+    {
+      "sector": "Utilities",
+      "current_companies": 31,
+      "no_financial_history": 0,
+      "latest_leverage_missing": 11,
+      "latest_interest_coverage_missing": 20,
+      "leverage_missing_pct": "35.48",
+      "interest_coverage_missing_pct": "64.52"
+    }
+  ],
+  "outliers": [
+    {
+      "ticker": "COST",
+      "company_name": "Costco",
+      "sector": "Consumer Staples",
+      "fiscal_period_end": "2026-08-30",
+      "metric": "interest_coverage",
+      "value": "80.58620689655173",
+      "observed_companies": 9,
+      "lower_fence": 0.6454296845087066,
+      "upper_fence": 16.023803741480325
+    },
+    {
+      "ticker": "KHC",
+      "company_name": "Kraft Heinz",
+      "sector": "Consumer Staples",
+      "fiscal_period_end": "2025-12-27",
+      "metric": "interest_coverage",
+      "value": "-4.9303062302006335",
+      "observed_companies": 9,
+      "lower_fence": 0.6454296845087066,
+      "upper_fence": 16.023803741480325
+    },
+    {
+      "ticker": "STE",
+      "company_name": "Steris",
+      "sector": "Health Care",
+      "fiscal_period_end": "2026-03-31",
+      "metric": "interest_coverage",
+      "value": "22.62422997946612",
+      "observed_companies": 14,
+      "lower_fence": -6.2554375867282435,
+      "upper_fence": 21.74230716149469
+    },
+    {
+      "ticker": "FIX",
+      "company_name": "Comfort Systems USA",
+      "sector": "Industrials",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "interest_coverage",
+      "value": "145.91952491952492",
+      "observed_companies": 13,
+      "lower_fence": -24.446821515892424,
+      "upper_fence": 55.411369193154044
+    },
+    {
+      "ticker": "EME",
+      "company_name": "Emcor",
+      "sector": "Industrials",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "interest_coverage",
+      "value": "142.54725457570714",
+      "observed_companies": 13,
+      "lower_fence": -24.446821515892424,
+      "upper_fence": 55.411369193154044
+    },
+    {
+      "ticker": "FTNT",
+      "company_name": "Fortinet",
+      "sector": "Information Technology",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "interest_coverage",
+      "value": "103.71641791044776",
+      "observed_companies": 15,
+      "lower_fence": -14.161354961832062,
+      "upper_fence": 46.83559160305344
+    },
+    {
+      "ticker": "TER",
+      "company_name": "Teradyne",
+      "sector": "Information Technology",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "interest_coverage",
+      "value": "94.95340344726849",
+      "observed_companies": 15,
+      "lower_fence": -14.161354961832062,
+      "upper_fence": 46.83559160305344
+    },
+    {
+      "ticker": "VST",
+      "company_name": "Vistra Corp.",
+      "sector": "Utilities",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "interest_coverage",
+      "value": "-22.423529411764704",
+      "observed_companies": 11,
+      "lower_fence": 1.0977354761178253,
+      "upper_fence": 3.4198286655346184
+    },
+    {
+      "ticker": "DPZ",
+      "company_name": "Domino's",
+      "sector": "Consumer Discretionary",
+      "fiscal_period_end": "2025-12-28",
+      "metric": "liabilities_to_assets",
+      "value": "3.27278484368109",
+      "observed_companies": 35,
+      "lower_fence": -0.006209342451095501,
+      "upper_fence": 1.454712182041572
+    },
+    {
+      "ticker": "YUM",
+      "company_name": "Yum! Brands",
+      "sector": "Consumer Discretionary",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "1.8934976210808832",
+      "observed_companies": 35,
+      "lower_fence": -0.006209342451095501,
+      "upper_fence": 1.454712182041572
+    },
+    {
+      "ticker": "MSCI",
+      "company_name": "MSCI",
+      "sector": "Financials",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "1.4655079501667614",
+      "observed_companies": 74,
+      "lower_fence": 0.33286748210901523,
+      "upper_fence": 1.236389763174182
+    },
+    {
+      "ticker": "ERIE",
+      "company_name": "Erie Indemnity",
+      "sector": "Financials",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "0.3195091851212985",
+      "observed_companies": 74,
+      "lower_fence": 0.33286748210901523,
+      "upper_fence": 1.236389763174182
+    },
+    {
+      "ticker": "TROW",
+      "company_name": "T. Rowe Price",
+      "sector": "Financials",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "0.1595755065612405",
+      "observed_companies": 74,
+      "lower_fence": 0.33286748210901523,
+      "upper_fence": 1.236389763174182
+    },
+    {
+      "ticker": "OTIS",
+      "company_name": "Otis Worldwide",
+      "sector": "Industrials",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "1.494790199943678",
+      "observed_companies": 66,
+      "lower_fence": 0.17384903098331989,
+      "upper_fence": 1.1204369890870607
+    },
+    {
+      "ticker": "TDG",
+      "company_name": "TransDigm Group",
+      "sector": "Industrials",
+      "fiscal_period_end": "2025-09-30",
+      "metric": "liabilities_to_assets",
+      "value": "1.4224977083242394",
+      "observed_companies": 66,
+      "lower_fence": 0.17384903098331989,
+      "upper_fence": 1.1204369890870607
+    },
+    {
+      "ticker": "CPRT",
+      "company_name": "Copart",
+      "sector": "Industrials",
+      "fiscal_period_end": "2026-07-31",
+      "metric": "liabilities_to_assets",
+      "value": "0.0911395409366551",
+      "observed_companies": 66,
+      "lower_fence": 0.17384903098331989,
+      "upper_fence": 1.1204369890870607
+    },
+    {
+      "ticker": "VRSN",
+      "company_name": "Verisign",
+      "sector": "Information Technology",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "2.624707745682178",
+      "observed_companies": 67,
+      "lower_fence": -0.007266651135021507,
+      "upper_fence": 0.9957944625864765
+    },
+    {
+      "ticker": "FICO",
+      "company_name": "Fair Isaac",
+      "sector": "Information Technology",
+      "fiscal_period_end": "2025-09-30",
+      "metric": "liabilities_to_assets",
+      "value": "1.9345073396808472",
+      "observed_companies": 67,
+      "lower_fence": -0.007266651135021507,
+      "upper_fence": 0.9957944625864765
+    },
+    {
+      "ticker": "DELL",
+      "company_name": "Dell Technologies",
+      "sector": "Information Technology",
+      "fiscal_period_end": "2026-01-30",
+      "metric": "liabilities_to_assets",
+      "value": "1.024386391011591",
+      "observed_companies": 67,
+      "lower_fence": -0.007266651135021507,
+      "upper_fence": 0.9957944625864765
+    },
+    {
+      "ticker": "SBAC",
+      "company_name": "SBA Communications",
+      "sector": "Real Estate",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "1.4125487731675783",
+      "observed_companies": 29,
+      "lower_fence": 0.19713714572101354,
+      "upper_fence": 0.8682737458888236
+    },
+    {
+      "ticker": "CCI",
+      "company_name": "Crown Castle",
+      "sector": "Real Estate",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "1.0518751189796307",
+      "observed_companies": 29,
+      "lower_fence": 0.19713714572101354,
+      "upper_fence": 0.8682737458888236
+    },
+    {
+      "ticker": "NRG",
+      "company_name": "NRG Energy",
+      "sector": "Utilities",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "0.9423129718599864",
+      "observed_companies": 20,
+      "lower_fence": 0.5940991064821484,
+      "upper_fence": 0.8632521115746399
+    },
+    {
+      "ticker": "VST",
+      "company_name": "Vistra Corp.",
+      "sector": "Utilities",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "0.8770156438026474",
+      "observed_companies": 20,
+      "lower_fence": 0.5940991064821484,
+      "upper_fence": 0.8632521115746399
+    },
+    {
+      "ticker": "PEG",
+      "company_name": "Public Service Enterprise Group",
+      "sector": "Utilities",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "0.3286786160900375",
+      "observed_companies": 20,
+      "lower_fence": 0.5940991064821484,
+      "upper_fence": 0.8632521115746399
+    },
+    {
+      "ticker": "PPL",
+      "company_name": "PPL Corporation",
+      "sector": "Utilities",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "0.2734727256652816",
+      "observed_companies": 20,
+      "lower_fence": 0.5940991064821484,
+      "upper_fence": 0.8632521115746399
+    },
+    {
+      "ticker": "NI",
+      "company_name": "NiSource",
+      "sector": "Utilities",
+      "fiscal_period_end": "2025-12-31",
+      "metric": "liabilities_to_assets",
+      "value": "0.2437623226720433",
+      "observed_companies": 20,
+      "lower_fence": 0.5940991064821484,
+      "upper_fence": 0.8632521115746399
+    }
+  ],
+  "sector_comparison": [
+    {
+      "sector": "Communication Services",
+      "current_companies": 22,
+      "companies_with_financials": 22,
+      "earliest_latest_period": "2025-09-27",
+      "latest_period": "2026-06-30",
+      "leverage_available": 11,
+      "leverage_coverage_pct": "50.00",
+      "median_liabilities_to_assets": 0.5212782820826299,
+      "interest_coverage_available": 6,
+      "interest_coverage_pct": "27.27",
+      "median_interest_coverage": 3.7551401994827733
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "current_companies": 47,
+      "companies_with_financials": 47,
+      "earliest_latest_period": "2025-08-30",
+      "latest_period": "2026-06-27",
+      "leverage_available": 35,
+      "leverage_coverage_pct": "74.47",
+      "median_liabilities_to_assets": 0.7538383911194406,
+      "interest_coverage_available": 9,
+      "interest_coverage_pct": "19.15",
+      "median_interest_coverage": 5.412089937338739
+    },
+    {
+      "sector": "Consumer Staples",
+      "current_companies": 34,
+      "companies_with_financials": 33,
+      "earliest_latest_period": "2025-09-27",
+      "latest_period": "2026-08-30",
+      "leverage_available": 26,
+      "leverage_coverage_pct": "76.47",
+      "median_liabilities_to_assets": 0.6603838412305658,
+      "interest_coverage_available": 9,
+      "interest_coverage_pct": "26.47",
+      "median_interest_coverage": 9.18359375
+    },
+    {
+      "sector": "Energy",
+      "current_companies": 21,
+      "companies_with_financials": 20,
+      "earliest_latest_period": "2025-12-31",
+      "latest_period": "2025-12-31",
+      "leverage_available": 11,
+      "leverage_coverage_pct": "52.38",
+      "median_liabilities_to_assets": 0.471153609591681,
+      "interest_coverage_available": 3,
+      "interest_coverage_pct": "14.29",
+      "median_interest_coverage": 5.721223021582734
+    },
+    {
+      "sector": "Financials",
+      "current_companies": 76,
+      "companies_with_financials": 76,
+      "earliest_latest_period": "2025-08-31",
+      "latest_period": "2026-06-30",
+      "leverage_available": 74,
+      "leverage_coverage_pct": "97.37",
+      "median_liabilities_to_assets": 0.7945899460138957,
+      "interest_coverage_available": 2,
+      "interest_coverage_pct": "2.63",
+      "median_interest_coverage": 7.478977871443625
+    },
+    {
+      "sector": "Health Care",
+      "current_companies": 60,
+      "companies_with_financials": 60,
+      "earliest_latest_period": "2025-09-30",
+      "latest_period": "2026-06-30",
+      "leverage_available": 45,
+      "leverage_coverage_pct": "75.00",
+      "median_liabilities_to_assets": 0.5313936961792493,
+      "interest_coverage_available": 14,
+      "interest_coverage_pct": "23.33",
+      "median_interest_coverage": 5.6948958795584845
+    },
+    {
+      "sector": "Industrials",
+      "current_companies": 83,
+      "companies_with_financials": 82,
+      "earliest_latest_period": "2025-07-31",
+      "latest_period": "2026-07-31",
+      "leverage_available": 66,
+      "leverage_coverage_pct": "79.52",
+      "median_liabilities_to_assets": 0.6199687668730809,
+      "interest_coverage_available": 13,
+      "interest_coverage_pct": "15.66",
+      "median_interest_coverage": 12.23404255319149
+    },
+    {
+      "sector": "Information Technology",
+      "current_companies": 75,
+      "companies_with_financials": 75,
+      "earliest_latest_period": "2025-08-31",
+      "latest_period": "2026-09-03",
+      "leverage_available": 67,
+      "leverage_coverage_pct": "89.33",
+      "median_liabilities_to_assets": 0.4837166313271353,
+      "interest_coverage_available": 15,
+      "interest_coverage_pct": "20.00",
+      "median_interest_coverage": 14.558441558441558
+    },
+    {
+      "sector": "Materials",
+      "current_companies": 24,
+      "companies_with_financials": 24,
+      "earliest_latest_period": "2025-09-30",
+      "latest_period": "2026-06-30",
+      "leverage_available": 17,
+      "leverage_coverage_pct": "70.83",
+      "median_liabilities_to_assets": 0.5632018378508118,
+      "interest_coverage_available": 7,
+      "interest_coverage_pct": "29.17",
+      "median_interest_coverage": 6.247826086956522
+    },
+    {
+      "sector": "Real Estate",
+      "current_companies": 30,
+      "companies_with_financials": 30,
+      "earliest_latest_period": "2025-12-31",
+      "latest_period": "2025-12-31",
+      "leverage_available": 29,
+      "leverage_coverage_pct": "96.67",
+      "median_liabilities_to_assets": 0.5105244162068362,
+      "interest_coverage_available": 7,
+      "interest_coverage_pct": "23.33",
+      "median_interest_coverage": 3.257367657090687
+    },
+    {
+      "sector": "Utilities",
+      "current_companies": 31,
+      "companies_with_financials": 31,
+      "earliest_latest_period": "2025-09-30",
+      "latest_period": "2025-12-31",
+      "leverage_available": 20,
+      "leverage_coverage_pct": "64.52",
+      "median_liabilities_to_assets": 0.7454794962369087,
+      "interest_coverage_available": 11,
+      "interest_coverage_pct": "35.48",
+      "median_interest_coverage": 2.3736929003852505
+    }
+  ],
+  "no_history": [
+    {
+      "ticker": "HONA"
+    },
+    {
+      "ticker": "VYLR"
+    },
+    {
+      "ticker": "XOM"
+    }
+  ]
+}
