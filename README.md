@@ -1,35 +1,23 @@
 # S&P 500 financial risk pipeline
 
-Retrieves financial values from SEC 10-K filings, calculates two risk ratios,
-and stores results in CSVs and PostgreSQL sector-ranking views.
+Extracts financial values from SEC 10-K filings for current S&P 500 constituents,
+calculates liabilities/assets and interest coverage, and loads the results into
+PostgreSQL (Neon) for SQL analysis. Tableau visualization is planned.
 
-The code favors direct concept searches, explicit accounting formulas and small
-modules with separate purposes. Current behavior and policies below reflect the
-October 19, 2026 revision; dated research below describes earlier snapshots.
+The project favors explicit accounting formulas and small modules with a single
+purpose. Missing values remain missing throughout extraction, storage and analysis.
 
-## Analytical framework
-
-The project is organized around four questions:
-
-1. **Likelihood of failure:** how vulnerable is a company to financial distress or default?
-2. **Loss or recovery conditional on failure:** how protected is a stakeholder if failure occurs?
-3. **Likelihood of growth or contraction:** which direction might the business move?
-4. **Magnitude of growth or contraction:** how large might the upside or downside be?
-
-The measures below provide accounting inputs for investigating these questions.
-They are not calibrated probabilities, recovery estimates or forecasts. The
-framework is the analytical objective; the pipeline currently produces historical
-financial measures.
-
-Liabilities/assets, interest coverage and the planned current ratio support the
-assessment of financial vulnerability. Revenue growth and operating margin will
-add business-direction and profitability measures; free cash flow will add a
-measure of cash generation after defined capital expenditures. These are intended
-uses, not claims that one ratio answers a framework question by itself.
-
-Stakeholder recovery and the magnitude of future outcomes remain separate analysis
-problems. Book assets are not a liquidation valuation, and the current pipeline
-does not model claim priority, stakeholder-specific recovery or future scenarios.
+- [Metrics](#metrics)
+- [Pipeline and storage](#pipeline-and-storage)
+- [Setup and execution](#setup-and-execution)
+- [SQL analysis](#sql-analysis)
+- [Data rules and assumptions](#data-rules-and-assumptions)
+- [Accounting fallbacks](#accounting-fallbacks)
+- [Limitations](#limitations)
+- [Tests and evidence](#tests-and-evidence)
+- [Roadmap](#roadmap)
+- [Analytical framework](#analytical-framework)
+- [Design decisions and accounting review](#design-decisions-and-accounting-review)
 
 ## Metrics
 
@@ -41,7 +29,7 @@ does not model claim priority, stakeholder-specific recovery or future scenarios
 A missing required value or zero denominator produces `None`. Zero numerators and
 negative reported amounts are not automatically rejected.
 
-## Pipeline flow
+## Pipeline and storage
 
 1. Read current S&P 500 constituents, CIKs and sectors from Wikipedia.
 2. Use each CIK to retrieve up to five distinct original 10-K reporting periods,
@@ -50,19 +38,9 @@ negative reported amounts are not automatically rejected.
 4. Retrieve each metric, trying its accounting fallbacks only when needed.
 5. Calculate ratios, save CSVs, load the database and refresh sector views.
 
-Extraction is the main runtime cost, so `ThreadPoolExecutor` processes three
-companies concurrently while each company's filings remain sequential. Results
-retain company-CSV order and are written once after all workers succeed.
-EdgarTools shares one request limiter across the threads (9 requests/second by
-default), below the [SEC limit](https://www.sec.gov/about/developer-resources).
-
-In user-reported runs, extraction took **2,023 seconds with one worker** and
-**1,671 seconds with three**—about **17% faster**. Two workers were close at
-1,689 seconds; four, five, six and ten were slower. Three is the chosen practical
-setting, not a proven optimum. These were individual runs with potentially
-different cache, network and machine conditions; the original roughly 2,200-second
-sequential run is not a controlled baseline. Parsing still takes time even when
-downloads are cached, so more workers do not guarantee a shorter run.
+Extraction processes three companies concurrently, with each company's filings
+processed sequentially. Results retain company-CSV order and are written after
+all workers succeed. [Performance observations](#extraction-performance) are recorded below.
 
 Historical results cover **current constituents**, not historical index membership.
 Amended filings are excluded. The full run performs all five steps.
@@ -86,6 +64,74 @@ fiscal-period end. CIK is stored only in `companies`. The ratios CSV is written
 directly after extraction finishes; there is no checkpoint or resume mechanism.
 Sector views join by ticker, select the latest stored period for current
 constituents and rank nonmissing ratios without substituting an older period.
+
+## Setup and execution
+
+Schema setup creates tables if absent; it does not migrate older schemas or delete
+existing tables. The separate view-refresh stage creates the sector views.
+
+Run from the repository root. The development environment uses Python 3.13;
+[requirements.txt](requirements.txt) pins dependencies, including EdgarTools 5.58.0.
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+```
+
+Set these variables in an uncommitted `.env` file:
+
+```dotenv
+SEC_user_agent="Your name your-email@example.com"
+db_connection_string="postgresql+psycopg2://USER:PASSWORD@HOST/DATABASE?sslmode=require"
+```
+
+Run the full pipeline **with network access, CSV replacement and database writes**:
+
+```sh
+.venv/bin/python src/main.py
+```
+
+Run just constituent collection or ratio extraction **with network access and CSV writes**:
+
+```sh
+PYTHONPATH=src .venv/bin/python -m table_data.company_status
+PYTHONPATH=src .venv/bin/python -m table_data.generate_ratios
+```
+
+## SQL analysis
+
+Database SQL is separated by purpose:
+
+| Location | Purpose |
+| --- | --- |
+| [src/database/sql/](src/database/sql/) | Create reusable sector-ranking views. |
+| [analysis/liabilities_to_assets/](src/database/sql/analysis/liabilities_to_assets/) | Analyze the liabilities/assets ratio. |
+| [analysis/interest_coverage/](src/database/sql/analysis/interest_coverage/) | Analyze the interest-coverage ratio. |
+
+Each metric folder contains three independent, read-only queries:
+
+| Query | Result per sector |
+| --- | --- |
+| `sector_distribution.sql` | 25th percentile, median and 75th percentile of available ratios. |
+| `sector_ratio_coverage.sql` | Percentage of current sector constituents with that ratio available. |
+| `sector_reporting_dates.sql` | Earliest and latest fiscal-period end among available ratios. |
+
+Run an analysis query in Neon's SQL editor after the tables are loaded and the
+sector views exist. These queries return results; they do not create views or
+modify stored data. View creation is handled by the separate pipeline stage.
+
+All three queries use each current company's latest stored period. A missing
+latest ratio is not replaced with an older value. Percentiles weight companies
+equally, exclude SQL `NULL` and may interpolate between observed values. Coverage
+uses all current companies in the sector as its denominator, separately for each
+ratio. Fiscal dates describe the financial periods, not when filings were submitted.
+
+Read distributions alongside coverage and reporting dates: sparse sectors may
+represent only a few companies, and latest periods can differ across companies.
+Historical or filtered analyses will need date ranges matching their own samples.
+
+The planned Tableau workflow is to visualize SQL results and link the published
+interactive dashboard from a screenshot in this README. No dashboard is published yet.
 
 ## Data rules and assumptions
 
@@ -119,7 +165,154 @@ These are retrieval policies under a defined scope, not a promise to validate
 arbitrary filings. Missing or unusable selected data returns `None`; unexpected
 parser, network or malformed-input errors are not all converted to `None`.
 
-## Why the pipeline is built this way
+## Accounting fallbacks
+
+Exact concept names are written in the respective metric modules. Definitions
+were reviewed against the US GAAP 2026 baseline; standards research is done
+beforehand, not downloaded at runtime.
+
+| Metric | Order after its direct concept is unavailable |
+| --- | --- |
+| Assets | Current + noncurrent assets; liabilities-and-equity total; liabilities + net assets; liabilities + inclusive permanent equity + temporary equity. |
+| Liabilities | Current + noncurrent liabilities; assets − net assets; assets − inclusive permanent equity − temporary equity. |
+| Inclusive permanent equity | Inclusive permanent partners’ capital; parent equity + noncontrolling interest; derived partners’ capital; equity before treasury stock − treasury stock. |
+| Inclusive temporary equity | Parent temporary equity + redeemable noncontrolling equity. |
+| Total interest expense | Operating + nonoperating expense; total interest income − total net interest; incurred interest − capitalized interest; total income − operating net − nonoperating net; operating expense + derived nonoperating expense. Every term is required. |
+| Operating income | Subject to the explicit-zero restriction below: gross profit − operating expenses; revenues − costs and expenses; the same identities with gross profit or operating expenses reconstructed using cost of revenue. |
+
+The operating-income fallbacks require both other operating income/expense and
+operating government-assistance income to be established as zero, directly or
+through complete compatible inputs. Missing or nonzero adjustments remain
+unsupported by these fallbacks. This is a conservative implementation restriction,
+not an SEC requirement to report zero facts.
+
+Assets and liabilities use helpers excluding the final equity identity to avoid
+circular calls. Intermediate values with their own fallbacks have separate modules;
+shared components use one implementation. The detailed review below records the
+identities, scope restrictions and evidence behind these choices.
+
+## Limitations
+
+- **Ticker changes:** database records are keyed by ticker, and ticker changes
+  are not automatically reconciled. Later loads can retain rows under the old
+  ticker while adding rows under the new ticker, splitting or duplicating a
+  company's stored history. Filing retrieval still uses CIK; the retained CIK
+  column in `companies` can identify the connection between those records.
+- **Implemented additions with unverified recovery:** the explicit SG&A
+  complement, total regulated/unregulated operating revenue and inclusive LLC
+  members' equity were absent. They now have direct-first, complete-input
+  fallbacks. Their presence in the official taxonomy is established; recovery
+  for actual missing S&P 500 results is not established by the samples.
+- **Coverage gaps:** additional justified accounting fallbacks and permitted
+  standard filing structures remain to be implemented. Returning `None` does not
+  automatically make an amount unobtainable.
+- **Unverified coverage:** all S&P 500 issuers and periods, complete historical
+  semantic comparability, and deployed PostgreSQL/view behavior have not been
+  comprehensively established by the current tests.
+- **Intentional exclusions:** custom-concept interpretation, malformed or
+  misbound data, permitted non-USD reporting exceptions, calculation-linkbase
+  retrieval and amended filings are outside current supported behavior.
+- **Information limits:** compliant filings need not disclose every component
+  required for our ratios. A net amount may not determine its gross components,
+  and rounded amounts may not determine a unique underlying value.
+
+## Tests and evidence
+
+- **Tests:** 34 constructed and isolated checks passed for date/dimension selection,
+  missing values, fallback priority, arithmetic and database loading. All four
+  metrics and both ratios also matched the frozen baseline across 22 archived
+  filings from six companies, including missing states. These checks establish
+  tested behavior and regression consistency, not universal accounting correctness
+  or complete deployed PostgreSQL behavior.
+- **Investigations:** official-definition reviews established the explicit
+  accounting fallbacks above and rejected substitutions with incompatible scope.
+  A historical 30-filing null audit identified unavailable total-interest inputs
+  and operating-income facts as immediate blockers; it did not demonstrate a
+  selection or arithmetic bug explaining those nulls. Taxonomy changes explained
+  some interest-coverage gaps, and no general missing-tag-equals-zero rule was
+  established. Disney's negative expense was traced to the source tag, not Edgar's
+  parsing. These samples do not establish full-index coverage or current null rates.
+
+The October 19, 2026 read-only SQL check reported 503 current ticker rows, 500 with
+financial history, 401 latest liabilities/assets values and 96 latest
+interest-coverage values. HONA, VYLR and XOM had no financial rows in that snapshot.
+These are historical observations, not a fresh database check or a count of
+unique issuers. The notebook and result export were removed; the
+[SQL analysis queries](src/database/sql/analysis/) remain available for a new run.
+
+Scratch retains executable checks, diagnostic scripts, filing fixtures and source
+evidence. Explanatory summaries belong here rather than in separate scratch reports.
+
+[Tests and archived fixtures](scratch/tests/) are separate from
+[research evidence](scratch/research/research_evidence.json) and its
+[source manifest](scratch/research/source_manifest.json). The research includes
+historical observations whose exploratory runners were removed; it is not all
+rerunnable from the retained files. The broader AI-assisted analysis has not been
+independently reviewed by the owner. The owner's small diagnostic scripts in
+`scratch/research/` use live Edgar data; the checks below run offline without
+writing production CSVs or the live database.
+
+```sh
+PYTHONPATH=src .venv/bin/python -B -m unittest discover -s scratch/tests -p 'test_*.py'
+.venv/bin/python -B scratch/tests/verify_archived_filings.py
+```
+
+## Roadmap
+
+| Measure or feature | Planned definition and scope |
+| --- | --- |
+| Current ratio | Current assets / current liabilities. Previously discussed; interest coverage became the immediate implementation priority. |
+| Revenue growth | Change in annual revenue relative to the preceding comparable annual period. Establish the revenue concepts, comparison basis and zero/missing prior-period treatment before implementation. |
+| Operating margin | Annual operating income / annual revenue, using the same reporting period and scope. |
+| Free cash flow (FCF) | Operating cash flow minus a clearly defined capital-expenditure measure. Establish which expenditures are included and normalize the cash-outflow sign before implementing the subtraction. |
+| FCF margin | Potential extension: defined free cash flow / revenue for the same period. |
+| Calculation-linkbase retrieval | Revisit recovery of missing values if the coverage benefit warrants the additional code; preserve the applicable relationship semantics. |
+
+Revenue retrieval is a shared prerequisite for revenue growth, operating margin
+and any FCF margin. The planned metrics are not implemented yet. Their exact
+standard concepts, component boundaries and fallback rules still require review;
+listing a formula here does not approve every possible tag substitution.
+
+The existing liabilities/assets measure retains **total liabilities** as its
+numerator, despite the historical `debt_to_assets_ratio` name. Interest-bearing
+debt must not silently replace it when extending the project.
+
+Next SQL analyses will examine annual company changes, matched-company sector
+trends and the relationship between liabilities/assets and interest coverage
+where both are available. Tableau visualizations will follow the SQL analysis.
+
+## Analytical framework
+
+The project is organized around four questions:
+
+1. **Likelihood of failure:** how vulnerable is a company to financial distress or default?
+2. **Loss or recovery conditional on failure:** how protected is a stakeholder if failure occurs?
+3. **Likelihood of growth or contraction:** which direction might the business move?
+4. **Magnitude of growth or contraction:** how large might the upside or downside be?
+
+The implemented and planned measures provide accounting inputs for investigating these questions.
+They are not calibrated probabilities, recovery estimates or forecasts. The
+framework is the analytical objective; the pipeline currently produces historical
+financial measures.
+
+Liabilities/assets, interest coverage and the planned current ratio support the
+assessment of financial vulnerability. Revenue growth and operating margin will
+add business-direction and profitability measures; free cash flow will add a
+measure of cash generation after defined capital expenditures. These are intended
+uses, not claims that one ratio answers a framework question by itself.
+
+Stakeholder recovery and the magnitude of future outcomes remain separate analysis
+problems. Book assets are not a liquidation valuation, and the current pipeline
+does not model claim priority, stakeholder-specific recovery or future scenarios.
+
+## Design decisions and accounting review
+
+Current policies are summarized above. The detailed reviews below preserve the
+reasoning, tested observations, rejected candidates and remaining uncertainty.
+Earlier test counts and sample results describe those review stages.
+
+<details>
+<summary>Design decisions and retrieval assumptions</summary>
 
 The original pipeline used short Edgar concept searches and separate metric files.
 The review examined whether its selections and formulas were justified by official
@@ -276,20 +469,10 @@ including their supporting architecture. The affected values currently remain
 missing. This is a known recoverable coverage gap and a future feature—not proof
 that linkbases have negligible value or that `None` resolves the gap.
 
-## Accounting fallbacks
+</details>
 
-Exact concept names are written in the respective metric modules. Definitions
-were reviewed against the US GAAP 2026 baseline; standards research is done
-beforehand, not downloaded at runtime.
-
-| Metric | Order after its direct concept is unavailable |
-| --- | --- |
-| Assets | Current + noncurrent assets; liabilities-and-equity total; liabilities + net assets; liabilities + inclusive permanent equity + temporary equity. |
-| Liabilities | Current + noncurrent liabilities; assets − net assets; assets − inclusive permanent equity − temporary equity. |
-| Inclusive permanent equity | Inclusive permanent partners’ capital; parent equity + noncontrolling interest; derived partners’ capital; equity before treasury stock − treasury stock. |
-| Inclusive temporary equity | Parent temporary equity + redeemable noncontrolling equity. |
-| Total interest expense | Operating + nonoperating expense; total interest income − total net interest; incurred interest − capitalized interest; total income − operating net − nonoperating net; operating expense + derived nonoperating expense. Every term is required. |
-| Operating income | Subject to the explicit-zero restrictions below: gross profit − operating expenses; revenues − costs and expenses; the same identities with gross profit or operating expenses reconstructed using cost of revenue. |
+<details>
+<summary>Accounting derivations, module structure and research findings</summary>
 
 ### Full inventory and nested-derivation review: completed work and remaining scope
 
@@ -659,118 +842,30 @@ Historical taxonomy definitions are not all identical. In the reviewed releases,
 version gate or prove cross-year semantic equivalence. Earlier version comparisons
 remain in the archived review linked below.
 
-## Setup and execution
+</details>
 
-Schema setup creates tables if absent; it does not migrate older schemas or delete
-existing tables. The separate view-refresh stage creates the sector views.
+<details>
+<summary>Extraction performance</summary>
 
-Run from the repository root. The development environment uses Python 3.13;
-[requirements.txt](requirements.txt) pins dependencies, including EdgarTools 5.58.0.
+<a id="extraction-performance"></a>
 
-```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-```
+Extraction is the main runtime cost, so `ThreadPoolExecutor` processes three
+companies concurrently while each company's filings remain sequential. Results
+retain company-CSV order and are written once after all workers succeed.
+EdgarTools shares one request limiter across the threads (9 requests/second by
+default), below the [SEC limit](https://www.sec.gov/about/developer-resources).
 
-Set these variables in an uncommitted `.env` file:
+In user-reported runs, extraction took **2,023 seconds with one worker** and
+**1,671 seconds with three**—about **17% faster**. Two workers were close at
+1,689 seconds; four, five, six and ten were slower. Three is the chosen practical
+setting, not a proven optimum. These were individual runs with potentially
+different cache, network and machine conditions; the original roughly 2,200-second
+sequential run is not a controlled baseline. Parsing still takes time even when
+downloads are cached, so more workers do not guarantee a shorter run.
 
-```dotenv
-SEC_user_agent="Your name your-email@example.com"
-db_connection_string="postgresql+psycopg2://USER:PASSWORD@HOST/DATABASE?sslmode=require"
-```
+</details>
 
-Run the full pipeline **with network access, CSV replacement and database writes**:
-
-```sh
-.venv/bin/python src/main.py
-```
-
-Run just constituent collection or ratio extraction **with network access and CSV writes**:
-
-```sh
-PYTHONPATH=src .venv/bin/python -m table_data.company_status
-PYTHONPATH=src .venv/bin/python -m table_data.generate_ratios
-```
-
-## Research and tests
-
-- **Tests:** 34 constructed and isolated checks passed for date/dimension selection,
-  missing values, fallback priority, arithmetic and database loading. All four
-  metrics and both ratios also matched the frozen baseline across 22 archived
-  filings from six companies, including missing states. These checks establish
-  tested behavior and regression consistency, not universal accounting correctness
-  or deployed PostgreSQL behavior.
-- **Investigations:** official-definition reviews established the explicit
-  accounting fallbacks above and rejected substitutions with incompatible scope.
-  A historical 30-filing null audit identified unavailable total-interest inputs
-  and operating-income facts as immediate blockers; it did not demonstrate a
-  selection or arithmetic bug explaining those nulls. Taxonomy changes explained
-  some interest-coverage gaps, and no general missing-tag-equals-zero rule was
-  established. Disney's negative expense was traced to the source tag, not Edgar's
-  parsing. These samples do not establish full-index coverage or current null rates.
-
-[Tests and archived fixtures](scratch/tests/) are separate from
-[research evidence](scratch/research/research_evidence.json) and its
-[source manifest](scratch/research/source_manifest.json). The research includes
-historical observations whose exploratory runners were removed; it is not all
-rerunnable from the retained files. The broader AI-assisted analysis has not been
-independently reviewed by the owner. The owner's small diagnostic scripts in
-`scratch/research/` use live Edgar data; the checks below run offline without
-writing production CSVs or the live database.
-
-```sh
-PYTHONPATH=src .venv/bin/python -B -m unittest discover -s scratch/tests -p 'test_*.py'
-.venv/bin/python -B scratch/tests/verify_archived_filings.py
-```
-
-## Upcoming features
-
-| Measure or feature | Planned definition and scope |
-| --- | --- |
-| Current ratio | Current assets / current liabilities. Previously discussed; interest coverage became the immediate implementation priority. |
-| Revenue growth | Change in annual revenue relative to the preceding comparable annual period. Establish the revenue concepts, comparison basis and zero/missing prior-period treatment before implementation. |
-| Operating margin | Annual operating income / annual revenue, using the same reporting period and scope. |
-| Free cash flow (FCF) | Operating cash flow minus a clearly defined capital-expenditure measure. Establish which expenditures are included and normalize the cash-outflow sign before implementing the subtraction. |
-| FCF margin | Potential extension: defined free cash flow / revenue for the same period. |
-| Calculation-linkbase retrieval | Revisit recovery of missing values if the coverage benefit warrants the additional code; preserve the applicable relationship semantics. |
-
-Revenue retrieval is a shared prerequisite for revenue growth, operating margin
-and any FCF margin. The planned metrics are not implemented yet. Their exact
-standard concepts, component boundaries and fallback rules still require review;
-listing a formula here does not approve every possible tag substitution.
-
-The existing liabilities/assets measure retains **total liabilities** as its
-numerator, despite the historical `debt_to_assets_ratio` name. Interest-bearing
-debt must not silently replace it when extending the project.
-
-Tableau visualizations are upcoming after the next SQL analysis work.
-
-## Remaining limitations
-
-- **Ticker changes:** database records are keyed by ticker, and ticker changes
-  are not automatically reconciled. Later loads can retain rows under the old
-  ticker while adding rows under the new ticker, splitting or duplicating a
-  company's stored history. Filing retrieval still uses CIK; the retained CIK
-  column in `companies` can identify the connection between those records.
-- **Confirmed retrieval omissions corrected in this pass:** the explicit SG&A
-  complement, total regulated/unregulated operating revenue and inclusive LLC
-  members' equity were absent. They now have direct-first, complete-input
-  fallbacks. Their presence in the official taxonomy is established; recovery
-  for actual missing S&P 500 results is not established by the samples.
-- **Coverage gaps:** additional justified accounting fallbacks and permitted
-  standard filing structures remain to be implemented. Returning `None` does not
-  automatically make an amount unobtainable.
-- **Unverified coverage:** all S&P 500 issuers and periods, complete historical
-  semantic comparability, and deployed PostgreSQL/view behavior have not been
-  comprehensively established by the current tests.
-- **Intentional exclusions:** custom-concept interpretation, malformed or
-  misbound data, permitted non-USD reporting exceptions, calculation-linkbase
-  retrieval and amended filings are outside current supported behavior.
-- **Information limits:** compliant filings need not disclose every component
-  required for our ratios. A net amount may not determine its gross components,
-  and rounded amounts may not determine a unique underlying value.
-
-## Official references and review history
+## Official references
 
 - [SEC accepted standard taxonomies](https://www.sec.gov/data-research/structured-data/taxonomies-schemas/standard-taxonomies)
 - [US GAAP 2026 definitions](https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-doc-2026.xml)
