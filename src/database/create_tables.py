@@ -26,7 +26,7 @@ def create_tables():
         ticker TEXT REFERENCES companies(ticker),
         fiscal_period_start DATE,
         fiscal_period_end DATE,
-        debt_to_assets_ratio NUMERIC,
+        liabilities_to_assets_ratio NUMERIC,
         interest_coverage_ratio NUMERIC,
         PRIMARY KEY (ticker, fiscal_period_end)
     );

@@ -2,13 +2,13 @@ from concurrent.futures import ThreadPoolExecutor
 import pandas as pd
 from edgar import Company
 
-from calculations.debt_to_asset_ratio import calculate_debt_to_assets
+from calculations.liabilities_to_assets_ratio import calculate_liabilities_to_assets
 from calculations.interest_coverage_ratio import calculate_interest_coverage
 from setup_sec_identity import setup_sec_identity
 from value_retrieval.get_value import get_annual_start
 
 COLUMNS = ['ticker', 'fiscal_period_start', 'fiscal_period_end',
-           'debt_to_assets_ratio', 'interest_coverage_ratio']
+           'liabilities_to_assets_ratio', 'interest_coverage_ratio']
 
 
 def get_company_ratios(company):
@@ -34,11 +34,11 @@ def get_company_ratios(company):
         else:
             source = None
         start = get_annual_start(source, end)
-        debt = calculate_debt_to_assets(source, end)
+        liabilities_to_assets = calculate_liabilities_to_assets(source, end)
         coverage = calculate_interest_coverage(source, start, end)
         results.append(dict(ticker=ticker,
             fiscal_period_start=start, fiscal_period_end=end,
-            debt_to_assets_ratio=debt, interest_coverage_ratio=coverage))
+            liabilities_to_assets_ratio=liabilities_to_assets, interest_coverage_ratio=coverage))
         if len(periods) == 5:
             break
     print(f'{ticker}: processed {len(periods)} periods', flush=True)

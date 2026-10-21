@@ -2,7 +2,8 @@
 
 Extracts financial values from SEC 10-K filings for current S&P 500 constituents,
 calculates liabilities/assets and interest coverage, and loads the results into
-PostgreSQL (Neon) for SQL analysis. Tableau visualization is planned.
+PostgreSQL (Neon) for data analysis. A first Tableau visualization is published;
+the distribution dashboard and automated data refresh are in progress.
 
 The project favors explicit accounting formulas and small modules with a single
 purpose. Missing values remain missing throughout extraction, storage and analysis.
@@ -10,20 +11,20 @@ purpose. Missing values remain missing throughout extraction, storage and analys
 - [Metrics](#metrics)
 - [Pipeline and storage](#pipeline-and-storage)
 - [Setup and execution](#setup-and-execution)
-- [SQL analysis](#sql-analysis)
+- [Data analysis](#data-analysis)
 - [Data rules and assumptions](#data-rules-and-assumptions)
 - [Accounting fallbacks](#accounting-fallbacks)
 - [Limitations](#limitations)
 - [Tests and evidence](#tests-and-evidence)
 - [Roadmap](#roadmap)
 - [Analytical framework](#analytical-framework)
-- [Design decisions and accounting review](#design-decisions-and-accounting-review)
+- [Design decisions](#design-decisions)
 
 ## Metrics
 
 | Output | Formula | Meaning |
 | --- | --- | --- |
-| `debt_to_assets_ratio` | Total liabilities / total assets | Uses **all liabilities**, not only interest-bearing debt. |
+| `liabilities_to_assets_ratio` | Total liabilities / total assets | Uses **all liabilities**, not only interest-bearing debt. |
 | `interest_coverage_ratio` | Annual operating income / annual total interest expense | Total interest expense includes operating and nonoperating interest expense; the numerator is operating income, not a separately reconstructed EBIT. |
 
 A missing required value or zero denominator produces `None`. Zero numerators and
@@ -69,6 +70,9 @@ constituents and rank nonmissing ratios without substituting an older period.
 
 Schema setup creates tables if absent; it does not migrate older schemas or delete
 existing tables. The separate view-refresh stage creates the sector views.
+For structural database changes, the project owner manually deletes the old
+tables and dependent views in Neon, then reruns the pipeline to recreate and
+load the current schema. No automatic schema migration is performed.
 
 Run from the repository root. The development environment uses Python 3.13;
 [requirements.txt](requirements.txt) pins dependencies, including EdgarTools 5.58.0.
@@ -91,14 +95,26 @@ Run the full pipeline **with network access, CSV replacement and database writes
 .venv/bin/python src/main.py
 ```
 
-Run just constituent collection or ratio extraction **with network access and CSV writes**:
+To run an individual collection stage instead of the full pipeline, choose one
+of the commands below. Both use network access and replace their output CSV;
+neither loads the database or refreshes views.
+
+Refresh the current company list in `data/company_status.csv`:
 
 ```sh
 PYTHONPATH=src .venv/bin/python -m table_data.company_status
+```
+
+Read that company list, retrieve SEC filings and write `data/financial_ratios.csv`:
+
+```sh
 PYTHONPATH=src .venv/bin/python -m table_data.generate_ratios
 ```
 
-## SQL analysis
+`PYTHONPATH=src` lets Python find the project's modules. `.venv/bin/python` uses
+the project's Python environment, and `-m` runs the named module.
+
+## Data analysis
 
 Database SQL is separated by purpose:
 
@@ -108,30 +124,70 @@ Database SQL is separated by purpose:
 | [analysis/liabilities_to_assets/](src/database/sql/analysis/liabilities_to_assets/) | Analyze the liabilities/assets ratio. |
 | [analysis/interest_coverage/](src/database/sql/analysis/interest_coverage/) | Analyze the interest-coverage ratio. |
 
-Each metric folder contains three independent, read-only queries:
+Each metric folder contains one read-only query, `distribution_analysis.sql`.
+It returns one row per current company with its ratio, fiscal dates, sector
+statistics, whisker endpoints and an outlier flag.
 
-| Query | Result per sector |
+The queries separate each calculation into a named CTE:
+
+| CTE | Responsibility |
 | --- | --- |
-| `sector_distribution.sql` | 25th percentile, median and 75th percentile of available ratios. |
-| `sector_ratio_coverage.sql` | Percentage of current sector constituents with that ratio available. |
-| `sector_reporting_dates.sql` | Earliest and latest fiscal-period end among available ratios. |
+| `sector_observed_companies` | Count available ratios per sector. |
+| `sector_min_max` | Calculate the lowest and highest observed ratios. |
+| `sector_mean` | Calculate the mean of available ratios. |
+| `sector_quartiles` | Calculate P25, median and P75. |
+| `sector_whiskers` | Use only the quartiles to calculate IQR and whisker thresholds. |
+| `sector_statistics` | Join the separate summaries by sector. |
+
+The final `SELECT` joins the sector statistics to individual company rows and
+flags ratios outside the whiskers. Each CTE returns its own outputs;
+`sector_whiskers` does not carry the quartile columns forward.
 
 Run an analysis query in Neon's SQL editor after the tables are loaded and the
 sector views exist. These queries return results; they do not create views or
 modify stored data. View creation is handled by the separate pipeline stage.
+`main` currently ends with view creation; it does not run the analysis queries
+or send their results to Google Sheets yet.
 
-All three queries use each current company's latest stored period. A missing
+All queries use each current company's latest stored period. A missing
 latest ratio is not replaced with an older value. Percentiles weight companies
-equally, exclude SQL `NULL` and may interpolate between observed values. Coverage
-uses all current companies in the sector as its denominator, separately for each
-ratio. Fiscal dates describe the financial periods, not when filings were submitted.
+equally, exclude SQL `NULL` and may interpolate between observed values.
+Companies with missing ratios remain in the output, allowing coverage to be
+calculated as available ratios divided by all current sector companies.
+Fiscal dates describe the financial periods, not when filings were submitted.
 
 Read distributions alongside coverage and reporting dates: sparse sectors may
 represent only a few companies, and latest periods can differ across companies.
 Historical or filtered analyses will need date ranges matching their own samples.
 
+The distribution queries calculate sector mean, minimum, quartiles, maximum
+and interquartile range (IQR). The lower whisker is P25 minus 1.5 × IQR and the
+upper whisker is P75 plus 1.5 × IQR. These are calculated thresholds, which need
+not be actual company values. Label the chart "Whiskers show 1.5 × IQR
+thresholds" to distinguish it from a conventional box plot. Ratios strictly
+outside the whiskers are flagged. Missing ratios retain a NULL flag.
+With zero IQR, the whiskers coincide and any different observed value is flagged.
+No minimum sample size is imposed: check `sector_observed_companies` before
+interpreting sparse sectors, especially interest coverage. Flags identify
+statistical review candidates, not financial distress or extraction errors.
+
+Build the custom Tableau plot from the supplied SQL quartiles and whisker
+endpoints, with individual company ratios shown as dots grouped by sector.
+Include ticker, company name, ratio and fiscal dates in company tooltips.
+The repeated SQL sector statistics are reference values; do not sum them across
+company rows. Tableau's built-in 1.5 × IQR box plot uses observed whisker
+endpoints and will not implement this threshold-based convention automatically.
+
 The planned Tableau workflow is to visualize SQL results and link the published
-interactive dashboard from a screenshot in this README. No dashboard is published yet.
+interactive dashboard from a screenshot in this README. An initial liabilities/assets
+chart has been published; the README preview and automated Google Sheets updates
+are not yet implemented.
+
+The intended refresh path is pipeline → Neon analysis queries → Google Sheets →
+Tableau Public's daily refresh. A program run will update the Sheet after this
+integration is implemented; Tableau will pick up changes at its next scheduled
+refresh, not immediately. The README screenshot remains static until replaced.
+Show the query/export snapshot date separately from company fiscal-period dates.
 
 ## Data rules and assumptions
 
@@ -218,8 +274,10 @@ identities, scope restrictions and evidence behind these choices.
 
 ## Tests and evidence
 
-- **Tests:** 34 constructed and isolated checks passed for date/dimension selection,
-  missing values, fallback priority, arithmetic and database loading. All four
+- **Tests:** the latest offline run passed 33 of 34 constructed and isolated
+  checks. One existing concurrency test still calls `generate_ratios(max_workers=...)`,
+  but the current function uses three workers internally and accepts no argument.
+  That test/API mismatch remains unresolved. All four
   metrics and both ratios also matched the frozen baseline across 22 archived
   filings from six companies, including missing states. These checks establish
   tested behavior and regression consistency, not universal accounting correctness
@@ -232,13 +290,18 @@ identities, scope restrictions and evidence behind these choices.
   some interest-coverage gaps, and no general missing-tag-equals-zero rule was
   established. Disney's negative expense was traced to the source tag, not Edgar's
   parsing. These samples do not establish full-index coverage or current null rates.
+- **Distribution queries:** before/after refactors were compared in PostgreSQL
+  using read-only synthetic inputs. All output columns and values matched across
+  19 company rows per metric, including missing ratios, an empty sector sample,
+  a single observed value and zero IQR. These checks establish consistency of
+  the SQL changes, not independent verification of every company's source values.
 
 The October 19, 2026 read-only SQL check reported 503 current ticker rows, 500 with
 financial history, 401 latest liabilities/assets values and 96 latest
 interest-coverage values. HONA, VYLR and XOM had no financial rows in that snapshot.
 These are historical observations, not a fresh database check or a count of
 unique issuers. The notebook and result export were removed; the
-[SQL analysis queries](src/database/sql/analysis/) remain available for a new run.
+[analysis queries](src/database/sql/analysis/) remain available for a new run.
 
 Scratch retains executable checks, diagnostic scripts, filing fixtures and source
 evidence. Explanatory summaries belong here rather than in separate scratch reports.
@@ -273,13 +336,22 @@ and any FCF margin. The planned metrics are not implemented yet. Their exact
 standard concepts, component boundaries and fallback rules still require review;
 listing a formula here does not approve every possible tag substitution.
 
-The existing liabilities/assets measure retains **total liabilities** as its
-numerator, despite the historical `debt_to_assets_ratio` name. Interest-bearing
-debt must not silently replace it when extending the project.
+The liabilities/assets measure uses **total liabilities** as its numerator.
+Interest-bearing debt must not silently replace it when extending the project.
 
-Next SQL analyses will examine annual company changes, matched-company sector
-trends and the relationship between liabilities/assets and interest coverage
-where both are available. Tableau visualizations will follow the SQL analysis.
+The first Tableau dashboard will show company ratios grouped by sector, with
+quartiles, median, mean, whisker thresholds and outlier points. Coverage, fiscal
+dates and the snapshot date provide context. Next work is to complete that
+dashboard, automate Neon-to-Google-Sheets updates and add the README preview/link.
+Further analysis is deferred until that dashboard is built:
+
+| Analysis | Question and scope |
+| --- | --- |
+| Annual company changes | Which companies' liabilities/assets ratios changed most? Calculate percentage-point differences between comparable consecutive annual periods; preserve missing observations and flag gaps. |
+| Matched-company sector trends | Are changes widespread within sectors? Compare the same companies across periods, reporting median company change and the share with an increase. |
+| Company position within its sector | How does each company's latest ratio compare with its sector median and percentile? Keep the reporting period visible. |
+| Interest-coverage histories | How does available coverage change within each company? Preserve gaps and avoid inferring the cause of negative ratios without the underlying amounts. |
+| Combined ratio comparison | How do liabilities/assets and interest coverage relate where both are available for the same company and period? Include sample size and sector context. |
 
 ## Analytical framework
 
@@ -305,7 +377,7 @@ Stakeholder recovery and the magnitude of future outcomes remain separate analys
 problems. Book assets are not a liquidation valuation, and the current pipeline
 does not model claim priority, stakeholder-specific recovery or future scenarios.
 
-## Design decisions and accounting review
+## Design decisions
 
 Current policies are summarized above. The detailed reviews below preserve the
 reasoning, tested observations, rejected candidates and remaining uncertainty.
@@ -453,7 +525,7 @@ provenance classes were removed in favor of values/`None`, with reporting dates 
 
 We implemented and tested filed calculation relationships, then measured what
 happens without them. Disabling the linkbase while keeping the same direct facts
-and accounting fallbacks removed liabilities and debt-to-assets for AMD and Walmart
+and accounting fallbacks removed liabilities and liabilities-to-assets for AMD and Walmart
 in five filings each. Other outputs did not change in the sample.
 [Measured comparison](scratch/research/research_evidence.json)
 

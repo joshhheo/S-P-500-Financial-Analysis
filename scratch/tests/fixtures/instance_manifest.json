@@ -36,7 +36,7 @@
         "interest_expense": "2645000000"
       },
       "ratios": {
-        "debt_to_assets": "0.8202574344305730451678338015",
+        "liabilities_to_assets": "0.8202574344305730451678338015",
         "interest_coverage": "41.19054820415879017013232514"
       }
     }
@@ -78,7 +78,7 @@
         "interest_expense": "2931000000"
       },
       "ratios": {
-        "debt_to_assets": "0.8563535598361469008235177389",
+        "liabilities_to_assets": "0.8563535598361469008235177389",
         "interest_coverage": "40.74957352439440464005458888"
       }
     }
@@ -120,7 +120,7 @@
         "interest_expense": "3933000000"
       },
       "ratios": {
-        "debt_to_assets": "0.8237407929480434394171017888",
+        "liabilities_to_assets": "0.8237407929480434394171017888",
         "interest_coverage": "29.06203915586066615814899568"
       }
     }
@@ -162,7 +162,7 @@
         "interest_expense": null
       },
       "ratios": {
-        "debt_to_assets": "0.8439640528248123184832045592",
+        "liabilities_to_assets": "0.8439640528248123184832045592",
         "interest_coverage": null
       }
     }
@@ -204,7 +204,7 @@
         "interest_expense": null
       },
       "ratios": {
-        "debt_to_assets": "0.7947533828265704638390384171",
+        "liabilities_to_assets": "0.7947533828265704638390384171",
         "interest_coverage": null
       }
     }
@@ -246,7 +246,7 @@
         "interest_expense": "34000000"
       },
       "ratios": {
-        "debt_to_assets": null,
+        "liabilities_to_assets": null,
         "interest_coverage": "107.2941176470588235294117647"
       }
     }
@@ -288,7 +288,7 @@
         "interest_expense": "88000000"
       },
       "ratios": {
-        "debt_to_assets": null,
+        "liabilities_to_assets": null,
         "interest_coverage": "14.36363636363636363636363636"
       }
     }
@@ -330,7 +330,7 @@
         "interest_expense": "106000000"
       },
       "ratios": {
-        "debt_to_assets": null,
+        "liabilities_to_assets": null,
         "interest_coverage": "3.783018867924528301886792453"
       }
     }
@@ -372,7 +372,7 @@
         "interest_expense": "92000000"
       },
       "ratios": {
-        "debt_to_assets": null,
+        "liabilities_to_assets": null,
         "interest_coverage": "20.65217391304347826086956522"
       }
     }
@@ -414,7 +414,7 @@
         "interest_expense": "131000000"
       },
       "ratios": {
-        "debt_to_assets": null,
+        "liabilities_to_assets": null,
         "interest_coverage": "28.19847328244274809160305344"
       }
     }
@@ -450,7 +450,7 @@
         "interest_expense": "5069000000"
       },
       "ratios": {
-        "debt_to_assets": "0.4111298209095907627052077606",
+        "liabilities_to_assets": "0.4111298209095907627052077606",
         "interest_coverage": null
       }
     }
@@ -492,7 +492,7 @@
         "interest_expense": null
       },
       "ratios": {
-        "debt_to_assets": "0.9180912562995773915794707225",
+        "liabilities_to_assets": "0.9180912562995773915794707225",
         "interest_coverage": null
       }
     }
@@ -534,7 +534,7 @@
         "interest_expense": "2063000000"
       },
       "ratios": {
-        "debt_to_assets": "0.5435204473193728757811643460",
+        "liabilities_to_assets": "0.5435204473193728757811643460",
         "interest_coverage": "40.41832283082888996606883180"
       }
     }
@@ -576,7 +576,7 @@
         "interest_expense": "1968000000"
       },
       "ratios": {
-        "debt_to_assets": "0.4994295784220440025632561120",
+        "liabilities_to_assets": "0.4994295784220440025632561120",
         "interest_coverage": "44.98119918699186991869918699"
       }
     }
@@ -612,7 +612,7 @@
         "interest_expense": "2935000000"
       },
       "ratios": {
-        "debt_to_assets": "0.4757977440775690551640786234",
+        "liabilities_to_assets": "0.4757977440775690551640786234",
         "interest_coverage": "37.28551959114139693356047700"
       }
     }
@@ -648,7 +648,7 @@
         "interest_expense": null
       },
       "ratios": {
-        "debt_to_assets": "0.4451093128789359663846540324",
+        "liabilities_to_assets": "0.4451093128789359663846540324",
         "interest_coverage": null
       }
     }
@@ -684,7 +684,7 @@
         "interest_expense": null
       },
       "ratios": {
-        "debt_to_assets": "0.4166653480595377490848866525",
+        "liabilities_to_assets": "0.4166653480595377490848866525",
         "interest_coverage": null
       }
     }
@@ -726,7 +726,7 @@
         "interest_expense": null
       },
       "ratios": {
-        "debt_to_assets": null,
+        "liabilities_to_assets": null,
         "interest_coverage": null
       }
     }
@@ -768,7 +768,7 @@
         "interest_expense": null
       },
       "ratios": {
-        "debt_to_assets": null,
+        "liabilities_to_assets": null,
         "interest_coverage": null
       }
     }
@@ -810,7 +810,7 @@
         "interest_expense": null
       },
       "ratios": {
-        "debt_to_assets": null,
+        "liabilities_to_assets": null,
         "interest_coverage": null
       }
     }
@@ -852,7 +852,7 @@
         "interest_expense": null
       },
       "ratios": {
-        "debt_to_assets": null,
+        "liabilities_to_assets": null,
         "interest_coverage": null
       }
     }
@@ -894,7 +894,7 @@
         "interest_expense": null
       },
       "ratios": {
-        "debt_to_assets": null,
+        "liabilities_to_assets": null,
         "interest_coverage": null
       }
     }

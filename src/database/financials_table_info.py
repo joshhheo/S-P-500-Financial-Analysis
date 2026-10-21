@@ -11,17 +11,17 @@ def financials_table_info():
 
     upsert_query = """
     INSERT INTO financials (
-        ticker, debt_to_assets_ratio, interest_coverage_ratio,
+        ticker, liabilities_to_assets_ratio, interest_coverage_ratio,
         fiscal_period_start, fiscal_period_end
     )
     VALUES (
-        :ticker, :debt_to_assets_ratio,
+        :ticker, :liabilities_to_assets_ratio,
         :interest_coverage_ratio,
         :fiscal_period_start, :fiscal_period_end
     )
     ON CONFLICT (ticker, fiscal_period_end)
     DO UPDATE SET
-        debt_to_assets_ratio = EXCLUDED.debt_to_assets_ratio,
+        liabilities_to_assets_ratio = EXCLUDED.liabilities_to_assets_ratio,
         interest_coverage_ratio = EXCLUDED.interest_coverage_ratio,
         fiscal_period_start = EXCLUDED.fiscal_period_start;
     """

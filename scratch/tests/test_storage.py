@@ -14,9 +14,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'src'))
 from database.financials_table_info import financials_table_info
 
 
-def row(debt=0.4, interest=28):
+def row(liabilities_to_assets=0.4, interest=28):
     return dict(ticker='AMD', fiscal_period_end='2025-12-27',
-        fiscal_period_start='2024-12-29', debt_to_assets_ratio=debt, interest_coverage_ratio=interest)
+        fiscal_period_start='2024-12-29', liabilities_to_assets_ratio=liabilities_to_assets, interest_coverage_ratio=interest)
 
 
 class DatabaseLoadTests(unittest.TestCase):
@@ -25,7 +25,7 @@ class DatabaseLoadTests(unittest.TestCase):
         self.addCleanup(engine.dispose)
         with engine.begin() as connection:
             connection.execute(text('CREATE TABLE financials (ticker TEXT, fiscal_period_end TEXT, '
-                'debt_to_assets_ratio NUMERIC, interest_coverage_ratio NUMERIC, '
+                'liabilities_to_assets_ratio NUMERIC, interest_coverage_ratio NUMERIC, '
                 'fiscal_period_start TEXT, '
                 'PRIMARY KEY(ticker,fiscal_period_end))'))
         binds=[]
@@ -41,7 +41,7 @@ class DatabaseLoadTests(unittest.TestCase):
             financials_table_info()
         self.assertEqual(binds[0][1],0.4)
         with engine.connect() as connection:
-            result=connection.execute(text('SELECT debt_to_assets_ratio,interest_coverage_ratio FROM financials')).one()
+            result=connection.execute(text('SELECT liabilities_to_assets_ratio,interest_coverage_ratio FROM financials')).one()
         self.assertEqual(tuple(result),(.2,None))
 
 

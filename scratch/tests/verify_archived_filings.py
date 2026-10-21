@@ -14,7 +14,7 @@ from value_retrieval.get_assets import get_assets
 from value_retrieval.get_liabilities import get_liabilities
 from value_retrieval.get_operating_income import get_operating_income
 from value_retrieval.get_interest_expense import get_interest_expense
-from calculations.debt_to_asset_ratio import calculate_debt_to_assets
+from calculations.liabilities_to_assets_ratio import calculate_liabilities_to_assets
 from calculations.interest_coverage_ratio import calculate_interest_coverage
 
 
@@ -36,7 +36,7 @@ def verify_archived_filings():
                     'interest_expense': get_interest_expense(source, start, end),
                 },
                 'ratios': {
-                    'debt_to_assets': calculate_debt_to_assets(source, end),
+                    'liabilities_to_assets': calculate_liabilities_to_assets(source, end),
                     'interest_coverage': calculate_interest_coverage(source, start, end),
                 },
             }

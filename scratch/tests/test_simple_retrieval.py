@@ -3,7 +3,7 @@ import unittest
 from edgar.xbrl import XBRL
 from value_retrieval.get_value import get_annual_start
 from value_retrieval.get_assets import get_assets
-from calculations.debt_to_asset_ratio import calculate_debt_to_assets
+from calculations.liabilities_to_assets_ratio import calculate_liabilities_to_assets
 
 END = '2025-12-31'
 
@@ -64,9 +64,9 @@ class RetrievalScopeTests(unittest.TestCase):
         self.assertEqual(get_assets(data, END), 100)
 
     def test_missing_source_and_valid_ratio(self):
-        self.assertIsNone(calculate_debt_to_assets(None, END))
+        self.assertIsNone(calculate_liabilities_to_assets(None, END))
         data = source(fact('Assets', 100) + fact('Liabilities', 40))
-        value = calculate_debt_to_assets(data, END)
+        value = calculate_liabilities_to_assets(data, END)
         self.assertEqual(str(value), '0.4')
 
     def test_unitless_metadata_establishes_annual_start(self):
@@ -142,7 +142,7 @@ class ExplicitFormulaTests(unittest.TestCase):
 
     def test_zero_denominator_is_missing(self):
         data = source(fact('Assets', 0) + fact('Liabilities', 40))
-        self.assertIsNone(calculate_debt_to_assets(data, END))
+        self.assertIsNone(calculate_liabilities_to_assets(data, END))
 
     def test_pipeline_uses_edgar_objects_without_network_or_csv_writes(self):
         from unittest.mock import patch
@@ -159,9 +159,9 @@ class ExplicitFormulaTests(unittest.TestCase):
             self.assertEqual(str(save.call_args.args[1]), 'data/financial_ratios.csv')
             self.assertFalse(save.call_args.kwargs['index'])
             rows = save.call_args.args[0].to_dict('records')
-            self.assertEqual(str(rows[0]['debt_to_assets_ratio']), '0.4')
+            self.assertEqual(str(rows[0]['liabilities_to_assets_ratio']), '0.4')
             self.assertIsNone(rows[0]['interest_coverage_ratio'])
-            self.assertEqual(set(rows[0]), {'ticker', 'fiscal_period_start', 'fiscal_period_end', 'debt_to_assets_ratio', 'interest_coverage_ratio'})
+            self.assertEqual(set(rows[0]), {'ticker', 'fiscal_period_start', 'fiscal_period_end', 'liabilities_to_assets_ratio', 'interest_coverage_ratio'})
             self.assertEqual(rows[0]['fiscal_period_start'], '2025-01-01')
 
     def test_parallel_companies_match_sequential_output(self):

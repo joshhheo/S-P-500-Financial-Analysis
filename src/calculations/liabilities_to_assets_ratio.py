@@ -3,7 +3,7 @@ from value_retrieval.get_liabilities import get_liabilities
 from value_retrieval.get_assets import get_assets
 
 
-def calculate_debt_to_assets(financial_data, period_end):
+def calculate_liabilities_to_assets(financial_data, period_end):
     liabilities = get_liabilities(financial_data, period_end)
     assets = get_assets(financial_data, period_end)
     if liabilities is None or assets is None:
