@@ -165,6 +165,7 @@ class ExplicitFormulaTests(unittest.TestCase):
             self.assertEqual(rows[0]['fiscal_period_start'], '2025-01-01')
 
     def test_parallel_companies_match_sequential_output(self):
+        from concurrent.futures import ThreadPoolExecutor
         from threading import Barrier
         from types import SimpleNamespace
         from unittest.mock import patch
@@ -190,11 +191,13 @@ class ExplicitFormulaTests(unittest.TestCase):
              patch(module+'pd.read_csv', return_value=companies), \
              patch(module+'Company', side_effect=company_for) as company, \
              patch.object(pd.DataFrame, 'to_csv', autospec=True) as save:
-            generate_ratios(max_workers=1)
+            with patch(module+'ThreadPoolExecutor',
+                       return_value=ThreadPoolExecutor(max_workers=1)):
+                generate_ratios()
             sequential = save.call_args.args[0].copy()
             save.reset_mock()
             company.side_effect = concurrent_company
-            generate_ratios(max_workers=2)
+            generate_ratios()
             save.assert_called_once()
             parallel = save.call_args.args[0]
             pd.testing.assert_frame_equal(parallel, sequential)

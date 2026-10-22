@@ -1,0 +1,85 @@
+{
+  "calculation_date": "2026-10-22",
+  "metric": "liabilities_to_assets_ratio",
+  "grain": "one current ticker, using latest stored fiscal_period_end without older-value fallback",
+  "published_tableau_extract_verified": false,
+  "sources": {
+    "data/company_status.csv": {
+      "sha256": "1cdb8fc64af87f7b95048fd06c55ef23651526ee47b08f0aaeb1d5bb2b012a43"
+    },
+    "data/financial_ratios.csv": {
+      "sha256": "6d13f7072379848c15839273066137168f9742a7e9453cd0344c2d453a0bc6fd"
+    }
+  },
+  "total": 503,
+  "available": 401,
+  "missing": 102,
+  "sectors": [
+    {
+      "sector": "Communication Services",
+      "total": 22,
+      "available": 11,
+      "missing": 11
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "total": 47,
+      "available": 35,
+      "missing": 12
+    },
+    {
+      "sector": "Consumer Staples",
+      "total": 34,
+      "available": 26,
+      "missing": 8
+    },
+    {
+      "sector": "Energy",
+      "total": 21,
+      "available": 11,
+      "missing": 10
+    },
+    {
+      "sector": "Financials",
+      "total": 76,
+      "available": 74,
+      "missing": 2
+    },
+    {
+      "sector": "Health Care",
+      "total": 60,
+      "available": 45,
+      "missing": 15
+    },
+    {
+      "sector": "Industrials",
+      "total": 83,
+      "available": 66,
+      "missing": 17
+    },
+    {
+      "sector": "Information Technology",
+      "total": 75,
+      "available": 67,
+      "missing": 8
+    },
+    {
+      "sector": "Materials",
+      "total": 24,
+      "available": 17,
+      "missing": 7
+    },
+    {
+      "sector": "Real Estate",
+      "total": 30,
+      "available": 29,
+      "missing": 1
+    },
+    {
+      "sector": "Utilities",
+      "total": 31,
+      "available": 20,
+      "missing": 11
+    }
+  ]
+}

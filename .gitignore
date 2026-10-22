@@ -4,4 +4,5 @@
 __pycache__/
 *.pyc
 
-# Temporary completed-CSV writes
+# macOS folder metadata
+.DS_Store
