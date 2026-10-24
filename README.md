@@ -74,6 +74,10 @@ The interquartile range (IQR) is the distance between the lower and upper quarti
 Whiskers extend to the most extreme observed values within 1.5 × IQR below the
 lower quartile or above the upper quartile. Points beyond the whiskers are outliers.
 
+The average line shows the arithmetic mean of ticker ratios for each sector and
+comparison period, giving each ticker equal weight. Extreme values can pull the
+average away from the median, which is the middle value.
+
 Point colors show distance from that sector's median for the same comparison
 period: green is closer and red is farther away. Color does not indicate financial
 health.
@@ -118,17 +122,16 @@ See the [annual-matching rules](#annual-matching-for-the-charts) for eligibility
 
 **Zoomed View (0–1.5)**
 
-[![Previous and Latest liabilities-to-assets distributions by sector, zoomed to 0–1.5](<docs/images/Liabilties-to-Assets-Distribution (0-1.5).png>)][tableau]
+[![Previous and Latest liabilities-to-assets distributions by sector, zoomed to 0–1.5](<images/Liabilties-to-Assets-Distribution (0-1.5).png>)][tableau]
 
 **Full-Range View**
 
-[![Previous and Latest liabilities-to-assets distributions by sector, full range](<docs/images/Liabilties-to-Assets-Distribution.png>)][tableau]
+[![Previous and Latest liabilities-to-assets distributions by sector, full range](<images/Liabilties-to-Assets-Distribution.png>)][tableau]
 
 **Coverage:** 401 of 503 tickers have a latest ratio (79.72%); 102 are missing
 (20.28%). The paired charts include 396 tickers (78.73% of all current tickers),
 with two observations each: 792 rows. The remaining 107 tickers are excluded.
-These counts use the October 21, 2026 repository CSV snapshot. The published
-Tableau extract has not been independently checked against them.
+These counts use the October 21, 2026 repository CSV snapshot.
 [Source record](scratch/research/liabilities_to_assets_coverage.json).
 
 | Sector | Latest available / total | Matched tickers | Excluded from paired plots | Matched % |
@@ -145,21 +148,362 @@ Tableau extract has not been independently checked against them.
 | Real Estate | 29 / 30 | 29 | 1 | 96.67% |
 | Utilities | 20 / 31 | 19 | 12 | 61.29% |
 
+### Liabilities-to-Assets Observations
+
+#### Utility Extraction Errors
+
+The unusually low ratios for PPL, PSEG, and NiSource reproduce a calculation that
+omits separately reported long-term debt. Their 2025 consolidated balance sheets
+give the following comparison:
+
+| Company | Stored ratio | Including all reported liabilities |
+| --- | ---: | ---: |
+| [PPL](https://www.sec.gov/Archives/edgar/data/0000922224/000119312526136009/ppl_2025_annual_report.pdf) | 0.273 | 0.671 |
+| [PSEG](https://s24.q4cdn.com/601515617/files/doc_financials/2025/q4/PSEG_2025_10-K.pdf) | 0.329 | 0.705 |
+| [NiSource](https://d18rn0p25nwr6d.cloudfront.net/CIK-0001111711/e5c9b499-c076-4b24-96c8-1c551acb79de.pdf) | 0.244 | 0.675 |
+
+These errors remain in the CSVs. The exact retrieval path, earlier periods, and
+other utilities need review. Both annual periods and the chart statistics need
+updating before interpreting the corrected utility distribution.
+
+#### Extreme Company Ratios
+
+##### Domino's
+
+Domino's has the highest latest ratio in the matched sample: **3.273**, compared
+with **3.281** previously. Its 2025 balance sheet reports approximately
+**$5.62 billion of liabilities against $1.72 billion of assets**.
+
+**Business and asset base.** Franchisees sell pizzas and pay royalties; Domino's
+supply-chain business also sells food and other supplies to stores. About **99% of
+stores are franchised**, so most stores' buildings and equipment are not on the
+listed company's balance sheet. This lets Domino's earn recurring income without
+owning every restaurant. It has assets, but its recorded asset base is relatively
+small compared with its liabilities.
+
+**Liabilities and cash use.** Domino's borrows through **securitized bonds backed
+by franchise agreements, supply-chain agreements, intellectual property, and
+related rights**. Its debt is supported by that cash-generating business system,
+not just physical restaurants.
+[Debt structure and collateral](https://www.sec.gov/Archives/edgar/data/1286681/000119312525198332/d946118d8k.htm).
+Buybacks have historically used operating cash flows, recapitalization proceeds,
+and borrowings. Cash distributed to shareholders reduces assets and equity while
+debt can remain outstanding. Repaying bond principal, by contrast, reduces debt;
+issuing new bonds to repay older bonds generally replaces an existing obligation.
+
+**What the ratio says about stability.** The ratio identifies substantial leverage
+and negative book equity, but is **weak evidence of immediate payment distress on
+its own**. Domino's reported **$792.1 million of operating cash flow in 2025**:
+the business continued generating cash despite its high ratio. The vulnerability
+is that debt payments remain due if franchise and supply-chain cash flows weaken,
+and future refinancing may be needed. The ratio is therefore a reason to examine
+cash available after investment, interest costs, and repayment dates, rather than
+a conclusion that the business is unstable.
+[Annual report](https://www.sec.gov/Archives/edgar/data/1286681/000128668126000014/dpz_ars_2026.pdf).
+
+##### Verisign
+
+Verisign's ratio rises from **2.392 to 2.625**, with approximately **$3.48 billion
+of liabilities against $1.33 billion of assets** at year-end 2025.
+
+**Business and asset base.** Registrars pay Verisign for domain registrations and
+renewals, and Verisign operates the registry services over the registration period.
+Its business uses computing infrastructure and staff rather than a separate
+physical location for every customer. Cash returned through buybacks and dividends
+also leaves fewer assets on the balance sheet. The recorded asset total therefore
+does not represent the value of all the future registrations the business may earn.
+
+**Liabilities and cash use.** Approximately **$1.38 billion is deferred revenue**:
+customers have already paid for services Verisign still owes them. Another
+**$1.79 billion is senior-note debt**. These obligations are different. Deferred
+revenue generally requires providing the service over time, with the associated
+operating costs; debt requires interest and principal payments. Treating the full
+liability balance as borrowed money would misread its financial structure.
+[Annual filing](https://www.sec.gov/Archives/edgar/data/1014473/000101447326000006/vrsn-20251231.htm).
+
+**What the ratio says about stability.** This is a **limited standalone indicator
+of payment pressure**, because it combines financing debt with prepaid services
+and an asset base reduced by shareholder distributions. Verisign generated about
+**$1.09 billion of operating cash flow in 2025**, which provides important context
+alongside its negative book equity.
+[2025 results](https://www.sec.gov/Archives/edgar/data/1014473/000101447326000005/q42025earningsrelease.htm).
+The service obligations and debt are still real. A stronger stability assessment
+would examine whether registrations and renewals can continue funding operations
+and debt service, and how much cash is retained rather than distributed. The
+2.625 ratio alone does not establish deterioration in that ability.
+
+##### SBA Communications
+
+SBA Communications' ratio decreases from **1.443 to 1.413**, with approximately
+**$16.35 billion of liabilities against $11.58 billion of assets** at year-end
+2025.
+
+**Business and asset base.** SBA owns and operates tower sites and leases antenna
+space to wireless service providers. Tenant payments fund site operations,
+investment, debt service, and shareholder distributions. Unlike Domino's, this is
+a business with substantial physical assets. However, depreciation of towers and
+amortization of acquired assets reduce their recorded values over time, even while
+sites can continue earning rent. Buybacks and dividends also reduce assets and
+equity. A comparatively small denominator here means small relative to its
+liabilities, not that SBA owns few assets.
+[Annual report](https://www.sec.gov/Archives/edgar/data/1034054/000119312526149691/d875239dars.pdf).
+
+**Liabilities and cash use.** Borrowing is a substantial part of the financing
+structure supporting its tower portfolio and capital allocation. SBA reported
+about **$13.0 billion of debt principal** at year-end 2025, alongside other
+obligations such as ground leases. The business therefore depends on collecting
+lease income while meeting its own financing and site commitments.
+
+**What the ratio says about stability.** The high ratio is **a relevant warning
+about leverage, although it does not establish current distress**. SBA also
+reported net debt equal to **6.4 times annualized adjusted EBITDA**, a separate
+company-defined leverage measure. This corroborates that the borrowing burden is
+substantial relative to that earnings measure; depreciation alone is not the full
+explanation.
+[Debt and leverage figures](https://ir.sbasite.com/news-events/press-releases/news-details/2026/SBA-Communications-Corporation-Reports-Fourth-Quarter-2025-Results-Provides-Full-Year-2026-Outlook-and-Declares-Quarterly-Cash-Dividend/default.aspx).
+Recurring tenant payments help support the obligations, but lost rental income,
+higher refinancing costs, or large repayments could create pressure. Assessing
+stability requires checking those commitments against cash generation, rather
+than treating the book value of towers as either their sale value or proof that
+the debt is safe.
+
+##### What These Companies Have in Common
+
+The common feature is **large obligations relative to the assets still recorded on
+the balance sheet**. That can result from different combinations of borrowing,
+shareholder payouts, operating liabilities, and reductions in asset values. The
+business model explains why a company can generate cash despite that structure;
+it does not make the obligations disappear.
+
+For example, a company with assets of 100 and liabilities of 80 has a ratio of
+0.80. Paying shareholders 20 of cash, with liabilities unchanged, raises the ratio
+to 1.00. The ratio rose because assets and equity fell, even though the company
+did not borrow more. Borrowing alone initially adds both cash and debt, so how the
+cash is subsequently used matters.
+
+Across the stored sample, **18 tickers in seven sectors have latest ratios above
+1**, generally indicating negative book equity. The useful question is whether
+their businesses can generate enough cash, at the right times, to meet their
+specific obligations. Domino's franchise cash flows, Verisign's prepaid services,
+and SBA's tower rents require different assessments. A high ratio identifies a
+balance-sheet feature to investigate; its meaning for stability depends on the
+company behind it.
+
+#### Sector Differences
+
+##### Utilities Have a Narrow Central Distribution
+
+**What the chart shows.** Utilities have an **IQR of approximately 0.060**, the
+narrowest in the stored sample. Expressed as percentages of assets, the middle
+half of their ratios fit within a range of about **6 percentage points**. That
+is a statement about how similar the covered companies look, not how low their
+liabilities are: their latest median is approximately **0.750**.
+
+**Business and financing.** Utilities invest in infrastructure that provides
+services over many years. Customer payments fund operations and investment, as
+well as payments to lenders and shareholders. For regulated utilities, rate-setting
+considers the cost of financing that infrastructure with debt and equity. Similar
+operating requirements and regulatory arrangements could therefore encourage
+similar financing choices across companies.
+[Utility financing context](https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/cost-of-capital).
+
+**What it means.** The cluster could reflect a common business structure rather
+than unusually similar financial health. Two utilities with the same ratio can
+still face different interest costs, investment needs, and repayment schedules.
+Regulatory financing assumptions also do not directly determine the listed
+parent's total liabilities/assets ratio. The identified extraction errors must be
+corrected before confirming the sector's median and spread. A narrow box alone
+establishes neither stability nor distress.
+
+##### Energy Has the Lowest Stored Median
+
+**What the chart shows.** Energy's latest median is approximately **0.471**:
+liabilities equal about **47.1% of assets** for the middle covered ticker.
+Information Technology is close at **0.488**, so Energy sits at the low end of the
+sample without being sharply separated from every other sector.
+
+**Business and financing.** For oil and gas producers, producing and selling energy
+generates cash that can be reinvested, used to repay lenders, or returned to
+shareholders. The choice affects the balance sheet. Earlier strong industry cash
+flows supported debt repayment and shareholder distributions; the IEA documents
+these uses of cash in 2022–2023.
+[Industry cash-flow context](https://www.iea.org/reports/world-energy-investment-2024/overview-and-key-findings).
+
+Debt repayment can lower a ratio that starts below 1, while profits retained in
+the business can build equity. For example, a company with liabilities of 60 and
+assets of 100 has a ratio of 0.60. Using 10 of cash to repay debt leaves liabilities
+of 50 and assets of 90, lowering the ratio to about 0.56. Paying that cash to
+shareholders instead would leave liabilities at 60 and raise the ratio to about
+0.67. A large physical asset base alone therefore does not explain a low ratio;
+how it was financed and how cash is used matter.
+
+**What it means.** The chart suggests relatively less reliance on liabilities in
+these companies' recorded funding mix. It does not establish the most stable
+future cash flows. As an example of industry cash-flow variability, the EIA reports
+that operating cash flow in its global upstream sample fell by 10% in real terms
+in 2024. That is a different population and period from this chart, but illustrates
+why a low balance-sheet ratio does not guarantee steady cash generation.
+[EIA financial review](https://www.eia.gov/finance/review/).
+Only **11 of 21 Energy tickers** are matched here, and a producer-focused explanation
+does not cover every Energy business. Debt repayment is a possible contributor to
+the low median, not an established explanation for the full sample.
+
+##### Consumer Discretionary Sits High and Varies Widely
+
+**What the chart shows.** The latest median is approximately **0.754**, and
+**seven of 35 matched tickers** have ratios above 1. Its **0.365 IQR** means the
+middle half span about **36.5 percentage points**. The sector therefore combines
+an elevated typical ratio with substantial differences between companies; its
+position is not just a reflection of Domino's extreme value.
+
+**Business and financing.** The sector combines companies that own very different
+assets and earn cash in different ways. A retailer carries inventory and uses
+stores; a franchisor can earn royalties while franchisees operate the locations.
+Borrowing, property ownership, leases, and shareholder payouts can consequently
+produce different ratios even among profitable businesses.
+
+Distributions are a concrete example. McDonald's returned **$7.1 billion** through
+dividends and buybacks in 2025. As with Domino's, cash paid out can reduce equity
+without requiring operating losses.
+[McDonald's annual filing](https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm).
+Leases also matter, but generally add both an obligation and a right-of-use asset.
+Adding equal amounts moves the ratio toward 1, so leases can help explain an
+increase from a lower ratio without explaining every value above 1.
+
+**What it means.** The wide spread makes individual business models particularly
+important. An elevated ratio could reflect payouts and leased locations, or it
+could accompany weak earnings and growing borrowing. The chart cannot distinguish
+those explanations. If sales weaken while rent and debt payments remain due, cash
+pressure could increase; whether that is happening requires company-level evidence.
+The median is a comparison point, not a diagnosis of the sector's financial health.
+
+##### Financials Have the Highest Stored Median
+
+**What the chart shows.** Financials have the highest latest median, approximately
+**0.795**, across **74 matched tickers**. Consumer Discretionary has prominent
+extremes, but Financials have the higher middle value. This separates the typical
+sector position from the most dramatic individual points.
+
+**Business and financing.** For a bank, customer deposits are liabilities because
+the bank owes that money back. Deposits and other financing support assets such
+as loans and securities, which generate income. A large liability balance can
+therefore be part of the ordinary business model. JPMorgan describes deposits,
+secured and unsecured funding, and equity as sources of balance-sheet financing.
+[JPMorgan's financing and balance sheet](https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm).
+
+**What it means.** The high ratio is relevant to how much of the asset base is
+funded by obligations rather than equity. However, it does not reveal the quality
+of loans, the market value of securities, or how quickly funding might leave.
+Those differences can matter greatly: deposit withdrawals may require a bank to
+raise cash, and selling assets at a loss can weaken its equity position.
+[Bank asset values and funding pressure](https://www.stlouisfed.org/on-the-economy/2023/feb/rising-rates-complicate-banks-investment-portfolios).
+
+A high ratio is therefore neither automatically abnormal for a bank nor sufficient
+evidence that it is safe. Financials also include insurers, exchanges, and asset
+managers. Comparing companies within those narrower business groups would be more
+informative than treating the whole sector as one financing model.
+
+##### Materials Also Have a Relatively Narrow Middle Range
+
+**What the chart shows.** Materials have an **IQR of approximately 0.139**, so the
+middle half span about **13.9 percentage points**, compared with **36.5** for
+Consumer Discretionary and Communication Services. Their latest median is about
+**0.563**. The observation is that central ratios are relatively similar, rather
+than that liabilities are especially low.
+
+**Possible explanation.** Comparable investment and financing policies among some
+producers could contribute, but a shared cause has not been established. The sector
+contains chemicals, packaging, mining, and construction materials, so its members
+do not all have the same operating process. The sample also covers only **17 of
+24 tickers**; the companies with usable data may influence the apparent clustering.
+
+**What it means.** Similar total ratios can conceal different obligations. As a
+hypothetical example, two companies could each have assets of 100 and liabilities
+of 55. One might have 45 of borrowing and 10 of supplier obligations; the other
+might have 10 of borrowing and 45 of supplier obligations. Both ratios are 0.55,
+but their interest costs and payment schedules could differ considerably. The
+compact box establishes similarity in the totals, not a common explanation or
+identical financial stability.
+
+##### Technology Combines a Low Median With High Outliers
+
+**What the chart shows.** Information Technology has a latest median of
+approximately **0.488**, yet **three of 66 matched tickers** exceed 1. Verisign's
+**2.625** ratio is therefore very different from that of the middle covered
+company. The low median and high extremes are both meaningful observations.
+
+**Business and financing.** Companies can differ in how they retain or distribute
+cash, how much they borrow, and whether customers pay before services are provided.
+Verisign illustrates the last point: prepaid registrations create liabilities
+alongside its debt, while shareholder payouts reduce the assets it retains.
+That particular combination helps explain its outlier without establishing a
+sector-wide cause for the lower median.
+
+**What it means.** The company label matters less than the underlying flow of cash
+and obligations. A low ratio could reflect substantial retained assets, while a
+high ratio could reflect distributions, borrowing, or operating liabilities.
+Neither establishes whether future income can support payments when they fall due.
+
+This is also a useful comparison of the average and median lines. A few very high
+values can pull the average upward much more than the median. If the average sits
+well above the median, the high end of the distribution is influencing it; the
+middle company need not have a similarly high ratio. Neither line weights a
+company more heavily just because it is larger.
+
+#### Changes Between Annual Periods
+
+**What the chart shows.** Most sector boxes overlap substantially, and every
+sector's median changes by less than **4 percentage points**. There are still
+differences in direction:
+
+| Sector | Previous median | Latest median | Change in percentage points |
+| --- | ---: | ---: | ---: |
+| Energy | 0.472 | 0.471 | −0.1 |
+| Materials | 0.524 | 0.563 | +3.9 |
+| Information Technology | 0.524 | 0.488 | −3.6 |
+
+These are rounded differences between sector medians. They are not percentage
+changes of −0.1%, +3.9%, and −3.6%, or the median changes of individual companies.
+
+**Why ratios can stay similar.** Assets and liabilities are balances accumulated
+over time, so one year's sales or profits need not transform their proportions.
+A company can also grow while keeping the same ratio: liabilities of 60 against
+assets of 100 give the same 0.60 ratio as liabilities of 66 against assets of 110.
+The business expanded, but its funding proportions stayed similar.
+
+**Why a stable median can hide movement.** Some companies' ratios can rise while
+others fall, leaving the middle value or box largely unchanged. Because Previous
+and Latest include the same tickers within each metric, a changing participant
+list does not explain the difference between those two plots. However, the
+companies still have different fiscal dates, and each ratio can change through
+borrowing, repayment, payouts, or changes in recorded assets.
+
+**What it means for stability.** A stable ratio does not prove stable cash flow,
+and a rising ratio does not establish deteriorating operations. For example, a
+profitable company's buyback can raise its ratio. A company with a ratio below 1
+could lower it by selling assets and repaying debt, even if financial pressure
+prompted the sale. The reason for the movement matters alongside its direction.
+
+To determine whether a sector-wide shift was widespread, the next useful measures
+are the **median individual-company change** and the **share of matched companies
+whose ratios increased**. A change between two sector medians answers where the
+middle of each distribution sits; those additional measures would show how the
+same companies actually moved.
+
 ### Interest Coverage Distribution
 
 **Zoomed View (−10–65×)**
 
-[![Previous and Latest interest-coverage distributions by sector, zoomed to −10–65 times](<docs/images/Interest Coverage Ratio Distribution (-10-65).png>)][tableau]
+[![Previous and Latest interest-coverage distributions by sector, zoomed to −10–65 times](<images/Interest Coverage Ratio Distribution (-10-65).png>)][tableau]
 
 **Full-Range View**
 
-[![Previous and Latest interest-coverage distributions by sector, full range](<docs/images/Interest Coverage Ratio Distribution.png>)][tableau]
+[![Previous and Latest interest-coverage distributions by sector, full range](<images/Interest Coverage Ratio Distribution.png>)][tableau]
 
 **Coverage:** 96 of 503 tickers have a latest ratio (19.09%); 407 are missing
 (80.91%). The paired charts include 94 tickers (18.69% of all current tickers),
 with two observations each: 188 rows. The remaining 409 tickers are excluded.
-These counts use the October 21, 2026 repository CSV snapshot. The published
-Tableau extract has not been independently checked against them.
+These counts use the October 21, 2026 repository CSV snapshot.
 [Source record](scratch/research/interest_coverage_counts.json).
 
 | Sector | Latest available / total | Matched tickers | Excluded from paired plots | Matched % |
@@ -176,9 +520,255 @@ Tableau extract has not been independently checked against them.
 | Real Estate | 7 / 30 | 7 | 23 | 23.33% |
 | Utilities | 11 / 31 | 10 | 21 | 32.26% |
 
-Interest coverage is expressed as a multiple (×). Some sectors have only two or
-three usable observations, which is too few to describe the sector as a whole.
-Always read the charts alongside their coverage counts.
+Interest coverage is expressed as a multiple (×).
+
+### Interest Coverage Observations
+
+#### Limited Data and Interpretation
+
+**These charts describe a small, selected group of companies and should not be
+used to rank whole sectors by financial stability.** Only **94 of 503 tickers
+(18.69%)** appear in the paired plots. The 188 plotted rows are two annual
+observations for each of those tickers, not 188 different companies.
+
+Coverage is uneven: Financials have only two matched tickers and Energy has three.
+Even Industrials, which includes EMCOR, covers only **13 of 83 tickers**. A sector's
+box, median, or average can therefore be heavily influenced by a few available
+companies. Missing results may reflect unsupported filing structures or unavailable
+inputs; they do not mean zero coverage or financial distress. The companies with
+usable ratios should not be assumed to represent those without them.
+
+**Apparent year-to-year volatility may therefore misrepresent the wider sector.**
+Large shifts in a box, median, or average may be driven by a small set of covered
+companies, while most sector members are absent. These plots are not a reliable
+measure of how volatile interest coverage was across the full sector, or whether
+a change was widespread. Previous and Latest use the same matched tickers, so
+limited coverage does not itself make a verified company's change inaccurate;
+it limits how confidently that change can be generalized.
+
+My observations focus on individual companies whose reported inputs can be checked.
+A large movement is a reason to examine both operating income and interest expense,
+not by itself evidence that a company has become less stable. A very small positive
+interest expense can produce an enormous ratio, making percentage changes look
+dramatic even when interest remains modest relative to earnings.
+
+#### EMCOR's Coverage Falls by About 60 Percent
+
+EMCOR's ratio falls from **355.88× in FY2024 to 142.55× in FY2025**, a decline of
+**59.94%**. Both stored ratios can be reproduced from the operating income and
+gross interest expense in its annual filing:
+
+| Measure | FY2024 | FY2025 | Change |
+| --- | ---: | ---: | ---: |
+| Operating income | $1,344.863 million | $1,713.418 million | +27.40% |
+| Interest expense | $3.779 million | $12.020 million | +218.07% |
+| Interest coverage | 355.88× | 142.55× | −59.94% |
+
+[Reported financial statements](https://www.sec.gov/Archives/edgar/data/105634/000010563426000025/eme-20251231.htm).
+
+**What caused the drop.** Interest expense more than tripled from a very small
+base, while operating income grew by about 27%. The denominator therefore grew
+much faster than the numerator. Coverage fell even though reported operating
+income increased: this is a financing-cost change, rather than evidence of a
+collapse in operating earnings.
+
+**Business and borrowing context.** EMCOR attributes the higher interest expense
+to temporary use of its revolving credit facility during 2025. Such a facility
+allows borrowing and repayment during the year. Its debt note reports **no
+outstanding debt at either year-end, excluding finance lease liabilities**. Annual
+interest expense can therefore rise despite there being no outstanding revolving
+borrowings on the final balance-sheet date. The ratio measures financing costs
+incurred over the year, not just the debt held on December 31.
+[Interest-expense discussion and Note 9](https://www.sec.gov/Archives/edgar/data/105634/000010563426000025/eme-20251231.htm).
+
+**An earnings qualification.** FY2025 operating income includes a **$144.9 million
+gain from selling its UK operations**. That gain should not be assumed to recur,
+so the reported ratio is not a measure of recurring operating earnings alone.
+Subtracting that gain alone still leaves operating income about $223.7 million
+above FY2024; this is not a full adjustment for every nonrecurring item.
+[Operating-income and sale-gain details](https://emcorgroup.com/application/files/4817/7205/3638/4Q25_Earnings_Release.pdf).
+
+**What it says about stability.** At 142.55×, reported operating income remains
+very large relative to annual interest expense. The percentage decline is therefore
+**weak evidence of financial instability on its own**. It shows that interest
+became a larger claim on earnings, but began from an exceptionally small base.
+The relevant question is whether higher borrowing costs persist and whether cash
+from the business can support future interest, investment, and principal payments.
+Operating income is not cash available to pay every obligation, and this ratio
+does not measure those principal payments.
+
+This is a checked company-level observation. It does not establish a decline in
+interest coverage across Industrials or the wider S&P 500.
+
+#### Kraft Heinz
+
+Kraft Heinz's ratio falls from **1.85× to −4.93×**, a **367.17% decrease**.
+Dollar amounts below are in millions.
+
+| Measure | FY2024 | FY2025 |
+| --- | ---: | ---: |
+| Operating income / (loss) | $1,683 | −$4,669 |
+| Interest expense | $912 | $947 |
+| Interest coverage | 1.85× | −4.93× |
+
+**Operating income.** Goodwill and intangible-asset impairments rose from
+**$3.669 billion to $9.306 billion**, explaining most of the earnings decline.
+These write-downs recognize reduced asset values without an equivalent cash
+payment that year. There was also weaker performance beyond those charges:
+company-defined adjusted operating income fell **11.5%**, from $5.360 billion
+to $4.745 billion.
+
+**Interest expense.** Expense increased about **3.8%**. That added pressure, but
+the much larger change came from operating income turning negative. The ratio
+crosses zero because of an operating loss, while interest expense remains positive.
+[Annual report and earnings reconciliation](https://www.sec.gov/Archives/edgar/data/1637459/000163745926000009/khc-20251227.htm).
+
+**What the ratio says about stability.** Reported operating earnings no longer
+cover interest. However, the negative ratio includes substantial noncash charges,
+so it does not establish that cash generated was insufficient to pay interest.
+The write-downs still matter as evidence of reduced asset values; recurring
+earnings, cash flow, and repayment needs require separate assessment.
+
+#### Willis Towers Watson
+
+WTW's ratio rises from **2.38× to 8.59×**, a **260.41% increase**.
+Dollar amounts below are in millions.
+
+| Measure | FY2024 | FY2025 |
+| --- | ---: | ---: |
+| Operating income | $627 | $2,234 |
+| Interest expense | $263 | $260 |
+| Interest coverage | 2.38× | 8.59× |
+
+**Operating income.** FY2024 included a **$1.042 billion goodwill impairment
+associated with TRANZACT**, which did not recur in FY2025. Transaction and
+transformation expenses also fell from **$409 million to $23 million**. These
+changes explain most of the rebound: the comparison starts from a year depressed
+by unusually large expenses. Company-defined adjusted operating income grew
+only about **3%**, from $2.378 billion to $2.449 billion.
+
+**Interest expense.** Expense declined about **1.1%**, so reduced financing costs
+made only a small contribution. The coverage increase primarily reflects the
+recovery in reported operating income.
+[Annual report and earnings reconciliation](https://www.sec.gov/Archives/edgar/data/0001140536/000119312526127631/wtw_ars_123125.pdf).
+
+**What the ratio says about stability.** Reported earnings provide a larger
+margin over annual interest costs. The 260% improvement nevertheless overstates
+the growth in underlying operating performance, because much of it reflects
+prior-year charges disappearing. It does not establish a proportionate improvement
+in financial stability or cash available for debt repayment.
+
+#### Baxter International
+
+Baxter's ratio falls from **0.0343× to −1.0621×**, a **3,195.17% decrease**.
+Dollar amounts below are in millions.
+
+| Measure | FY2024 | FY2025 |
+| --- | ---: | ---: |
+| Operating income / (loss) | $14 | −$308 |
+| Interest expense | $408 | $290 |
+| Interest coverage | 0.0343× | −1.0621× |
+
+**Operating income.** Earnings were already barely positive in FY2024. FY2025
+included **$485 million of goodwill impairments** and a **$290 million trade-name
+impairment**, alongside other operating costs. The business's reported earnings
+therefore moved from near break-even to a loss. The write-downs reduce accounting
+income without equivalent current-year cash payments.
+
+**Interest expense.** Expense fell about **28.9%**. The filing presents interest
+expense before deducting interest income separately from net interest expense;
+this calculation uses **$290 million**, rather than the $238 million net amount.
+Lower interest expense did not prevent coverage turning negative because
+operating income deteriorated.
+[Annual report, operating results, and interest note](https://www.sec.gov/Archives/edgar/data/10456/000162828026007733/bax-20251231.htm).
+
+**What the ratio says about stability.** Neither year's reported operating
+earnings cover interest. That deserves investigation, but the enormous percentage
+is amplified by the **near-zero starting ratio**. It does not mean payment
+pressure increased thirtyfold. Cash generation, the reasons for the impairments,
+and debt obligations matter more than that percentage alone.
+
+#### Viatris
+
+Viatris's ratio falls from **0.0184× to −5.6505×**, a **30,870.27% decrease**.
+Dollar amounts below are in millions.
+
+| Measure | FY2024 | FY2025 |
+| --- | ---: | ---: |
+| Operating income / (loss) | $10.1 | −$2,663.1 |
+| Interest expense | $550.0 | $471.3 |
+| Interest coverage | 0.0184× | −5.6505× |
+
+**Operating income.** Goodwill impairment rose from **$321.0 million to
+$2,936.8 million**, a major driver of the loss. Gross profit also fell from
+$5,623.6 million to $5,013.5 million. The decline therefore includes both a large
+noncash write-down and weaker gross profit; it should not all be dismissed as
+an accounting adjustment.
+
+**Interest expense.** Expense fell about **14.3%**, providing some relief in
+dollar terms. The ratio still became negative because of the operating loss.
+Dividing a negative loss by a smaller positive interest amount makes its negative
+multiple larger in magnitude; that is not evidence that lower interest costs
+made the company worse off.
+[Reported results](https://investor.viatris.com/news-releases/news-release-details/viatris-reports-fourth-quarter-and-full-year-2025-financial).
+
+**What the ratio says about stability.** The loss warrants examination, but
+**30,870% is dominated by the tiny positive starting ratio**. It is not a comparable
+measure of deterioration across companies. Assessing payment capacity requires
+cash flow and obligations alongside the earnings changes and impairment.
+
+#### Air Products
+
+Air Products' ratio falls from **20.41× to −4.10×**, a **120.08% decrease**.
+Dollar amounts below are in millions. Its fiscal year ends on September 30.
+
+| Measure | FY2024 | FY2025 |
+| --- | ---: | ---: |
+| Operating income / (loss) | $4,466.1 | −$877.0 |
+| Interest expense | $218.8 | $214.0 |
+| Interest coverage | 20.41× | −4.10× |
+
+**Operating income.** FY2025 included **$3.747 billion of business and asset
+charges**, including project exits. FY2024 also benefited from a **$1.576 billion
+business-sale gain**. The comparison therefore combines a year boosted by a gain
+with a year burdened by charges. Company-defined adjusted operating income fell
+about **3%**, much less than the reported earnings swing.
+[Reported results and reconciliation](https://www.sec.gov/Archives/edgar/data/2969/000000296925000051/exhibit99130sep25.htm).
+
+**Interest expense.** Reported expense declined about **2.2%**. However, total
+interest incurred rose from **$507.9 million to $615.8 million**; more was
+capitalized into construction projects rather than expensed immediately. The
+ratio uses expense after capitalization, so its denominator does not capture
+all financing costs incurred that year.
+[Annual report, interest-expense discussion](https://www.airproducts.com.cn/-/media/files/en/900/900-25-045-glb-annual-report-2025.pdf).
+
+**What the ratio says about stability.** The negative ratio signals a reported
+operating loss, but does not alone establish an inability to pay interest.
+Project charges deserve scrutiny, while capitalized interest makes cash funding
+needs important even when reported interest expense looks stable. Adjusted
+results provide context; they do not replace the plotted accounting measure.
+
+#### What These Company Changes Show
+
+The companies examined show much larger annual percentage changes in interest
+coverage than in their liabilities-to-assets ratios. This illustrates **greater
+sensitivity to annual earnings and financing costs**. Operating income can swing
+with business performance, impairments, sale gains, and restructuring expenses;
+assets and liabilities are accumulated balances that may change more gradually
+or move together.
+
+There are two different mathematical effects. A small **interest-expense
+denominator** can produce a very high coverage multiple, as with EMCOR. A small
+**previous coverage ratio** can produce an enormous percentage change, as with
+Baxter and Viatris. Moving from positive earnings to a loss also allows a decrease
+greater than 100%. These changes cannot be ranked as equivalent changes in
+financial stability.
+
+Two annual observations establish a change, rather than persistent volatility.
+These checked examples also do not establish that interest coverage was more
+volatile across the full S&P 500, given the limited sample. Company-defined
+adjusted earnings are included only to explain the reported movements; the
+charts continue to use reported operating income and interest expense.
 
 [tableau]: https://public.tableau.com/views/SP500FinancialAnalysisOctober212026Data/Liabilties-to-Assets-Distribution?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
@@ -638,9 +1228,9 @@ tables and dependent views in Neon, then rerun the pipeline to load them.
 
 ## Roadmap
 
-The next analysis step is to check the published Tableau extracts against the
-coverage records, then interpret the paired box plots. Automatic chart updates
-are not planned as part of the tool.
+The next analysis step is to investigate the identified utility extraction errors
+and update the affected data and charts. Automatic chart updates are not planned
+as part of the tool.
 
 ### Improving Interest-Coverage Data
 
