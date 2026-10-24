@@ -1,0 +1,111 @@
+{
+  "calculation_date": "2026-10-22",
+  "metric": "interest_coverage_ratio",
+  "grain": "one current ticker, using latest stored fiscal_period_end without older-value fallback",
+  "published_tableau_extract_verified": false,
+  "sources": {
+    "data/company_status.csv": {
+      "sha256": "1cdb8fc64af87f7b95048fd06c55ef23651526ee47b08f0aaeb1d5bb2b012a43"
+    },
+    "data/financial_ratios.csv": {
+      "sha256": "6d13f7072379848c15839273066137168f9742a7e9453cd0344c2d453a0bc6fd"
+    }
+  },
+  "total": 503,
+  "available": 96,
+  "missing": 407,
+  "sectors": [
+    {
+      "sector": "Communication Services",
+      "total": 22,
+      "available": 6,
+      "missing": 16,
+      "matched_annual_pairs": 6,
+      "excluded_from_paired_plots": 16
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "total": 47,
+      "available": 9,
+      "missing": 38,
+      "matched_annual_pairs": 8,
+      "excluded_from_paired_plots": 39
+    },
+    {
+      "sector": "Consumer Staples",
+      "total": 34,
+      "available": 9,
+      "missing": 25,
+      "matched_annual_pairs": 9,
+      "excluded_from_paired_plots": 25
+    },
+    {
+      "sector": "Energy",
+      "total": 21,
+      "available": 3,
+      "missing": 18,
+      "matched_annual_pairs": 3,
+      "excluded_from_paired_plots": 18
+    },
+    {
+      "sector": "Financials",
+      "total": 76,
+      "available": 2,
+      "missing": 74,
+      "matched_annual_pairs": 2,
+      "excluded_from_paired_plots": 74
+    },
+    {
+      "sector": "Health Care",
+      "total": 60,
+      "available": 14,
+      "missing": 46,
+      "matched_annual_pairs": 14,
+      "excluded_from_paired_plots": 46
+    },
+    {
+      "sector": "Industrials",
+      "total": 83,
+      "available": 13,
+      "missing": 70,
+      "matched_annual_pairs": 13,
+      "excluded_from_paired_plots": 70
+    },
+    {
+      "sector": "Information Technology",
+      "total": 75,
+      "available": 15,
+      "missing": 60,
+      "matched_annual_pairs": 15,
+      "excluded_from_paired_plots": 60
+    },
+    {
+      "sector": "Materials",
+      "total": 24,
+      "available": 7,
+      "missing": 17,
+      "matched_annual_pairs": 7,
+      "excluded_from_paired_plots": 17
+    },
+    {
+      "sector": "Real Estate",
+      "total": 30,
+      "available": 7,
+      "missing": 23,
+      "matched_annual_pairs": 7,
+      "excluded_from_paired_plots": 23
+    },
+    {
+      "sector": "Utilities",
+      "total": 31,
+      "available": 11,
+      "missing": 20,
+      "matched_annual_pairs": 10,
+      "excluded_from_paired_plots": 21
+    }
+  ],
+  "matched_annual_pairs": 94,
+  "excluded_from_paired_plots": 409,
+  "paired_export_rows": 188,
+  "pair_rule": "Both ratios available for this metric; prior end equals latest start minus one day; each period spans 364\u2013371 days."
+}

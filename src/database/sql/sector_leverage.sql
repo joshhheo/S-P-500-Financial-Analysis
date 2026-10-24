@@ -1,5 +1,7 @@
 CREATE OR REPLACE VIEW sector_leverage_rankings AS
-WITH latest_financials AS (
+WITH
+
+latest_financials AS (
     SELECT DISTINCT ON (ticker)
         ticker,
         fiscal_period_start,
@@ -9,6 +11,7 @@ WITH latest_financials AS (
     FROM financials
     ORDER BY ticker, fiscal_period_end DESC
 )
+
 SELECT
     c.ticker,
     c.cik,
@@ -17,7 +20,7 @@ SELECT
     f.fiscal_period_start,
     f.fiscal_period_end,
     f.liabilities_to_assets_ratio,
-    f.interest_coverage_ratio AS interest_coverage_ratio,
+    f.interest_coverage_ratio,
     CASE
         WHEN f.liabilities_to_assets_ratio IS NOT NULL THEN
             RANK() OVER (

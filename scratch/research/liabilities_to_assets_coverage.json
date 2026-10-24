@@ -19,67 +19,93 @@
       "sector": "Communication Services",
       "total": 22,
       "available": 11,
-      "missing": 11
+      "missing": 11,
+      "matched_annual_pairs": 11,
+      "excluded_from_paired_plots": 11
     },
     {
       "sector": "Consumer Discretionary",
       "total": 47,
       "available": 35,
-      "missing": 12
+      "missing": 12,
+      "matched_annual_pairs": 35,
+      "excluded_from_paired_plots": 12
     },
     {
       "sector": "Consumer Staples",
       "total": 34,
       "available": 26,
-      "missing": 8
+      "missing": 8,
+      "matched_annual_pairs": 25,
+      "excluded_from_paired_plots": 9
     },
     {
       "sector": "Energy",
       "total": 21,
       "available": 11,
-      "missing": 10
+      "missing": 10,
+      "matched_annual_pairs": 11,
+      "excluded_from_paired_plots": 10
     },
     {
       "sector": "Financials",
       "total": 76,
       "available": 74,
-      "missing": 2
+      "missing": 2,
+      "matched_annual_pairs": 74,
+      "excluded_from_paired_plots": 2
     },
     {
       "sector": "Health Care",
       "total": 60,
       "available": 45,
-      "missing": 15
+      "missing": 15,
+      "matched_annual_pairs": 45,
+      "excluded_from_paired_plots": 15
     },
     {
       "sector": "Industrials",
       "total": 83,
       "available": 66,
-      "missing": 17
+      "missing": 17,
+      "matched_annual_pairs": 64,
+      "excluded_from_paired_plots": 19
     },
     {
       "sector": "Information Technology",
       "total": 75,
       "available": 67,
-      "missing": 8
+      "missing": 8,
+      "matched_annual_pairs": 66,
+      "excluded_from_paired_plots": 9
     },
     {
       "sector": "Materials",
       "total": 24,
       "available": 17,
-      "missing": 7
+      "missing": 7,
+      "matched_annual_pairs": 17,
+      "excluded_from_paired_plots": 7
     },
     {
       "sector": "Real Estate",
       "total": 30,
       "available": 29,
-      "missing": 1
+      "missing": 1,
+      "matched_annual_pairs": 29,
+      "excluded_from_paired_plots": 1
     },
     {
       "sector": "Utilities",
       "total": 31,
       "available": 20,
-      "missing": 11
+      "missing": 11,
+      "matched_annual_pairs": 19,
+      "excluded_from_paired_plots": 12
     }
-  ]
+  ],
+  "matched_annual_pairs": 396,
+  "excluded_from_paired_plots": 107,
+  "paired_export_rows": 792,
+  "pair_rule": "Both ratios available for this metric; prior end equals latest start minus one day; each period spans 364\u2013371 days."
 }
