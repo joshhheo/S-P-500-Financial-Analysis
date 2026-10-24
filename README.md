@@ -1,200 +1,135 @@
 # S&P 500 Financial Analysis
 
-Builds a company-level financial overview of current S&P 500 constituents using
-annual SEC 10-K filings. The goal is to examine financial condition, performance
-and business trajectory, with sector comparisons providing context for each company.
+Company-level analysis of current S&P 500 constituents using annual SEC 10-K
+filings, with sector comparisons providing context for financial condition,
+performance, and business trajectory.
 
-The tool currently calculates liabilities/assets and interest coverage, writes
-CSVs, and loads PostgreSQL (Neon) for users to query and analyze. The author's
-separate Tableau presentation compares these ratios across sectors and adjacent
-annual periods. Liquidity, profitability, growth and cash-flow measures are planned
-extensions; the current outputs do not constitute a complete company assessment.
+The project collects up to five annual reporting periods for each current
+constituent and calculates liabilities-to-assets and interest coverage ratios.
+Results are available as CSVs and in PostgreSQL for company-level and sector
+queries. My Tableau charts compare each company's latest two comparable annual
+periods within its sector.
 
-The project favors explicit accounting formulas and small modules with a single
-purpose. Missing values remain missing throughout extraction, storage and analysis.
-
-- [Tools and rationale](#tools-and-rationale)
+- [Analytical Framework](#analytical-framework)
 - [Metrics](#metrics)
-- [Pipeline and storage](#pipeline-and-storage)
-- [Setup and execution](#setup-and-execution)
-- [Data analysis](#data-analysis)
-- [Data rules and assumptions](#data-rules-and-assumptions)
-- [Accounting fallbacks](#accounting-fallbacks)
+- [Data Analysis](#data-analysis)
+- [Data Rules and Assumptions](#data-rules-and-assumptions)
+- [Accounting Fallbacks](#accounting-fallbacks)
 - [Limitations](#limitations)
-- [Tests and evidence](#tests-and-evidence)
+- [Tests and Evidence](#tests-and-evidence)
+- [How It Works](#how-it-works)
+- [How It's Built](#how-its-built)
+- [Setup and Execution](#setup-and-execution)
 - [Roadmap](#roadmap)
-- [Analytical framework](#analytical-framework)
-- [Design decisions](#design-decisions)
 
-## Tools and rationale
+## Analytical Framework
 
-The tools support separate collection, calculation, storage and presentation
-steps. This keeps the financial data reusable beyond the published charts.
+The long-term company overview addresses four questions:
 
-| Tool or format | Role and rationale |
-| --- | --- |
-| Python | Coordinates extraction and calculations in small, testable modules. Explicit accounting formulas make the metric definitions and fallback order inspectable. |
-| EdgarTools | Retrieves SEC filings and parses their XBRL facts, avoiding a custom filing parser. The project still controls concept selection, reporting periods and accounting calculations. |
-| PostgreSQL | Stores company identities separately from financial periods. SQL supports historical period matching, consistent company samples and reusable sector views. Users can query the data independently of Tableau. |
-| Neon | Hosts the PostgreSQL database so storage is separate from the local extraction process and does not require running a local database server. |
-| Tableau Public | Provides interactive sector comparisons and company tooltips. Publishing dated views makes the analysis accessible, while CSV exports keep chart updates separate from the collection pipeline. |
-| CSV | Provides portable snapshots that can be inspected or imported into other tools without requiring access to the database or Tableau. |
+1. **Likelihood of failure:** how vulnerable is a company to financial distress or default?
+2. **Loss or recovery conditional on failure:** how protected is a stakeholder if failure occurs?
+3. **Likelihood of growth or contraction:** which direction might the business move?
+4. **Magnitude of growth or contraction:** how large might the upside or downside be?
 
-Supporting libraries include pandas for tabular data handling, SQLAlchemy for
-database connections and SQL execution, and psycopg2 as the PostgreSQL driver.
-Pinned dependencies are listed in [requirements.txt](requirements.txt).
+Different measures help investigate different questions. Liabilities/assets,
+interest coverage, and planned liquidity measures help assess financial
+vulnerability. Revenue growth and profit margins help show whether a business is
+expanding and how profitably it operates. Free cash flow shows how much cash
+remains after capital expenditures. Growth, profitability, liquidity, and cash-flow
+measures are planned additions, not current outputs.
+
+These measures provide evidence, not definite answers. A few ratios cannot tell
+us whether a company will fail, how much it will grow, or what stakeholders would
+recover if it failed. Those judgments also require business context and assumptions
+about the future. For example, assets reported on a balance sheet may sell for
+different amounts, and recovery depends on which claims get paid first.
 
 ## Metrics
 
-| Output | Formula | Meaning |
-| --- | --- | --- |
-| `liabilities_to_assets_ratio` | Total liabilities / total assets | Uses **all liabilities**, not only interest-bearing debt. |
-| `interest_coverage_ratio` | Annual operating income / annual total interest expense | Total interest expense includes operating and nonoperating interest expense; the numerator is operating income, not a separately reconstructed EBIT. |
-
-A missing required value or zero denominator produces `None`. Zero numerators and
-negative reported amounts are not automatically rejected.
-
-## Pipeline and storage
-
-1. Read current S&P 500 constituents, CIKs and sectors from Wikipedia.
-2. Use each CIK to retrieve up to five distinct original 10-K reporting periods,
-   processing up to three companies concurrently.
-3. Let Edgar parse each filing; search its facts using explicit concept names.
-4. Retrieve each metric, trying its accounting fallbacks only when needed.
-5. Calculate ratios, save CSVs, load the database and refresh sector views.
-
-Extraction processes three companies concurrently, with each company's filings
-processed sequentially. Results retain company-CSV order and are written after
-all workers succeed. [Performance observations](#extraction-performance) are recorded below.
-
-Historical results cover **current constituents**, not historical index membership.
-Amended filings are excluded. The full run performs all five steps.
-
-| Location | Purpose |
+| Output | Formula |
 | --- | --- |
-| [src/main.py](src/main.py) | Run the pipeline stages. |
-| [src/wiki_pull.py](src/wiki_pull.py) | Retrieve the constituent list. |
-| [src/table_data/](src/table_data/) | Build company and ratio CSVs. |
-| [src/value_retrieval/get_value.py](src/value_retrieval/get_value.py) | Establish the annual start from DEI facts and retrieve exact concepts for specified dates. |
-| [src/value_retrieval/](src/value_retrieval/) | Individual asset, liability, equity, interest and operating-income formulas. |
-| [src/calculations/](src/calculations/) | Divide independently retrieved metrics. |
-| [src/database/](src/database/) | Create tables, load CSVs and refresh views. |
-| [scratch/tests/](scratch/tests/) | Repeatable behavior checks and archived filing fixtures. |
-| [scratch/research/](scratch/research/) | Historical investigations and source evidence behind accounting decisions. |
+| `liabilities_to_assets_ratio` | Total liabilities / total assets |
+| `interest_coverage_ratio` | Annual operating income / annual total interest expense |
 
-The company CSV (`data/company_status.csv`) supplies ticker, CIK, name and sector
-to `companies`, keyed by ticker. The ratios CSV (`data/financial_ratios.csv`)
-supplies the reporting dates and two ratios to `financials`, keyed by ticker and
-fiscal-period end. CIK is stored only in `companies`. The ratios CSV is written
-directly after extraction finishes; there is no checkpoint or resume mechanism.
-Sector views join by ticker, select the latest stored period for current
-constituents and rank nonmissing ratios without substituting an older period.
+## Data Analysis
 
-The reusable tool provides these database outputs:
+**Data snapshot: October 21, 2026.** Open the [interactive Tableau workbook][tableau]
+and use its sheet tabs to switch between metrics and zoom levels. Each image below
+also links to the workbook.
 
-| Output | Purpose |
-| --- | --- |
-| `companies` | Company identity, current sector and constituent status. |
-| `financials` | Stored financial ratios and fiscal periods for each ticker. |
-| `sector_leverage_rankings` | Latest liabilities/assets ratios and within-sector ranks for current constituents. |
-| `sector_interest_coverage_rankings` | Latest interest-coverage ratios and within-sector ranks for current constituents. |
+My Tableau charts are separate from the pipeline. I run the
+[preparation queries](src/database/sql/tableau_prep/) against the database, export
+the results as CSVs, and import them into Tableau. The exact steps depend on the
+database and Tableau version.
 
-Users can build their own queries, visualizations and research from these tables
-and views, or use the CSV outputs directly. The SQL files defining the ranking
-views are part of the tool; the queries under `sql/tableau_prep/` and the Tableau
-presentation are the author's specific use of its data, not required tool stages.
+### Reading the Charts
 
-## Setup and execution
+Each sector has two box plots: Previous and Latest. These refer to each company's
+consecutive annual periods, so the actual fiscal dates can differ across companies.
+The snapshot date describes when the data was collected, not the fiscal year being
+measured. Each dot represents one ticker in one annual period.
 
-Schema setup creates tables if absent; it does not migrate older schemas or delete
-existing tables. The separate view-refresh stage creates the sector views.
-For structural database changes, the project owner manually deletes the old
-tables and dependent views in Neon, then reruns the pipeline to recreate and
-load the current schema. No automatic schema migration is performed.
+The box contains the middle 50% of observations, with the median marked inside.
+The interquartile range (IQR) is the distance between the lower and upper quartiles.
+Whiskers extend to the most extreme observed values within 1.5 × IQR below the
+lower quartile or above the upper quartile. Points beyond the whiskers are outliers.
 
-Run from the repository root. The development environment uses Python 3.13;
-[requirements.txt](requirements.txt) pins dependencies, including EdgarTools 5.58.0.
+Point colors show distance from that sector's median for the same comparison
+period: green is closer and red is farther away. Color does not indicate financial
+health.
+The score is the absolute distance from the median divided by the IQR, calculated
+separately for each sector and comparison period. A score of 1 means one IQR away;
+a zero IQR leaves the score unavailable. The color ranges are 0–4 for
+liabilities/assets and 0–5 for interest coverage; higher scores share the strongest
+red. Distance alone does not determine whether a point is an outlier.
 
-```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
+Zoomed charts use a narrower axis range. Points outside that range still contribute
+to the box plots and statistics. An outlier is a point to investigate,
+not proof of financial distress or an extraction error. Filtering companies can
+change Tableau's statistics while the exported color scores stay fixed.
+
+Hover in Tableau for company details, the ratio, and fiscal dates.
+
+### Annual Percentage Change
+
+The tooltip on each Latest point also shows the percentage change in that company's
+ratio from its Previous annual period:
+
+```text
+Annual percentage change = 100 × (latest − previous) / previous
 ```
 
-Set these variables in an uncommitted `.env` file:
+For example, a ratio rising from 0.60 to 0.66 has increased by 10%, equivalent to
+6 percentage points. This compares the company's own ratios, not sector medians.
 
-```dotenv
-SEC_user_agent="Your name your-email@example.com"
-db_connection_string="postgresql+psycopg2://USER:PASSWORD@HOST/DATABASE?sslmode=require"
-```
+Change is shown only when the previous ratio is positive. A zero or negative
+previous ratio leaves change blank, but the company remains in both box plots.
+Previous points do not show percentage change.
 
-Run the full pipeline **with network access, CSV replacement and database writes**:
+### Coverage Definitions
 
-```sh
-.venv/bin/python src/main.py
-```
+“Latest available” counts tickers with a ratio in their latest stored period.
+“Matched tickers” counts those with usable ratios in both adjacent annual periods;
+only matched tickers appear in the charts. Percentages use all current tickers in
+the relevant sector or overall sample, including those with no financial records.
+See the [annual-matching rules](#annual-matching-for-the-charts) for eligibility.
 
-To run an individual collection stage instead of the full pipeline, choose one
-of the commands below. Both use network access and replace their output CSV;
-neither loads the database or refreshes views.
+### Liabilities-to-Assets Distribution
 
-Refresh the current company list in `data/company_status.csv`:
-
-```sh
-PYTHONPATH=src .venv/bin/python -m table_data.company_status
-```
-
-Read that company list, retrieve SEC filings and write `data/financial_ratios.csv`:
-
-```sh
-PYTHONPATH=src .venv/bin/python -m table_data.generate_ratios
-```
-
-`PYTHONPATH=src` lets Python find the project's modules. `.venv/bin/python` uses
-the project's Python environment, and `-m` runs the named module.
-
-## Data analysis
-
-The current research compares financial-ratio distributions across sectors and
-identifies companies that stand out within their sector. These charts provide
-context for the broader company-level analysis described in the analytical
-framework below. The Tableau presentation is a published snapshot, separate from
-the reusable pipeline. Tool users can work directly with `companies`, `financials`
-and the sector-ranking views.
-
-**Data snapshot: October 21, 2026.** The charts compare each company's Previous
-and Latest comparable annual periods; those fiscal dates vary by company and are
-separate from the snapshot date. Each sector uses the same matched tickers in
-both periods, with matching performed independently for each metric.
-
-[Explore the interactive Tableau workbook][tableau].
-Open the workbook's sheet tabs for the two metrics and their zoomed views.
-Each preview below links to the workbook.
-
-Each dot represents one ticker in one annual period. Boxes show the middle 50%
-of values, with the median inside each box. Whiskers end at the outermost observed
-values within the 1.5 × IQR thresholds. Dot colors show distance from the sector
-and period median in IQRs, not financial health. The zoomed views narrow the axis
-range to make the boxes easier to compare; observations outside the range are
-not shown, but remain in the matched sample and distribution calculations.
-
-**Liabilities-to-assets distribution by sector**
-
-**Zoomed view (0–1.5)**
+**Zoomed View (0–1.5)**
 
 [![Previous and Latest liabilities-to-assets distributions by sector, zoomed to 0–1.5](<docs/images/Liabilties-to-Assets-Distribution (0-1.5).png>)][tableau]
 
-**Full-range view**
+**Full-Range View**
 
 [![Previous and Latest liabilities-to-assets distributions by sector, full range](<docs/images/Liabilties-to-Assets-Distribution.png>)][tableau]
 
-**Data coverage — liabilities-to-assets**
-
-Coverage for the October 21, 2026 data snapshot, calculated from the repository
-CSVs on October 22, 2026:
-**401 of 503 ticker records have a ratio (79.72%); 102 are missing (20.28%).**
-
-The paired-year export includes **396 matched tickers out of 503 (78.73%)**, or 792 rows across the two periods.
-It excludes **107 tickers** without a complete, comparable annual pair.
+**Coverage:** 401 of 503 tickers have a latest ratio (79.72%); 102 are missing
+(20.28%). The paired charts include 396 tickers (78.73% of all current tickers),
+with two observations each: 792 rows. The remaining 107 tickers are excluded.
+These counts use the October 21, 2026 repository CSV snapshot. The published
+Tableau extract has not been independently checked against them.
+[Source record](scratch/research/liabilities_to_assets_coverage.json).
 
 | Sector | Latest available / total | Matched tickers | Excluded from paired plots | Matched % |
 | --- | ---: | ---: | ---: | ---: |
@@ -210,44 +145,22 @@ It excludes **107 tickers** without a complete, comparable annual pair.
 | Real Estate | 29 / 30 | 29 | 1 | 96.67% |
 | Utilities | 20 / 31 | 19 | 12 | 61.29% |
 
-Latest availability counts use each current ticker’s latest financial period,
-including tickers with no financial record. Matched counts require an available
-ratio in both consecutive full annual periods. Missing values never become zero,
-and older periods never replace a missing latest value. Both paired plots use
-the same tickers. Share classes count separately. Zooming the axis hides extreme
-values without changing the matched sample.
+### Interest Coverage Distribution
 
-These counts were checked against the repository CSV inputs, not a fresh Neon
-query. The published Tableau extract has not been independently reconciled
-against them. October 21 is the data snapshot date; October 22 is the coverage
-calculation date.
-[Coverage source record](scratch/research/liabilities_to_assets_coverage.json).
-
-Hover in Tableau for company details, ratio, fiscal dates and annual percentage
-change on Latest points with a positive prior ratio. Read the distributions
-alongside sector sample sizes, especially for interest coverage.
-
-**Interest-coverage distribution by sector**
-
-Interest coverage is operating income divided by annual total interest expense,
-expressed as a multiple (×).
-
-**Zoomed view (−10–65×)**
+**Zoomed View (−10–65×)**
 
 [![Previous and Latest interest-coverage distributions by sector, zoomed to −10–65 times](<docs/images/Interest Coverage Ratio Distribution (-10-65).png>)][tableau]
 
-**Full-range view**
+**Full-Range View**
 
 [![Previous and Latest interest-coverage distributions by sector, full range](<docs/images/Interest Coverage Ratio Distribution.png>)][tableau]
 
-**Data coverage — interest coverage**
-
-Coverage for the October 21, 2026 data snapshot, calculated from the repository
-CSVs on October 22, 2026:
-**96 of 503 ticker records have a ratio (19.09%); 407 are missing (80.91%).**
-
-The paired-year export includes **94 matched tickers out of 503 (18.69%)**, or 188 rows across the two periods.
-It excludes **409 tickers** without a complete, comparable annual pair.
+**Coverage:** 96 of 503 tickers have a latest ratio (19.09%); 407 are missing
+(80.91%). The paired charts include 94 tickers (18.69% of all current tickers),
+with two observations each: 188 rows. The remaining 409 tickers are excluded.
+These counts use the October 21, 2026 repository CSV snapshot. The published
+Tableau extract has not been independently checked against them.
+[Source record](scratch/research/interest_coverage_counts.json).
 
 | Sector | Latest available / total | Matched tickers | Excluded from paired plots | Matched % |
 | --- | ---: | ---: | ---: | ---: |
@@ -263,191 +176,494 @@ It excludes **409 tickers** without a complete, comparable annual pair.
 | Real Estate | 7 / 30 | 7 | 23 | 23.33% |
 | Utilities | 11 / 31 | 10 | 21 | 32.26% |
 
-The counting rules and snapshot limitations above also apply here. Sectors
-with only two or three observations cannot support a representative sector
-distribution, even if Tableau can draw a box plot.
-[Coverage source record](scratch/research/interest_coverage_counts.json).
+Interest coverage is expressed as a multiple (×). Some sectors have only two or
+three usable observations, which is too few to describe the sector as a whole.
+Always read the charts alongside their coverage counts.
 
 [tableau]: https://public.tableau.com/views/SP500FinancialAnalysisOctober212026Data/Liabilties-to-Assets-Distribution?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
-<details>
-<summary>Tableau data preparation and color definitions</summary>
+## Data Rules and Assumptions
 
-| Location | Purpose |
-| --- | --- |
-| [src/database/sql/](src/database/sql/) | Create reusable sector-ranking views for the tool. |
-| [tableau_prep/](src/database/sql/tableau_prep/) | Prepare datasets for the author's Tableau charts. |
+These rules explain which financial facts the code accepts and how it handles
+calculations, missing values, and errors.
 
-The read-only distribution queries are `liabilities_to_assets_distribution.sql`
-and `interest_coverage_distribution.sql`. Each returns two rows per matched
-current ticker, labeled `Previous` and `Latest`, with their own fiscal dates and
-ratio values. The same companies appear in both periods for a fair comparison.
-The matching is independent for each metric, so the two metrics can have
-different matched samples.
+### Company Coverage
 
-The prior period must end the day before the latest period starts, and both
-periods must span 364–371 days (calendar years or 52/53-week years). Both ratios
-must be available for that metric. Gaps, missing dates, shorter transition
-periods or missing ratios exclude the company from both plotted periods; no
-older valid observation is substituted. The coverage tables above disclose
-those exclusions against all current tickers.
+The project retrieves data for current S&P 500 constituents, including their
+earlier reporting periods. It does not reconstruct past index membership. The
+[S&P U.S. Indices Methodology](https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-us-indices.pdf)
+explains index eligibility and domestic reporting criteria.
 
-`comparison_period` labels the two distributions as Previous and Latest.
-Quartiles and median-distance scores are calculated separately for each sector and comparison period, using only the matched sample.
+Separate share classes count as separate tickers.
 
-Each row contains its own fiscal dates and ratio. The Latest row also includes
-year-over-year percentage change; this field is NULL on Previous rows.
-Percentage change is `100 × (latest − previous) / previous`, calculated only
-when the prior ratio is positive. A zero or negative baseline gives NULL for
-percentage change, but its company remains in both plots. For example,
-liabilities/assets rising from 0.60 to 0.66 is +10%, equivalent to a
-6-percentage-point increase.
+### Company Identifiers
 
-Run the selected query in Neon's SQL editor after loading the `companies` and
-`financials` tables, then export a CSV for Tableau Public. Google Sheets is not needed.
-These queries do not change stored data and are not run by `main`; publishing
-Tableau is separate from running the tool.
+A CIK is the SEC identifier used to select a company's filing. The code does not
+separately require every fact's internal company identifier to equal that CIK.
+The [SEC XBRL Guide §6.2.7](https://www.sec.gov/files/edgar/xbrl-guide.pdf) allows
+one co-registrant's CIK to represent the consolidated entity in a filing covering
+multiple registrants.
 
-**Gradient:** `median_distance_iqr` is the absolute difference between a company's
-ratio and its sector median, divided by sector IQR (P75 − P25). A score of 0 is at
-the median; 1 is one IQR away on either side. Missing ratios or zero IQR produce
-NULL. Use Average on Color as a continuous measure, with green for low distances
-and red for high distances. The liabilities/assets snapshots use a color range
-of 0–4; the interest-coverage snapshots use 0–5. Values above each range share
-the strongest red. Color indicates statistical distance, not financial
-health or an exact outlier cutoff.
+### Fact Selection
 
-**Outliers:** Tableau's native box plot uses the 1.5 × IQR setting.
-Whiskers end at the most extreme observed values within the limits;
-points beyond them are outliers. No outlier flag is exported by the SQL.
-Outliers identify review candidates, not financial distress or extraction errors.
+- **Tag names:** the code searches for exact standard tag names, such as
+  `us-gaap:InterestExpense`. It does not interpret company-specific custom tags
+  or substitute tags with similar names.
+- **Taxonomy validation:** the code relies on Edgar's parsing. Finding an exact
+  tag name does not independently verify the filing's taxonomy setup or whether
+  the amount was tagged correctly. The [SEC accepted-taxonomy list](https://www.sec.gov/data-research/structured-data/taxonomies-schemas/standard-taxonomies)
+  identifies supported taxonomies, and the [SEC interactive-data FAQs](https://www.sec.gov/data-research/structured-data/office-structured-disclosure-staff-observations-guidance-trends/staff-interpretations-faqs-related-interactive-data-disclosure)
+  explain reporting and tagging guidance.
+- **Company-wide amounts:** the code selects non-dimensioned facts: values without
+  an extra category such as a business segment or geographic region. This is the
+  project's policy for selecting company-wide amounts from a filing.
+- **Duplicate facts:** after Edgar's dataframe handling and the filters for
+  reporting dates and company-wide amounts, the code uses the first nonmissing
+  matching value. It assumes duplicate facts are consistent within accepted
+  rounding differences. It does not rank competing facts by reported precision
+  or reconcile conflicting values.
 
-In Tableau, place sector followed by `comparison_period` on Columns, the ratio
-on Rows and ticker on Detail. Manually sort `comparison_period` to put Previous
-before Latest. Use the built-in box plot with the 1.5 × IQR setting and an average
-reference line per cell. Add year-over-year change to Tooltip; it is populated
-only for Latest rows. Keep the SQL and Tableau samples consistent: filtering companies can
-change Tableau's statistics while the exported scores remain fixed. To zoom,
-change the axis range rather than filtering out extreme company values.
+### Reporting Dates
 
-</details>
+A filing can contain several years of figures. The code matches dates so that
+comparative periods are not mixed together:
 
-## Data rules and assumptions
+- **Assets and liabilities:** match the requested balance-sheet date.
+- **Operating income and interest expense:** match both the start and end of the
+  requested reporting period.
 
-- Use explicit standard concepts according to the reviewed definitions. Do not
-  interpret company-specific custom concepts or substitute vaguely similar tags.
-- Trust compliant filing structures, correct namespace bindings and Edgar's
-  parsing. Exact concept searching is not an independent taxonomy validator.
-- Select non-dimensioned facts from the requested filing. Match the exact instant
-  date or both duration dates. There is no separate context-CIK equality check.
-- Treat USD as a scope assumption for the selected companies and consolidated
-  concepts. **The code does not check units or convert currencies.** Permitted
-  non-USD reporting exceptions are outside supported coverage and are not detected.
-- Use the reported value first, then the explicit accounting fallbacks below.
-  Return the first successful result, including zero. Do not reconcile alternatives.
-- Preserve missing results as blank CSV cells and SQL `NULL`, not zero. The loader
-  uses pandas' inferred numeric types and converts missing cells to Python `None`.
-  Missing results do not distinguish undisclosed inputs from unsupported structures.
-- Require every input to a formula. An absent component does not automatically
-  mean zero; this includes noncontrolling interest and temporary equity.
-- Trust compliant duplicate facts and accepted rounding differences. Use Edgar's
-  dataframe duplicate handling, then the first nonmissing matching row. No independent
-  precision ranking or conflicting-value reconciliation is performed.
-- Convert numeric text to Python `float` and use ordinary arithmetic for these
-  analytical ratios. No Decimal module or custom arithmetic context is used.
+### Annual Start Date
 
-Annual starts come from the matching `DocumentType`, `DocumentFiscalPeriodFocus`
-and `DocumentPeriodEndDate` contexts. Exactly one shared start must be found.
-This avoids assuming that every annual reporting period is 350–380 days long.
+The code uses the filing's document metadata to identify the annual start:
 
-These are retrieval policies under a defined scope, not a promise to validate
-arbitrary filings. Missing or unusable selected data returns `None`; unexpected
-parser, network or malformed-input errors are not all converted to `None`.
+1. `DocumentType` must identify a `10-K`.
+2. `DocumentFiscalPeriodFocus` must identify a full fiscal year (`FY`).
+3. `DocumentPeriodEndDate` must match the requested period end.
 
-## Accounting fallbacks
+The matching facts must share exactly one possible start date. If they do not,
+the annual start is unavailable. The code does not identify an annual period
+simply by checking whether it lasts 350–380 days.
 
-Exact concept names are written in the respective metric modules. Definitions
-were reviewed against the US GAAP 2026 baseline; standards research is done
-beforehand, not downloaded at runtime.
+### Annual Matching for the Charts
 
-| Metric | Order after its direct concept is unavailable |
-| --- | --- |
-| Assets | Current + noncurrent assets; liabilities-and-equity total; liabilities + net assets; liabilities + inclusive permanent equity + temporary equity. |
-| Liabilities | Current + noncurrent liabilities; assets − net assets; assets − inclusive permanent equity − temporary equity. |
-| Inclusive permanent equity | Inclusive permanent partners’ capital; parent equity + noncontrolling interest; derived partners’ capital; equity before treasury stock − treasury stock. |
-| Inclusive temporary equity | Parent temporary equity + redeemable noncontrolling equity. |
-| Total interest expense | Operating + nonoperating expense; total interest income − total net interest; incurred interest − capitalized interest; total income − operating net − nonoperating net; operating expense + derived nonoperating expense. Every term is required. |
-| Operating income | Subject to the explicit-zero restriction below: gross profit − operating expenses; revenues − costs and expenses; the same identities with gross profit or operating expenses reconstructed using cost of revenue. |
+For a match, the previous period must end the day before the latest starts, and
+both periods must last 364–371 days. This accepts calendar years and 52/53-week
+fiscal years. Both annual values for the metric must be available. Gaps, missing
+dates, shorter transition periods, or a missing ratio exclude the ticker from
+both plots. Each matched ticker contributes two rows, one per period.
 
-The operating-income fallbacks require both other operating income/expense and
-operating government-assistance income to be established as zero, directly or
-through complete compatible inputs. Missing or nonzero adjustments remain
-unsupported by these fallbacks. This is a conservative implementation restriction,
-not an SEC requirement to report zero facts.
+Previous and Latest use the same tickers within each metric, but the two metrics
+can have different samples. A missing latest ratio is not replaced with an older
+value.
 
-Assets and liabilities use helpers excluding the final equity identity to avoid
-circular calls. Intermediate values with their own fallbacks have separate modules;
-shared components use one implementation. The retained research evidence records
-the reviewed definitions and scope restrictions.
+### Currency
+
+The project assumes USD for the selected company-wide amounts.
+[Regulation S-X 3-20(a)(2)](https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol3/pdf/CFR-2025-title17-vol3-sec210-3-20.pdf)
+generally requires issuers that are not foreign private issuers to report in
+U.S. dollars. [SEC Financial Reporting Manual §6640](https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual/frm-topic-6)
+describes limited exceptions.
+
+The code does not check units or convert currencies, so it does not detect or
+support those exceptions.
+
+### Calculation Rules
+
+- **Fallback order:** use a reported amount first, then try the accounting
+  identities below. The first successful result is retained, including zero.
+  Alternative results are not reconciled.
+- **Required inputs:** every component used by a formula must be available. This
+  includes noncontrolling interest and temporary equity where a formula uses them.
+  [Regulation S-X §4-02](https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol3/pdf/CFR-2025-title17-vol3-sec210-4-04.pdf)
+  permits immaterial amounts to be combined, so an absent tag does not establish zero.
+- **Missing inputs:** a ratio cannot be calculated when a required input is missing;
+  the result is `None`.
+- **Zero denominators:** a ratio with a zero denominator returns `None`.
+- **Zero numerators:** zero is a valid numerator and is not automatically rejected.
+- **Negative amounts:** negative reported values are not automatically rejected.
+
+### Missing Data
+
+- **Storage:** missing values remain blank in CSVs and become SQL `NULL`, never
+  zero. The loader uses pandas' inferred numeric types and converts missing cells
+  to Python `None`.
+- **Meaning:** a missing result does not explain whether the amount was undisclosed
+  or the filing used an unsupported structure.
+
+### Numeric Precision
+
+Reported values are converted to Python `float`, and calculations use ordinary
+floating-point arithmetic. The project does not use Decimal arithmetic to preserve
+exact decimal values.
+
+### Execution Errors
+
+Unavailable selected data returns `None`. Unexpected parser, network, or malformed
+input errors can still stop execution; they are not all treated as missing data.
+
+## Accounting Fallbacks
+
+A fallback calculates an amount from other reported values when the preferred
+tag is unavailable. For example, total liabilities can be calculated by adding
+current and noncurrent liabilities, but only when both values are present.
+
+The lists below show the attempts in order after the direct concept is unavailable.
+Exact tag names are in the retrieval modules.
+Their accounting meanings were reviewed against the
+[FASB US GAAP 2026 definitions](https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-doc-2026.xml)
+and [technical schema](https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-2026.xsd).
+That research is done before runtime; the code does not download taxonomy rules.
+The formulas are project interpretations of compatible accounting components,
+not substitutions mandated by the SEC.
+
+### Assets
+
+1. Current assets + noncurrent assets.
+2. Reported liabilities-and-equity total.
+3. Liabilities + net assets.
+4. Liabilities + inclusive permanent equity + temporary equity.
+
+### Liabilities
+
+1. Current liabilities + noncurrent liabilities.
+2. Assets − net assets.
+3. Assets − inclusive permanent equity − temporary equity.
+
+### Inclusive Permanent Equity
+
+1. Inclusive partners’ capital.
+2. Inclusive LLC members’ equity.
+3. Parent equity + noncontrolling interest.
+4. Derived partners’ capital.
+5. Equity before treasury stock − treasury stock.
+6. Derived LLC members’ equity.
+
+### Inclusive Temporary Equity
+
+Parent temporary equity + redeemable noncontrolling equity.
+
+### Total Interest Expense
+
+Every term in the chosen formula must be available.
+
+1. Operating interest expense + nonoperating interest expense.
+2. Total interest income − total net interest.
+3. Incurred interest − capitalized interest.
+4. Total interest income − operating net interest − nonoperating net interest.
+5. Operating interest expense + derived nonoperating interest expense.
+
+### Operating Income
+
+All attempts below are subject to the [operating-income restriction](#operating-income-restriction).
+
+1. Gross profit − operating expenses.
+2. Revenues − costs and expenses.
+3. The same identities with gross profit or operating expenses reconstructed
+   using cost of revenue.
+
+### Equity Definitions
+
+Inclusive equity includes noncontrolling interests. Derived partners’
+capital and LLC members’ equity combine the parent amount with the corresponding
+noncontrolling-interest amount. Permanent equity and temporary equity are retrieved
+separately; one is not assumed to include the other.
+
+### Operating-Income Restriction
+
+The operating-income formulas have an additional restriction: other operating
+income/expense and operating government-assistance income must both be established
+as zero, either directly or from complete inputs. If either is missing or nonzero,
+these fallbacks are not used. This is a conservative project rule, not an SEC
+requirement to report zero amounts explicitly.
+
+[Research evidence](scratch/research/research_evidence.json) records the reviewed
+definitions, component boundaries, and rejected alternatives.
 
 ## Limitations
 
-- **Ticker changes:** database records are keyed by ticker, and ticker changes
-  are not automatically reconciled. Later loads can retain rows under the old
-  ticker while adding rows under the new ticker, splitting or duplicating a
-  company's stored history. Filing retrieval still uses CIK; the retained CIK
-  column in `companies` can identify the connection between those records.
-- **Unverified fallback coverage:** supported SG&A, regulated/unregulated revenue
-  and LLC members' equity identities have constructed tests, but their recovery
-  of actual missing S&P 500 results has not been established by the samples.
-- **Coverage gaps:** additional justified accounting fallbacks and permitted
-  standard filing structures remain to be implemented. Returning `None` does not
-  automatically make an amount unobtainable.
-- **Unverified coverage:** all S&P 500 issuers and periods, complete historical
-  semantic comparability, and deployed PostgreSQL/view behavior have not been
-  comprehensively established by the current tests.
-- **Intentional exclusions:** custom-concept interpretation, malformed or
-  misbound data, permitted non-USD reporting exceptions, calculation-linkbase
-  retrieval and amended filings are outside current supported behavior.
-- **Known filing-tag issue:** Vistra's FY2025 interest-coverage result is about
-  −22.42×. Its filing tags a $40 million plant-restoration cost as incurred
-  interest; subtracting $125 million capitalized interest produces a −$85 million
-  denominator. The stored ratio has not been corrected. Investigate the source
-  mismatch before interpreting this point; do not remove negative ratios generally.
-  [Source filing](https://www.sec.gov/Archives/edgar/data/1692819/000169281926000006/vistra-20251231.htm).
-- **Information limits:** compliant filings need not disclose every component
-  required for our ratios. A net amount may not determine its gross components,
-  and rounded amounts may not determine a unique underlying value.
+- **Ticker changes can split company history.** The database uses tickers as keys
+  and does not automatically connect an old ticker to a new one. Later loads can
+  leave records under both. CIKs in `companies` help identify the relationship.
+- **Missing data is not necessarily unobtainable.** The code does not support every
+  valid filing structure or possible accounting derivation. The SG&A expense,
+  regulated/unregulated revenue, and LLC equity fallbacks have constructed tests,
+  but their recovery of missing S&P 500 values has not been demonstrated by the samples.
+- **Validation is incomplete.** Tests do not cover every issuer, period, historical
+  taxonomy change, or deployed PostgreSQL behavior.
+- **Some cases are outside scope.** These include interpreting custom tags,
+  malformed or incorrectly bound data, non-USD reporting exceptions, amended
+  filings, and retrieval through filing calculation relationships.
+- **Some inputs cannot be uniquely recovered.** Filings do not need to disclose every
+  component required by a formula. A net amount may not reveal its gross components,
+  and rounded amounts may not determine an exact underlying value.
 
-## Tests and evidence
+## Tests and Evidence
 
-- **Offline unit tests:** 41 checks cover retrieval and accounting fallbacks,
-  concurrent extraction order, failure handling, database loading with NULLs and
-  Tableau preparation. The seven Tableau checks cover latest-period selection,
-  current membership, calendar and 52/53-week years, missing observations, annual
-  gaps, nonpositive baselines, separate period statistics and zero IQR.
-- **Archived filings:** four financial inputs and both ratios are compared with
-  the frozen baseline across 22 filings from six companies, including missing
-  states. This verifies regression consistency, not universal accounting correctness.
-- **SQL limits:** Tableau tests use SQLite percentile substitutes and integer
-  date ordinals. They do not verify live PostgreSQL execution or precision.
+### AI Assistance
 
-Run both checks offline, without replacing production CSVs or writing the database:
+I used AI assistance for parts of development and test
+generation. For some checks, I rely entirely on AI-generated tests without
+independent manual verification. Tests can share assumptions or mistakes with
+the implementation, so passing results are not an independent accounting audit.
+
+### What the Checks Cover
+
+- **41 offline tests** check retrieval, accounting fallbacks, extraction order,
+  failure handling, and loading missing values into the database. Seven of these
+  test the Tableau queries: latest-period selection, current membership, annual
+  matching, missing data and gaps, nonpositive baselines, separate period statistics,
+  and zero IQR.
+- **22 archived filings from six companies** are compared with saved expected
+  results for four financial inputs and both ratios, including missing values.
+  This checks whether behavior has changed; it does not prove every expected result
+  is independently correct.
+- **The SQL tests use SQLite substitutes** for PostgreSQL percentiles and date
+  subtraction. They check the comparison rules, not live PostgreSQL execution
+  or numerical precision.
+
+### Running the Checks
+
+Run both checks offline. Neither replaces production CSVs nor writes the database:
 
 ```sh
 PYTHONPATH=src .venv/bin/python -B -m unittest discover -s scratch/tests -p 'test_*.py'
 .venv/bin/python -B scratch/tests/verify_archived_filings.py
 ```
 
-[scratch/tests/](scratch/tests/) contains the tests and archived filing fixtures.
-The fixture ZIP and instance manifest are required for the archived check.
-[scratch/research/](scratch/research/) retains the two coverage records,
-[accounting research evidence](scratch/research/research_evidence.json) and its
-[source manifest](scratch/research/source_manifest.json). Historical research
-includes observations whose exploratory runners and source downloads are no
-longer retained; it is not all independently rerunnable or owner-reviewed.
+### Retained Evidence
+
+The [tests folder](scratch/tests/) includes the saved filing ZIP and instance
+manifest needed for archived verification. The [research folder](scratch/research/)
+contains coverage records, [accounting evidence](scratch/research/research_evidence.json),
+and a [source manifest](scratch/research/source_manifest.json). Some historical
+scripts and downloads were removed, so not all research can be rerun from these
+files. I have not independently reviewed all retained research.
+
+## How It Works
+
+### Pipeline
+
+1. Retrieve current S&P 500 tickers, company names, sectors, and CIKs from Wikipedia.
+2. Use each CIK to retrieve up to five distinct original 10-K reporting periods.
+   Amended filings are excluded.
+3. Use EdgarTools to parse the filings, then select financial facts using the
+   reporting dates and accounting rules described above.
+4. Calculate ratios, write the CSVs, load PostgreSQL, and refresh the sector views.
+
+### Concurrent Extraction
+
+Three companies are processed at the same time using `ThreadPoolExecutor`.
+Filings for an individual company are processed sequentially.
+
+<a id="extraction-performance"></a>
+
+I chose three workers based on my extraction runs: one took 2,023 seconds, three
+took 1,671 seconds (about 17% faster), and two took 1,689 seconds. Higher worker
+counts were slower. These were individual runs with different possible cache
+and network conditions, not a controlled benchmark.
+
+EdgarTools shares one 9-request-per-second limiter across the threads, below the
+[SEC request limit](https://www.sec.gov/about/developer-resources).
+
+### Output Order
+
+Results retain the company CSV's order and are written after all workers finish
+successfully.
+
+### Failure Handling
+
+There is no checkpoint or resume mechanism if extraction fails.
+
+### Storage and Outputs
+
+| CSV | Database key and contents |
+| --- | --- |
+| `data/company_status.csv` | Loads ticker, CIK, company name, and sector into `companies`, keyed by ticker. |
+| `data/financial_ratios.csv` | `financials`, keyed by ticker and fiscal-period end: reporting dates and both ratios. |
+
+| Output | Purpose |
+| --- | --- |
+| `companies` | Company identity, current sector and constituent status. |
+| `financials` | Stored financial ratios and fiscal periods for each ticker. |
+| `sector_leverage_rankings` | Latest liabilities/assets ratios and within-sector ranks for current constituents. |
+| `sector_interest_coverage_rankings` | Latest interest-coverage ratios and within-sector ranks for current constituents. |
+
+The company loader marks tickers in the current CSV as current constituents and
+marks other stored tickers as no longer current.
+
+CIK is stored only in `companies`.
+
+The sector views join company details to financial history by ticker. They select
+each current ticker's latest stored period and rank its available ratio within
+the sector. A missing latest ratio stays missing; an older value is not substituted.
+
+The tables, views, and CSVs are reusable outputs. My Tableau preparation queries
+and chart publishing are separate research steps and are not run by `main`.
+
+## How It's Built
+
+### Tools and Rationale
+
+| Tool or format | Role and rationale |
+| --- | --- |
+| Python | Organizes collection and calculations into small, testable modules. Formulas and fallback order are written explicitly so they can be inspected. |
+| EdgarTools | Retrieves filings and parses XBRL, the structured financial facts in SEC filings. This avoids writing a custom parser while leaving concept selection and calculations in this project. |
+| PostgreSQL | Stores company details and reporting history in related tables. SQL supports period matching, consistent company samples, sector views, and queries independent of Tableau. |
+| Neon | Hosts PostgreSQL so the database does not depend on running a local server or keeping the extraction process open. |
+| Tableau Public | Publishes interactive sector comparisons with company tooltips. Importing dated CSVs keeps chart updates separate from extraction. |
+| CSV | Makes the results easy to inspect and use in other tools without access to the database or Tableau. |
+
+Pandas handles tabular data, SQLAlchemy manages database connections and SQL
+execution, and psycopg2 connects to PostgreSQL. Versions are pinned in
+[requirements.txt](requirements.txt).
+
+### Code Structure
+
+| Location | Purpose |
+| --- | --- |
+| [src/main.py](src/main.py) | Run the pipeline stages. |
+| [src/wiki_pull.py](src/wiki_pull.py) | Retrieve the constituent list. |
+| [src/table_data/](src/table_data/) | Build company and ratio CSVs. |
+| [src/value_retrieval/get_value.py](src/value_retrieval/get_value.py) | Identify the annual start from document metadata and retrieve exact concepts for the requested dates. |
+| [src/value_retrieval/](src/value_retrieval/) | Individual asset, liability, equity, interest and operating-income formulas. |
+| [src/calculations/](src/calculations/) | Divide independently retrieved metrics. |
+| [src/database/](src/database/) | Create tables, load CSVs and refresh views. |
+| [scratch/tests/](scratch/tests/) | Repeatable behavior checks and archived filing fixtures. |
+| [scratch/research/](scratch/research/) | Historical investigations and source evidence behind accounting decisions. |
+
+### Design Decisions
+
+- **Module responsibilities:** each main financial amount has its own retrieval
+  module. Supporting calculations have separate modules when they have their own
+  fallbacks, and shared calculations have one implementation.
+- **Preventing circular calls:** assets and liabilities use helpers that exclude
+  the final equity identity so the two retrieval functions cannot call each other
+  indefinitely.
+
+- **Equity scope:** parent-only equity is not automatically treated as total equity
+  including noncontrolling interests.
+- **Interest-expense scope:** cash interest paid is not substituted for accrued
+  interest expense, and a net interest amount alone does not establish total expense.
+  Unsupported equations stay out of production.
+- **Research definitions before runtime.** Definitions were reviewed against 2026
+  and selected 2021–2026 releases. Some interest concepts first appear in 2024.
+  The code does not check taxonomy versions at runtime or guarantee equivalent
+  meanings across every year.
+- **Defer calculation-linkbase retrieval.** A filing's calculation linkbase records
+  relationships between reported facts. Reading it could recover some missing
+  amounts, but adds parsing and relationship-handling code. I deferred that work
+  to keep the implementation small. An earlier comparison lost liabilities/assets
+  for ten AMD and Walmart filings when linkbase retrieval was disabled, so this
+  choice has a known coverage cost.
+
+The [research evidence](scratch/research/research_evidence.json) retains definition
+histories, candidate equations, filing observations, and rejected substitutions.
+
+### Why Caching Does Not Eliminate Extraction Time
+
+EdgarTools 5.58.0 uses a local HTTP response cache. The 30-second setting is a
+freshness period for submission metadata and company facts, not a server-side
+expiry applied to every call. Archived filing responses are cached indefinitely
+under the default rules; index responses use a 30-minute freshness period.
+[Cache rules](https://github.com/dgunning/edgartools/blob/v5.58.0/edgar/httpclient.py).
+
+Caching helps when the same URL is requested again. A first extraction still needs
+to download uncached filings, and metadata may require a network freshness check
+after 30 seconds. Cached filing responses can reduce later downloads, but a new
+pipeline run still parses filings, selects facts, and calculates ratios. The
+pipeline does not persist those parsed results or resume completed companies.
+Caching therefore does not remove the full extraction cost.
+
+### Why I Do Not Use EdgarTools' Total-Value Getters
+
+I use EdgarTools to retrieve and parse filings, but calculate financial totals
+through this project's exact-concept searches and reviewed accounting fallbacks.
+Convenience methods such as `get_total_assets()` can use broader label matching
+than the metric requires.
+
+In the pinned 5.58.0 implementation, `get_total_assets()` includes the pattern
+`Assets$`, which also matches a label ending in “Current Assets.” If no earlier
+pattern finds a usable total, the method can therefore return current assets as
+total assets. An isolated check with only “Current Assets = 100” reproduced that
+result. Current assets alone are not total assets.
+[Getter implementation](https://github.com/dgunning/edgartools/blob/v5.58.0/edgar/financials.py).
+
+This is a specific reason to keep metric selection explicit, not a claim that
+every convenience method is incorrect. My retrieval requires the exact reported
+total or a complete supported identity, such as current assets plus noncurrent
+assets. Otherwise, the amount remains missing.
+
+## Setup and Execution
+
+Run these commands from the repository root. The development environment uses
+Python 3.13; the dependency file pins the libraries, including EdgarTools 5.58.0.
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+```
+
+Create a `.env` file with your SEC contact identity and database connection string.
+Do not commit this file:
+
+```dotenv
+SEC_user_agent="Your name your-email@example.com"
+db_connection_string="postgresql+psycopg2://USER:PASSWORD@HOST/DATABASE?sslmode=require"
+```
+
+Run the full pipeline (**network access, CSV replacement and database writes**):
+
+```sh
+.venv/bin/python src/main.py
+```
+
+To run only a collection stage, use one of these commands. Both access the network
+and replace their corresponding CSV. They do not load the database or refresh views.
+
+```sh
+# Refresh data/company_status.csv
+PYTHONPATH=src .venv/bin/python -m table_data.company_status
+
+# Read that company list and write data/financial_ratios.csv
+PYTHONPATH=src .venv/bin/python -m table_data.generate_ratios
+```
+
+`PYTHONPATH=src` lets Python find the project modules. `.venv/bin/python` uses the
+project's virtual environment, and `-m` runs the named module.
+
+Schema setup creates tables that do not exist; the view-refresh stage creates
+the sector views. It does not update an older table structure or delete existing
+tables automatically. When the structure changes, I manually recreate the affected
+tables and dependent views in Neon, then rerun the pipeline to load them.
 
 ## Roadmap
+
+The next analysis step is to check the published Tableau extracts against the
+coverage records, then interpret the paired box plots. Automatic chart updates
+are not planned as part of the tool.
+
+### Improving Interest-Coverage Data
+
+I plan to verify existing interest-coverage values more thoroughly and investigate
+why so many companies have missing results. The work will focus on:
+
+- **Checking reported inputs:** compare operating income and total interest expense
+  with the original financial statements and notes. Review both ordinary and
+  extreme ratios, confirming the reporting period, units, and accounting scope.
+- **Understanding missing results:** identify whether operating income, interest
+  expense, or a component needed for a fallback is unavailable. Distinguish missing
+  disclosures from values the current retrieval rules do not support.
+- **Reviewing additional retrieval methods:** investigate standard concepts,
+  complete accounting identities, and filing calculation relationships that could
+  recover missing inputs. Add methods only when their definitions and filing
+  evidence support the intended metric; do not assume missing components are zero.
+- **Verifying changes independently:** manually check selected filing examples and
+  compare results before and after retrieval changes. Use those checked examples
+  to support tests, rather than relying only on AI-generated expectations.
+- **Reporting progress:** update the coverage counts and explain remaining gaps
+  so readers can see which companies and sectors the analysis represents.
+
+### Planned Measures and Features
 
 | Measure or feature | Planned definition and scope |
 | --- | --- |
@@ -458,19 +674,12 @@ longer retained; it is not all independently rerunnable or owner-reviewed.
 | FCF margin | Potential extension: defined free cash flow / revenue for the same period. |
 | Calculation-linkbase retrieval | Revisit recovery of missing values if the coverage benefit warrants the additional code; preserve the applicable relationship semantics. |
 
-Revenue retrieval is a shared prerequisite for revenue growth, operating margin
-and any FCF margin. The planned metrics are not implemented yet. Their exact
-standard concepts, component boundaries and fallback rules still require review;
-listing a formula here does not approve every possible tag substitution.
+These additions still need reviewed tag definitions, component boundaries, and
+fallback rules. Revenue retrieval is needed for revenue growth, operating margin,
+and FCF margin. The existing liabilities/assets metric will continue to use total
+liabilities.
 
-The liabilities/assets measure uses **total liabilities** as its numerator.
-Interest-bearing debt must not silently replace it when extending the project.
-
-Both metrics' matched Previous/Latest distributions and zoomed counterparts are
-published on Tableau Public, with linked previews above for the October 21, 2026
-data snapshot. Next steps are to reconcile coverage with the published extracts
-and review the distributions before writing findings. Automatic Tableau updates
-are outside the tool's scope. Further research questions are:
+### Further Analysis
 
 | Analysis | Question and scope |
 | --- | --- |
@@ -478,92 +687,4 @@ are outside the tool's scope. Further research questions are:
 | Matched-company sector trends | Are changes widespread within sectors? Compare the same companies across periods, reporting median company change and the share with an increase. |
 | Company position within its sector | How does each company's latest ratio compare with its sector median and percentile? Keep the reporting period visible. |
 | Interest-coverage histories | How does available coverage change within each company? Preserve gaps and avoid inferring the cause of negative ratios without the underlying amounts. |
-| Correlation exploration (deferred) | Potential future analysis of liabilities/assets versus interest coverage within sectors, using company-level scatter plots and correlation summaries. Inspect the patterns and validate inputs before deciding whether Pearson, Spearman or another approach is appropriate. |
-
-Correlation is deferred while the current analysis focuses on matched annual
-box plots. No correlation analysis is currently implemented; validate inputs
-before pursuing it.
-
-**Potential correlation data coverage (calculated separately from the repository
-CSV snapshot):** only **69 of 503 ticker records (13.72%)** have both ratios for
-their latest stored period. Sector samples are smaller still, and available
-companies may not represent those with missing ratios. Fiscal dates can differ
-between tickers, and share classes remain separate observations. Total liabilities
-also include non-interest-bearing obligations, so a relationship with interest
-coverage is indirect. Any future analysis should report sample sizes and coverage
-separately and should not interpret correlation as causation.
-
-## Analytical framework
-
-The long-term goal is a financial overview of each company, organized around
-four questions about downside vulnerability and business trajectory:
-
-1. **Likelihood of failure:** how vulnerable is a company to financial distress or default?
-2. **Loss or recovery conditional on failure:** how protected is a stakeholder if failure occurs?
-3. **Likelihood of growth or contraction:** which direction might the business move?
-4. **Magnitude of growth or contraction:** how large might the upside or downside be?
-
-The implemented and planned measures provide accounting inputs for investigating these questions.
-They are not calibrated probabilities, recovery estimates or forecasts. The
-framework is the analytical objective; the pipeline currently produces historical
-financial measures.
-
-Liabilities/assets, interest coverage and the planned current ratio support the
-assessment of financial vulnerability. Revenue growth and operating margin will
-add business-direction and profitability measures; free cash flow will add a
-measure of cash generation after defined capital expenditures. These are intended
-uses, not claims that one ratio answers a framework question by itself.
-
-Stakeholder recovery and the magnitude of future outcomes remain separate analysis
-problems. Book assets are not a liquidation valuation, and the current pipeline
-does not model claim priority, stakeholder-specific recovery or future scenarios.
-
-## Design decisions
-
-The pipeline uses Edgar for filing retrieval and parsing, with explicit concept
-searches and accounting formulas in small Python modules. It does not implement
-custom XML parsing, a runtime taxonomy engine or a general inference framework.
-
-- **Accounting boundaries:** parent-only equity is not inclusive equity; cash
-  interest paid is not accrued interest expense; a net interest amount alone does
-  not establish gross expense. Operating-income fallbacks retain their explicit
-  zero-adjustment restriction. Reviewed but unsupported equations stay out of
-  production.
-- **Historical comparability:** definitions were reviewed against the 2026
-  taxonomy and selected 2021–2026 releases. Some interest concepts first appear
-  in 2024. There is no runtime taxonomy-version gate or guarantee of equivalent
-  meaning across all years.
-- **Calculation linkbases:** retrieval is deferred to keep the implementation
-  small. In an earlier comparison, disabling it removed liabilities/assets for
-  ten AMD and Walmart filings. This is a known coverage tradeoff, not evidence
-  that missing values are impossible to recover.
-
-Detailed definition histories, candidate equations, filing observations and
-rejected substitutions remain in the [research evidence](scratch/research/research_evidence.json).
-Official definitions and reporting guidance are linked below.
-
-<details>
-<summary>Extraction performance</summary>
-
-<a id="extraction-performance"></a>
-
-The three-worker setting is based on user-reported extraction runs: 2,023 seconds
-with one worker versus 1,671 seconds with three, about 17% faster. Two workers took
-1,689 seconds; higher worker counts were slower. These were individual runs with
-potentially different cache and network conditions, not a controlled benchmark.
-EdgarTools shares a 9-request/second limiter across threads, below the
-[SEC limit](https://www.sec.gov/about/developer-resources).
-
-</details>
-
-## Official references
-
-- [SEC accepted standard taxonomies](https://www.sec.gov/data-research/structured-data/taxonomies-schemas/standard-taxonomies)
-- [US GAAP 2026 definitions](https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-doc-2026.xml)
-- [US GAAP 2026 schema](https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-2026.xsd)
-- [SEC XBRL Guide](https://www.sec.gov/files/edgar/xbrl-guide.pdf)
-- [SEC interactive-data interpretations and FAQs](https://www.sec.gov/data-research/structured-data/office-structured-disclosure-staff-observations-guidance-trends/staff-interpretations-faqs-related-interactive-data-disclosure)
-- [S&P U.S. Indices Methodology](https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-us-indices.pdf): index eligibility and domestic reporting criteria.
-- [Regulation S-X 3-20(a)(2)](https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol3/pdf/CFR-2025-title17-vol3-sec210-3-20.pdf): general USD reporting requirement for non-foreign-private issuers.
-- [SEC Financial Reporting Manual §6640](https://www.sec.gov/about/divisions-offices/division-corporation-finance/financial-reporting-manual/frm-topic-6): limited staff exceptions to USD reporting.
-- [Regulation S-X §4-02](https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol3/pdf/CFR-2025-title17-vol3-sec210-4-04.pdf): immaterial amounts need not be separately presented; omission alone does not establish zero.
+| Correlation exploration | Potential future analysis of liabilities/assets versus interest coverage within sectors, using company-level scatter plots and correlation summaries. Inspect the patterns and validate inputs before deciding whether Pearson, Spearman or another approach is appropriate. |
