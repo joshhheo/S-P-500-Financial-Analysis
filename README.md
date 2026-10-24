@@ -1,13 +1,19 @@
-# S&P 500 financial risk pipeline
+# S&P 500 Financial Analysis
 
-Extracts financial values from SEC 10-K filings for current S&P 500 constituents,
-calculates liabilities/assets and interest coverage, and loads the results into
-PostgreSQL (Neon) for users to query and analyze. The author's separate research
-uses these outputs for sector distribution analysis and Tableau visualizations.
+Builds a company-level financial overview of current S&P 500 constituents using
+annual SEC 10-K filings. The goal is to examine financial condition, performance
+and business trajectory, with sector comparisons providing context for each company.
+
+The tool currently calculates liabilities/assets and interest coverage, writes
+CSVs, and loads PostgreSQL (Neon) for users to query and analyze. The author's
+separate Tableau presentation compares these ratios across sectors and adjacent
+annual periods. Liquidity, profitability, growth and cash-flow measures are planned
+extensions; the current outputs do not constitute a complete company assessment.
 
 The project favors explicit accounting formulas and small modules with a single
 purpose. Missing values remain missing throughout extraction, storage and analysis.
 
+- [Tools and rationale](#tools-and-rationale)
 - [Metrics](#metrics)
 - [Pipeline and storage](#pipeline-and-storage)
 - [Setup and execution](#setup-and-execution)
@@ -19,6 +25,24 @@ purpose. Missing values remain missing throughout extraction, storage and analys
 - [Roadmap](#roadmap)
 - [Analytical framework](#analytical-framework)
 - [Design decisions](#design-decisions)
+
+## Tools and rationale
+
+The tools support separate collection, calculation, storage and presentation
+steps. This keeps the financial data reusable beyond the published charts.
+
+| Tool or format | Role and rationale |
+| --- | --- |
+| Python | Coordinates extraction and calculations in small, testable modules. Explicit accounting formulas make the metric definitions and fallback order inspectable. |
+| EdgarTools | Retrieves SEC filings and parses their XBRL facts, avoiding a custom filing parser. The project still controls concept selection, reporting periods and accounting calculations. |
+| PostgreSQL | Stores company identities separately from financial periods. SQL supports historical period matching, consistent company samples and reusable sector views. Users can query the data independently of Tableau. |
+| Neon | Hosts the PostgreSQL database so storage is separate from the local extraction process and does not require running a local database server. |
+| Tableau Public | Provides interactive sector comparisons and company tooltips. Publishing dated views makes the analysis accessible, while CSV exports keep chart updates separate from the collection pipeline. |
+| CSV | Provides portable snapshots that can be inspected or imported into other tools without requiring access to the database or Tableau. |
+
+Supporting libraries include pandas for tabular data handling, SQLAlchemy for
+database connections and SQL execution, and psycopg2 as the PostgreSQL driver.
+Pinned dependencies are listed in [requirements.txt](requirements.txt).
 
 ## Metrics
 
@@ -130,10 +154,12 @@ the project's Python environment, and `-m` runs the named module.
 
 ## Data analysis
 
-The author's research asks how financial-ratio distributions differ across sectors
-and which companies stand out within their sector. The Tableau presentation is a
-published snapshot, separate from the reusable pipeline. Tool users can work
-directly with `companies`, `financials` and the sector-ranking views.
+The current research compares financial-ratio distributions across sectors and
+identifies companies that stand out within their sector. These charts provide
+context for the broader company-level analysis described in the analytical
+framework below. The Tableau presentation is a published snapshot, separate from
+the reusable pipeline. Tool users can work directly with `companies`, `financials`
+and the sector-ranking views.
 
 **Data snapshot: October 21, 2026.** The charts compare each company's Previous
 and Latest comparable annual periods; those fiscal dates vary by company and are
@@ -469,7 +495,8 @@ separately and should not interpret correlation as causation.
 
 ## Analytical framework
 
-The project is organized around four questions:
+The long-term goal is a financial overview of each company, organized around
+four questions about downside vulnerability and business trajectory:
 
 1. **Likelihood of failure:** how vulnerable is a company to financial distress or default?
 2. **Loss or recovery conditional on failure:** how protected is a stakeholder if failure occurs?
